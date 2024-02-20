@@ -1,0 +1,8 @@
+{
+  "catppuccin-theme-settings@@catppuccin-theme-dark": "ctp-macchiato",
+  "catppuccin-icon-styles@@ctp-icon-hide": true,
+  "things-style@@fancy-highlight": true,
+  "things-style@@fancy-code": true,
+  "catppuccin-theme-settings@@catppuccin-theme-accents": "ctp-accent-sky",
+  "catppuccin-interface-styles@@ctp-bold-folder-title": true
+}

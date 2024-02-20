@@ -1,0 +1,49 @@
+{
+  "settings": {
+    "migrated": 4,
+    "iconPacksPath": ".obsidian/icons",
+    "fontSize": 16,
+    "emojiStyle": "twemoji",
+    "iconColor": null,
+    "recentlyUsedIcons": [
+      "LiPi",
+      "LiBug",
+      "LiSigmaSquare",
+      "LiDatabase",
+      "😢"
+    ],
+    "recentlyUsedIconsSize": 5,
+    "rules": [],
+    "extraMargin": {
+      "top": 0,
+      "right": 4,
+      "bottom": 0,
+      "left": 0
+    },
+    "iconInTabsEnabled": false,
+    "iconInTitleEnabled": false,
+    "iconInFrontmatterEnabled": true,
+    "iconsBackgroundCheckEnabled": false,
+    "iconsInNotesEnabled": true,
+    "iconIdentifier": ":"
+  },
+  "ACG": "FarChessRook",
+  "Research": "LiBug",
+  "Computer Science": "LiBook",
+  "Computer Science/Math": "LiSigmaSquare",
+  "Algorithm": "FarLightbulb",
+  "Algorithm/Math": "LiPercentSquare",
+  "Computer Science/Computer Architecture": "LiComputer",
+  "Computer Science/Programming Languages/NJU 软件分析": "LiSearchCode",
+  "_ignore": "FarEyeSlash",
+  "_ignore/Diaries": "FarLifeRing",
+  "_ignore/Plans": "LiCalendarCheck",
+  "_ignore/Templates": "FarCopy",
+  "_ignore/Diaries/2024/02/04.md": "😫",
+  "_ignore/Diaries/2024/02/03.md": "🙁",
+  "_ignore/Diaries/2024/02/10.md": "😢",
+  "_ignore/Diaries/2024/02/05.md": "🤡",
+  "_assets": "LiDatabase",
+  "Computer Science/Computer Network": "LiNetwork",
+  "Computer Science/Theory of Computer Science": "LiPi"
+}

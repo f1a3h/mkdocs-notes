@@ -1,0 +1,204 @@
+{
+  "main": {
+    "id": "bfa24af23da9d7e2",
+    "type": "split",
+    "children": [
+      {
+        "id": "dfc7aeff828013f0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2471d8043cff3fed",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "index.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "475bf7f71d779dfa",
+    "type": "split",
+    "children": [
+      {
+        "id": "78191040f133e0ac",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "00948b16b9d42f94",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "cb5bb9f1bbe89d17",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "2dceb2653dcb2636",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 210
+  },
+  "right": {
+    "id": "76b1a789183f3b92",
+    "type": "split",
+    "children": [
+      {
+        "id": "ff5274c9758ff81f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "527cfc522cda239a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "index.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "0ff2e9b3f1633d98",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "index.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "71e0ff9b9735d2dc",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "45cab91d97f45ad5",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "index.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "audio-recorder:Start/stop recording": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "remotely-save:Remotely Save": false,
+      "templater-obsidian:Templater": false
+    }
+  },
+  "active": "2471d8043cff3fed",
+  "lastOpenFiles": [
+    "Algorithm/index.md",
+    "ACG/index.md",
+    "Computer Science/Computer Network/CNATDA/Chapter 2.md",
+    "index.md",
+    "_assets/img/XilmO_夕末_110221098_粼_0.png",
+    "Computer Science/Theory of Computer Science/index.md",
+    "Computer Science/Theory of Computer Science/Part 1/index.md",
+    "Computer Science/Programming Languages/index.md",
+    "Computer Science/Computer Security/Stanford CS110L.md",
+    "Computer Science/Computer Network/index.md",
+    "_ignore/Templates/note.md",
+    "Computer Science/Computer Network/CNATDA/index.md",
+    "Computer Science/Computer Architecture/UCB CS61C.md",
+    "Computer Science/Computer Architecture/CSAPP/index.md",
+    "Computer Science/Computer Architecture/CSAPP/Chapter 2.md",
+    "Computer Science/index.md",
+    "Computer Science/Computer Architecture/index.md",
+    "Research/Papers/liuYourCodeGenerated2023.md",
+    "Research/Papers/index.md",
+    "Research/_Fuzzing Survey/The Art, Science, and Engineering of Fuzzing.md",
+    "Research/Learning Research.md",
+    "Research/Research Log.md",
+    "Research/index.md",
+    "Computer Science/Computer Network/CNATDA",
+    "Research/_Is Your Code Generated by ChatGPT Really Correct?/Is Your Code Generated by ChatGPT Really Correct?.md",
+    "Computer Science/Computer Network/CNATDA/Chapter 6.md",
+    "Computer Science/Computer Network/CNATDA/Chapter 5.md",
+    "Computer Science/Computer Network/CNATDA/Chapter 4.md",
+    "Computer Science/Computer Security",
+    "Computer Science/Programming Languages",
+    "Computer Science/Computer Architecture/CSAPP",
+    "assets/img.zip",
+    "ACG/Novel",
+    "ACG/Comics",
+    "ACG/Game",
+    "ACG/Anime",
+    "_assets/img/favicon.svg",
+    "_ignore/Diaries/2024/02/Bangumi年鉴.png",
+    "_assets/img",
+    "_assets/img/Screenshot 2024-02-16 at 20.41.07.png",
+    "_assets/img/Screenshot 2024-02-16 at 20.27.04.png",
+    "_assets/img/Screenshot 2024-02-16 at 00.33.39.png",
+    "Ignore/Plans/2024/02/Untitled.canvas",
+    "Untitled.canvas",
+    "Notes/NJU「软件分析」/Static Analysis for Security/image.png",
+    "Notes/NJU「软件分析」/Soundness and Soundiness/whyrefl.png",
+    "Notes/NJU「软件分析」/Soundness and Soundiness/reflection.png",
+    "Notes/NJU「软件分析」/Soundness and Soundiness/other.png"
+  ]
+}

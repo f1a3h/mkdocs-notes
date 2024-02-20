@@ -1,0 +1,110 @@
+site_name: f1a3h's Notebook
+site_url: https://note.f1a3h.com
+site_description: f1a3h's Notebook
+
+repo_name: f1a3h/mkdocs-notes
+repo_url: https://github.com/f1a3h/mkdocs-notes/
+edit_uri: tree/master/docs
+
+copyright: Copyright &copy; 2024 <a href="https://github.com/f1a3h" target="_blank" rel="noopener">f1a3h</a>
+
+theme: 
+  name: 'material'
+  language: 'en'
+  icon: 
+    logo: material/lambda
+  favicon: _assets/img/favicon.svg
+  custom_dir: overrides
+  features:
+    - content.code.annotate
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
+  font: false
+  palette:
+    - scheme: default
+
+markdown_extensions:
+  - toc:
+      permalink: true
+      toc_depth: 5
+  - meta
+  - nl2br
+  - def_list
+  - attr_list
+  - md_in_html
+  - sane_lists
+  - admonition
+  - footnotes
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.snippets
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji 
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search
+  - callouts
+  - obsidian-bridge
+  - include_dir_to_nav
+
+validation:
+  nav:
+    omitted_files: info
+    not_found: warn
+    absolute_links: info
+  links:
+    not_found: ignore
+    absolute_links: ignore
+    unrecognized_links: ignore
+
+# extra:
+#   social:
+#     - icon: fontawesome/brands/github
+#       link: https://github.com/f1a3h/
+#     - icon: fontawesome/solid/rss
+#       link: https://note.f1a3h.com/
+#     - icon: fontawesome/solid/home
+#       link: https://f1a3h.com/
+
+extra_css:
+  # - https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css
+  # - https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
+  # - https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
+  - https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Crimson+Pro:wght@200..900&family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather+Sans&display=swap
+  - https://cdn.tonycrane.cc/utils/katex.min.css
+  - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
+  - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
+  - _assets/css/tasklist.css
+  - _assets/css/custom.css
+  - _assets/css/flink.css
+
+extra_javascript:
+  # - https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js
+  - https://cdn.tonycrane.cc/utils/katex.min.js
+  - _assets/js/katex.js
+
+# not_in_nav: 
+
+nav:
+  - Home: index.md
+  - Computer Science: Computer Science
+  - Research: Research
+  - Algorithm: Algorithm
+  - ACG: ACG
