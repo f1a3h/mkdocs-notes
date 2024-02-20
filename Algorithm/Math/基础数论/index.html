@@ -1,0 +1,4204 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="旧文搬运">
+      
+      
+      
+        <link rel="canonical" href="https://note.f1a3h.com/Algorithm/Math/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/">
+      
+      
+        <link rel="prev" href="../gcd%20%26%26%20lcm/">
+      
+      
+        <link rel="next" href="../%E5%BF%AB%E9%80%9F%E5%B9%82/">
+      
+      
+      <link rel="icon" href="../../../_assets/img/favicon.svg">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.10">
+    
+    
+      
+        <title>基础数论复习 - f1a3h's Notebook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Crimson+Pro:wght@200..900&family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather+Sans&display=swap">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/utils/katex.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css">
+    
+      <link rel="stylesheet" href="../../../_assets/css/tasklist.css">
+    
+      <link rel="stylesheet" href="../../../_assets/css/custom.css">
+    
+      <link rel="stylesheet" href="../../../_assets/css/flink.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="f1a3h&#39;s Notebook" class="md-header__button md-logo" aria-label="f1a3h's Notebook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m6 20 4.16-12.09L9.34 6H8V4h2c.42 0 .78.26.93.63L16.66 18H18v2h-2c-.43 0-.79-.27-.93-.64l-3.74-8.71L8.12 20H6Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            f1a3h's Notebook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              基础数论复习
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/f1a3h/mkdocs-notes/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    f1a3h/mkdocs-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Computer%20Science/" class="md-tabs__link">
+          
+  
+    
+  
+  Computer Science
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Research/Learning%20Research/" class="md-tabs__link">
+          
+  
+    
+  
+  Research
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../ACM%E7%AE%97%E6%B3%95%E5%AE%9E%E8%B7%B5/" class="md-tabs__link">
+          
+  
+    
+  
+  Algorithm
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ACG/" class="md-tabs__link">
+          
+  
+    
+  
+  ACG
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="f1a3h&#39;s Notebook" class="md-nav__button md-logo" aria-label="f1a3h's Notebook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m6 20 4.16-12.09L9.34 6H8V4h2c.42 0 .78.26.93.63L16.66 18H18v2h-2c-.43 0-.79-.27-.93-.64l-3.74-8.71L8.12 20H6Z"/></svg>
+
+    </a>
+    f1a3h's Notebook
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/f1a3h/mkdocs-notes/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    f1a3h/mkdocs-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Computer%20Science/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Computer Science
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Computer Architecture
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/Computer%20Architecture/UCB%20CS61C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UCB CS61C
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Computer%20Science/Computer%20Architecture/CSAPP/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    CSAPP
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            CSAPP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/Computer%20Architecture/CSAPP/Chapter%202/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CS:APP 第二章学习笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Computer%20Science/Computer%20Network/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Computer Network
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Network
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Computer%20Science/Computer%20Network/CNATDA/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    CNATDA
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            CNATDA
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/Computer%20Network/CNATDA/Chapter%202/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CNATDA 第二章学习笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/Computer%20Network/CNATDA/Chapter%203/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CNATDA 第三章学习笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/Computer%20Network/CNATDA/Chapter%204/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CNATDA 第四章学习笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/Computer%20Network/CNATDA/Chapter%205/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CNATDA 第五章学习笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/Computer%20Network/CNATDA/Chapter%206/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CNATDA 第六章学习笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Computer Security
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Security
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/Computer%20Security/Stanford%20CS110L/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stanford CS110L
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Math
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Math
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/Math/Linear%20Algebra%20Done%20Wrong/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linear Algebra Done Wrong
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/Math/MIT%2018.330/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MIT 18.330: Introduction to Numerical Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/Math/%E8%B0%A2%E6%83%A0%E6%B0%91%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    谢惠民做题记录
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Computer%20Science/Programming%20Languages/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Programming Languages
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Programming Languages
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    NJU 软件分析
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_6_2" id="__nav_2_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            NJU 软件分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/CFL-Reachability%20and%20IFDS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CFL-Reachability and IFDS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Data%20Flow%20Analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Flow Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Datalog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datalog-Based Program Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Interprocedural%20Analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interprocedural Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Pointer%20Analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pointer Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Soundness%20and%20Soundiness/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Soundness and Soundiness
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Static%20Analysis%20for%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Static Analysis for Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Theory of Computer Science
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Theory of Computer Science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/Part%201/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Part 1
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_7_2" id="__nav_2_7_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Part 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/Part%201/Chapter%201/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Regular Languages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Research/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Research
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Research
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Research/Learning%20Research/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Research
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Research/Research%20Log/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Research Log
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Research/Papers/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Papers
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Papers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Research/Papers/liuYourCodeGenerated2023/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    liuYourCodeGenerated2023
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Algorithm
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Algorithm
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ACM%E7%AE%97%E6%B3%95%E5%AE%9E%E8%B7%B5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ACM算法实践总结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%8F%8C%E5%90%91%E6%90%9C%E7%B4%A2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    双向搜索总结
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Math
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Math
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Miller%20Rabin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Miller Rabin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gcd%20%26%26%20lcm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    gcd && lcm 复习笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    基础数论复习
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    基础数论复习
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      素数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="素数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      素数判定
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      整数惟一分解定理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      素数筛法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="素数筛法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eratosthenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eratosthenes 筛法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Eratosthenes 筛法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      筛法优化质因数分解
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#euler" class="md-nav__link">
+    <span class="md-ellipsis">
+      Euler 筛法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      约数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="约数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      整数惟一分解定理的推论
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="整数惟一分解定理的推论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      例题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      最大公约数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="最大公约数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gcda-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      高精度 \(\gcd{(a, b)}\)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      容斥原理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="容斥原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      错排问题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      欧拉函数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="欧拉函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      容斥原理求欧拉函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      素因数分解求欧拉函数的算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      埃氏筛法预处理欧拉函数值
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      欧拉函数的性质
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="欧拉函数的性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      例题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      同余
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="同余">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      剩余系
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      模运算
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      快速幂
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      费马小定理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="费马小定理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      费马小定理判断素数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      欧拉定理
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      欧拉定理的推论
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="欧拉定理的推论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      例题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      扩展欧几里得算法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="扩展欧几里得算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bezout" class="md-nav__link">
+    <span class="md-ellipsis">
+      裴蜀定理 ( Bézout 定理 )
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="裴蜀定理 ( Bézout 定理 )">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      例题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      扩展欧几里得算法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      逆元
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="逆元">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#n" class="md-nav__link">
+    <span class="md-ellipsis">
+      模 \(n\) 意义下乘法的逆
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      逆元
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      求解逆元
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="求解逆元">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      欧拉定理求逆元
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性求逆元: 递推法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性求逆元: 倒推法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      例题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性同余方程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="线性同余方程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性同余方程组（模互素）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="线性同余方程组（模互素）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      中国剩余定理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性同余方程组（模不互素）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="线性同余方程组（模不互素）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    <span class="md-ellipsis">
+      例题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    <span class="md-ellipsis">
+      高次同余方程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="高次同余方程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一类高次同余方程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一类高次同余方程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bsgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      BSGS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二类高次同余方程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    <span class="md-ellipsis">
+      阶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_48" class="md-nav__link">
+    <span class="md-ellipsis">
+      原根
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%BF%AB%E9%80%9F%E5%B9%82/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    快速幂复习笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    String
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            String
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../String/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AC自动机
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../String/Manacher/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    manacher
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../ACG/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    ACG
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            ACG
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Comics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Comics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ACG/Comics/%E8%91%AC%E9%80%81%E3%81%AE%E3%83%95%E3%83%AA%E3%83%BC%E3%83%AC%E3%83%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    葬送のフリーレン
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Game
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Game
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ACG/Game/%E5%A1%9E%E5%B0%94%E8%BE%BE%E4%BC%A0%E8%AF%B4%EF%BC%9A%E6%97%B7%E9%87%8E%E4%B9%8B%E6%81%AF/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    「塞尔达传说：旷野之息」——一场孤独的冒险
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ACG/Game/%E6%A8%B1%E4%B9%8B%E8%AF%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    樱之诗
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Novel
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Novel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ACG/Novel/%E9%92%A2%E9%93%81%E4%B9%8B%E7%BF%BC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    天空、战争与巨龙的诗歌 ——「钢铁之翼」
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      素数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="素数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      素数判定
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      整数惟一分解定理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      素数筛法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="素数筛法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eratosthenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eratosthenes 筛法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Eratosthenes 筛法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      筛法优化质因数分解
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#euler" class="md-nav__link">
+    <span class="md-ellipsis">
+      Euler 筛法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      约数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="约数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      整数惟一分解定理的推论
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="整数惟一分解定理的推论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      例题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      最大公约数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="最大公约数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gcda-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      高精度 \(\gcd{(a, b)}\)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      容斥原理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="容斥原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      错排问题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      欧拉函数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="欧拉函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      容斥原理求欧拉函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      素因数分解求欧拉函数的算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      埃氏筛法预处理欧拉函数值
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      欧拉函数的性质
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="欧拉函数的性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      例题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      同余
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="同余">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      剩余系
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      模运算
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      快速幂
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      费马小定理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="费马小定理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      费马小定理判断素数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      欧拉定理
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      欧拉定理的推论
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="欧拉定理的推论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      例题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      扩展欧几里得算法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="扩展欧几里得算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bezout" class="md-nav__link">
+    <span class="md-ellipsis">
+      裴蜀定理 ( Bézout 定理 )
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="裴蜀定理 ( Bézout 定理 )">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      例题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      扩展欧几里得算法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      逆元
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="逆元">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#n" class="md-nav__link">
+    <span class="md-ellipsis">
+      模 \(n\) 意义下乘法的逆
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      逆元
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      求解逆元
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="求解逆元">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      欧拉定理求逆元
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性求逆元: 递推法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性求逆元: 倒推法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      例题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性同余方程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="线性同余方程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性同余方程组（模互素）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="线性同余方程组（模互素）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      中国剩余定理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性同余方程组（模不互素）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="线性同余方程组（模不互素）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    <span class="md-ellipsis">
+      例题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    <span class="md-ellipsis">
+      高次同余方程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="高次同余方程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一类高次同余方程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一类高次同余方程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bsgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      BSGS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二类高次同余方程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    <span class="md-ellipsis">
+      阶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_48" class="md-nav__link">
+    <span class="md-ellipsis">
+      原根
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>基础数论复习</h1>
+
+<p>数论，是一门研究整数的纯数学的分支，而整数的基本元素是素数(也称质数)，所以数论的本质是对素数性质的研究。</p>
+<h2 id="_1">素数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>一些基本概念就不写了.</p>
+<p>注意两点:</p>
+<ol>
+<li><strong>0、1、负整数</strong>既不是素数也不是合数.</li>
+<li><span class="arithmatex">\(\pi(n)\)</span> 表示不大于 <span class="arithmatex">\(n\)</span> 的素数个数, 有如下近似关系 <span class="arithmatex">\(\pi(n)\sim\dfrac{n}{\ln{n}}\)</span> .</li>
+</ol>
+<h3 id="_2">素数判定<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>如何判定正整数 <span class="arithmatex">\(n\)</span> 是否是素数?</p>
+<p>很容易想到用每一个小于 <span class="arithmatex">\(n\)</span> 且大于 <span class="arithmatex">\(1\)</span> 的数来判断它是否是 <span class="arithmatex">\(n\)</span> 的约数, 若都不是, 则 <span class="arithmatex">\(n\)</span> 为素数, 否则为合数.</p>
+<p>这个暴力算法是 <span class="arithmatex">\(\mathcal{O}(n)\)</span> 的, 但是我们考虑到, 若数 <span class="arithmatex">\(p\)</span> 为 <span class="arithmatex">\(n\)</span> 的约数, 则 <span class="arithmatex">\(\frac{n}{p}\)</span> 也是 <span class="arithmatex">\(n\)</span> 的约数, 所以我们只需用 <span class="arithmatex">\(2\sim \sqrt{n}\)</span> 的数来判定即可, 于是优化一下我们得到一个 <span class="arithmatex">\(\mathcal{O}(\sqrt{n})\)</span> 的算法.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">bool</span><span class="w"> </span><span class="nf">isPrime</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="_3">整数惟一分解定理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>若整数 <span class="arithmatex">\(n\ge2\)</span> , 那么 <span class="arithmatex">\(n\)</span> 一定可以惟一地表示为若干素数的乘积, 形如</p>
+<div class="arithmatex">\[n=p_1^{r_1}p_2^{r_2}\cdots p_k^{r_k}(p_i为素数, r_i\ge0)\]</div>
+</blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">vector</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">factor</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="n">vector</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="n">ret</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="n">n</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">ret</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="_4">素数筛法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>主要是埃氏筛法和欧拉筛法.</p>
+<h3 id="eratosthenes">Eratosthenes 筛法<a class="headerlink" href="#eratosthenes" title="Permanent link">&para;</a></h3>
+<p>Eratosthenes 筛法可以快速列举出给定范围内的所有素数.</p>
+<p>一个合数一定可以写成 <span class="arithmatex">\(p\cdot x\)</span> 的形式, 其中 <span class="arithmatex">\(p\)</span> 为素数, <span class="arithmatex">\(x\)</span> 为整数, 因此对每一个 <span class="arithmatex">\(p\)</span> , 我们从小到大枚举 <span class="arithmatex">\(x\)</span> , 筛掉相应的 <span class="arithmatex">\(p\cdot x\)</span> 即可.</p>
+<p>一点小改进: 当 <span class="arithmatex">\(x&lt;p\)</span> 时, <span class="arithmatex">\(p\cdot x\)</span> 一定被 <span class="arithmatex">\(x\)</span> 的素因子筛过一遍, 所以我们枚举 <span class="arithmatex">\(x\)</span> 时从 <span class="arithmatex">\(x=p\)</span> 开始枚举.</p>
+<p>时间复杂度: <span class="arithmatex">\(\mathcal{O}(\frac{n}{2}+\frac{n}{3}+\frac{n}{5}+\cdots)=\mathcal{O}(n\log{\log{n}})\)</span></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">bool</span><span class="w"> </span><span class="n">isprime</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Eratos</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="n">memset</span><span class="p">(</span><span class="n">isprime</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="n">isprime</span><span class="p">);</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="n">isprime</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">isprime</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isprime</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="n">isprime</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="p">}</span>
+</code></pre></div>
+<h4 id="_5">例题<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p><a href="http://poj.org/problem?id=2689">「POJ 2689」Prime Distance</a></p>
+<p>由于这里 <span class="arithmatex">\(L,R\)</span> 的范围很大, 暴力筛完之后枚举求解肯定会 T , 但是 <span class="arithmatex">\(R-L\le 10^6\)</span> 的范围却是在我们的承受范围之内的.</p>
+<p>于是我们考虑用 <span class="arithmatex">\(1\sim n\)</span> 这一小范围的素数筛掉 <span class="arithmatex">\(L\sim R\)</span> 之间的合数.</p>
+<p>假设数 <span class="arithmatex">\(k\in[L, R]\)</span> , 其中 <span class="arithmatex">\(k\)</span> 的最小质因数为 <span class="arithmatex">\(p\)</span> , 满足 <span class="arithmatex">\(p&gt;n\)</span> , 则 <span class="arithmatex">\(k=p\cdot x\)</span> , 若 <span class="arithmatex">\(x&lt;p\)</span> , 则 <span class="arithmatex">\(k\)</span> 一定存在小于 <span class="arithmatex">\(p\)</span> 的质因数, 矛盾, 故而 <span class="arithmatex">\(x\ge p\)</span> , 也就是说, 会被漏筛的数 <span class="arithmatex">\(k\)</span> 满足 <span class="arithmatex">\(k\ge p^2\)</span> , 为了保证算法的正确性, 我们要让这样的数落在 <span class="arithmatex">\([L, R]\)</span> 外, 也就是让 <span class="arithmatex">\(p^2&gt;R\)</span> , 于是我们令 <span class="arithmatex">\(n=\sqrt{R}\)</span> 即可.</p>
+<h4 id="_6">筛法优化质因数分解<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>利用埃氏筛法可以快速实现素因数分解, 只要在筛的时候记录下每个数的最小素因数即可.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">bool</span><span class="w"> </span><span class="n">isprime</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">minfac</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Eratos</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="n">memset</span><span class="p">(</span><span class="n">isprime</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="n">isprime</span><span class="p">);</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="n">isprime</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">isprime</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="n">minfac</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isprime</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">        </span><span class="n">isprime</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">minfac</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="n">minfac</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="p">}</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="n">vector</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">factor</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">  </span><span class="n">vector</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">    </span><span class="n">ret</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">minfac</span><span class="p">[</span><span class="n">n</span><span class="p">]);</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">    </span><span class="n">n</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">minfac</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="euler">Euler 筛法<a class="headerlink" href="#euler" title="Permanent link">&para;</a></h3>
+<p>在埃氏筛中, 30 这个数被 <span class="arithmatex">\(p=2,3,5\)</span> 分别筛了三次, 造成了重复, 如果我们能让每个数只被它最小的素因数筛, 就能做到 <span class="arithmatex">\(\mathcal{O}(n)\)</span> 的时间复杂度.</p>
+<p>在 Euler 筛法中, 我们从 <span class="arithmatex">\(2\sim n\)</span> 枚举每一个数 <span class="arithmatex">\(i\)</span> , 若 <span class="arithmatex">\(i\)</span> 是素数, 则加入素数表中, 然后我们再从小到大枚举前面的素数 <span class="arithmatex">\(prime[j]\)</span> , 筛掉 <span class="arithmatex">\(i\cdot prime[j]\)</span> , 当 <span class="arithmatex">\(prime[j]\)</span> 是 <span class="arithmatex">\(i\)</span> 的一个素因数时, 那么后面再继续枚举到的素数一定不是所筛的数的最小素因数, 毕竟后面的素数一定大于当前的 <span class="arithmatex">\(prime[j]\)</span> , 所以这时可以终止筛选.</p>
+<p>时间复杂度: <span class="arithmatex">\(\mathcal{O}(n)\)</span></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">prime</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kt">bool</span><span class="w"> </span><span class="n">isprime</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Euler</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="n">memset</span><span class="p">(</span><span class="n">isprime</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="n">isprime</span><span class="p">);</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="n">isprime</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">isprime</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isprime</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="n">prime</span><span class="p">[</span><span class="o">++</span><span class="n">prime</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">prime</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">prime</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">      </span><span class="n">isprime</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">prime</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">prime</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="_7">约数<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="_8">整数惟一分解定理的推论<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[N=p_1^{r_1}p_2^{r_2}\cdots p_k^{r_k}\]</div>
+<ol>
+<li><span class="arithmatex">\(N\)</span> 的正约数的个数为 <span class="arithmatex">\((r_1+1)(r_2+1)\cdots(r_k+1)=\prod_{i=1}^k(r_i+1)\)</span></li>
+<li><span class="arithmatex">\(N\)</span> 的约数个数上界为 <span class="arithmatex">\(\sqrt{N}\)</span></li>
+<li><span class="arithmatex">\(N\)</span> 的所有正约数的和为 <span class="arithmatex">\((1+p_1+p_1^2+\cdots+p_1^{r_1})\cdots(1+p_k+\cdots+p_k^{r_k})=\prod_{i=1}^k(\sum_{j=0}^{r_i}p_i^j)\)</span></li>
+<li>时间复杂度: <span class="arithmatex">\(\mathcal{O}(\sqrt{N})\)</span></li>
+</ol>
+<h4 id="_9">例题<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<p><a href="https://www.luogu.com.cn/problem/P1463">「Luoggu P1463」反素数</a></p>
+<p>这道题只需要知道 <span class="arithmatex">\(1\sim 2\cdot 10^9\)</span> 内前 12 个素数的积就已经超出 <span class="arithmatex">\(N\)</span> 的范围, 所以打个表然后直接爆搜即可.</p>
+<p>(亏我想了半天要怎么转化, 完全没考虑只有 12 个素数会被用到)</p>
+<h2 id="_10">最大公约数<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>左转 <a href="https://blog.f1a3h.com/p/gcd-lcm-%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/">gcd &amp; lcm 复习笔记</a></p>
+<h3 id="gcda-b">高精度 <span class="arithmatex">\(\gcd{(a, b)}\)</span><a class="headerlink" href="#gcda-b" title="Permanent link">&para;</a></h3>
+<p>更相减损术适用于大整数下求 <span class="arithmatex">\(\gcd(a, b)\)</span></p>
+<ol>
+<li><span class="arithmatex">\(a&lt;b\)</span> 时, <span class="arithmatex">\(\gcd(a, b)=\gcd(b, a)\)</span></li>
+<li><span class="arithmatex">\(a=b\)</span> 时, <span class="arithmatex">\(\gcd(a, b)=a\)</span></li>
+<li><span class="arithmatex">\(a, b\)</span> 同为偶数时, <span class="arithmatex">\(\gcd(a, b)=2\gcd(\frac{a}{2}, \frac{b}{2})\)</span></li>
+<li><span class="arithmatex">\(a\)</span> 为偶数, <span class="arithmatex">\(b\)</span> 为奇数时, <span class="arithmatex">\(\gcd(a, b)=\gcd(\frac{a}{2}, b)\)</span></li>
+<li><span class="arithmatex">\(a\)</span> 为奇数, <span class="arithmatex">\(b\)</span> 为偶数时, <span class="arithmatex">\(\gcd(a, b)=\gcd(a, \frac{b}{2})\)</span></li>
+<li><span class="arithmatex">\(a, b\)</span> 同为奇数时, <span class="arithmatex">\(\gcd(a, b)=\gcd(b, a-b)\)</span></li>
+</ol>
+<h2 id="_11">容斥原理<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>原理很简单, 记住一个公式即可</p>
+<div class="arithmatex">\[|\cap A_i|=\sum_{1\le i\le m}|A_i|-\sum_{1\le i&lt; j\le m}|A_i\cap A_j|+\sum_{1\le i&lt;j&lt;k\le m}|A_i\cap A_j\cap A_k|-\cdots+(-1)^{m+1}\sum|A_1\cap A_2\cap\cdots\cap A_m|\]</div>
+<h3 id="_12">错排问题<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<ol>
+<li>利用容斥原理求解</li>
+</ol>
+<p>令集合 <span class="arithmatex">\(S\)</span> 表示 <span class="arithmatex">\(1,2, \cdots, n\)</span> 的全排列, 则 <span class="arithmatex">\(|S|=n!\)</span></p>
+<p>设子集 <span class="arithmatex">\(S_i\)</span> 表示 <span class="arithmatex">\(i\)</span> 排在第 <span class="arithmatex">\(i\)</span> 位的排列, 则 <span class="arithmatex">\(|S_i|=(n-1)!\)</span></p>
+<p>同理, 设 <span class="arithmatex">\(S_{i_1}\cap S_{i_2}\cap\cdots\cap S_{i_k}\)</span> 表示 <span class="arithmatex">\(i_1, i_2, \cdots, i_k\)</span> 这 <span class="arithmatex">\(k\)</span> 个数排在相应位置的排列数, 则 <span class="arithmatex">\(|S_{i_1}\cap S_{i_2}\cap\cdots\cap S_{i_k}|=(n-k)!\)</span></p>
+<p>每个元素都不排在自己位置的排列数为 <span class="arithmatex">\(D_n=|\overline{S_1}\cap\overline{S_2}\cap\cdots\cap\overline{S_n}|=|S|-|S_1\cup S_2\cup\cdots\cup S_n|\)</span></p>
+<p>由容斥原理可得</p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(D_n=n!(1-\frac{1}{1!}+\frac{1}{2!}-\frac{1}{3!}+\cdots\pm\frac{1}{n!})\)</span>\)</span></p>
+<ol start="2">
+<li>递推公式</li>
+</ol>
+<p>推导过程并不难想, 懒得写了, 直接上公式</p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(D_n=(n-1)(D_{n-1}+D_{n-2})\)</span>\)</span></p>
+<h2 id="_13">欧拉函数<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<ol>
+<li>若 <span class="arithmatex">\(\gcd{(a, b)}=1\)</span> , 则称 <span class="arithmatex">\(a, b\)</span> 互质(互素), 记作 <span class="arithmatex">\(a\bot b\)</span> </li>
+<li>欧拉函数 <span class="arithmatex">\(\varphi(n)\)</span> 定义为 <span class="arithmatex">\([1, n]\)</span> 中与 <span class="arithmatex">\(n\)</span> 互质的数的个数.</li>
+<li>若 <span class="arithmatex">\(n\)</span> 为素数, 则 <span class="arithmatex">\(\varphi(n)=n-1\)</span></li>
+</ol>
+<h3 id="_14">容斥原理求欧拉函数<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>根据整数惟一分解定理, 将 <span class="arithmatex">\(N\)</span> 分解为</p>
+<div class="arithmatex">\[N=p_1^{r_1}p_2^{r_2}\cdots p_k^{r_k}\]</div>
+<p>设 <span class="arithmatex">\([1, n]\)</span> 中 <span class="arithmatex">\(p_i\)</span> 的倍数的集合为 <span class="arithmatex">\(A_i\)</span> , 则 <span class="arithmatex">\(|A_i|=\lfloor \frac{N}{p_i}\rfloor\)</span></p>
+<p>对于 <span class="arithmatex">\(p_i\not=p_j\)</span> , 有 <span class="arithmatex">\(|A_i\cap A_j|=\lfloor\frac{N}{p_ip_j}\rfloor\)</span></p>
+<p>根据容斥原理, </p>
+<div class="arithmatex">\[\begin{aligned}\varphi(N)&amp;=|A|-|\overline{A_1}\cup\overline{A_2}\cup\cdots\cup\overline{A_k}| \\\ &amp;=N-(\frac{N}{p_1}+\frac{N}{p_2}+\cdots+\frac{N}{p_k})+(\frac{N}{p_1p_2}+\cdots+\frac{N}{p_1p_k})-\cdots\pm\frac{N}{p_1p_2\cdots p_k} \\\ &amp;=N(1-\frac{1}{p_1})(1-\frac{1}{p_2})\cdots(1-\frac{1}{p_k})\end{aligned}\]</div>
+<h3 id="_15">素因数分解求欧拉函数的算法<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>时间复杂度: <span class="arithmatex">\(\mathcal{O}(\sqrt{n})\)</span></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">euler_phi</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">      </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="c1">//先除后乘可以一定程度上避免爆 int</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">      </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="_16">埃氏筛法预处理欧拉函数值<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>时间复杂度: <span class="arithmatex">\(\mathcal{O}(n\log{\log{n}})\)</span></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">phi</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">euler_phi</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">      </span><span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="c1">//注意这里 j 的起点是 i 而不是 i * i</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">        </span><span class="n">phi</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">phi</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="_17">欧拉函数的性质<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p>若 <span class="arithmatex">\(a\bot b\)</span> , 则 <span class="arithmatex">\(\varphi(a)\varphi(b)=\varphi(ab)\)</span> , 即欧拉函数具有积性函数的性质.</p>
+<p>上式分别将 <span class="arithmatex">\(a, b\)</span> 用整数惟一分解定理表示, 然后带入欧拉函数计算式即可得到证明.</p>
+<h4 id="_18">例题<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h4>
+<p><a href="http://poj.org/problem?id=3090">「POJ 3090」Visible Lattice Points</a></p>
+<p>设某点坐标为 <span class="arithmatex">\((x_0, y_0)\)</span> , 若该点能被看见, 则这个点一定是直线 <span class="arithmatex">\(y=\frac{y_0}{x_0}x\)</span> 上距离原点最近的一个整数点.</p>
+<p>我们设一点 <span class="arithmatex">\((x_1, y_1)\)</span> 满足 <span class="arithmatex">\(\frac{y_1}{x_1}=\frac{y_0}{x_0}, x_1&gt;x_0\)</span> , 则该点显然不可见, 从这个式子中我们可以知道, <span class="arithmatex">\(x_1, y_1\)</span> 必然存在一个公约数, 而 <span class="arithmatex">\(x_0, y_0\)</span> 不存在公约数, 即 <span class="arithmatex">\(x_0, y_0\)</span> 互质, 因此可见点就是图中所有满足 <span class="arithmatex">\(x_0, y_0\)</span> 互质的点再加上 <span class="arithmatex">\((1, 0), (0, 1), (1, 1)\)</span> .</p>
+<p>固定 <span class="arithmatex">\(y=y_0\)</span> , 当 <span class="arithmatex">\(x&lt;y_0\)</span> 时, 满足条件的点的数量就是 <span class="arithmatex">\(\varphi(y_0)\)</span> , 当 <span class="arithmatex">\(x&gt;y_0\)</span> 时, 将点 <span class="arithmatex">\((x, y_0)\)</span> 以 <span class="arithmatex">\(y=x\)</span> 对称过去得到的点就是固定 <span class="arithmatex">\(x=x_i\)</span> 时 <span class="arithmatex">\(y&lt;x_i\)</span> 的情况, 根据坐标轴关于 <span class="arithmatex">\(y=x\)</span> 对称的性质, <span class="arithmatex">\(x&lt;y_0\)</span> 和 <span class="arithmatex">\(x&gt;y_0\)</span> 两种情况下的答案数相等, 所以我们只需考虑 <span class="arithmatex">\(x&lt;y_0\)</span> 的情况, 然后乘 2 即可.</p>
+<p>最终的答案为: <span class="arithmatex">\(3+2\cdot\sum_{i=2}^N \varphi(i)\)</span></p>
+<p><a href="https://www.luogu.com.cn/problem/P2303">「Luogu P2303」Longge 的问题</a></p>
+<p>考虑满足 <span class="arithmatex">\(\gcd(i, n)=d\)</span> 的 <span class="arithmatex">\(i\)</span> 的个数.</p>
+<p>由 <span class="arithmatex">\(\gcd(i, n)=d\)</span> 可以推出 <span class="arithmatex">\(\gcd(\frac{i}{d}, \frac{n}{d})=1\)</span>, 即 <span class="arithmatex">\(\frac{i}{d}, \frac{n}{d}\)</span> 互质, 又 <span class="arithmatex">\(\frac{i}{d}&lt;\frac{n}{d}\)</span> , 所以这样的 <span class="arithmatex">\(\frac{i}{d}\)</span> 的个数为 <span class="arithmatex">\(\varphi(\frac{n}{d})\)</span> , 也就是 <span class="arithmatex">\(i\)</span> 的个数为 <span class="arithmatex">\(\varphi(\frac{n}{d})\)</span></p>
+<p>所以答案为 <span class="arithmatex">\(\sum_{d|n}d\varphi(\frac{n}{d})\)</span></p>
+<h2 id="_19">同余<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<h3 id="_20">剩余系<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>剩余系</strong>指模正整数 <span class="arithmatex">\(n\)</span> 的余数所组成的集合.</li>
+<li><strong>完全剩余系</strong>: 如果一个剩余系中包含了这个正整数 <span class="arithmatex">\(n\)</span> 所有可能的余数 (<span class="arithmatex">\(0, 1, \cdots, n-1\)</span>) , 那么就称它为模 <span class="arithmatex">\(n\)</span> 的一个完全剩余系, 记作 <span class="arithmatex">\(Z_n\)</span> .<br />
+<strong>简化剩余系</strong>:完全剩余系中与 <span class="arithmatex">\(n\)</span> 互质的数的集合, 记作 <span class="arithmatex">\(Z_n^*\)</span> .</li>
+<li><strong>同余等价类</strong>: <span class="arithmatex">\(Z_n\)</span> 里的每一个元素代表所有模 <span class="arithmatex">\(n\)</span> 意义下与它同余的整数, 我们把满足同余关系的所有整数看作一个同余等价类.</li>
+<li>在 <span class="arithmatex">\(Z_n\)</span> 中的四则运算结果全部都要在模 <span class="arithmatex">\(n\)</span> 意义下.</li>
+</ol>
+<h3 id="_21">模运算<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<ol>
+<li>如果 <span class="arithmatex">\(a\equiv b\pmod{m}\)</span> 且有 <span class="arithmatex">\(c\equiv d\pmod{m}\)</span> , 那么:</li>
+</ol>
+<p><span class="arithmatex">\(<span class="arithmatex">\(a+c\equiv b+d\pmod{m}\)</span>\)</span></p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(a-c\equiv b-d\pmod{m}\)</span>\)</span></p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(a\times c\equiv b\times d\pmod{m}\)</span>\)</span></p>
+<ol start="2">
+<li>
+<div class="arithmatex">\[(a+b)\bmod m=((a\bmod m)+(b\bmod m))\bmod m\]</div>
+</li>
+</ol>
+<p><span class="arithmatex">\(<span class="arithmatex">\((a-b)\bmod m=((a\bmod m)-(b\bmod m)+m)\bmod m\)</span>\)</span></p>
+<p><span class="arithmatex">\(<span class="arithmatex">\((a\times b)\bmod m=((a\bmod m)\times(b\bmod m))\bmod m\)</span>\)</span></p>
+<h3 id="_22">快速幂<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<p>右转 <a href="http://blog.f1a3h.com/posts/quickpow/">快速幂复习笔记</a></p>
+<h3 id="_23">费马小定理<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>若 <span class="arithmatex">\(p\)</span> 为素数, 且 <span class="arithmatex">\(a\bot p\)</span> , 则 <span class="arithmatex">\(a^{p-1}\equiv 1\pmod{p}\)</span> .</p>
+</blockquote>
+<p>因为 <span class="arithmatex">\(p\)</span> 为素数, 则 <span class="arithmatex">\(2, 3, \cdots, p-1\)</span> 与 <span class="arithmatex">\(p\)</span> 互质, 且不存在两个数模 <span class="arithmatex">\(p\)</span> 同余.</p>
+<p>又 <span class="arithmatex">\(a\bot p\)</span> , 所以 <span class="arithmatex">\(a, 2a, 3a, \cdots, (p-1)a\)</span> 与 <span class="arithmatex">\(p\)</span> 互质, 且不存在两个数模 <span class="arithmatex">\(p\)</span> 同余.</p>
+<p>因此 <span class="arithmatex">\(a\cdot 2a\cdot 3a\cdots(p-1)a=(p-1)!a^{p-1}\)</span> 与 <span class="arithmatex">\(p\)</span> 互质, 且 <span class="arithmatex">\((p-1)!a^{p-1}\equiv (p-1)!\pmod{p}\)</span></p>
+<p>两边同时除以 <span class="arithmatex">\((p-1)!\)</span> 得到 <span class="arithmatex">\(a^{p-1}\equiv 1\pmod{p}\)</span></p>
+<ol>
+<li>费马小定理的另一种形式: 若 <span class="arithmatex">\(p\)</span> 为素数, 则对任意正整数 <span class="arithmatex">\(a\)</span> 有 <span class="arithmatex">\(a^p\equiv a\pmod{p}\)</span>.</li>
+<li>应用: <span class="arithmatex">\(p\)</span> 是素数, <span class="arithmatex">\(a, p\)</span> 互质, 则 <span class="arithmatex">\(a^b\bmod{p}= a^{b\bmod (p-1)}\bmod{p}\)</span> .</li>
+</ol>
+<h4 id="_24">费马小定理判断素数<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h4>
+<ol>
+<li>多次选取 <span class="arithmatex">\(a\)</span> 来判断 <span class="arithmatex">\(p\)</span> 是否满足费马小定理, 正确的概率随 <span class="arithmatex">\(a\)</span> 选取的次数的增加而增加.</li>
+<li>时间复杂度: 设选取 <span class="arithmatex">\(k\)</span> 次 <span class="arithmatex">\(a\)</span> , 每次用快速幂处理的时间为 <span class="arithmatex">\(\mathcal{O}(\log{p})\)</span> , 则总时间复杂度为 <span class="arithmatex">\(\mathcal{O}(k\log{p})\)</span> .</li>
+<li>由于存在 Carmichael 数, 因此上述算法存在缺陷, 即存在合数满足费马小定理.</li>
+<li><span class="arithmatex">\(10^4\)</span> 以内的 Carmichael 数有: 561, 1105, 1729, 2465, 2821, 6601, 8911.</li>
+</ol>
+<h2 id="_25">欧拉定理<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>(在 <span class="arithmatex">\(p\)</span> 不是素数的情况下, 可以使用欧拉定理)</p>
+<p>对于和 <span class="arithmatex">\(m\)</span> 互素的 <span class="arithmatex">\(a\)</span> , 有: <span class="arithmatex">\(a^{\varphi(m)}\equiv1\pmod{m}\)</span> .</p>
+</blockquote>
+<p>证明方法和费马小定理差不多.</p>
+<p>引理: 若 <span class="arithmatex">\(a, m\)</span> 互质, 满足 <span class="arithmatex">\(a^x\equiv 1\pmod{m}\)</span> 的最小正整数 <span class="arithmatex">\(x_0\)</span> 是 <span class="arithmatex">\(\varphi(m)\)</span> 的约数.</p>
+<h2 id="_26">欧拉定理的推论<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><span class="arithmatex">\(a, m(m&gt;1)\)</span> 互素, 则有 <span class="arithmatex">\(a^b\bmod{m}=a^{b\bmod\varphi(m)}\bmod m\)</span> .</p>
+</blockquote>
+<h4 id="_27">例题<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h4>
+<p><a href="http://poj.org/problem?id=3696">「POJ 3696」The Luckiest number</a></p>
+<p>设 <span class="arithmatex">\(n\)</span> 个 8 连在一起的正整数为 <span class="arithmatex">\(A_n\)</span> , 则 <span class="arithmatex">\(A_n=10A_{n-1}+8\)</span> , 容易求得 <span class="arithmatex">\(A_n=\frac{8}{9}(10^n-1)\)</span> .</p>
+<p>若 <span class="arithmatex">\(L|A_n\)</span> , 即 <span class="arithmatex">\(L|\frac{8}{9}(10^n-1)\)</span>, 可以得到 <span class="arithmatex">\(9L|8(10^n-1)\)</span> , 令 <span class="arithmatex">\(d=\gcd(9L, 8)\)</span> , 则有 <span class="arithmatex">\(\frac{9L}{d}|(10^n-1)\)</span></p>
+<p>于是 <span class="arithmatex">\(10^n\equiv 1\pmod{\frac{9L}{d}}\)</span></p>
+<p>根据欧拉定理的引理, 只需求出 <span class="arithmatex">\(\varphi(\frac{9L}{d})\)</span> , 然后枚举它的约数, 一一验证后取最小的一个数即可.</p>
+<p>时间复杂度: <span class="arithmatex">\(\mathcal{O}(\sqrt{L}\log{L})\)</span></p>
+<h2 id="_28">扩展欧几里得算法<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h2>
+<h3 id="bezout">裴蜀定理 ( Bézout 定理 )<a class="headerlink" href="#bezout" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>对任何整数 <span class="arithmatex">\(a, b\)</span> , 关于未知数 <span class="arithmatex">\(x, y\)</span> 的线性不定方程 ( 称为裴蜀等式 ) <span class="arithmatex">\(ax+by=c\)</span> 有整数解当且仅当 <span class="arithmatex">\(c\)</span> 为 <span class="arithmatex">\(\gcd{(a, b)}\)</span> 的倍数.</p>
+<p>裴蜀等式有解时必有无穷多个解.</p>
+</blockquote>
+<p>推论: <span class="arithmatex">\(a, b\)</span> 互素等价于 <span class="arithmatex">\(ax+by=1\)</span> 有整数解.</p>
+<h4 id="_29">例题<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h4>
+<p><a href="http://www.lydsy.com/JudgeOnline/problem.php?id=1441">「BZOJ 1441」Min</a></p>
+<p>假设 <span class="arithmatex">\(S\)</span> 已知, 于是有方程 <span class="arithmatex">\(A_1x_1+A_2x_2+\cdots+A_nx_n=S\)</span></p>
+<p>根据裴蜀定理, <span class="arithmatex">\(S\)</span> 必然是 <span class="arithmatex">\(\gcd{(A_1, A_2, \cdots, A_n)}\)</span> 的倍数, 取 <span class="arithmatex">\(S_{min}=\gcd{(A_1, A_2, \cdots, A_n)}\)</span> 即可.</p>
+<h3 id="_30">扩展欧几里得算法<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h3>
+<p>见 <a href="http://www.hlwer.com/index.php/archives/27/">gcd &amp; lcm 复习笔记</a></p>
+<p>根据裴蜀定理, <span class="arithmatex">\(ax+by=\gcd{(a, b)}\)</span> 有无穷组解, 而扩展欧几里得算法求出来的只是其中一组特解 <span class="arithmatex">\((x_0, y_0)\)</span> .</p>
+<p>下面考虑求 <span class="arithmatex">\(ax+by=c\)</span> 的一般解.</p>
+<p>首先设 <span class="arithmatex">\(c=t\gcd(a, b)\)</span> ( <span class="arithmatex">\(t\)</span> 为整数 ) , 则使用扩展欧几里得算法求出 <span class="arithmatex">\(ax+by=\gcd{(a, b)}\)</span> 的特解 <span class="arithmatex">\((x_0, y_0)\)</span> 后, 容易得到 <span class="arithmatex">\(ax+by=c\)</span> 特解为 <span class="arithmatex">\((tx_0, ty_0)\)</span> .</p>
+<p>由于之后考虑的是 <span class="arithmatex">\(ax+by=c\)</span> , 所以后面用 <span class="arithmatex">\((x_0, y_0)\)</span> 代替 <span class="arithmatex">\((tx_0, ty_0)\)</span> .</p>
+<p>将方程的所有解按照 <span class="arithmatex">\(x\)</span> 的大小排序, 则特解后的下一组解 <span class="arithmatex">\((x_1, y_1)\)</span> 可以表示为 <span class="arithmatex">\((x_0+d_1, y_0+d_2)\)</span> , 其中 <span class="arithmatex">\(d_1\)</span> 为满足条件的最小正整数.</p>
+<p>带入方程后得到 <span class="arithmatex">\(ad_1+bd_2=0\)</span> , 变形后有 <span class="arithmatex">\(-\dfrac{d_1}{d_2}=\dfrac{b}{a}=\dfrac{\frac{b}{\gcd{(a, b)}}}{\frac{a}{\gcd{(a, b)}}}\)</span> .</p>
+<p>因此方程的一般解可以表示为 <span class="arithmatex">\(\left(x_0+k\dfrac{b}{\gcd{(a, b)}}, y_0-k\dfrac{a}{\gcd{(a, b)}}\right)(k\in \mathbf{Z})\)</span> .</p>
+<p>为什么这里要将 <span class="arithmatex">\(\dfrac{b}{a}\)</span> 再变形为 <span class="arithmatex">\(\dfrac{\frac{b}{\gcd{(a, b)}}}{\frac{a}{\gcd{(a, b)}}}\)</span> 呢?</p>
+<p>因为 <span class="arithmatex">\(\frac{b}{a}\)</span> 不是最简分数, 这一步变形是化简 <span class="arithmatex">\(\frac{b}{a}\)</span> , 直接用 <span class="arithmatex">\((x_0+kb, y_0-ka)\)</span> 来表示特解的话会漏掉一些情况, 如 <span class="arithmatex">\((x_0+\frac{b}{\gcd{(a, b)}}, y_0-\frac{a}{\gcd{(a, b)}})\)</span> 就不能被 <span class="arithmatex">\((x_0+kb, y_0-ka)\)</span> 表示.</p>
+<h2 id="_31">逆元<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h2>
+<h3 id="n">模 <span class="arithmatex">\(n\)</span> 意义下乘法的逆<a class="headerlink" href="#n" title="Permanent link">&para;</a></h3>
+<p>如果在 <span class="arithmatex">\(Z_n\)</span> 中两元素 <span class="arithmatex">\(a, b\)</span> 满足 <span class="arithmatex">\(a\cdot b=1\)</span> , 那么我们就说 <span class="arithmatex">\(a, b\)</span> 互为模 <span class="arithmatex">\(n\)</span> 意义下乘法的逆元, 记作 <span class="arithmatex">\(a=b^{-1}, b=a^{-1}\)</span> .</p>
+<h3 id="_32">逆元<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h3>
+<p>当 <span class="arithmatex">\(a, m\)</span> 互素的时候, 若 <span class="arithmatex">\(ax\equiv 1\pmod{m}\)</span> , 则称 <span class="arithmatex">\(x\)</span> 为 <span class="arithmatex">\(a\)</span> 关于模 <span class="arithmatex">\(m\)</span> 的逆元, 记作 <span class="arithmatex">\(a^{-1}\)</span> .</p>
+<p>在 <span class="arithmatex">\([0, m)\)</span> 的范围内, 逆元是唯一的.</p>
+<h3 id="_33">求解逆元<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h3>
+<p>求解逆元等价于解方程 <span class="arithmatex">\(ax+my=1\)</span></p>
+<p>直接使用扩展欧几里得算法即可.</p>
+<h4 id="_34">欧拉定理求逆元<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h4>
+<p>因为 <span class="arithmatex">\(a, m\)</span> 互素, 根据欧拉定理, 有 <span class="arithmatex">\(a\cdot a^{\varphi(m)-1}\equiv 1\pmod{m}\)</span> , 因此 <span class="arithmatex">\(a^{\varphi(m)-1}\)</span> 为所求逆元.</p>
+<h4 id="_35">线性求逆元: 递推法<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h4>
+<p>递推法求解 <span class="arithmatex">\(1\sim n\)</span> 的逆元.</p>
+<p>假设当前求解的是 <span class="arithmatex">\(i\)</span> 关于模 <span class="arithmatex">\(p\)</span> 的逆元.</p>
+<p>根据带余除法, <span class="arithmatex">\(p=iq+r\)</span> , 两边分别对 <span class="arithmatex">\(p\)</span> 取模得到 <span class="arithmatex">\(iq+r\equiv 0\pmod{p}\)</span> </p>
+<p>若 <span class="arithmatex">\(i\)</span> 不为 <span class="arithmatex">\(p\)</span> 的倍数, 则 <span class="arithmatex">\(r\)</span> 不为 0 , 因此 <span class="arithmatex">\(r^{-1}\)</span> 存在.</p>
+<p>在上式两边乘 <span class="arithmatex">\(i^{-1}r^{-1}\)</span> 得到 <span class="arithmatex">\(qr^{-1}+i^{-1}\equiv 0\pmod{p}\)</span> , 即</p>
+<div class="arithmatex">\[r^{-1}\equiv -qr^{-1}=-r^{-1}\left\lfloor \dfrac{p}{i}\right\rfloor\pmod{p}\]</div>
+<p>为了防止答案为负数, 使用 <span class="arithmatex">\(r^{-1}(p-\left\lfloor \frac{p}{i}\right\rfloor)\)</span> 代替 <span class="arithmatex">\(-r^{-1}\left\lfloor \frac{p}{i}\right\rfloor\)</span> .</p>
+<p>时间复杂度: <span class="arithmatex">\(\mathcal{O}(n)\)</span></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">inv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="n">inv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">inv</span><span class="p">[</span><span class="n">p</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+</code></pre></div>
+<h4 id="_36">线性求逆元: 倒推法<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h4>
+<p>先直接求解 <span class="arithmatex">\(n!\)</span> 的逆元, 然后利用 <span class="arithmatex">\(((n-1)!)^{-1}\equiv(n!)^{-1}\cdot n\pmod{p}\)</span> 倒推求得 <span class="arithmatex">\(1!\sim (n-1)!\)</span> 的逆元.</p>
+<p>接着再利用 <span class="arithmatex">\(n^{-1}\equiv (n!)^{-1}\cdot (n-1)!\pmod{p}\)</span> 求解 <span class="arithmatex">\(1\sim n\)</span> 的逆元.</p>
+<h3 id="_37">例题<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h3>
+<p><a href="http://poj.org/problem?id=1845">「POJ 1845」Sumdiv</a></p>
+<p>首先利用整数惟一分解定理将 <span class="arithmatex">\(A\)</span> 表示为 <span class="arithmatex">\(A=p_1^{r_1}p_2^{r_2}\cdots p_n^{r_n}\)</span> .</p>
+<p>则 <span class="arithmatex">\(A^B\)</span> 约数和为</p>
+<div class="arithmatex">\[(1+p_1+p_1^2+\cdots +p_1^{B\cdot r_1})(1+p_2+p_2^2+\cdots+p_2^{B\cdot r_2})\cdots(1+p_n+p_n^2+\cdots+p_n^{B\cdot r_n})\]</div>
+<p>可以发现, 每一个括号里都是一个等比数列求和, 以 <span class="arithmatex">\(p_i\)</span> 为例, 它的和可以写成 <span class="arithmatex">\(\dfrac{p_i^{B\cdot r_i+1}-1}{p_i-1}\)</span> , 然后我们可以利用快速幂求解分子 <span class="arithmatex">\(p_i^{B\cdot r_i+1}\bmod{9901}\)</span> , 这时若 <span class="arithmatex">\(p_i-1&gt;(p_i^{B\cdot r_i+1}-1)\bmod{9901}\)</span> , 我们会得到 <span class="arithmatex">\(0\)</span> , 这显然是错的, 而模数 <span class="arithmatex">\(9901\)</span> 正好为素数, 因此考虑用 <span class="arithmatex">\(p_i-1\)</span> 的逆元与分子的结果相乘来代替除法.</p>
+<p>当 <span class="arithmatex">\(p_i-1\)</span> 为 <span class="arithmatex">\(9901\)</span> 的倍数时不存在逆元, 这时我们可以发现 <span class="arithmatex">\(p_i\equiv 1\pmod{9901}\)</span> , 因此 <span class="arithmatex">\(1, p_i, p_i^2, \cdots, p_i^{B\cdot r_i+1}\equiv 1\pmod{9901}\)</span> , 所以 <span class="arithmatex">\(1+p_i+p_i^2+\cdots+p_i^{B\cdot r_i}\equiv B\cdot r_i+1\pmod{9901}\)</span> .</p>
+<h2 id="_38">线性同余方程<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h2>
+<p>形如 <span class="arithmatex">\(ax\equiv c\pmod{m}\)</span> 的方程，称为线性同余方程。</p>
+<ol>
+<li>朴素算法<br />
+   将 <span class="arithmatex">\(x=1, 2, \cdots, m-1\)</span> 一次带进去验证即可，这个朴素算法的复杂度取决于 <span class="arithmatex">\(m\)</span> 。</li>
+<li>扩展欧几里得算法<br />
+   可以将方程看作 <span class="arithmatex">\(ax+my=c\)</span> ，然后利用扩展欧几里得方法求解。<br />
+   根据裴蜀定理，当且仅当 <span class="arithmatex">\(\gcd{(a, m)}|c\)</span> 时方程有解。<br />
+   令 <span class="arithmatex">\(d=\gcd(a, m)\)</span> ，则方程一共有 <span class="arithmatex">\(d\)</span> 个解，我们用扩展欧几里得算法求得特解 <span class="arithmatex">\(x_0\)</span> ，则方程的通解 <span class="arithmatex">\(x_i=x_0+i\cdot \dfrac{m}{d}(i=0, 1, \cdots, d-1)\)</span> 。</li>
+<li>欧拉定理<br />
+   令 <span class="arithmatex">\(d=\gcd{(a, m)}\)</span> ，若 <span class="arithmatex">\(d \nmid c\)</span> 则方程无解。<br />
+   然后令 <span class="arithmatex">\(a\'=\dfrac{a}{d}, c\'=\dfrac{c}{d}, m\'=\dfrac{m}{d}\)</span> ，则 <span class="arithmatex">\(\gcd{(a\', m\')}=1\)</span> ，原方程变为 <span class="arithmatex">\(a\'x\equiv c\'\pmod{m\'}\)</span> ，由欧拉定理，<span class="arithmatex">\(a\'^{\varphi(m\')}\equiv 1\pmod{m\'}\)</span> ，在方程两边分别乘上上式，得到 <span class="arithmatex">\(a\'x\equiv c\'a\'^{\varphi(m\')}\pmod{m\'}\)</span> ，即 <span class="arithmatex">\(x\equiv c\'a\'^{\varphi(m\')-1}\pmod{m\'}\)</span> ，于是我们得到原方程的特解 <span class="arithmatex">\(x_0=dc\'a\'^{\varphi(m\')-1}\)</span> ，因此原方程的解为 <span class="arithmatex">\(x_i=x_0+i\cdot m'(i=1, 2, \cdots,d-1)\)</span> 。</li>
+</ol>
+<h4 id="_39">例题<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h4>
+<p><strong>线性组合</strong></p>
+<blockquote>
+<p>对应整数数列 <span class="arithmatex">\(A_1, A_2, \cdots, A_n\)</span> 是否存在 <span class="arithmatex">\(X_1, X_2, \cdots, X_n\)</span> ， 使得 <span class="arithmatex">\(A_1X_1+A_2X_2+\cdots+A_nX_n=C\)</span> ，其中 <span class="arithmatex">\(\gcd{(A_1, A_2, \cdots, A_n)}\mid C(n\ge2)\)</span> 。如有，请找出一组整数解 <span class="arithmatex">\((x_1, x_2, x_3, x_4)\)</span> 满足 <span class="arithmatex">\(12x_1+24x_2+18x_3+15x_4=3\)</span> .</p>
+</blockquote>
+<p>题中的方程是 n 元形式的扩展欧几里得方程，我们尝试将 n 元逐步降为二元得到最终解。</p>
+<p>设 <span class="arithmatex">\(d=\gcd{(A_1, A_2, \cdots, A_n)}\)</span> ，令 <span class="arithmatex">\(C\'=\dfrac{C}{d},A_i\'=\dfrac{A_i}{d}(i=1, 2, \cdots, n)\)</span> ，首先将方程变形为 <span class="arithmatex">\(A_1\'X_1+A_2\'X_2+\cdots+A_n\'X_n=C\'\)</span> ，此时满足 <span class="arithmatex">\(\gcd{(A_1\', A_2\', \cdots, A_n\', C\')}=1\)</span> 。</p>
+<p>然后我们考虑求解方程 <span class="arithmatex">\(A_1\'X_1+\gcd(A_2\', A_3\', \cdots, A_n\')Y_1=C\'\)</span> ，利用扩展欧几里得方法求得特解 <span class="arithmatex">\(X_1,Y_1\)</span> ，由于题中仅要求得到一组解，因此我们只取特解即可，然后再以同样的方法求解 <span class="arithmatex">\(A_2\'X_2+A_3\'X_3+\cdots+A_n\'X_n=\gcd(A_2\', A_3\', \cdots, A_n\')Y_1\)</span> 便可以实现逐渐降元了。</p>
+<h3 id="_40">线性同余方程组（模互素）<a class="headerlink" href="#_40" title="Permanent link">&para;</a></h3>
+<p>考虑形如 <span class="arithmatex">\(x\equiv a_i\pmod{m_i}\)</span> 的若干个线性同余方程联合得到的方程组，例如<br />
+$$<br />
+\begin{cases}<br />
+x &amp;\equiv&amp; 2\pmod{3} \\<br />
+x &amp;\equiv&amp; 3\pmod{5} \\<br />
+x &amp;\equiv&amp; 5\pmod{7}<br />
+\end{cases}<br />
+$$<br />
+一种可行的解法是令 <span class="arithmatex">\(x=3y+2\)</span> ，然后将方程 <span class="arithmatex">\((2)\)</span> 改写成 <span class="arithmatex">\(y\equiv 2\pmod{5}\)</span> ，接着再令 <span class="arithmatex">\(y=5z+2\)</span> 代入方程 <span class="arithmatex">\((3)\)</span> 得到 <span class="arithmatex">\(z\equiv 4\pmod{7}\)</span> ，再令 <span class="arithmatex">\(z=7k+4\)</span> ，最后我们可以得到解 <span class="arithmatex">\(x\equiv68\pmod{105}\)</span> 。</p>
+<h4 id="_41">中国剩余定理<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>若线性同余方程组 <span class="arithmatex">\(x\equiv a_i\pmod{m_i}(i=1, \cdots, n)\)</span> 的模数 <span class="arithmatex">\(m_i\)</span> 两两互素，则 <span class="arithmatex">\(x\)</span> 在 <span class="arithmatex">\(\bmod{M}(M=\prod_{i=1}^n m_i)\)</span> 下有唯一解。</p>
+</blockquote>
+<p>令 <span class="arithmatex">\(M_i=\dfrac{M}{m_i}\)</span> ，有 <span class="arithmatex">\(\gcd{(M_i, m_i)}=1\)</span> ，因此 <span class="arithmatex">\(M_i\)</span> 在 <span class="arithmatex">\(\bmod{m_i}\)</span> 下的逆元存在，设其为 <span class="arithmatex">\(t_i\)</span> ，于是有 <span class="arithmatex">\(a_iM_it_i\equiv a_i\pmod{m_i},a_iM_it_i\equiv0\pmod{m_j}(j\not= i)\)</span> 。</p>
+<p>可以得到解 <span class="arithmatex">\(x\equiv\sum_{i=1}^na_iM_it_i\pmod{M}\)</span> 。 </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">//China Remainer Theorem</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">CRT</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[],</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ti</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getinv</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="w"> </span><span class="n">Mi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ti</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Mi</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">M</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">M</span><span class="p">;</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="p">}</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="c1">//利用 exgcd 求逆元</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="kt">int</span><span class="w"> </span><span class="nf">getinv</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">  </span><span class="n">exgcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="_42">线性同余方程组（模不互素）<a class="headerlink" href="#_42" title="Permanent link">&para;</a></h3>
+<p>对于模不互素的线性同余方程组<br />
+$$<br />
+\begin{cases}<br />
+x &amp;\equiv a_1\pmod{m_1} \\<br />
+x &amp;\equiv a_2\pmod{m_2} \\<br />
+&amp;\cdots \\<br />
+x &amp;\equiv a_n\pmod{m_n}<br />
+\end{cases}<br />
+$$</p>
+<p>考虑求解方程数量为 2 的情形，当方程数量大于 2 时迭代求解。</p>
+<p>$$<br />
+\begin{cases}<br />
+x &amp;\equiv a_1\pmod{m_1} \\<br />
+x &amp;\equiv a_2\pmod{m_2}<br />
+\end{cases}<br />
+$$<br />
+设 <span class="arithmatex">\(y=x-a_1\)</span> ，则方程组变为<br />
+$$<br />
+\begin{cases}<br />
+y &amp;\equiv 0 &amp;\pmod{m_1} \\<br />
+y &amp;\equiv a_2-a_1 &amp;\pmod{m_2}<br />
+\end{cases}<br />
+$$<br />
+设 <span class="arithmatex">\(d=\gcd{(m_1, m_2)}\)</span> ，根据裴蜀定理，若 <span class="arithmatex">\(d \nmid (a_2-a_1)\)</span> ，则方程组无解，否则令 <span class="arithmatex">\(y\'=\dfrac{y}{d},a\'=\dfrac{a_2-a_1}{d}, m_i\'=\dfrac{m_1}{d}(i=1,2)\)</span> ，有<br />
+$$<br />
+\begin{cases}<br />
+y\' &amp;\equiv{0} &amp;\pmod{m_1'} \\<br />
+y\' &amp;\equiv{a\'} &amp;\pmod{m_2'}<br />
+\end{cases}<br />
+$$<br />
+此时 <span class="arithmatex">\(\gcd{(m_1\', m_2\')}=1\)</span> ，令 <span class="arithmatex">\(y\'=km_1\'\)</span> ，再由欧拉定理可得 <span class="arithmatex">\(k\equiv{a\'m_1\'^{\varphi(m_2\')-1}}\pmod{m_2\'}\)</span> ，于是 <span class="arithmatex">\(y\equiv{da\'m_1\'^{\varphi{(m_2\')}}}\pmod{dm_1\'m_2\'}\)</span> ，最后代回去可以得到 <span class="arithmatex">\(x\equiv{(a_2-a_1)m_1\'^{\varphi{(m_2\')}}+a_1}\pmod{dm_1\'m_2\'}\)</span> 。</p>
+<h4 id="_43">例题<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h4>
+<p><a href="http://poj.org/problem?id=2891">「POJ 2891」Strange Way to Express Integers</a></p>
+<p>算法和上述一致。</p>
+<p>假设我们已经通过迭代求解得到前 <span class="arithmatex">\(k-1\)</span> 个方程的一个解 <span class="arithmatex">\(x_0\)</span> ，令 <span class="arithmatex">\(M=\prod_{i=1}^{k-1}m_i\)</span> ，则 <span class="arithmatex">\(x=x_0+i\cdot M\)</span> 是前 <span class="arithmatex">\(k-1\)</span> 个方程的通解。</p>
+<p>考虑第 <span class="arithmatex">\(k\)</span> 个方程，我们可以将其改写为 <span class="arithmatex">\(x_0+t\cdot M\equiv{a_k}\pmod{m_k}\)</span> ，即 <span class="arithmatex">\(t\cdot M\equiv{a_k-x_0}\pmod{m_k}\)</span> ，接下来找到一个合适的 <span class="arithmatex">\(t\)</span> 即可，也就是求解一个同余方程了，利用欧拉定理求解即可。</p>
+<h2 id="_44">高次同余方程<a class="headerlink" href="#_44" title="Permanent link">&para;</a></h2>
+<h3 id="_45">第一类高次同余方程<a class="headerlink" href="#_45" title="Permanent link">&para;</a></h3>
+<p>形如 <span class="arithmatex">\(a^x\equiv{b}\pmod{p}\)</span> 的方程称为第一类高次同余方程，其中 <span class="arithmatex">\(\gcd(a, p)=1\)</span> 。</p>
+<h4 id="bsgs">BSGS<a class="headerlink" href="#bsgs" title="Permanent link">&para;</a></h4>
+<p>解决这一类方程主要采用 BSGS (Baby Step Giant Step) 算法。</p>
+<p>将 <span class="arithmatex">\(x\)</span> 写成 <span class="arithmatex">\(x=kt-m(0\le m\le t-1)\)</span> 的形式，则原方程可变形为 <span class="arithmatex">\((a^t)^k\equiv{b\cdot a^m\pmod{p}}\)</span> 。</p>
+<p>假设 <span class="arithmatex">\(t\)</span> 已知，那么我们只需枚举 <span class="arithmatex">\(k\)</span> ，然后计算相应的 <span class="arithmatex">\(b\cdot a^m\)</span> ，判断是否满足变形后的等式即可。</p>
+<p>因为在枚举 <span class="arithmatex">\(k\)</span> 的过程中 <span class="arithmatex">\(m\)</span> 的取值也在变化，但 <span class="arithmatex">\(m\)</span> 的取值范围是不变的，因此我们可以预处理所有可能的 <span class="arithmatex">\(b\cdot a^m\)</span> 值，用一个 Hash 表储存。</p>
+<p>由欧拉定理可知，有 <span class="arithmatex">\(a^{\varphi(p)}\equiv{1}\pmod{p}\)</span> ，而 <span class="arithmatex">\(\varphi(p)&lt;p\)</span> ，因此从 1~p ，模 <span class="arithmatex">\(p\)</span> 意义下 <span class="arithmatex">\(a\)</span> 的幂至少完成了一次循环，所以最小整数解 <span class="arithmatex">\(x&lt;p\)</span> ，进而我们可以从 <span class="arithmatex">\(0\)</span> 到 <span class="arithmatex">\(\dfrac{p}{t}\)</span> 枚举 <span class="arithmatex">\(k\)</span> ，而 <span class="arithmatex">\(m\in[0,t-1]\)</span> ，因此时间复杂度为 <span class="arithmatex">\(\mathcal{O}(\dfrac{p}{t}+t)\)</span> ，当 <span class="arithmatex">\(t=\sqrt{p}\)</span> 时复杂度最小。</p>
+<p>时间复杂度：<span class="arithmatex">\(\mathcal{O}(2\sqrt{p})\)</span></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">BSGS</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="n">b</span><span class="w"> </span><span class="o">%=</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="n">map</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">hash</span><span class="p">;</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sqrt</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="p">)</span><span class="n">b</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">power</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="c1">//快速幂</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="n">hash</span><span class="p">[</span><span class="n">val</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">  </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">power</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">);</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">power</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">);</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hash</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">hash</span><span class="p">.</span><span class="n">end</span><span class="p">()</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">-1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">hash</span><span class="p">[</span><span class="n">val</span><span class="p">];</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">j</span><span class="p">;</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="_46">第二类高次同余方程<a class="headerlink" href="#_46" title="Permanent link">&para;</a></h3>
+<p>形如 <span class="arithmatex">\(x^k\equiv{b}\pmod{p}\)</span> 的方程称为第二类高次同余方程。</p>
+<p>首先引入<strong>阶</strong>和<strong>原根</strong>的概念，这一部分和抽象代数相关，我目前还不会 QAQ 。</p>
+<h3 id="_47">阶<a class="headerlink" href="#_47" title="Permanent link">&para;</a></h3>
+<p>满足同余式 <span class="arithmatex">\(a^n\equiv{1}\pmod{p}\)</span> 的最小整数 <span class="arithmatex">\(n\)</span> 称为 <span class="arithmatex">\(a\)</span> 模 <span class="arithmatex">\(p\)</span> 的阶，记作 <span class="arithmatex">\(\delta_p(a)\)</span> 。</p>
+<p>由欧拉定理可知，当 <span class="arithmatex">\(\gcd(a, p)=1\)</span> 时，有 <span class="arithmatex">\(a^{\varphi(p)}\equiv{1}\pmod{p}\)</span> ，因此阶的存在性得证。</p>
+<p><strong>性质 1</strong> ：<span class="arithmatex">\(a,a^2,\cdots,a^{\delta_p(a)}\)</span> 模 <span class="arithmatex">\(m\)</span> 两两不同余。</p>
+<p><strong>性质 2</strong> ：若 <span class="arithmatex">\(a^n\equiv{1}\pmod{p}\)</span> ，则 <span class="arithmatex">\(n \mid \delta_p(a)\)</span> 。</p>
+<p>​   <strong>推论</strong> ：若 <span class="arithmatex">\(a^m\equiv{a^n}\pmod{p}\)</span> ，则 <span class="arithmatex">\(m\equiv{n}\pmod{\delta_p(a)}\)</span> 。</p>
+<p><strong>性质 3</strong> ：设 <span class="arithmatex">\(p\in\mathbb{N}^*,\, a,b\in\mathbb{Z},\gcd(a,p)=\gcd(b,p)=1\)</span> ，则 <span class="arithmatex">\(\delta_p(ab)=\delta_p(a)\delta_p(b)\)</span> 的充要条件是 <span class="arithmatex">\(\gcd(\delta_p(a),\delta_p(b))=1\)</span> 。</p>
+<p><strong>性质 4</strong> ：设 <span class="arithmatex">\(k\in\mathbb{N},p\in\mathbb{N}^*,a\in\mathbb{Z},\gcd(a,p)=1\)</span> ，则 <span class="arithmatex">\(\delta_p(a^k)=\dfrac{\delta_p(a)}{\gcd(\delta_p(a),k)}\)</span> 。</p>
+<h3 id="_48">原根<a class="headerlink" href="#_48" title="Permanent link">&para;</a></h3>
+<p>设 <span class="arithmatex">\(p\in\mathbb{N}^*,a\in\mathbb{Z}\)</span> ，若 <span class="arithmatex">\(\gcd(a,p)=1\)</span> ，且 <span class="arithmatex">\(\delta_p(a)=\varphi(p)\)</span> ，则称 <span class="arithmatex">\(a\)</span> 为模 <span class="arithmatex">\(m\)</span> 的原根。</p>
+<p>以下基于 <span class="arithmatex">\(p\)</span> 为质数的情况进行讨论。</p>
+<p>如何判断 <span class="arithmatex">\(a\)</span> 是否是 <span class="arithmatex">\(p\)</span> 的原根？</p>
+<p>由费马小定理，方程 <span class="arithmatex">\(a^x\equiv{1}\pmod{p}\)</span> 的一个解为 <span class="arithmatex">\(x=p-1\)</span> ，因此最小整数解 <span class="arithmatex">\(x_{min}\mid (p-1)\)</span> ，而满足 <span class="arithmatex">\(x_{min}=p-1\)</span> 的整数 <span class="arithmatex">\(a\)</span> 是 <span class="arithmatex">\(p\)</span> 的原根，所以我们逐个枚举 <span class="arithmatex">\(p-1\)</span> 的约数 <span class="arithmatex">\(k\)</span> ，如果只有当 <span class="arithmatex">\(k=p-1\)</span> 时满足 <span class="arithmatex">\(a^k\equiv{1}\pmod{p}\)</span> ，则 <span class="arithmatex">\(a\)</span> 是 <span class="arithmatex">\(p\)</span> 的原根。</p>
+<p>下面考虑求解 <span class="arithmatex">\(x^k\equiv{b}\pmod{p}\)</span> 。</p>
+<p>由<strong>阶的性质 1</strong> ，存在唯一的正整数 <span class="arithmatex">\(m\)</span> ，满足 <span class="arithmatex">\(a^m\equiv{b}\pmod{p},0\le m\le p-1\)</span> ，其中 <span class="arithmatex">\(a\)</span> 是 <span class="arithmatex">\(p\)</span> 的原根，<span class="arithmatex">\(m\)</span> 可以由第一类高次同余方程求出。</p>
+<p>同样，存在唯一正整数 <span class="arithmatex">\(y\)</span> ，使得 <span class="arithmatex">\(x\equiv{a^y}\pmod{p}\)</span> ，于是上述方程变为 <span class="arithmatex">\(a^{ky}\equiv{a^m}\pmod{p}\)</span> 。</p>
+<p>由<strong>阶的性质 2</strong> 的<strong>推论</strong>，<span class="arithmatex">\(ky\equiv{m}\pmod{p-1}\)</span> ，于是我们求解这个线性同余方程得到 <span class="arithmatex">\(y\)</span> 便可以得到 <span class="arithmatex">\(x\)</span> 。</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+<h2 id="__comments">Comments</h2>
+<!-- Insert generated snippet here -->
+<script
+  src="https://giscus.app/client.js"
+  data-repo="cxzhou35/notebook"
+  data-repo-id="R_kgDOI0PNYQ"
+  data-category="Announcements"
+  data-category-id="DIC_kwDOI0PNYc4CTvN5"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="top"
+  data-theme="light"
+  data-lang="zh-CN"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async
+></script>
+
+<!-- Synchronize Giscus theme with palette -->
+<script>
+  var giscus = document.querySelector("script[src*=giscus]");
+
+  /* Set palette on initial load */
+  var palette = __md_get("__palette");
+  if (palette && typeof palette.color === "object") {
+    var theme = "light";
+    giscus.setAttribute("data-theme", theme);
+  }
+
+  /* Register event handlers after documented loaded */
+  document.addEventListener("DOMContentLoaded", function () {
+    var ref = document.querySelector("[data-md-component=palette]");
+    ref.addEventListener("change", function () {
+      var palette = __md_get("__palette");
+      if (palette && typeof palette.color === "object") {
+        var theme =
+          palette.color.scheme === "default" ? "light" : "noborder_dark";
+
+        /* Instruct Giscus to change theme */
+        var frame = document.querySelector(".giscus-frame");
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme } } },
+          "https://giscus.app",
+        );
+      }
+    });
+  });
+</script>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 <a href="https://github.com/f1a3h" target="_blank" rel="noopener">f1a3h</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+        <script src="https://cdn.tonycrane.cc/utils/katex.min.js"></script>
+      
+        <script src="../../../_assets/js/katex.js"></script>
+      
+    
+  </body>
+</html>
