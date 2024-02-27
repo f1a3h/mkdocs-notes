@@ -4,22 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "dfc7aeff828013f0",
+        "id": "1dfc7a099206c1d2",
         "type": "tabs",
         "children": [
           {
-            "id": "2471d8043cff3fed",
+            "id": "132107511eef9d4e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "_ignore/Diaries/2024/02/27.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "70a4f7580bd4a316",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Computer Science/Math/Linear Algebra Done Wrong.md",
                 "mode": "preview",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -69,7 +82,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 210
+    "width": 239
   },
   "right": {
     "id": "76b1a789183f3b92",
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
+                "file": "Computer Science/Math/Linear Algebra Done Wrong.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
+                "file": "Computer Science/Math/Linear Algebra Done Wrong.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,8 +138,16 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md"
+                "file": "Computer Science/Math/Linear Algebra Done Wrong.md"
               }
+            }
+          },
+          {
+            "id": "39ce1918033e737e",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
             }
           }
         ],
@@ -150,55 +171,54 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "2471d8043cff3fed",
+  "active": "70a4f7580bd4a316",
   "lastOpenFiles": [
-    "Algorithm/index.md",
-    "ACG/index.md",
-    "Computer Science/Computer Network/CNATDA/Chapter 2.md",
-    "index.md",
-    "_assets/img/XilmO_夕末_110221098_粼_0.png",
-    "Computer Science/Theory of Computer Science/index.md",
-    "Computer Science/Theory of Computer Science/Part 1/index.md",
-    "Computer Science/Programming Languages/index.md",
-    "Computer Science/Computer Security/Stanford CS110L.md",
-    "Computer Science/Computer Network/index.md",
-    "_ignore/Templates/note.md",
-    "Computer Science/Computer Network/CNATDA/index.md",
+    "_ignore/Diaries/2024/02/27.md",
+    "_assets/img/Screenshot 2024-02-27 at 20.45.33.png",
     "Computer Science/Computer Architecture/UCB CS61C.md",
-    "Computer Science/Computer Architecture/CSAPP/index.md",
-    "Computer Science/Computer Architecture/CSAPP/Chapter 2.md",
+    "_assets/img/Screenshot 2024-02-27 at 18.33.57.png",
     "Computer Science/index.md",
-    "Computer Science/Computer Architecture/index.md",
-    "Research/Papers/liuYourCodeGenerated2023.md",
-    "Research/Papers/index.md",
-    "Research/_Fuzzing Survey/The Art, Science, and Engineering of Fuzzing.md",
-    "Research/Learning Research.md",
-    "Research/Research Log.md",
+    "Computer Science/Theory of Computer Science/index.md",
     "Research/index.md",
+    "_assets/img/Screenshot 2024-02-26 at 22.20.39.png",
+    "_assets/img/Screenshot 2024-02-26 at 22.01.01.png",
+    "_assets/img/Screenshot 2024-02-26 at 21.59.28.png",
+    "_ignore/Diaries/2024/02/26.md",
+    "Algorithm/WriteUp/Quantum Wave Speed Pass.md",
+    "Algorithm/WriteUp/LuoguP5539.md",
+    "Algorithm/index.md",
+    "Algorithm/WriteUp",
+    "Algorithm/ACM算法实践.md",
+    "Research/Research Log.md",
+    "Computer Science/Theory of Computer Science/18.404/1.md",
+    "Research/Papers/index.md",
+    "Computer Science/Math/Linear Algebra Done Wrong.md",
+    "_ignore/Diaries/2024/02/24.md",
+    "_ignore/Diaries/2024/02/23.md",
+    "Computer Science/Theory of Computer Science/18.404/index.md",
+    "Computer Science/Computer Network/index.md",
+    "Computer Science/Theory of Computer Science/18.404",
+    "Computer Science/Theory of Computer Science/Programming Languages/index.md",
+    "README.md",
+    "Computer Science/Math/MIT 18.330.md",
+    "_assets/img/Screenshot 2024-02-23 at 12.22.23.png",
+    "_ignore/Templates/note.md",
+    "Computer Science/Theory of Computer Science/Part 1/index.md",
+    "Computer Science/Theory of Computer Science/Part 1/Chapter 1.md",
+    "_ignore/Diaries/2024/02/21.md",
+    "_assets/js/custom.js",
+    "_assets/css/custom.css",
+    "_assets/css/custom.css.bak",
+    "_assets/img/Screenshot 2024-02-20 at 17.27.16.png",
+    "_assets/font/LXGWBrightGB-Regular.ttf",
+    "_assets/font/MapleMono-VF 1.otf",
+    "_assets/font/MapleMono-VF.otf",
+    "_assets/font",
+    "_assets/img/XilmO_夕末_110221098_粼_0.png",
     "Computer Science/Computer Network/CNATDA",
-    "Research/_Is Your Code Generated by ChatGPT Really Correct?/Is Your Code Generated by ChatGPT Really Correct?.md",
-    "Computer Science/Computer Network/CNATDA/Chapter 6.md",
-    "Computer Science/Computer Network/CNATDA/Chapter 5.md",
-    "Computer Science/Computer Network/CNATDA/Chapter 4.md",
-    "Computer Science/Computer Security",
-    "Computer Science/Programming Languages",
-    "Computer Science/Computer Architecture/CSAPP",
-    "assets/img.zip",
-    "ACG/Novel",
-    "ACG/Comics",
-    "ACG/Game",
-    "ACG/Anime",
     "_assets/img/favicon.svg",
     "_ignore/Diaries/2024/02/Bangumi年鉴.png",
-    "_assets/img",
-    "_assets/img/Screenshot 2024-02-16 at 20.41.07.png",
-    "_assets/img/Screenshot 2024-02-16 at 20.27.04.png",
-    "_assets/img/Screenshot 2024-02-16 at 00.33.39.png",
     "Ignore/Plans/2024/02/Untitled.canvas",
-    "Untitled.canvas",
-    "Notes/NJU「软件分析」/Static Analysis for Security/image.png",
-    "Notes/NJU「软件分析」/Soundness and Soundiness/whyrefl.png",
-    "Notes/NJU「软件分析」/Soundness and Soundiness/reflection.png",
-    "Notes/NJU「软件分析」/Soundness and Soundiness/other.png"
+    "Untitled.canvas"
   ]
 }

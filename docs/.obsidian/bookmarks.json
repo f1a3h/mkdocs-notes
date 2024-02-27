@@ -1,0 +1,50 @@
+{
+  "items": [
+    {
+      "type": "group",
+      "ctime": 1708763688575,
+      "items": [
+        {
+          "type": "file",
+          "ctime": 1708763674163,
+          "path": "_ignore/Diaries/2024/02/24.md"
+        }
+      ],
+      "title": "diary"
+    },
+    {
+      "type": "group",
+      "ctime": 1708763759126,
+      "items": [
+        {
+          "type": "file",
+          "ctime": 1708763745860,
+          "path": "Computer Science/Theory of Computer Science/18.404/1.md"
+        },
+        {
+          "type": "file",
+          "ctime": 1708763745860,
+          "path": "Computer Science/Math/Linear Algebra Done Wrong.md"
+        }
+      ],
+      "title": "csdiy"
+    },
+    {
+      "type": "group",
+      "ctime": 1708763797196,
+      "items": [
+        {
+          "type": "file",
+          "ctime": 1708763790147,
+          "path": "Research/Research Log.md"
+        },
+        {
+          "type": "file",
+          "ctime": 1708763790147,
+          "path": "Research/Papers/index.md"
+        }
+      ],
+      "title": "research"
+    }
+  ]
+}

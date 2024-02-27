@@ -10,6 +10,9 @@ categories:
 tags:
     - ACM
 ---
+> [!info] 
+> 「ACM算法实践」课程考试总结。
+
 
 ## 第一章——基础
 

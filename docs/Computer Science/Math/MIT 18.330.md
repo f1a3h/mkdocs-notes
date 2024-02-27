@@ -1,5 +1,5 @@
 ---
-title: "MIT 18.330: Introduction to Numerical Analysis"
+title: MIT 18.330
 date: 2024-02-05
 draft: false
 math: true

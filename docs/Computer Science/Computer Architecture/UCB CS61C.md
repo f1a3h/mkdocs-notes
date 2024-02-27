@@ -12,7 +12,7 @@ tags:
 ---
 
 > [!info] 
-> Study notes based on [UCB CS61C, Summer 2020](https://inst.eecs.berkeley.edu/~cs61c/su20/) online videos along with its textbooks.
+> Study notes based on UCB CS61C, [Summer 2020](https://inst.eecs.berkeley.edu/~cs61c/su20/) & [Fall 2020](https://inst.eecs.berkeley.edu/~cs61c/fa20/) online videos along with its textbooks.
 
 
 1. Abstraction
@@ -22,7 +22,7 @@ tags:
 5. Performance Measurement & Improvement
 6. Dependability via Redundancy
 
-# Great Idea #1: Levels of Representation & Interpretation
+# Great Idea \#1: Levels of Representation & Interpretation
 
 ![image.png](https://fastly.jsdelivr.net/gh/f1a3h/imgs/202401302014701.png)
 
@@ -119,6 +119,7 @@ When it comes to memory management in C, there can be tons of memory problems. F
     When a `free()` is called, we insert that block into the list and combine it with adjacent blocks.
     
     When a `malloc()` is called, we first search for the blocks large enough for allocation, then choose one using a method offered below:
+    
     - Best-fit: choose the smallest, this provides the least concentrative distribution of small blocks yet a slowest service.
     - First-fit: choose the block with least order, this is fast but tends to concentrate small blocks at beginning.
     - Next-fit: like first-fit, but resume search from where we last left off. Also fast, and it does not concentrate small blocks at front.
@@ -276,9 +277,9 @@ There are three steps for the linker:
 
 Note that the linker enables separate compilation of files, which saves a lot of compile-time.
 
-!!! info
-	
-    The text segment starts at address `0000 0000 0040 0000`<sub>hex</sub    and the data segment at `0000 0000 1000 0000`<sub>hex</sub>.
+> [!info] 
+> 
+>  The text segment starts at address `0000 0000 0040 0000`<sub>hex</sub> and the data segment at `0000 0000 1000 0000`<sub>hex</sub>.
 
 Three types of addresses:
 
@@ -454,9 +455,11 @@ Control construction options:
 "Iron law" of processor performance:
 
 $$\frac{\mathtt{Time}}{\mathtt{Program}}=\frac{\mathtt{Instructions}}{\mathtt{Program}}\cdot\frac{\mathtt{Cycles}}{\mathtt{Instruction}}\cdot\frac{\mathtt{Time}}{\mathtt{Cycle}}$$
-# Great Idea #4: Parallelism
+# Great Idea \#4: Parallelism
 
 ## Pipelining
+
+### Intro
 
 Noticed that since we have to set the maximum clock frequency to  the lowest value to fit in `lw` instruction, there will always be chips idle when performing other instructions.
 
@@ -468,7 +471,7 @@ To align the five instruction stages, we place a register between each two stage
 
 ![image.png](https://fastly.jsdelivr.net/gh/f1a3h/imgs/202402051445337.png)
 
-## Hazards
+### Hazards
 
 [lec14.pdf](https://inst.eecs.berkeley.edu/~cs61c/su20/pdfs/lectures/lec14.pdf)
 
@@ -499,7 +502,124 @@ A hazard is a situation that prevents starting the next instruction in the next 
 	- Solution 2: move branch comparator to ID stage
 	- Solution 3: branch prediction - guess outcome of a branch, fix afterwards if necessary
 
-# Great Idea #3: Principle of Locality
+## Parallelism
+
+### Flynn's Taxonomy
+
+- Choice of hardware and software parallelism are independent
+- *Flynn's Taxonomy* is for parallel hardware
+
+![[Screenshot 2024-02-27 at 18.33.57.png]]
+
+### SIMD Architectures
+
+To improve performance, Intel's SIMD instructions:
+
+- Fetch one instruction, do the work of multiple instructions
+- MMX (MultiMedia eXtension)
+- SSE (Streaming SIMD Extension)
+
+In the evolution of x86 SIMD, it started with MMX, getting new instructions, new and wider registers, more parallelism.
+
+In SSE, architecture extended with eight 128-bit data registers, which are called XMM registers.
+
+> [!note] 
+> In 64-bit address architecture, they are available as 16 64-bit registers.
+
+Programming in C, we can use Intel SSE intrinsics, which are C functions and procedures for putting in assembly language, including SSE instructions.
+
+|        Operations         |           Intrinsics            |                   Corresponding SSE instructions                   |
+|:-------------------------:|:-------------------------------:|:------------------------------------------------------------------:|
+|     Vector data type      |            `_m128d`             |                                                                    |
+| Load and store operations | `_mm_load_pd`<br>`_mm_store_pd` | `MOVAPD`/aligned, packed double<br>`MOVAPD`/aligned, packed double |
+|        Arithmetic         |  `_mm_add_pd`<br>`_mm_mul_pd`   |   `ADDPD`/add, packed double<br>`MULPD`/multiple, packed double    |
+
+> [!example]- 2x2 Matrix Multiply
+> ```c
+> #include <stdio.h>
+> // header file for SSE compiler intrinsics
+> #include <emmintrin.h>
+> 
+> // NOTE: vector registers will be represented in comments as v1 = [a | b]
+> // where v1 is a variable of type __m128d and a, b are doubles
+> 
+> int main(void) {
+> 	// allocate A,B,C aligned on 16-byte boundaries
+> 	double A[4] __attribute__ ((aligned (16)));
+> 	double B[4] __attribute__ ((aligned (16)));
+> 	double C[4] __attribute__ ((aligned (16)));
+> 	int lda = 2;
+> 	int i = 0;
+> 	// declare several 128-bit vector variables
+> 	__m128d c1,c2,a,b1,b2;
+> 	
+> 	// Initialize A, B, C for example
+> 	/* A = (note column order!)
+> 	   1 0
+> 	   0 1
+> 	*/
+> 	A[0] = 1.0; A[1] = 0.0; A[2] = 0.0; A[3] = 1.0;
+> 	
+> 	/* B = (note column order!)
+> 	   1 3
+> 	   2 4
+> 	*/
+> 	B[0] = 1.0; B[1] = 2.0; B[2] = 3.0; B[3] = 4.0;
+> 	
+> 	/* C = (note column order!)
+> 	   0 0
+> 	   0 0
+> 	*/
+> 	C[0] = 0.0; C[1] = 0.0; C[2] = 0.0; C[3] = 0.0;
+> 	
+> 	// used aligned loads to set
+> 	// c1 = [c_11 | c_21]
+> 	c1 = _mm_load_pd(C+0*lda);
+> 	// c2 = [c_12 | c_22]
+> 	c2 = _mm_load_pd(C+1*lda);
+> 	
+> 	for (i = 0; i < 2; i++) {
+> 		/* a =
+> 		i = 0: [a_11 | a_21]
+> 		i = 1: [a_12 | a_22]
+> 		*/
+> 		a = _mm_load_pd(A+i*lda);
+> 		/* b1 =
+> 		i = 0: [b_11 | b_11]
+> 		i = 1: [b_21 | b_21]
+> 		*/
+> 		b1 = _mm_load1_pd(B+i+0*lda);
+> 		/* b2 =
+> 		i = 0: [b_12 | b_12]
+> 		i = 1: [b_22 | b_22]
+> 		*/
+> 		b2 = _mm_load1_pd(B+i+1*lda);
+> 		/* c1 =
+> 		i = 0: [c_11 + a_11*b_11 | c_21 + a_21*b_11]
+> 		i = 1: [c_11 + a_21*b_21 | c_21 + a_22*b_21]
+> 		*/
+> 		c1 = _mm_add_pd(c1,_mm_mul_pd(a,b1));
+> 		/* c2 =
+> 		i = 0: [c_12 + a_11*b_12 | c_22 + a_21*b_12]
+> 		i = 1: [c_12 + a_21*b_22 | c_22 + a_22*b_22]
+> 		*/
+> 		c2 = _mm_add_pd(c2,_mm_mul_pd(a,b2));
+> 	}
+> 	
+> 	// store c1,c2 back into C for completion
+> 	_mm_store_pd(C+0*lda,c1);
+> 	_mm_store_pd(C+1*lda,c2);
+> 	
+> 	// print C
+> 	printf("%g,%g\n%g,%g\n",C[0],C[2],C[1],C[3]);
+> 	return 0;
+> }
+> ```
+
+To improve RISC-V performance, add SIMD instructions (and hardware) – V extension:
+
+- `vadd vd, vs1, vs2`
+# Great Idea \#3: Principle of Locality
 
 ## Caches
 
@@ -625,22 +745,146 @@ How to categorize misses:
 
 AMAT = Hit Time $+$ Miss Penalty $\times$ Miss Rate
 
-???+ note "Details"
-	
-    Why not "Hit Time $\times$ Hit Rate $+$ Miss Time $\times$ Miss Rate"?
-    
-    AMAT = Hit Time $\times$ (1 $-$ Miss Rate) + (Miss Penalty $-$ Hit Time) $\times$ Miss Rate
+> [!summary]+
+> 
+>  Why not "Hit Time $\times$ Hit Rate $+$ Miss Time $\times$ Miss Rate"?
+>  
+>  AMAT = Hit Time $\times$ (1 $-$ Miss Rate) + (Miss Penalty $-$ Hit Time) $\times$ Miss Rate
 
-???+ note "Summary"
-	
-    Big Idea: If something is expensive but we want to do it repeatedly, do it once and cache the result
-    
-    Cache Design Choices:
-    - size of cache: speed vs. capacity
-    - block size
-    - write policy
-    - associativity choice of N
-    - block replacement policy
-    - 2nd level cache
-    - 3rd level cache
+> [!summary]+
+> 
+>  Big Idea: If something is expensive but we want to do it repeatedly, do it once and cache the result
+>  
+>  Cache Design Choices:
+>  - size of cache: speed vs. capacity
+>  - block size
+>  - write policy
+>  - associativity choice of N
+>  - block replacement policy
+>  - 2nd level cache
+>  - 3rd level cache
 
+## OS
+
+### Basics
+
+What does OS do?
+
+- OS is the first thing that runs when computer starts
+- Finds and controls all devices in the machine in a general way
+- Starts services
+- Loads, runs and manages programs
+
+What does the core of OS do?
+
+- Provides *isolation* between running processes
+- Provides *interaction* with the outside world
+
+What does OS need from hardware?
+
+- Memory translation
+- Protection and privilege
+	- Split the processor into at least two modes: "User" and "Supervisor"
+	- Lesser privilege cannot change its memory mapping
+- Traps & Interrupts
+	- A way of going into supervisor mode on demand
+
+What happens at boot?
+
+1. BIOS[^1]: Find a storage device and loads the first sector
+2. Bootloader: Load the OS kernel from disk into a location in memory and jump into it
+3. Init: Launch an application that waits for input in loop (e.g., Terminal/Desktop/...)
+4. OS Boot: Initialize services, drivers, etc.
+
+[^1]: BIOS: Basic Input Output System
+
+### OS Functions
+
+Refer to the lecture [slides](https://inst.eecs.berkeley.edu/~cs61c/fa20/pdfs/lectures/lec28.pdf).
+
+### Virtual Memory
+
+![[Screenshot 2024-02-26 at 21.59.28.png|Hierarchy]]
+
+![[Screenshot 2024-02-26 at 22.01.01.png]]
+
+- Processes uses virtual addresses
+- Memory uses physical addresses
+
+Address space = set of addresses for all available memory locations.
+
+Responsibilities of memory manager:
+
+1. Map virtual to physical addresses
+2. Protection: isolate memory between processes
+3. Swap memory to disk: give illusions of larger memory by storing some contents on disk
+
+Physical memory (DRAM) is broken into pages:
+
+![[Screenshot 2024-02-26 at 22.20.39.png]]
+
+Paged memory translation:
+
+- OS keeps track of active processes
+- Memory manager extracts page number from virtual address
+- Looks up page address in page table
+- Computes physical memory address from sum of
+	- page address and
+	- offset (from virtual address)
+
+> [!note]+ 
+> Physical addresses may have more or fewer bits than virtual addresses.
+
+Since a page table is too large for a cache, so we have to store it in memory (DRAM, acts like caches for disk). To minimize performance penalty, we can:
+
+- Transfer blocks (not words) between DRAM and caches
+- Use a cache for frequently accessed page table entries
+
+Refer to [slides](https://inst.eecs.berkeley.edu/~cs61c/fa20/pdfs/lectures/lec30.pdf).
+
+### I/O
+
+Interface options:
+
+1. Special I/O instructions
+2. Memory mapped I/O
+	- Use normal load/store instructions
+
+I/O polling:
+
+- Device registers:
+	- Control register
+	- Data register
+- Processor reads from control register in loop
+- then loads from (input) / writes to (output) data register
+- Procedure called "polling"
+
+Polling wastes processor resources, there is an alternative called "interrupts":
+
+- No I/O activity: nothing to do
+- Lots of I/O: expensive - thrashing cashes, VM, saving/restoring state
+
+When there is low data rate, we use interrputs. While there's high data rate, we start with interrupts, then switch to Direct Memory Access (DMA).
+
+The DMA allows I/O devices to directly read/write main memory, introducing a new hardware called *DMA engine* to let CPU execute other instructions.
+
+- Incoming data
+	- Receive interrupt from device
+	- CPU takes interrupt, initiates transfer
+	- Device/DMA engine handle the transfer
+		- CPU is free to execute other things
+	- Upon completion, device/DMA engine interrupts the CPU again
+- Outging data
+	- CPU decides to initiate transfer, confirms that external device is ready
+	- CPU begins transfer
+	- Device/DMA engine handle the transfer
+	- Device/DMA engine interrupt the CPU again to signal completion
+
+To plug in the DMA engine in the memory hierarchy, there are two extremes:
+
+- Between `L1$` and CPU
+	- Pro: free coherency
+	- Con: trash the CPU's working set with transferred data
+- Between Last-level cache and main memory
+	- Pro: don't mess with cache
+	- Con: need to explicitly manage coherency
