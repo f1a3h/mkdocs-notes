@@ -4,35 +4,34 @@
     "type": "split",
     "children": [
       {
-        "id": "1dfc7a099206c1d2",
+        "id": "d7b5fb2cfcd5e0c0",
         "type": "tabs",
         "children": [
           {
-            "id": "132107511eef9d4e",
+            "id": "367e8690fa667828",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_ignore/Diaries/2024/02/27.md",
-                "mode": "source",
+                "file": "Algorithm/WriteUp/Quantum Wave Speed Pass.md",
+                "mode": "preview",
                 "source": false
               }
             }
           },
           {
-            "id": "70a4f7580bd4a316",
+            "id": "8d16e3df8cfd51b3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Science/Math/Linear Algebra Done Wrong.md",
+                "file": "Computer Science/Computer Architecture/UCB CS61C.md",
                 "mode": "preview",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Science/Math/Linear Algebra Done Wrong.md",
+                "file": "Algorithm/WriteUp/Quantum Wave Speed Pass.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Science/Math/Linear Algebra Done Wrong.md",
+                "file": "Algorithm/WriteUp/Quantum Wave Speed Pass.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Science/Math/Linear Algebra Done Wrong.md"
+                "file": "Algorithm/WriteUp/Quantum Wave Speed Pass.md"
               }
             }
           },
@@ -171,53 +170,54 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "70a4f7580bd4a316",
+  "active": "367e8690fa667828",
   "lastOpenFiles": [
-    "_ignore/Diaries/2024/02/27.md",
-    "_assets/img/Screenshot 2024-02-27 at 20.45.33.png",
     "Computer Science/Computer Architecture/UCB CS61C.md",
-    "_assets/img/Screenshot 2024-02-27 at 18.33.57.png",
+    "Algorithm/WriteUp/LuoguP5539.md",
+    "Algorithm/WriteUp/Quantum Wave Speed Pass.md",
+    "Computer Science/Computer Security/Stanford CS110L.md",
+    "Computer Science/Theory of Computer Science/18.404/Automata and Language Theory.md",
+    "_assets/img/favicon.png",
+    "_assets/img/paw-256.ico",
+    "_assets/img/favicon.ico",
+    "_assets/font/SarasaGothicSC-Regular.ttf",
+    "_assets/css/admonition.css",
+    "_assets/css/font.css",
+    "Research/Research Log.md",
+    "Research/Papers/boehmeFuzzingChallengesReflections2021.md",
+    "_assets/img/Screenshot 2024-03-08 at 22.09.18.png",
+    "_assets/img/Screenshot 2024-03-08 at 22.03.33.png",
+    "_ignore/Diaries/2024/03/08 1.md",
+    "_assets/img/Screenshot 2024-03-08 at 12.55.55.png",
+    "_assets/img/Screenshot 2024-03-08 at 12.49.07.png",
+    "_assets/img/Screenshot 2024-03-08 at 09.34.44.png",
+    "_ignore/Diaries/2024/03/08.md",
+    "Research/Papers/liuYourCodeGenerated2023.md",
+    "Research/Papers/Untitled.md",
+    "Notes/Research/Papers/boehmeFuzzingChallengesReflections2021.md",
+    "Notes/Research/Papers",
+    "Notes/Research",
+    "Notes",
+    "_ignore/Diaries/2024/03/03.md",
+    "_ignore/Diaries/2024/03/07.md",
+    "_assets/img/Screenshot 2024-03-03 at 11.02.02.png",
+    "_ignore/Diaries/2024/03/02 1.md",
+    "_ignore/Diaries/2024/03/02.md",
+    "_assets/img/Screenshot 2024-03-02 at 18.23.47.png",
+    "_assets/img/Screenshot 2024-03-02 at 18.06.50.png",
+    "_ignore/Diaries/2024/03/01.md",
+    "_assets/font/zed-mono-extended.ttf",
+    "_assets/font/zed-sans-extended.ttf",
+    "Computer Science/Theory of Computer Science/18.404/index.md",
+    "_assets/img/Screenshot 2024-02-29 at 19.32.02.png",
+    "Computer Science/Math/Linear Algebra Done Wrong.md",
+    "_ignore/Diaries/2024/02/27.md",
     "Computer Science/index.md",
     "Computer Science/Theory of Computer Science/index.md",
     "Research/index.md",
-    "_assets/img/Screenshot 2024-02-26 at 22.20.39.png",
-    "_assets/img/Screenshot 2024-02-26 at 22.01.01.png",
-    "_assets/img/Screenshot 2024-02-26 at 21.59.28.png",
     "_ignore/Diaries/2024/02/26.md",
-    "Algorithm/WriteUp/Quantum Wave Speed Pass.md",
-    "Algorithm/WriteUp/LuoguP5539.md",
     "Algorithm/index.md",
-    "Algorithm/WriteUp",
     "Algorithm/ACM算法实践.md",
-    "Research/Research Log.md",
-    "Computer Science/Theory of Computer Science/18.404/1.md",
-    "Research/Papers/index.md",
-    "Computer Science/Math/Linear Algebra Done Wrong.md",
-    "_ignore/Diaries/2024/02/24.md",
-    "_ignore/Diaries/2024/02/23.md",
-    "Computer Science/Theory of Computer Science/18.404/index.md",
-    "Computer Science/Computer Network/index.md",
-    "Computer Science/Theory of Computer Science/18.404",
-    "Computer Science/Theory of Computer Science/Programming Languages/index.md",
-    "README.md",
-    "Computer Science/Math/MIT 18.330.md",
-    "_assets/img/Screenshot 2024-02-23 at 12.22.23.png",
-    "_ignore/Templates/note.md",
-    "Computer Science/Theory of Computer Science/Part 1/index.md",
-    "Computer Science/Theory of Computer Science/Part 1/Chapter 1.md",
-    "_ignore/Diaries/2024/02/21.md",
-    "_assets/js/custom.js",
-    "_assets/css/custom.css",
-    "_assets/css/custom.css.bak",
-    "_assets/img/Screenshot 2024-02-20 at 17.27.16.png",
-    "_assets/font/LXGWBrightGB-Regular.ttf",
-    "_assets/font/MapleMono-VF 1.otf",
-    "_assets/font/MapleMono-VF.otf",
-    "_assets/font",
-    "_assets/img/XilmO_夕末_110221098_粼_0.png",
-    "Computer Science/Computer Network/CNATDA",
-    "_assets/img/favicon.svg",
-    "_ignore/Diaries/2024/02/Bangumi年鉴.png",
     "Ignore/Plans/2024/02/Untitled.canvas",
     "Untitled.canvas"
   ]

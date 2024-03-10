@@ -19,12 +19,17 @@
         {
           "type": "file",
           "ctime": 1708763745860,
-          "path": "Computer Science/Theory of Computer Science/18.404/1.md"
+          "path": "Computer Science/Theory of Computer Science/18.404/Automata and Language Theory.md"
         },
         {
           "type": "file",
           "ctime": 1708763745860,
           "path": "Computer Science/Math/Linear Algebra Done Wrong.md"
+        },
+        {
+          "type": "file",
+          "ctime": 1709974234324,
+          "path": "Computer Science/Computer Architecture/UCB CS61C.md"
         }
       ],
       "title": "csdiy"

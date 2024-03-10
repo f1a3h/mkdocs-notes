@@ -1,6 +1,6 @@
 {
   "database": "Zotero",
-  "noteImportFolder": "Notes/Research/Papers",
+  "noteImportFolder": "Research/Papers",
   "pdfExportImageDPI": 120,
   "pdfExportImageFormat": "jpg",
   "pdfExportImageQuality": 90,
@@ -14,14 +14,14 @@
   "exportFormats": [
     {
       "name": "Import Zotero Note",
-      "outputPathTemplate": "Notes/Research/Papers/{{citekey}}.md",
+      "outputPathTemplate": "Research/Papers/{{citekey}}.md",
       "imageOutputPathTemplate": "Assets/{{citekey}}/",
       "imageBaseNameTemplate": "image",
       "cslStyle": "apa",
-      "templatePath": "Ignore/Templates/zotero_integration.md"
+      "templatePath": "_ignore/Templates/zotero_integration.md"
     }
   ],
   "citeSuggestTemplate": "[[{{citekey}}]]",
-  "openNoteAfterImport": false,
+  "openNoteAfterImport": true,
   "whichNotesToOpenAfterImport": "first-imported-note"
 }

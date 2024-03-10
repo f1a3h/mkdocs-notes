@@ -24,11 +24,11 @@ tags:
     - Memory safety issues
         - Overflow: buffer overflow, integer overflow, etc.
         - Valgrind is unable to find leaks resulted by buffer overflow.
-- Why not use GC’ed languages
+- Why not use GC'ed languages
     - Expensive
         - No matter what type of GC is used, there will always be nontrivial memory overhead.
     - Disruptive
-        - Drop whatever you’re doing - it’s time for GC!
+        - Drop whatever you're doing - it's time for GC!
     - Non-deterministic
         - Nobody knows when will the next GC pause be. Depends on how much money is being used.
     - Precludes manual optimization
@@ -101,7 +101,7 @@ Check out the official [lecture notes](https://reberhardt.com/cs110l/spring-2020
     - Caution: you can have memory leaks if you create reference cycles
 - `RefCell<T>`
     - Allows us to have shared references to the cell with mutability
-    - Its `new` function doesn’t heap allocate
+    - Its `new` function doesn't heap allocate
     - This is still safe because it will enforce the reference rules at runtime, which results in additional cost
     - Common pattern: `Rc<RefCell<T>>`
 
@@ -109,13 +109,13 @@ Check out the official [lecture notes](https://reberhardt.com/cs110l/spring-2020
 
 [lecture-07.pdf](https://reberhardt.com/cs110l/spring-2020/slides/lecture-07.pdf)
 
-- Don’t call `fork()`
+- Don't call `fork()`
     - Why fork?
         - Get concurrent execution
             - Accidentally nesting forks when spawning multiple child processes
-            - Children can execute code they weren’t supposed to
+            - Children can execute code they weren't supposed to
             - Accessing data structure during threading
-            - Failure to clean up zombie children if `waitpid()` isn’t called
+            - Failure to clean up zombie children if `waitpid()` isn't called
         - Invoke external functionality on the system
             - Almost every `fork()` is followed by an `exec()`
     - Common multiprocessing tactic
@@ -126,7 +126,7 @@ Check out the official [lecture notes](https://reberhardt.com/cs110l/spring-2020
         - No concurrency: run (without swallowing output), and get the status code
         - With concurrency: spawn and immediately return
         - `pre_exec()` function
-- Don’t call `pipe()`
+- Don't call `pipe()`
     - Problems
         - Leaked file descriptors
         - Use-after-close
@@ -139,6 +139,6 @@ Check out the official [lecture notes](https://reberhardt.com/cs110l/spring-2020
 
 [lecture-08.pdf](https://reberhardt.com/cs110l/spring-2020/slides/lecture-08.pdf)
 
-- Don’t call `signal()`
+- Don't call `signal()`
     - `signal()` is dead. Long live `sigaction()`
-        - The only portable use of `signal()` is to set a signal’s disposition to `SIG_DFL` or `SIG_IGN`
+        - The only portable use of `signal()` is to set a signal's disposition to `SIG_DFL` or `SIG_IGN`

@@ -511,7 +511,7 @@ A hazard is a situation that prevents starting the next instruction in the next 
 
 ![[Screenshot 2024-02-27 at 18.33.57.png]]
 
-### SIMD Architectures
+### Instruction-Level
 
 To improve performance, Intel's SIMD instructions:
 
@@ -619,6 +619,96 @@ Programming in C, we can use Intel SSE intrinsics, which are C functions and pro
 To improve RISC-V performance, add SIMD instructions (and hardware) – V extension:
 
 - `vadd vd, vs1, vs2`
+
+### Thread-Level
+
+#### Multicore
+
+Multiprocessor execution model:
+
+- Each processor (core) executes its own instructions
+- Separate resources:
+	- datapath
+	- highest level caches
+- Shared resources:
+	- memory (DRAM)
+		- Advantages:
+			- simplifies communication in program via shared variables
+		- Drawbacks:
+			- does not scale well
+				- "slow" memory shared by too many "customers" (cores)
+				- may become bottleneck
+	- often 3rd level cache
+- Nomenclature:
+	- "multiprocessor microprocessor"
+	- multicore processor
+
+#### Thread
+
+- *Thread*: "thread of execution", is a single stream of instructions.
+- With a single core, a single CPU can execute many threads by *time sharing*.
+	- ![[Screenshot 2024-03-02 at 18.06.50.png]]
+- Each thread has:
+	- dedicated program counter
+	- separate registers
+	- accesses the shared memory
+- Each physical core provides one:
+	- *hardware threads* that actively execute instructions
+	- each executes one "hardware instructions"
+- OS multiplexes multiple:
+	- *software threads* onto the available hardware threads
+	- all threads except those mapped to hardware threads are waiting
+
+#### Multithreading
+
+When an active thread encounters cache miss, we switch out to execute another thread. However, saving the current state and loading the new state can be expensive. As a result, we consider asking hardware for help. And Moore's Law tells us that transistors are plenty.
+
+Then, we came up with hardware assisted software multithreading. We simply make two copies of PC and registers inside processor hardware, this makes it looks identical to two processors. Thus we now have *hyper-threading* (aka simultaneously multithreading, SMT), which means that both threads can be active simultaneously.
+
+![[Screenshot 2024-03-02 at 18.23.47.png]]
+
+PS: MIMD is thread-level parallelism, while SIM is instruction-level.
+
+OpenMP's Fork-Join Model:
+
+![[Screenshot 2024-03-03 at 11.02.02.png]]
+
+Note that OpenMP threads are operating system (software) threads, and OS will multiplex requested OpenMP threads onto available hardware threads. Hopefully each gets a real hardware thread to run on, so there will be no OS-level time-multiplexing. However, others tasks will compete for hardware threads, so be careful when timing result for projects.
+
+#### Synchronization
+
+To solve the problem that different threads could be "racing" for shared resources which will lead to a nondeterministic result, computers use locks to control access, which relies on hardware synchronization instructions.
+
+- Solution: Atomic read/write
+	- R-Type instruction format: `Add`, `And`, ...
+	- ![[Screenshot 2024-03-08 at 09.34.44.png]]
+	- `amoadd.w rd, rs2, (rs1)`
+
+Deadlock: a system state in which no progress is possible.
+
+- Solution: elapsed wall clock time
+
+#### Shared Memory and Caches
+
+SMP: (Shared Meomory) Symmetric Multiprocessor
+
+![[Screenshot 2024-03-08 at 12.49.07.png]]
+
+How does hardware keep caches coherent?
+
+- Each cache tracks state of each *block* in cache:
+	- **Shared**: up-to-date data, other caches may have a copy
+	- **Modified**: up-to-date data, changed (dirty), no other cache has a copy, OK to write, memory out-of-date (i.e., write back)
+	- **Exclusive**: up-to-date data, no other cache has a copy, OK to write, memory up-to-date
+	- **Owner**: up-to-date data, other caches may have a copy (they must be in Shared state)
+
+![[Screenshot 2024-03-08 at 12.55.55.png]]
+
+Coherency Tracked by Cache Block:
+
+- *false sharing*: block ping-pongs between two caches even though processors are accessing disjoint variables
+- 4th "C" of cache misses: *Coherence Misses*
+
 # Great Idea \#3: Principle of Locality
 
 ## Caches

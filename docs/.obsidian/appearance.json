@@ -1,8 +1,8 @@
 {
   "accentColor": "",
   "monospaceFontFamily": "JetBrainsMono Nerd Font,Input,CaskaydiaCove Nerd Font,FiraCode Nerd Font",
-  "textFontFamily": "LXGW Bright GB,Maple Mono,JetBrains Mono,Lucida Grande,Crimson,LXGW WenKai Screen R",
-  "interfaceFontFamily": "Lucida Grande,Merriweather Sans,Crimson,PingFang SC",
+  "textFontFamily": "Zed Sans Extended,LXGW WenKai Screen R,LXGW Bright GB,Maple Mono,Lucida Grande,Crimson",
+  "interfaceFontFamily": "Zed Sans Extended,Lucida Grande,Merriweather Sans,Crimson,PingFang SC",
   "theme": "moonstone",
   "cssTheme": "Things"
 }

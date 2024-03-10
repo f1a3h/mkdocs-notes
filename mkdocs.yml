@@ -12,7 +12,7 @@ theme:
   name: 'material'
   language: 'en'
   icon: 
-    logo: material/lambda
+    logo: fontawesome/solid/fish-fins
     repo: fontawesome/brands/github-alt
     admonition:
       info: fontawesome/solid/anchor
@@ -26,7 +26,7 @@ theme:
       bug: fontawesome/solid/robot
       example: fontawesome/solid/flask
       quote: fontawesome/solid/link
-  favicon: _assets/img/favicon.svg
+  favicon: _assets/img/favicon.png
   custom_dir: overrides
   features:
     - content.code.annotate
@@ -38,16 +38,20 @@ theme:
     - search.highlight
     - search.share
   font:
-    text: MapleMono, LXGW WenKai Screen
+    text: 
     code: JetBrains Mono
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
+      primary: cyan
+      accent: cyan
       toggle:
         icon: material/toggle-switch 
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: orange
+      accent: orange
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to light mode
@@ -55,7 +59,7 @@ theme:
 markdown_extensions:
   - toc:
       permalink: true
-      toc_depth: 5
+      toc_depth: 10
   - meta
   - abbr
   - nl2br
@@ -128,8 +132,10 @@ extra_css:
   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
   - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
   - _assets/css/tasklist.css
-  - _assets/css/custom.css
+  # - _assets/css/custom.css
   - _assets/css/flink.css
+  - _assets/css/font.css
+  - _assets/css/admonition.css
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
 
 extra_javascript:

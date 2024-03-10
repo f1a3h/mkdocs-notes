@@ -6,11 +6,11 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "😜",
+      "😔",
       "😢",
       "LiClipboardSignature",
-      "LiArrowUpZA",
-      "FasArrowUpAZ",
-      "LiLock"
+      "LiArrowUpZA"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -50,5 +50,7 @@
   "Computer Science/Computer Security": "LiLock",
   "Algorithm/String": "LiArrowUpZA",
   "Algorithm/WriteUp": "LiClipboardSignature",
-  "_ignore/Diaries/2024/02/26.md": "😢"
+  "_ignore/Diaries/2024/02/26.md": "😢",
+  "_ignore/Diaries/2024/03/07.md": "😔",
+  "_ignore/Diaries/2024/03/03.md": "😜"
 }
