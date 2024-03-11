@@ -6,32 +6,32 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Finite automata, regular expressions, push-down automata, context-free grammars, pumping lemmas">
+        <meta name="description" content="Introduction to the Theory of Computation">
       
       
       
-        <link rel="canonical" href="https://note.f1a3h.com/Computer%20Science/Theory%20of%20Computer%20Science/18.404/Automata%20and%20Language%20Theory/">
+        <link rel="canonical" href="https://note.f1a3h.com/Computer%20Science/Theory%20of%20Computer%20Science/MIT%2018.404/">
       
       
-        <link rel="prev" href="../../">
+        <link rel="prev" href="Automata%20and%20Language%20Theory/">
       
       
-        <link rel="next" href="../">
+        <link rel="next" href="../Programming%20Languages/">
       
       
-      <link rel="icon" href="../../../../_assets/img/favicon.png">
+      <link rel="icon" href="../../../_assets/img/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
     
     
       
-        <title>Automata and Language Theory - f1a3h's Notebook</title>
+        <title>Introduction to the Theory of Computation - f1a3h's Notebook</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.7e359304.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e359304.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -94,17 +94,19 @@
     
       <link rel="stylesheet" href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css">
     
-      <link rel="stylesheet" href="../../../../_assets/css/tasklist.css">
+      <link rel="stylesheet" href="../../../_assets/css/tasklist.css">
     
-      <link rel="stylesheet" href="../../../../_assets/css/flink.css">
+      <link rel="stylesheet" href="../../../_assets/css/custom.css">
     
-      <link rel="stylesheet" href="../../../../_assets/css/font.css">
+      <link rel="stylesheet" href="../../../_assets/css/flink.css">
     
-      <link rel="stylesheet" href="../../../../_assets/css/admonition.css">
+      <link rel="stylesheet" href="../../../_assets/css/font.css">
+    
+      <link rel="stylesheet" href="../../../_assets/css/admonition.css">
     
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -129,11 +131,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#regular-languages" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -144,7 +141,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="f1a3h&#39;s Notebook" class="md-header__button md-logo" aria-label="f1a3h's Notebook" data-md-component="logo">
+    <a href="../../.." title="f1a3h&#39;s Notebook" class="md-header__button md-logo" aria-label="f1a3h's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M275.2 38.4c-10.6-8-25-8.5-36.3-1.5S222 57.3 224.6 70.3l9.7 48.6c-19.4 9-36.9 19.9-52.4 31.5-15.3 11.5-29 23.9-40.7 36.3l-93.1-54.3c-12.5-7.3-28.4-5.3-38.6 4.9s-12.5 26-5.3 38.6L50 256 4.2 336.1c-7.2 12.6-5 28.4 5.3 38.6s26.1 12.2 38.6 4.9l93.1-54.3c11.8 12.3 25.4 24.8 40.7 36.3 15.5 11.6 33 22.5 52.4 31.5l-9.7 48.6c-2.6 13 3.1 26.3 14.3 33.3s25.6 6.5 36.3-1.5l77.6-58.2c54.9-4 101.5-27 137.2-53.8 39.2-29.4 67.2-64.7 81.6-89.5 5.8-9.9 5.8-22.2 0-32.1-14.4-24.8-42.5-60.1-81.6-89.5-35.8-26.8-82.3-49.8-137.2-53.8l-77.6-58.2zM384 256a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>
@@ -164,7 +161,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Automata and Language Theory
+              Introduction to the Theory of Computation
             
           </span>
         </div>
@@ -276,7 +273,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -297,7 +294,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
     
@@ -317,7 +314,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../Research/Learning%20Research/" class="md-tabs__link">
+        <a href="../../../Research/Learning%20Research/" class="md-tabs__link">
           
   
     
@@ -337,7 +334,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../Algorithm/ACM%E7%AE%97%E6%B3%95%E5%AE%9E%E8%B7%B5/" class="md-tabs__link">
+        <a href="../../../Algorithm/ACM%E7%AE%97%E6%B3%95%E5%AE%9E%E8%B7%B5/" class="md-tabs__link">
           
   
     
@@ -357,7 +354,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../ACG/" class="md-tabs__link">
+        <a href="../../../ACG/" class="md-tabs__link">
           
   
     
@@ -392,7 +389,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="f1a3h&#39;s Notebook" class="md-nav__button md-logo" aria-label="f1a3h's Notebook" data-md-component="logo">
+    <a href="../../.." title="f1a3h&#39;s Notebook" class="md-nav__button md-logo" aria-label="f1a3h's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M275.2 38.4c-10.6-8-25-8.5-36.3-1.5S222 57.3 224.6 70.3l9.7 48.6c-19.4 9-36.9 19.9-52.4 31.5-15.3 11.5-29 23.9-40.7 36.3l-93.1-54.3c-12.5-7.3-28.4-5.3-38.6 4.9s-12.5 26-5.3 38.6L50 256 4.2 336.1c-7.2 12.6-5 28.4 5.3 38.6s26.1 12.2 38.6 4.9l93.1-54.3c11.8 12.3 25.4 24.8 40.7 36.3 15.5 11.6 33 22.5 52.4 31.5l-9.7 48.6c-2.6 13 3.1 26.3 14.3 33.3s25.6 6.5 36.3-1.5l77.6-58.2c54.9-4 101.5-27 137.2-53.8 39.2-29.4 67.2-64.7 81.6-89.5 5.8-9.9 5.8-22.2 0-32.1-14.4-24.8-42.5-60.1-81.6-89.5-35.8-26.8-82.3-49.8-137.2-53.8l-77.6-58.2zM384 256a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>
@@ -422,7 +419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -460,6 +457,8 @@
       
         
       
+        
+      
     
     
       
@@ -478,7 +477,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -555,7 +554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer%20Architecture/UCB%20CS61C/" class="md-nav__link">
+      <a href="../../Computer%20Architecture/UCB%20CS61C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -599,7 +598,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Computer%20Architecture/CSAPP/" class="md-nav__link ">
+            <a href="../../Computer%20Architecture/CSAPP/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -630,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer%20Architecture/CSAPP/Chapter%202/" class="md-nav__link">
+      <a href="../../Computer%20Architecture/CSAPP/Chapter%202/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -692,7 +691,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Computer%20Network/" class="md-nav__link ">
+            <a href="../../Computer%20Network/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -756,7 +755,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Computer%20Network/CNATDA/" class="md-nav__link ">
+            <a href="../../Computer%20Network/CNATDA/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -787,7 +786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer%20Network/CNATDA/Chapter%202/" class="md-nav__link">
+      <a href="../../Computer%20Network/CNATDA/Chapter%202/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -808,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer%20Network/CNATDA/Chapter%203/" class="md-nav__link">
+      <a href="../../Computer%20Network/CNATDA/Chapter%203/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -829,7 +828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer%20Network/CNATDA/Chapter%204/" class="md-nav__link">
+      <a href="../../Computer%20Network/CNATDA/Chapter%204/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -850,7 +849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer%20Network/CNATDA/Chapter%205/" class="md-nav__link">
+      <a href="../../Computer%20Network/CNATDA/Chapter%205/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -871,7 +870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer%20Network/CNATDA/Chapter%206/" class="md-nav__link">
+      <a href="../../Computer%20Network/CNATDA/Chapter%206/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -952,7 +951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer%20Security/Stanford%20CS110L/" class="md-nav__link">
+      <a href="../../Computer%20Security/Stanford%20CS110L/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -961,6 +960,141 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Electronics/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Electronics
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Electronics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_2" id="__nav_2_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    数字电路与逻辑设计
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            数字电路与逻辑设计
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Electronics/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E4%B8%8E%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1/Ch.2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第2章 逻辑代数基础
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -999,10 +1133,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
         
           
-          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1013,8 +1147,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
             Math
           </label>
@@ -1027,7 +1161,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Math/Linear%20Algebra%20Done%20Wrong/" class="md-nav__link">
+      <a href="../../Math/Linear%20Algebra%20Done%20Wrong/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1048,7 +1182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Math/MIT%2018.330/" class="md-nav__link">
+      <a href="../../Math/MIT%2018.330/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1069,7 +1203,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Math/%E8%B0%A2%E6%83%A0%E6%B0%91%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+      <a href="../../Math/%E8%B0%A2%E6%83%A0%E6%B0%91%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1120,12 +1254,12 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1136,14 +1270,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_7">
             <span class="md-nav__icon md-icon"></span>
             Theory of Computer Science
           </label>
@@ -1178,32 +1312,32 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_2" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   <span class="md-ellipsis">
-    18.404
+    MIT 18.404
   </span>
   
 
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2_6_2" id="__nav_2_6_2_label" tabindex="0">
+              <label class="md-nav__link md-nav__link--active" for="__nav_2_7_2" id="__nav_2_7_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_6_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_7_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_7_2">
             <span class="md-nav__icon md-icon"></span>
-            18.404
+            MIT 18.404
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1211,28 +1345,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Automata and Language Theory
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="Automata%20and%20Language%20Theory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1241,99 +1357,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#regular-languages" class="md-nav__link">
-    <span class="md-ellipsis">
-      Regular Languages
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Regular Languages">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#finite-automata" class="md-nav__link">
-    <span class="md-ellipsis">
-      Finite Automata
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nondeterminism" class="md-nav__link">
-    <span class="md-ellipsis">
-      Nondeterminism
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#regular-expressions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Regular Expressions
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nonregular-languages" class="md-nav__link">
-    <span class="md-ellipsis">
-      Nonregular Languages
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#context-free-languages" class="md-nav__link">
-    <span class="md-ellipsis">
-      Context-Free Languages
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Context-Free Languages">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#context-free-grammars" class="md-nav__link">
-    <span class="md-ellipsis">
-      Context-Free Grammars
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1364,6 +1387,8 @@
       
         
       
+        
+      
     
     
       
@@ -1374,12 +1399,12 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_3" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Programming%20Languages/" class="md-nav__link ">
+            <a href="../Programming%20Languages/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1390,14 +1415,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2_6_3" id="__nav_2_6_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2_7_3" id="__nav_2_7_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_6_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7_3">
             <span class="md-nav__icon md-icon"></span>
             Programming Languages
           </label>
@@ -1442,12 +1467,12 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_3_2" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/" class="md-nav__link ">
+            <a href="../Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1458,14 +1483,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2_6_3_2" id="__nav_2_6_3_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2_7_3_2" id="__nav_2_7_3_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_6_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_6_3_2">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_7_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7_3_2">
             <span class="md-nav__icon md-icon"></span>
             NJU 软件分析
           </label>
@@ -1478,7 +1503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/CFL-Reachability%20and%20IFDS/" class="md-nav__link">
+      <a href="../Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/CFL-Reachability%20and%20IFDS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1499,7 +1524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Data%20Flow%20Analysis/" class="md-nav__link">
+      <a href="../Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Data%20Flow%20Analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1520,7 +1545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Datalog/" class="md-nav__link">
+      <a href="../Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Datalog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1541,7 +1566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Interprocedural%20Analysis/" class="md-nav__link">
+      <a href="../Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Interprocedural%20Analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1562,7 +1587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Pointer%20Analysis/" class="md-nav__link">
+      <a href="../Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Pointer%20Analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1583,7 +1608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Soundness%20and%20Soundiness/" class="md-nav__link">
+      <a href="../Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Soundness%20and%20Soundiness/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1604,11 +1629,96 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Static%20Analysis%20for%20Security/" class="md-nav__link">
+      <a href="../Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Static%20Analysis%20for%20Security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Static Analysis for Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_3_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Programming%20Languages/Stanford%20CS242/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Stanford CS242
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_7_3_3" id="__nav_2_7_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_7_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Stanford CS242
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Programming%20Languages/Stanford%20CS242/Syntax%20and%20Semantics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Syntax and Semantics
   </span>
   
 
@@ -1685,7 +1795,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Research/" class="md-nav__link ">
+            <a href="../../../Research/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1716,7 +1826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Research/Learning%20Research/" class="md-nav__link">
+      <a href="../../../Research/Learning%20Research/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1737,7 +1847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Research/Research%20Log/" class="md-nav__link">
+      <a href="../../../Research/Research%20Log/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1785,7 +1895,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Research/Papers/" class="md-nav__link ">
+            <a href="../../../Research/Papers/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1816,7 +1926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Research/Papers/boehmeFuzzingChallengesReflections2021/" class="md-nav__link">
+      <a href="../../../Research/Papers/boehmeFuzzingChallengesReflections2021/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1839,7 +1949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Research/Papers/liuYourCodeGenerated2023/" class="md-nav__link">
+      <a href="../../../Research/Papers/liuYourCodeGenerated2023/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1906,7 +2016,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Algorithm/" class="md-nav__link ">
+            <a href="../../../Algorithm/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1937,7 +2047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Algorithm/ACM%E7%AE%97%E6%B3%95%E5%AE%9E%E8%B7%B5/" class="md-nav__link">
+      <a href="../../../Algorithm/ACM%E7%AE%97%E6%B3%95%E5%AE%9E%E8%B7%B5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1960,7 +2070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Algorithm/%E5%8F%8C%E5%90%91%E6%90%9C%E7%B4%A2/" class="md-nav__link">
+      <a href="../../../Algorithm/%E5%8F%8C%E5%90%91%E6%90%9C%E7%B4%A2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2029,7 +2139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Algorithm/Math/Miller%20Rabin/" class="md-nav__link">
+      <a href="../../../Algorithm/Math/Miller%20Rabin/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2050,7 +2160,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Algorithm/Math/gcd%20%26%26%20lcm/" class="md-nav__link">
+      <a href="../../../Algorithm/Math/gcd%20%26%26%20lcm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2071,7 +2181,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Algorithm/Math/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/" class="md-nav__link">
+      <a href="../../../Algorithm/Math/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2092,7 +2202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Algorithm/Math/%E5%BF%AB%E9%80%9F%E5%B9%82/" class="md-nav__link">
+      <a href="../../../Algorithm/Math/%E5%BF%AB%E9%80%9F%E5%B9%82/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2165,7 +2275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Algorithm/String/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/" class="md-nav__link">
+      <a href="../../../Algorithm/String/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2186,7 +2296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Algorithm/String/Manacher/" class="md-nav__link">
+      <a href="../../../Algorithm/String/Manacher/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2259,7 +2369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Algorithm/WriteUp/LuoguP5539/" class="md-nav__link">
+      <a href="../../../Algorithm/WriteUp/LuoguP5539/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2280,7 +2390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Algorithm/WriteUp/Quantum%20Wave%20Speed%20Pass/" class="md-nav__link">
+      <a href="../../../Algorithm/WriteUp/Quantum%20Wave%20Speed%20Pass/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2343,7 +2453,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../ACG/" class="md-nav__link ">
+            <a href="../../../ACG/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2418,7 +2528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ACG/Comics/%E8%91%AC%E9%80%81%E3%81%AE%E3%83%95%E3%83%AA%E3%83%BC%E3%83%AC%E3%83%B3/" class="md-nav__link">
+      <a href="../../../ACG/Comics/%E8%91%AC%E9%80%81%E3%81%AE%E3%83%95%E3%83%AA%E3%83%BC%E3%83%AC%E3%83%B3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2491,7 +2601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ACG/Game/%E5%A1%9E%E5%B0%94%E8%BE%BE%E4%BC%A0%E8%AF%B4%EF%BC%9A%E6%97%B7%E9%87%8E%E4%B9%8B%E6%81%AF/" class="md-nav__link">
+      <a href="../../../ACG/Game/%E5%A1%9E%E5%B0%94%E8%BE%BE%E4%BC%A0%E8%AF%B4%EF%BC%9A%E6%97%B7%E9%87%8E%E4%B9%8B%E6%81%AF/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2512,7 +2622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ACG/Game/%E6%A8%B1%E4%B9%8B%E8%AF%97/" class="md-nav__link">
+      <a href="../../../ACG/Game/%E6%A8%B1%E4%B9%8B%E8%AF%97/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2583,7 +2693,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ACG/Novel/%E9%92%A2%E9%93%81%E4%B9%8B%E7%BF%BC/" class="md-nav__link">
+      <a href="../../../ACG/Novel/%E9%92%A2%E9%93%81%E4%B9%8B%E7%BF%BC/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2630,89 +2740,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#regular-languages" class="md-nav__link">
-    <span class="md-ellipsis">
-      Regular Languages
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Regular Languages">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#finite-automata" class="md-nav__link">
-    <span class="md-ellipsis">
-      Finite Automata
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nondeterminism" class="md-nav__link">
-    <span class="md-ellipsis">
-      Nondeterminism
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#regular-expressions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Regular Expressions
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nonregular-languages" class="md-nav__link">
-    <span class="md-ellipsis">
-      Nonregular Languages
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#context-free-languages" class="md-nav__link">
-    <span class="md-ellipsis">
-      Context-Free Languages
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Context-Free Languages">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#context-free-grammars" class="md-nav__link">
-    <span class="md-ellipsis">
-      Context-Free Grammars
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2729,238 +2756,12 @@
   
 
 
-  <h1>Automata and Language Theory</h1>
+  <h1>Introduction to the Theory of Computation</h1>
 
-<details class="key points">
-<summary>Key</summary>
-<p>Finite automata, regular expressions, push-down automata, context-free grammars, pumping lemmas.</p>
-</details>
-<h2 id="regular-languages">Regular Languages<a class="headerlink" href="#regular-languages" title="Permanent link">&para;</a></h2>
-<h3 id="finite-automata">Finite Automata<a class="headerlink" href="#finite-automata" title="Permanent link">&para;</a></h3>
-<p>对于内存容量极小的 computers 来说，finite automata 是一个很好的 model。</p>
-<p><img alt="Screenshot 2024-02-23 at 12.22.23.png" src="../../../../_assets/img/Screenshot%202024-02-23%20at%2012.22.23.png" /></p>
-<p>一个 finite automata 由以下 3 个部分组成：</p>
-<ul>
-<li>input: finite string</li>
-<li>out: <code>Accept</code> or <code>Reject</code></li>
-<li>computation process: 从 start state 开始，读入 input symbols，进行相应的 transition，如果以 accept state 结束则输出 <code>Accept</code> 否则输出 <code>Reject</code></li>
-</ul>
-<p>能让 finite automata <span class="arithmatex">\(M_1\)</span> accept 的 strings 的集合记为 <span class="arithmatex">\(A\)</span>，我们称 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(M_1\)</span> 的语言 (language)，<span class="arithmatex">\(M_1\)</span> 可以识别 (recognize) <span class="arithmatex">\(A\)</span>，<span class="arithmatex">\(A=L(M_1)\)</span> 。</p>
-<p>对 finite automata 的 formal definition 如下：</p>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p>A finite automaton <span class="arithmatex">\(M\)</span> is a 5-tuple <span class="arithmatex">\((Q, \Sigma, \delta, q_0, F)\)</span></p>
-<ol>
-<li><span class="arithmatex">\(Q\)</span>: finite set of states</li>
-<li><span class="arithmatex">\(\Sigma\)</span>: finite set of alphabet symbols</li>
-<li><span class="arithmatex">\(\delta\)</span>: transition functions <span class="arithmatex">\(\delta\colon Q\times\Sigma \to Q\)</span></li>
-<li><span class="arithmatex">\(q_0\)</span>: start state</li>
-<li><span class="arithmatex">\(F\)</span>: set of accept states</li>
-</ol>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>MIT 18.404J Theory Of Computation, Fall 2020 学习笔记</p>
 </div>
-<p>对于 string 和 languages 还有以下补充与定义：</p>
-<details class="info" open="open">
-<summary>Info</summary>
-<ul>
-<li>string 是由 <span class="arithmatex">\(\Sigma\)</span> 中的 symbols 组成的有限长序列</li>
-<li>language 是 strings 的集合 (finite or infinite)</li>
-<li>empty string <span class="arithmatex">\(\varepsilon\)</span> 是长度为 0 的 string</li>
-<li>empty language <span class="arithmatex">\(\varnothing\)</span> 是不包含 string 的集合</li>
-</ul>
-</details>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p><span class="arithmatex">\(M\)</span> accepts string <span class="arithmatex">\(w=w_1w_2\dots w_n\)</span>, each <span class="arithmatex">\(w_i\in\sigma\)</span> if there is a sequence of states <span class="arithmatex">\(r_0, r_1, r_2, \dots, r_n\in Q\)</span> where:</p>
-<ul>
-<li><span class="arithmatex">\(r_0=q_0\)</span></li>
-<li><span class="arithmatex">\(r_i=\delta(r_{i-1}, w_i) ,\forall 1\le i\le n\)</span></li>
-<li><span class="arithmatex">\(r_n\in F\)</span></li>
-</ul>
-</div>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p>A language is <em>regular</em> if some finite automaton recognizes it.</p>
-</div>
-<details class="example">
-<summary>Example</summary>
-<p><span class="arithmatex">\(C=\{ w|w \textrm{ has equal numbers of 0s and 1s} \}\)</span> 不是一个 regular language</p>
-</details>
-<details class="proof">
-<summary>Proof</summary>
-<p>把自己想象成一个 finite automata，会发现想要识别 <span class="arithmatex">\(C\)</span> 至少需要跟踪 0 和 1 的数量的差值，实际上这个差值是可能无限大的，所需要的 <span class="arithmatex">\(Q\)</span> 则是 infinite 的，因此 <span class="arithmatex">\(C\)</span> 无法被任何 finite automata 识别，所以 <span class="arithmatex">\(C\)</span> 不是一个 regular language</p>
-<p><del>非常不严谨的证明</del></p>
-</details>
-<p>arithmetic 的研究对象是 numbers，而在 theory of computation 中的研究对象则是 languages。arithmetic 有基本的 operations 来研究 numbers，相应地，我们也可以定义几种 operations 来研究 languages 的 properties。</p>
-<p>对于 languages <span class="arithmatex">\(A,B\)</span>，我们定义以下三种 operations，称为 <em>regular operations</em> :</p>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<ul>
-<li>union: <span class="arithmatex">\(A\cup B=\{w|w\in A \, \mathrm{or} \, w\in B\}\)</span> </li>
-<li>concatenation: <span class="arithmatex">\(A\circ B=\{ xy|x\in A\, \mathrm{and} \, y\in B \}=AB\)</span></li>
-<li>star: <span class="arithmatex">\(A\ast=\{ x_1\dots x_k|\mathrm{each} \, x_i\in A \,  \mathrm{for}\, k\ge 0 \}\)</span></li>
-</ul>
-</div>
-<p>可以发现对于任意 regular languages，它们的 union 和 concatenation 运算得到的仍然是 regular language.</p>
-<div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
-<p>The class of regular languages is closed under the union and concatenation operations.</p>
-</div>
-<details class="proof">
-<summary>Proof</summary>
-<p>（仅 DFA ）<br />
-显然采用构造法。</p>
-<p>Union:</p>
-<ul>
-<li><span class="arithmatex">\(M_1=(Q_1, \Sigma, \delta_1, q_1, F_1)\)</span> recognizes <span class="arithmatex">\(A_1\)</span></li>
-<li><span class="arithmatex">\(M_2=(Q_2, \Sigma, \delta_2, q_2, F_2)\)</span> recognizes <span class="arithmatex">\(A_2\)</span></li>
-<li>构造 <span class="arithmatex">\(M=(Q, \Sigma, \delta, q_0, F)\)</span> 识别 <span class="arithmatex">\(A_1\cup A_2\)</span><ul>
-<li><span class="arithmatex">\(Q=Q_1\times Q_2\)</span></li>
-<li><span class="arithmatex">\(q_0=(q_1, q_2)\)</span></li>
-<li><span class="arithmatex">\(\delta((q, r), q)=(\delta_1(q, a), \delta_2(r, a))\)</span></li>
-<li><span class="arithmatex">\(F=(F_1\times Q_2)\cup(Q_1\times F_2)\)</span></li>
-</ul>
-</li>
-</ul>
-<p>Concatenation:</p>
-<ul>
-<li>使用 DFA 没有一个简单的构造方法。</li>
-</ul>
-</details>
-<h3 id="nondeterminism">Nondeterminism<a class="headerlink" href="#nondeterminism" title="Permanent link">&para;</a></h3>
-<p><em>determinism</em>: 给定 machine 的 state，当读入下一个 symbol 时，我们可以确定下一个 state</p>
-<p>nondeterminism 是 determinism 的一种 generalization，所以每一个 nondeterministic finite automaton (NFA) 都天生是 deterministic finite automaton (DFA)。</p>
-<p><img alt="Screenshot 2024-02-29 at 19.05.08.png" src="../../../../_assets/img/Screenshot%202024-02-29%20at%2019.05.08.png" /></p>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p>A <em>nondeterministic finite automaton</em> is a 5-tuple <span class="arithmatex">\((Q, \Sigma, \delta, q_0, F)\)</span> where:</p>
-<ol>
-<li><span class="arithmatex">\(Q\)</span> is a finite set of states,</li>
-<li><span class="arithmatex">\(\Sigma\)</span> is a finite alphabet,</li>
-<li><span class="arithmatex">\(\delta\colon Q\times\Sigma_{\epsilon}\to\mathcal{P}(Q)\)</span> is the transition function,</li>
-<li><span class="arithmatex">\(q_0\in Q\)</span> is the start state, and</li>
-<li><span class="arithmatex">\(F\cup Q\)</span> is the set of accept states.</li>
-</ol>
-</div>
-<p>对比 DFA，NFA 其实保留了所有可能到达的 states，并且考虑每一个可能性，只要有一个分支被 accept，那么就说明这个 string 是可以被 accept 的，可以分别从三个角度来理解 nondeterminism：</p>
-<ul>
-<li>computational：对于可能到达的 states，每个都 fork 一个新的 parallel thread，任意一个 thread 能够到达 accept state 则 accept</li>
-<li>Mathematical：看成 tree with branches，每一条从根结点 (start state) 到叶子结点 (accept state) 都是一个 DFA</li>
-<li>Magical: 想象成 machine 在每一个 nondeterministic step 猜测要往哪个方向走，并且总是能猜测正确</li>
-</ul>
-<p>从上面的 mathematical way 结合前面提到的 union operation 的封闭性的证明，不难看出将所有分支对应的 DFA 进行 "union" 操作得到的新的 DFA 其实就是这个 NFA，也就是说，每个 NFA 都可以被转化为一个等价的 DFA。</p>
-<div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
-<p>Every nondeterministic finite automaton has an equivalent deterministic finite automaton.</p>
-</div>
-<p>进而我们可以得到以下定理：</p>
-<div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
-<p>If an NFA recognizes <span class="arithmatex">\(A\)</span> then <span class="arithmatex">\(A\)</span> is regular.</p>
-</div>
-<details class="proof">
-<summary>Proof</summary>
-<p>令 NFA <span class="arithmatex">\(M=(Q, \Sigma, \delta, q_0, F)\)</span> recognizes <span class="arithmatex">\(A\)</span>，我们需要构造能 recognize <span class="arithmatex">\(A\)</span> 的 DFA <span class="arithmatex">\(M^{\prime}=(Q^{\prime}, \Sigma, \delta^{\prime}, q_0^{\prime}, F^{\prime})\)</span></p>
-<p>Idea: DFA <span class="arithmatex">\(M^{\prime}\)</span> keeps track of <em>the subset of possible states</em> in NFA <span class="arithmatex">\(M\)</span>.</p>
-<p>Construction:</p>
-<ul>
-<li><span class="arithmatex">\(Q^{\prime}=\mathcal{P}(Q)\)</span></li>
-<li><span class="arithmatex">\(\delta^{\prime}(R, a)=\)</span></li>
-<li><span class="arithmatex">\(q_0^{\prime}=\{q_0\}\)</span></li>
-<li><span class="arithmatex">\(F^{\prime}=\{R|R\text{ intersects }F\}\)</span></li>
-</ul>
-</details>
-<p>再结合以上两个定理，我们又可以得到</p>
-<div class="admonition corollary">
-<p class="admonition-title">Corollary</p>
-<p>A language is regular if and only if some nondeterministic finite automaton recognizes it.</p>
-</div>
-<p>回到前面关于 regular operations 的封闭性的证明，有了 NFA，证明它们会更简单且直观。</p>
-<details class="proof">
-<summary>Proof</summary>
-<p>union:<br />
-<img alt="Screenshot 2024-02-29 at 19.09.10.png" src="../../../../_assets/img/Screenshot%202024-02-29%20at%2019.09.10.png" /></p>
-<p>concatenation:<br />
-<img alt="Screenshot 2024-02-29 at 19.09.52.png" src="../../../../_assets/img/Screenshot%202024-02-29%20at%2019.09.52.png" /></p>
-<p>star:<br />
-<img alt="Screenshot 2024-02-29 at 19.10.30.png" src="../../../../_assets/img/Screenshot%202024-02-29%20at%2019.10.30.png" /></p>
-</details>
-<h3 id="regular-expressions">Regular Expressions<a class="headerlink" href="#regular-expressions" title="Permanent link">&para;</a></h3>
-<p>类似于数学中用算数表达式来表示一个数字，我们也可以利用 regular operations 构造 languages 的表达式，称为 <em>regular expressions</em>.</p>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p>Say that R is a <em>regular expression</em> if R is</p>
-<ol>
-<li><span class="arithmatex">\(a\)</span> for some <span class="arithmatex">\(a\)</span> in the alphabet <span class="arithmatex">\(\Sigma\)</span>,</li>
-<li><span class="arithmatex">\(\epsilon\)</span>,</li>
-<li><span class="arithmatex">\(\varnothing\)</span>,</li>
-<li><span class="arithmatex">\(R_1\cup R_2\)</span>, where <span class="arithmatex">\(R_1\)</span> and <span class="arithmatex">\(R_2\)</span> are regular expressions,</li>
-<li><span class="arithmatex">\(R_1\circ R_2\)</span>, where <span class="arithmatex">\(R_1\)</span> and <span class="arithmatex">\(R_2\)</span> are regular expressions, or</li>
-<li><span class="arithmatex">\((R_1^{\ast})\)</span>, where <span class="arithmatex">\(R_1\)</span> is a regular expression.</li>
-</ol>
-</div>
-<p>regular expression 是 programming languages 中很重要的一个模型，当一个 PL 的 syntax 可以用 tokens 组成的 regular expressions 来表示，automatic system 就可以生成 <em>lexical analyzer</em> 来处理一个 input program.</p>
-<p>由于 regular operations 可以表示 languages，而 regular language 又可以被 NFA 定义，于是我们有</p>
-<div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
-<p>If <span class="arithmatex">\(R\)</span> is a regular expression and <span class="arithmatex">\(A=L(R)\)</span> then <span class="arithmatex">\(A\)</span> is regular.</p>
-</div>
-<details class="proof">
-<summary>Proof</summary>
-<p>将 <span class="arithmatex">\(R\)</span> 转化为一个等价的 NFA <span class="arithmatex">\(M\)</span>.</p>
-<p>Idea: regular expression 的定义是 inductive definition，于是我们同样可以利用它的定义进行 inductive proof，将复杂的证明转化为简单的几个小证明。</p>
-<p>分为两种情况证明：</p>
-<ol>
-<li>
-<p>If <span class="arithmatex">\(R\)</span> is atomic:<br />
-<img alt="Screenshot 2024-02-29 at 19.31.25.png" src="../../../../_assets/img/Screenshot%202024-02-29%20at%2019.31.25.png" /></p>
-</li>
-<li>
-<p>If <span class="arithmatex">\(R\)</span> is composite:<br />
-<img alt="Screenshot 2024-02-29 at 19.32.02.png" src="../../../../_assets/img/Screenshot%202024-02-29%20at%2019.32.02.png" /></p>
-</li>
-</ol>
-</details>
-<p>反过来也是一样的：</p>
-<div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
-<p>If <span class="arithmatex">\(A\)</span> is regular then <span class="arithmatex">\(A = L(R)\)</span> for some regular expr <span class="arithmatex">\(R\)</span>.</p>
-</div>
-<p>要证明这个定理，我们先引入 Generalized NFA (GNFA) 的概念，它应用了前一个的定理，将 regular expr 融入进 NFA 中，简化了 NFA 的形式，这也可以启发我们不断减少 NFA (GNFA) 的 states 是可以将 NFA (GNFA) 转化为 regular expr 从而也就证明了这个定理。</p>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
-<p>A <em>Generalized Nondeterministic Finite Automaton (GNFA)</em> is similar to an NFA, but allows regular expressions as transition labels.</p>
-</div>
-<details class="proof">
-<summary>Proof</summary>
-<p>考虑 induction.</p>
-<ul>
-<li>Basis (<span class="arithmatex">\(k=2\)</span>):<ul>
-<li><img alt="Screenshot 2024-03-08 at 22.03.33.png" src="../../../../_assets/img/Screenshot%202024-03-08%20at%2022.03.33.png" /></li>
-</ul>
-</li>
-<li>Induction step (<span class="arithmatex">\(k&gt;2\)</span>):<ul>
-<li>由 <span class="arithmatex">\(k-1\)</span> 增加 state 到 <span class="arithmatex">\(k\)</span> 并不方便，不妨反过来证明 <span class="arithmatex">\(k\)</span> 个 states 的 GNFA 去掉一个 state 得到的 GNFA 是等价的</li>
-<li><img alt="Screenshot 2024-03-08 at 22.09.18.png" src="../../../../_assets/img/Screenshot%202024-03-08%20at%2022.09.18.png" /></li>
-</ul>
-</li>
-</ul>
-</details>
-<h3 id="nonregular-languages">Nonregular Languages<a class="headerlink" href="#nonregular-languages" title="Permanent link">&para;</a></h3>
-<p>根据直觉来判断某个 language 是否是 regular 的是不靠谱的。<em>pumping lemma</em> 是一个 regular language 具有的必要条件，是判断 nonregular languages 的好工具。</p>
-<div class="admonition lemma">
-<p class="admonition-title">Lemma</p>
-<p>If <span class="arithmatex">\(A\)</span> is a regular language, then there is a number <span class="arithmatex">\(p\)</span> (the <em>pumping length</em>) where if <span class="arithmatex">\(s\)</span> is any string in <span class="arithmatex">\(A\)</span> of length at least <span class="arithmatex">\(p\)</span>, then <span class="arithmatex">\(s\)</span> may be divided into three pieces, <span class="arithmatex">\(s = xyz\)</span>, satisfying the following conditions:</p>
-<ol>
-<li>for each <span class="arithmatex">\(i\ge 0\)</span>, <span class="arithmatex">\(xy^i z\in A\)</span>,</li>
-<li><span class="arithmatex">\(|y|&gt;0\)</span>, and</li>
-<li><span class="arithmatex">\(|xy|\le p\)</span>.</li>
-</ol>
-</div>
-<p>注意到 finite automata 中的 "finite"，考虑 NFA 的 diagram 的形式，从 start state 到任何一个 accept state 的最长路径（存在环的话就计算一次环的长度）长度必然是有限的，取最长的长度，记为 <span class="arithmatex">\(p\)</span>，那么 <span class="arithmatex">\(p\)</span> 就是这个 NFA 的 pumping length。如果一个长度大于 <span class="arithmatex">\(p\)</span> 的 string 可以被 accept，这说明它对应的路径中必然存在环，而且这个环被计算过多次，也就是 pumping lemma 中的 <span class="arithmatex">\(y\)</span>。</p>
-<h2 id="context-free-languages">Context-Free Languages<a class="headerlink" href="#context-free-languages" title="Permanent link">&para;</a></h2>
-<p>regular languages 的力量终究还是有限的，某些规则简单的语言仍然不能被 finite automata 或 regular expr 来描述，而 context-free languages 则引入了递归的概念，这使得它的表示能力更为强大。</p>
-<p>context-free languages 在 regular languages 的基础上，附加了许多 languages。</p>
-<h3 id="context-free-grammars">Context-Free Grammars<a class="headerlink" href="#context-free-grammars" title="Permanent link">&para;</a></h3>
 
 
 
@@ -2975,59 +2776,95 @@
 
 
 
+<div id="__comments">
 
-<h2 id="__comments">Comments</h2>
-<!-- Insert generated snippet here -->
-<script
-  src="https://giscus.app/client.js"
-  data-repo="cxzhou35/notebook"
-  data-repo-id="R_kgDOI0PNYQ"
-  data-category="Announcements"
-  data-category-id="DIC_kwDOI0PNYc4CTvN5"
-  data-mapping="pathname"
-  data-strict="0"
-  data-reactions-enabled="1"
-  data-emit-metadata="0"
-  data-input-position="top"
-  data-theme="light"
-  data-lang="zh-CN"
-  data-loading="lazy"
-  crossorigin="anonymous"
-  async
-></script>
+<div class="mdx-switch">
+        <button data-md-color-primary="red"><code>red</code></button>
+        <button data-md-color-primary="pink"><code>pink</code></button>
+        <button data-md-color-primary="purple"><code>purple</code></button>
+        <button data-md-color-primary="deep-purple"><code>deep purple</code></button>
+        <button data-md-color-primary="indigo"><code>indigo</code></button>
+        <button data-md-color-primary="blue"><code>blue</code></button>
+        <button data-md-color-primary="light-blue"><code>light blue</code></button>
+        <button data-md-color-primary="cyan"><code>cyan</code></button>
+        <button data-md-color-primary="teal"><code>teal</code></button>
+        <button data-md-color-primary="green"><code>green</code></button>
+        <button data-md-color-primary="light-green"><code>light green</code></button>
+        <button data-md-color-primary="lime"><code>lime</code></button>
+        <button data-md-color-primary="yellow"><code>yellow</code></button>
+        <button data-md-color-primary="amber"><code>amber</code></button>
+        <button data-md-color-primary="orange"><code>orange</code></button>
+        <button data-md-color-primary="deep-orange"><code>deep orange</code></button>
+        <button data-md-color-primary="brown"><code>brown</code></button>
+        <button data-md-color-primary="grey"><code>grey</code></button>
+        <button data-md-color-primary="blue-grey"><code>blue grey</code></button>
+        <button data-md-color-primary="black"><code>black</code></button>
+        <button data-md-color-primary="white"><code>white</code></button>
+</div>
+
+<script>
+  var buttons = document.querySelectorAll("button[data-md-color-primary]");
+  buttons.forEach(function(button) {
+    button.addEventListener("click", function() {
+      var attr = this.getAttribute("data-md-color-primary");
+      document.body.setAttribute("data-md-color-primary", attr);
+      localStorage.setItem("data-md-color-primary",attr);
+      var name = document.querySelector("#__code_1 code span.l");
+      name.textContent = attr.replace("-", " ");
+    })
+  })
+</script>
+
+<h2 ><!-- Comments -->Comments</h2>
+
+<script src="https://giscus.app/client.js"
+        data-repo="f1a3h/mkdocs-notes"
+        data-repo-id="R_kgDOLVDcZA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOLVDcZM4Cd4pE"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+
+updateScheme();
+
+</script>
 
 <!-- Synchronize Giscus theme with palette -->
 <script>
-  var giscus = document.querySelector("script[src*=giscus]");
+var giscus = document.querySelector("script[src*=giscus]")
 
-  /* Set palette on initial load */
-  var palette = __md_get("__palette");
-  if (palette && typeof palette.color === "object") {
-    var theme = "light";
-    giscus.setAttribute("data-theme", theme);
-  }
+/* Set palette on initial load */
+var palette = __md_get("__palette")
+if (palette && typeof palette.color === "object") {
+    var theme = palette.color.scheme === "slate" ? "dark" : "light"
+    giscus.setAttribute("data-theme", theme) 
+}
 
-  /* Register event handlers after documented loaded */
-  document.addEventListener("DOMContentLoaded", function () {
-    var ref = document.querySelector("[data-md-component=palette]");
-    ref.addEventListener("change", function () {
-      var palette = __md_get("__palette");
-      if (palette && typeof palette.color === "object") {
-        var theme =
-          palette.color.scheme === "default" ? "light" : "noborder_dark";
-
+/* Register event handlers after documented loaded */
+document.addEventListener("DOMContentLoaded", function() {
+    var ref = document.querySelector("[data-md-component=palette]")
+    ref.addEventListener("change", function() {
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate" ? "dark" : "light"
+        localStorage.setItem("data-md-color-scheme", palette.color.scheme === "slate" ? "slate" : "default");
         /* Instruct Giscus to change theme */
-        var frame = document.querySelector(".giscus-frame");
+        var frame = document.querySelector(".giscus-frame")
         frame.contentWindow.postMessage(
-          { giscus: { setConfig: { theme } } },
-          "https://giscus.app",
-        );
-      }
-    });
-  });
+        { giscus: { setConfig: { theme } } },
+        "https://giscus.app"
+        )
+    }
+    })
+})
 </script>
-
-
                 
               </article>
             </div>
@@ -3109,12 +2946,12 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
       
-        <script src="../../../../_assets/js/katex.js"></script>
+        <script src="../../../_assets/js/katex.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
       

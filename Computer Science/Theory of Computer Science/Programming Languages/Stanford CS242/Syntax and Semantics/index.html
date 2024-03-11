@@ -6,17 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Datalog-Based Program Analysis">
+        <meta name="description" content="f1a3h's Notebook">
       
       
       
-        <link rel="canonical" href="https://note.f1a3h.com/Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Datalog/">
+        <link rel="canonical" href="https://note.f1a3h.com/Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/Stanford%20CS242/Syntax%20and%20Semantics/">
       
       
-        <link rel="prev" href="../Data%20Flow%20Analysis/">
+        <link rel="prev" href="../../NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/">
       
       
-        <link rel="next" href="../Interprocedural%20Analysis/">
+        <link rel="next" href="../">
       
       
       <link rel="icon" href="../../../../../_assets/img/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Datalog-Based Program Analysis - f1a3h's Notebook</title>
+        <title>Syntax and Semantics - f1a3h's Notebook</title>
       
     
     
@@ -132,7 +132,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#motivation" class="md-skip">
+        <a href="#syntax" class="md-skip">
           Skip to content
         </a>
       
@@ -166,7 +166,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Datalog-Based Program Analysis
+              Syntax and Semantics
             
           </span>
         </div>
@@ -1439,8 +1439,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1470,16 +1468,16 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_3_2" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1496,7 +1494,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_7_3_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_7_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_7_3_2">
             <span class="md-nav__icon md-icon"></span>
             NJU 软件分析
@@ -1510,7 +1508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CFL-Reachability%20and%20IFDS/" class="md-nav__link">
+      <a href="../../NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/CFL-Reachability%20and%20IFDS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1531,7 +1529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Data%20Flow%20Analysis/" class="md-nav__link">
+      <a href="../../NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Data%20Flow%20Analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1549,28 +1547,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Datalog-Based Program Analysis
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Datalog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1579,93 +1559,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#motivation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Motivation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#introduction-to-datalog" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction to Datalog
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Introduction to Datalog">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#predicates-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Predicates (Data)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#datalog-rules-logic" class="md-nav__link">
-    <span class="md-ellipsis">
-      Datalog Rules (Logic)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#execution-of-datalog-programs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Execution of Datalog Programs
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pointer-analysis-via-datalog" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pointer Analysis via Datalog
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#taint-analysis-via-datalog" class="md-nav__link">
-    <span class="md-ellipsis">
-      Taint Analysis via Datalog
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1678,7 +1571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Interprocedural%20Analysis/" class="md-nav__link">
+      <a href="../../NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Interprocedural%20Analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1699,7 +1592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Pointer%20Analysis/" class="md-nav__link">
+      <a href="../../NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Pointer%20Analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1720,7 +1613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Soundness%20and%20Soundiness/" class="md-nav__link">
+      <a href="../../NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Soundness%20and%20Soundiness/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1741,7 +1634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Static%20Analysis%20for%20Security/" class="md-nav__link">
+      <a href="../../NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Static%20Analysis%20for%20Security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1769,6 +1662,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1786,16 +1681,16 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_3_3" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Stanford%20CS242/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1812,7 +1707,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_7_3_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_7_3_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_7_3_3">
             <span class="md-nav__icon md-icon"></span>
             Stanford CS242
@@ -1823,10 +1718,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../Stanford%20CS242/Syntax%20and%20Semantics/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Syntax and Semantics
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1835,6 +1748,66 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax-trees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax Trees
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ambiguity-and-precedence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ambiguity and Precedence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Semantics
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2859,46 +2832,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#motivation" class="md-nav__link">
+  <a href="#syntax" class="md-nav__link">
     <span class="md-ellipsis">
-      Motivation
+      Syntax
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#introduction-to-datalog" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction to Datalog
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Introduction to Datalog">
+    <nav class="md-nav" aria-label="Syntax">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#predicates-data" class="md-nav__link">
+  <a href="#syntax-trees" class="md-nav__link">
     <span class="md-ellipsis">
-      Predicates (Data)
+      Syntax Trees
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#datalog-rules-logic" class="md-nav__link">
+  <a href="#ambiguity-and-precedence" class="md-nav__link">
     <span class="md-ellipsis">
-      Datalog Rules (Logic)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#execution-of-datalog-programs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Execution of Datalog Programs
+      Ambiguity and Precedence
     </span>
   </a>
   
@@ -2910,18 +2865,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pointer-analysis-via-datalog" class="md-nav__link">
+  <a href="#semantics" class="md-nav__link">
     <span class="md-ellipsis">
-      Pointer Analysis via Datalog
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#taint-analysis-via-datalog" class="md-nav__link">
-    <span class="md-ellipsis">
-      Taint Analysis via Datalog
+      Semantics
     </span>
   </a>
   
@@ -2945,90 +2891,37 @@
   
 
 
-  <h1>Datalog-Based Program Analysis</h1>
+  <h1>Syntax and Semantics</h1>
 
-<p><del>新年第一天，从「恋×シンアイ彼女」开始！</del></p>
-<p>新年第一天，从 Program Analysis 开始！</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>南京大学「<a href="https://tai-e.pascal-lab.net/lectures.html">软件分析</a>」课程 Datalog-Based Program Analysis 部分的学习笔记。</p>
-</div>
-<h2 id="motivation">Motivation<a class="headerlink" href="#motivation" title="Permanent link">&para;</a></h2>
+<p>以 arithmetic 的语言为例学习 programming languages 的语言。</p>
 <ul>
-<li>imperative: how to do (~implementation)</li>
-<li>E.g. C. 需要告诉机器要如何去实现</li>
-<li>declarative: what to do (~specification)</li>
-<li>E.g. SQL. 仅仅需要指明你想要什么，如何实现则交给程序（DBMS）自行选择</li>
+<li>Syntax: arithmetic expression 的结构是什么</li>
+<li>Static semantics: arithmetic expression 的 subset 具有什么样的含义</li>
+<li>Dynamic semantics: 给出的这个 arithmetic expression 的含义是什么</li>
 </ul>
-<p>在 program analysis 中，我们指明对于不同的 statement 对应不同的 rule，这就是一种 specification，而在 algorithm 中，我们则指明了每一步具体要怎么做，在实际的代码实现里更是要考虑更多的 implementation details。可以看出，前面所学的 program analysis 即是 declarative 也是 imperative 的。</p>
-<p>在 tai-e assignments 中，我们使用 imperative 的方式实现 program analysis，同样的，我们也可以通过 declarative 的方式来实现。(via Datalog)</p>
-<h2 id="introduction-to-datalog">Introduction to Datalog<a class="headerlink" href="#introduction-to-datalog" title="Permanent link">&para;</a></h2>
-<p>datalog 最早是以 database language 的身份出现的<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>，现在有了更广泛的应用。</p>
-<ul>
-<li>Datalog = Data + Logic (and, or, not)</li>
-<li>no side-effects</li>
-<li>no control flows</li>
-<li>no functions</li>
-<li>not turing-complete</li>
-</ul>
-<h3 id="predicates-data">Predicates (Data)<a class="headerlink" href="#predicates-data" title="Permanent link">&para;</a></h3>
-<p>在 datalog 中，一个 predicate (relation) 就是值一系列的 statemetns，本质上其实是 a table of data。而 fact 则是指这个 table 中某个 tuple。</p>
-<p>atoms 是 datalog 的 basic elements。</p>
-<p><code>P(X1, X2, ..., Xn)</code> 的形式表示一个 relation atom，其中 P 是 predicate 的名字，Xi 则是 arguments， 它的值可以是一个 variable 也可以是 constant。一个 relation atom 的值为 true 当且仅当 P 中存在 <code>(X1, X2, ..., Xn)</code> 这个 tuple。</p>
-<p>除了 relation atoms，datalog 还有 arithmetic atoms。</p>
-<h3 id="datalog-rules-logic">Datalog Rules (Logic)<a class="headerlink" href="#datalog-rules-logic" title="Permanent link">&para;</a></h3>
-<p>rule 用来表示 logic inferences，并且表明 facts 是如何被 deduced 的，它的形式为 <code>H &lt;- B1, B2, ,,,, Bn</code> ，其中 head 和 body 中的每一项都是 atom，<code>Bi</code> 也被称为 subgoal。</p>
-<p>一个 datalog program 由 facts 和 rules 组成。更多的语法直接看 slides 吧，懒得写了（</p>
-<p>datalog 的 predicates 被分为 EDB 和 IDB 两种：</p>
-<ol>
-<li>EDB (extensional database)<br />
-   - 提前定义好的 predicates<br />
-   - relations are immutable<br />
-   - 可以看作 input relations</li>
-<li>IDB (intensional database)<br />
-   - 由 rules 推导出的 predicates<br />
-   - 可以看作是 output relations</li>
-</ol>
-<p>datalog 支持 recursive rules，从而可以从自身进行 deduce。</p>
-<p>考虑以下两条 rules：</p>
-<ul>
-<li><code>A(x) &lt;- B(y), x &gt; y.</code></li>
-<li><code>A(x) &lt;- B(y), !C(x, y).</code></li>
-</ul>
-<p>可以发现它们都有可能使得 A 称为一个 infinite relation，但是这并不是我们使用 datalog 想要得到的结果，所以我们要避免 infinite relation，也就因此引入了 rule safety 的概念。</p>
-<p>注意到 EDB 的元素是有限个的，因此对于一个 non-negated realtion atom，它能 deduce 的元素也会是有限的，所以我们只需要保证 head 中的每一个 variable 至少被一个 non-negated atom relation 给限制住了即可。在 datalog 中，只有满足 safe rules 是被允许的。</p>
-<p>再考虑这条 rule：</p>
-<ul>
-<li><code>A(x) &lt;- B(x), !A(x)</code></li>
-</ul>
-<p>显然这是一条自相矛盾的 rule，但是它满足了 safe rule 的条件，因此我们需要另外添加限制。观察可以发现这种 contradictory rule 必然也是 recursive 的形式，并且是在 body 中对 head 进行 negate，因此，在 datalog 中，我们规定 recursion and negation of an atom must be separated。</p>
-<h3 id="execution-of-datalog-programs">Execution of Datalog Programs<a class="headerlink" href="#execution-of-datalog-programs" title="Permanent link">&para;</a></h3>
-<p><img alt="execution.png" src="https://fastly.jsdelivr.net/gh/f1a3h/imgs/execution_of_datalog.png" /></p>
-<ul>
-<li>datalog 使用 datalog engine 根据 EDB 和 rules 进行 deduce 并输出 IDB</li>
-<li>monotonicity: facts 只会从 rules 中产生而不会因为 deduction 而减少</li>
-<li>termination: 通过 rule safety 保证了能被 deduce 的 facts 必然是 finite 的，因此 datalog program 必然是可以终止的</li>
-</ul>
-<h2 id="pointer-analysis-via-datalog">Pointer Analysis via Datalog<a class="headerlink" href="#pointer-analysis-via-datalog" title="Permanent link">&para;</a></h2>
-<p>其实只要用 datalog 的语言描述出前面 pointer analysis 的 rules 即可，同样也需要考虑一些细节以及每个 atom 的 arguments 要如何设计。</p>
-<p><img alt="pa.png" src="https://fastly.jsdelivr.net/gh/f1a3h/imgs/pointer_analysis_via_datalog.png" /></p>
-<h2 id="taint-analysis-via-datalog">Taint Analysis via Datalog<a class="headerlink" href="#taint-analysis-via-datalog" title="Permanent link">&para;</a></h2>
-<p><img alt="ta.png" src="https://fastly.jsdelivr.net/gh/f1a3h/imgs/taint_analysis_via_datalog.png" /></p>
-<p>使用 datalog 来实现 program analysis 有以下优点和缺点：</p>
-<ul>
-<li>pros</li>
-<li>简洁、可读性高</li>
-<li>容易实现，写 bug 的概率也小很多</li>
-<li>off-the-shelf optimized datalog engines 可以让你少考虑一些优化上的细节，make your life easier</li>
-<li>cons</li>
-<li>表达能力有限，某些 logics 很难用 datalog 表示甚至根本表示不了</li>
-<li>datalog engine 作为一个 black box 的存在使得我们很难用更优秀、更有针对性的 algorithm 来实现更优越的性能</li>
-</ul>
+<h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
+<p>languages 以 <em>primitives</em> 或者表示 atomic unit of meaning 的 objects 开头，programming languages 中的 primitives 有 characters、booleans、functions 等。</p>
+<p>arithmetic 的结构可以用 context-free grammar (CFG) 表示，例如（<a href="https://en.wikipedia.org/wiki/Backus–Naur_form">Backus-Naur Form</a>）：</p>
+<p><img alt="Screenshot 2024-03-11 at 19.41.40.png" src="../../../../../_assets/img/Screenshot%202024-03-11%20at%2019.41.40.png" /></p>
+<p>grammar 是一个 meta-linguistic 的概念，用来表示 language 的结构。</p>
+<h3 id="syntax-trees">Syntax Trees<a class="headerlink" href="#syntax-trees" title="Permanent link">&para;</a></h3>
+<p>CFG 也可以描述树形结构，而由线性的字符组成的文字表达式则很难表示为树形的结构。从这一个角度出发，我们可以定义 syntax 为 establishing the basic structure of a language.</p>
+<p>language 的 syntax 又可以分为 abstract syntax 和 concrete syntax，分别指向它的 structure 和 symbols。一个 language 可能有多个 concrete syntax 对应同一个 abstract syntax。</p>
+<p>concrete syntax tree 或者说 parse/deriviation tree，是用来表示某些 context-free languages 的 syntactic structure 的树形结构，它相对于 abstract syntax tree (AST) 保留了 symbols，例如下图<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>中的 <code>INT</code>、<code>ID</code> 等：</p>
+<p><img alt="Screenshot 2024-03-11 at 20.24.41.png" src="../../../../../_assets/img/Screenshot%202024-03-11%20at%2020.24.41.png" /></p>
+<p>而 AST 则进一步抽象，去掉了与 semantics 无关的信息（e.g. grouping parentheses），仅仅保留了 structural details，例如下图<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>：</p>
+<p><img alt="Screenshot 2024-03-11 at 20.32.00.png" src="../../../../../_assets/img/Screenshot%202024-03-11%20at%2020.32.00.png" /></p>
+<h3 id="ambiguity-and-precedence">Ambiguity and Precedence<a class="headerlink" href="#ambiguity-and-precedence" title="Permanent link">&para;</a></h3>
+<p>CFG 可能是 ambiguity 的，对于某个 CFL 的 string，这个 CFG 可能得到不同的 parse tree，于是这个 CFG 就是 ambiguity 的。</p>
+<h2 id="semantics">Semantics<a class="headerlink" href="#semantics" title="Permanent link">&para;</a></h2>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:1">
-<p>David Maier, K. Tuncay Tekle, Michael Kifer, and David S. Warren, <em>"Datalog: Concepts, History, and Outlook"</em>. Chapter, 2018.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Stanford CS143 <a href="https://web.stanford.edu/class/cs143/lectures/lecture05.pdf">lecture05 slides</a>, p7.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://www.wikiwand.com/en/Abstract_syntax_tree">Abstract syntax tree - Wikipedia</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
