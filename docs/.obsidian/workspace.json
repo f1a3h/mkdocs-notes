@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Science/Theory of Computer Science/Programming Languages/Stanford CS242/Syntax and Semantics.md",
+                "file": "Algorithm/Math/基础数论.md",
                 "mode": "preview",
                 "source": false
               }
@@ -43,7 +43,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -109,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Science/Theory of Computer Science/Programming Languages/Stanford CS242/Syntax and Semantics.md",
+                "file": "Algorithm/WriteUp/Quantum Wave Speed Pass.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Science/Theory of Computer Science/Programming Languages/Stanford CS242/Syntax and Semantics.md",
+                "file": "Algorithm/WriteUp/Quantum Wave Speed Pass.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Science/Theory of Computer Science/Programming Languages/Stanford CS242/Syntax and Semantics.md"
+                "file": "Algorithm/WriteUp/Quantum Wave Speed Pass.md"
               }
             }
           },
@@ -182,14 +183,15 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "00948b16b9d42f94",
+  "active": "8ce9863e4832df3d",
   "lastOpenFiles": [
+    "Algorithm/Math/基础数论.md",
+    "Computer Science/Theory of Computer Science/Programming Languages/Stanford CS242/Syntax and Semantics.md",
     "_assets/css/custom.css",
     "_assets/css/custom.css.bak",
     "_assets/img/Screenshot 2024-03-11 at 20.32.00.png",
     "_assets/img/Screenshot 2024-03-11 at 20.24.41.png",
     "Computer Science/Theory of Computer Science/MIT 18.404/Automata and Language Theory.md",
-    "Computer Science/Theory of Computer Science/Programming Languages/Stanford CS242/Syntax and Semantics.md",
     "_assets/img/Screenshot 2024-03-11 at 19.41.40.png",
     "Computer Science/Computer Architecture/UCB CS61C.md",
     "_assets/img/Screenshot 2024-03-11 at 18.55.57.png",
@@ -200,7 +202,6 @@
     "Computer Science/Electronics/数字电路与逻辑设计",
     "Computer Science/Electronics",
     "Algorithm/WriteUp/Quantum Wave Speed Pass.md",
-    "Algorithm/Math/基础数论.md",
     "Algorithm/ACM算法实践.md",
     "Algorithm/WriteUp/LuoguP5539.md",
     "Computer Science/Theory of Computer Science/MIT 18.404/index.md",
@@ -216,7 +217,6 @@
     "_assets/img/favicon.ico",
     "_assets/font/SarasaGothicSC-Regular.ttf",
     "_assets/css/admonition.css",
-    "_assets/css/font.css",
     "Research/Research Log.md",
     "Research/Papers/boehmeFuzzingChallengesReflections2021.md",
     "_assets/img/Screenshot 2024-03-08 at 22.09.18.png",
