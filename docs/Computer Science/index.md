@@ -20,7 +20,7 @@ share: true
 > 这里是 CS 相关课程的学习笔记，主要涵盖了一些名校公开课以及经典教材。
 
 > [!success]+ Check
-> ~~Concurrent study~~
+> ~~没人比我更懂 parallel study~~
 > 
 > Computer Architecture:
 > 

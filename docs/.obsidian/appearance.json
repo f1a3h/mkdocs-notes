@@ -3,6 +3,6 @@
   "monospaceFontFamily": "JetBrainsMono Nerd Font,Input,CaskaydiaCove Nerd Font,FiraCode Nerd Font",
   "textFontFamily": "Zed Sans Extended,LXGW WenKai Screen R,LXGW Bright GB,Maple Mono,Lucida Grande,Crimson",
   "interfaceFontFamily": "Zed Sans Extended,Lucida Grande,Merriweather Sans,Crimson,PingFang SC",
-  "theme": "moonstone",
+  "theme": "system",
   "cssTheme": "Things"
 }

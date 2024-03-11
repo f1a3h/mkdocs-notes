@@ -6,11 +6,11 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiCircuitBoard",
       "😜",
       "😔",
       "😢",
-      "LiClipboardSignature",
-      "LiArrowUpZA"
+      "LiClipboardSignature"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -46,11 +46,11 @@
   "Computer Science/Computer Network": "LiNetwork",
   "Computer Science/Theory of Computer Science": "LiPi",
   "_ignore/Diaries/2024/02/21.md": "😫",
-  "Computer Science/Theory of Computer Science/Programming Languages/NJU 软件分析": "LiSearchCode",
   "Computer Science/Computer Security": "LiLock",
   "Algorithm/String": "LiArrowUpZA",
   "Algorithm/WriteUp": "LiClipboardSignature",
   "_ignore/Diaries/2024/02/26.md": "😢",
   "_ignore/Diaries/2024/03/07.md": "😔",
-  "_ignore/Diaries/2024/03/03.md": "😜"
+  "_ignore/Diaries/2024/03/03.md": "😜",
+  "Computer Science/Electronics": "LiCircuitBoard"
 }

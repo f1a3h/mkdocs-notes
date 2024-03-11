@@ -455,13 +455,22 @@ Control construction options:
 "Iron law" of processor performance:
 
 $$\frac{\mathtt{Time}}{\mathtt{Program}}=\frac{\mathtt{Instructions}}{\mathtt{Program}}\cdot\frac{\mathtt{Cycles}}{\mathtt{Instruction}}\cdot\frac{\mathtt{Time}}{\mathtt{Cycle}}$$
+## Amdahl's Law
+
+- Speed up due to enhancement $E$ : $\text{Speedup w/E}=\dfrac{\text{Exec time w/o E}}{\text{Exec time w/E}}$
+- Example:
+	- $E$ does not affect a portion of $s(s<1)$ of a task
+	- It does accelerate the remainder $(1-s)$ by a factor $P(P>1)$
+	- $\text{Exec time w/E}=\text{Exec time w/o E}\times[s+(1-s)/P]$
+	- $\text{Speedup w/E}=1/[s+(1-s)/P]<\dfrac{1}{s}$
+
 # Great Idea \#4: Parallelism
 
 ## Pipelining
 
 ### Intro
 
-Noticed that since we have to set the maximum clock frequency to  the lowest value to fit in `lw` instruction, there will always be chips idle when performing other instructions.
+Noticing that since we have to set the maximum clock frequency to  the lowest value to fit in `lw` instruction, there will always be chips idle when performing other instructions.
 
 As an analogy to doing laundry, we can use pipelining to increase *throughput* of entire workload.
 
@@ -708,6 +717,43 @@ Coherency Tracked by Cache Block:
 
 - *false sharing*: block ping-pongs between two caches even though processors are accessing disjoint variables
 - 4th "C" of cache misses: *Coherence Misses*
+
+### Request-Level
+
+Google query-serving architecture:
+
+![[Screenshot 2024-03-11 at 18.50.27.png]]
+
+### Data-Level
+
+Two kinds:
+
+- Data in memory
+- Data on many disks
+
+#### MapReduce
+
+Design goals:
+
+- Scalability to large data volumes
+- Cost-efficiency
+- Simplified data processing on large clusters
+
+![[Screenshot 2024-03-11 at 18.55.57.png]]
+
+MapReduce is centralized:
+
+- Master assigns map + reduce tasks to "worker" servers
+- As soon as a map task finishes, worker server can be a new map or reduce task
+- To tolerate faults, reassign task if a worker server "dies"
+
+In conclusion, MapReduce is a wonderful abstraction for programming thousands of machines. It hides details of machine failures, and it is file-based.
+
+#### Spark
+
+Apache's Spark is a fast and general engine for large-scale data processing.
+
+It is better than MapReduce. It combines the techniques of lazy-evaluation along with memory-based data processing.
 
 # Great Idea \#3: Principle of Locality
 

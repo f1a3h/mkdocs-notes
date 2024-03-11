@@ -13,5 +13,5 @@ tags:
 
 
 > [!info] 
-> MIT 18.404J Theory Of Computation Fall 2020 学习笔记
+> MIT 18.404J Theory Of Computation, Fall 2020 学习笔记
 

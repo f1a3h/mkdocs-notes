@@ -211,6 +211,12 @@ regular expression 是 programming languages 中很重要的一个模型，当�
 > 	- 由 $k-1$ 增加 state 到 $k$ 并不方便，不妨反过来证明 $k$ 个 states 的 GNFA 去掉一个 state 得到的 GNFA 是等价的
 > 	- ![[Screenshot 2024-03-08 at 22.09.18.png]]
 
+> [!summary] 
+> What can regular languages express?
+> 
+> - Languages that requiring counting modulo a fixed integer.
+> - Intuition: A finite automaton that runs long enough must repeat states.（这一点从后面的 pumping lemma 也可以看出来）
+> - Finite automaton cannot remember # of times it has visited a particular state.
 
 ### Nonregular Languages
 
@@ -233,3 +239,9 @@ context-free languages 在 regular languages 的基础上，附加了许多 lang
 
 ### Context-Free Grammars
 
+CFG 由四个部分组成：
+
+1. Rule: Variable $\to$ string of variables and terminals
+2. Variables: Symbols appear on left-hand side of rule
+3. Terminals: Symbols appear only on right-hand side
+4. Start Variable: Top left symbol
