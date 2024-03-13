@@ -22,10 +22,14 @@ share: true
 > [!success]+ Check
 > ~~没人比我更懂 parallel study~~
 > 
+> Compilers:
+> 
+> - [ ] Stanford CS143（龟速推进中，不过可能在正式上编译原理课之前不会全推完）
+> 
 > Computer Architecture:
 > 
-> - [ ] CS61C
-> - [ ] Computer Systems: A Programmer's Perspective
+> - [x] UCB CS61C（差不多就行了）
+> - [x] Computer Systems: A Programmer's Perspective（腰斩力 QAQ）
 > 
 > Computer Network:
 > 
@@ -33,16 +37,22 @@ share: true
 > 
 > Computer Security:
 > 
-> - [ ] CS110L
+> - [ ] Stanford CS110L（搁置ing，准备学一点 OS 之后再补完）
+> 
+> Electronics:
+> 
+> - [ ] 数字电路与逻辑设计
+> - [ ] 信号与系统
 > 
 > Math:
 > 
-> - [ ] Linear Algebra Done Wrong
-> - [ ] 18.330
+> - [ ] Linear Algebra Done Wrong（只是暂时搁置一下啦QAQ）
+> - [ ] MIT 18.330（搁置ing，之后上计算方法的时候再补完）
 > - [x] 谢惠民做题记录（腰斩力 QAQ）
 > 
 > Theory of Computer Science:
 > 
-> - [ ] 18.404
+> - [ ] MIT 18.404（龟速推进中）
 > - Programming Languages:
-> 	- [x] NJU「软件分析」
+> 	- [x] NJU「软件分析」（其实还剩最后两次作业没做）
+> 	- [ ] Stanford CS242（龟速推进中）

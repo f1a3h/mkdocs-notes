@@ -3,7 +3,7 @@ title: UCB CS61C
 date: 2024-01-21T23:42:00
 draft: false
 math: true
-description: Six Great Ideas in Computer Architecture
+description: Great Ideas in Computer Architecture
 categories:
   - Study Notes
   - Computer Architecture
@@ -15,18 +15,18 @@ tags:
 > Study notes based on UCB CS61C, [Summer 2020](https://inst.eecs.berkeley.edu/~cs61c/su20/) & [Fall 2020](https://inst.eecs.berkeley.edu/~cs61c/fa20/) online videos along with its textbooks.
 
 
-1. Abstraction
-2. Technology Trends
+1. Abstraction (Layers of Representation/Interpretation)
+2. Moore's Law
 3. Principles of Locality/Memory Hierarchy
 4. Parallelism
 5. Performance Measurement & Improvement
 6. Dependability via Redundancy
 
-# Great Idea \#1: Levels of Representation & Interpretation
+## Great Idea #1: Levels of Representation & Interpretation
 
 ![image.png](https://fastly.jsdelivr.net/gh/f1a3h/imgs/202401302014701.png)
 
-### Number Representation
+#### Number Representation
 
 [lec01.pdf](https://inst.eecs.berkeley.edu/~cs61c/su20/pdfs/lectures/lec01.pdf)
 
@@ -58,11 +58,11 @@ tags:
 		
 	See [[Computer Science/Computer Architecture/CSAPP/Chapter 2|CS:APP Chapter 2]] for more.
 
-## High-Level Language Program (e.g. C)
+### High-Level Language Program (e.g. C)
 
-### C: Introduction
+#### C: Introduction
 
-#### Basic Concepts
+##### Basic Concepts
 
 [lec02.pdf](https://inst.eecs.berkeley.edu/~cs61c/su20/pdfs/lectures/lec02.pdf)
 
@@ -79,7 +79,7 @@ tags:
 		- "Edit $\to$ Compile $\to$ Run \[repeat\]" iteration cycle can be slow
 - Variable Types
 
-#### C Memory Management
+##### C Memory Management
 
 [lec04.pdf](https://inst.eecs.berkeley.edu/~cs61c/su20/pdfs/lectures/lec04.pdf)
 
@@ -124,11 +124,11 @@ When it comes to memory management in C, there can be tons of memory problems. F
     - First-fit: choose the block with least order, this is fast but tends to concentrate small blocks at beginning.
     - Next-fit: like first-fit, but resume search from where we last left off. Also fast, and it does not concentrate small blocks at front.
 
-### Floating Point
+#### Floating Point
 
 See [[Computer Science/Computer Architecture/CSAPP/Chapter 2#Floating Point|CS:APP Ch.2 Floating Point]].
 
-#### Single Precision
+##### Single Precision
 
 Use normalized, base 2 scientific representation:
 
@@ -140,17 +140,17 @@ Split a 32-bit word into 3 fields:
 
 Here, we use biased notation ($bias=-127$) for the exponent in order to preserve the linearity of value as well as represent a small number.
 
-#### Double Precision
+##### Double Precision
 
 ![](https://fastly.jsdelivr.net/gh/f1a3h/imgs/20240126000842.png)
 
 Everything stays the same as Single Precision except the length of each field.
 
-#### Special Cases
+##### Special Cases
 
 ![](https://fastly.jsdelivr.net/gh/f1a3h/imgs/20240126001219.png)
 
-#### Limitations
+##### Limitations
 
 - Overflow & Underflow
 - Rounding occurs when result runs out of the end of the Significant
@@ -158,8 +158,8 @@ Everything stays the same as Single Precision except the length of each field.
 	- As a result, parallel execution strategies that work for integer data may not work for FP
 - FP cannot represent all integers
 
-## Assembly Language Program (e.g. RISC-V)
-### RISC-V: Introduction
+### Assembly Language Program (e.g. RISC-V)
+#### RISC-V: Introduction
 
 - Mainstream Instruction Set Architecture: x86, ARM architectures, RISC-V
 - Complex/Reduced Instruction Set Computing:
@@ -171,7 +171,7 @@ Everything stays the same as Single Precision except the length of each field.
 		- easier to build fast hardware
 		- let software do the complicated operations by composing simpler ones
 
-### Assembly Language
+#### Assembly Language
 
 - RISC Design Principles: smaller is faster, keep it simple.
 - RISC-V Registers: `s0-s11`, `t0-t6`, `x0`
@@ -194,9 +194,9 @@ Everything stays the same as Single Precision except the length of each field.
 	- ![](https://fastly.jsdelivr.net/gh/f1a3h/imgs/risc-v_instruction_format.png)
 	- The Stored Program concept is very powerful.
 
-## Machine Language Program (RISC-V)
+### Machine Language Program (RISC-V)
 
-### Translation vs. Interpretation
+#### Translation vs. Interpretation
 
 Interpreter: Directly executes a program in the source language.
 
@@ -209,18 +209,18 @@ Translation vs. Interpretation:
 - Translated/compiled code almost always more efficient and therefore higher performance
 - Translation/compilation helps "hide" the program "source" from the users
 
-### Translation
+#### Translation
 
 C translation steps are as follows:
 
 ![image.png](https://fastly.jsdelivr.net/gh/f1a3h/imgs/20240129162946.png)
 
-#### Compiler
+##### Compiler
 
 - Input: Higher-level language (HLL) code
 - Output: Assembly language code (may contain pseudo-instructions)
 
-#### Assembler
+##### Assembler
 
 - Input: Assembly language code
 - Output: Object code, information tables $\rightarrow$ Object file
@@ -264,7 +264,7 @@ The object file format is listed below from top to down:
 5. symbol table
 6. debugging information
 
-#### Linker
+##### Linker
 
 - Input: Object code files, information tables
 - Output: Executable code
@@ -288,7 +288,7 @@ Three types of addresses:
 - Static Data Reference (often `auipc` and `addi`) $\rightarrow$ always relocate
 	- `lw`, `sw` to variables in static area, relative to global pointer
 
-#### Loader
+##### Loader
 
 - Input: Executable code
 - Output: \<program is run\>
@@ -307,7 +307,9 @@ The loader follows these steps:
     *Virtually every problem in computer science can be solved by another level of indirection.*
     <p align="right">David Wheeler</p>
 
-## Logic Circuit Description
+## Great Idea #2: Moore's Law
+
+### Logic Circuit Description
 
 [lec10.pdf](https://inst.eecs.berkeley.edu/~cs61c/su20/pdfs/lectures/lec10.pdf)
 
@@ -318,7 +320,7 @@ Synchronous Digital Systems (SDS):
 - Digital
 	- Represent all values with two discrete values: 0/1, high/low, true/false 
 
-### Switches and Transistors
+#### Switches and Transistors
 
 - Switches
 	- The basic elements of physical implementations
@@ -327,7 +329,7 @@ Synchronous Digital Systems (SDS):
 		- [Understanding CMOS](https://www.bilibili.com/video/BV1GD4y1C7K5)
 	- MOS transistors acts as voltage-controlled switches
 
-### CMOS Networks
+#### CMOS Networks
 
 ![image.png](https://fastly.jsdelivr.net/gh/f1a3h/imgs/202401302320718.png)
 
@@ -337,9 +339,9 @@ Synchronous Digital Systems (SDS):
 - V<sub>GS</sub> = V<sub>Gate</sub> - V<sub>Source</sub>; V<sub>SG</sub> = V<sub>Source</sub> - V<sub>Gate</sub>; V<sub>TH</sub> = V<sub>Threshold</sub>
 
 In abstraction, we can simply view chips composed of transistors and wires as block diagrams.
-### Combinational Digital Logic
+#### Combinational Digital Logic
 
-#### Combinational Logic Gates
+##### Combinational Logic Gates
 
 Digital Systems consists of two basic types of circuits:
 
@@ -351,14 +353,14 @@ Digital Systems consists of two basic types of circuits:
 	<img src="https://fastly.jsdelivr.net/gh/f1a3h/imgs/202401302343742.png" width=250px >
 </figure>
 
-#### Boolean Algebra
+##### Boolean Algebra
 
 Translate truth table to boolean algebra:
 
 - Sum of Products (SoP)
 - Product of Sums (PoS)
 
-#### Circuit Simplification
+##### Circuit Simplification
 
 Hardware can have delays, so we should simplify boolean expressions $\rightarrow$ smaller transistor networks $\rightarrow$ smaller circuit delays $\rightarrow$ faster hardware.
 
@@ -366,7 +368,7 @@ Hardware can have delays, so we should simplify boolean expressions $\rightarrow
 	
     <img src="https://fastly.jsdelivr.net/gh/f1a3h/imgs/202401302349229.png" height=350px>
 
-### Sequential Digital Logic
+#### Sequential Digital Logic
 
 [lec11.pdf](https://inst.eecs.berkeley.edu/~cs61c/su20/pdfs/lectures/lec11.pdf)
 
@@ -374,7 +376,7 @@ Hardware can have delays, so we should simplify boolean expressions $\rightarrow
 
 In combinational digital logic, systems are memoryless. However, when we want to sum up a series of numbers without knowing its length, this is impossible to implement with memoryless circuits. Thus, we now introduce registers.
 
-#### Register Details
+##### Register Details
 
 ![image.png](https://fastly.jsdelivr.net/gh/f1a3h/imgs/202402011759647.png)
 
@@ -392,25 +394,25 @@ When a FF feels that there is a change at the input side, it knows that it maybe
 
 ![image.png](https://fastly.jsdelivr.net/gh/f1a3h/imgs/202402011818177.png)
 
-#### Pipelining--Adding Registers to Improve Performance
+##### Pipelining--Adding Registers to Improve Performance
 
 Consider the example in the slides, we can infer that the *maximum clock frequency* is limited by the propagation of the *critical path*.
 
 To resolve that issue, we can employ the technique called *pipelining*. In details, that means to add more registers. Notably that this will cause a signal passing through the same path (ignore the added registers) with more cycles (while the length of a cycle is shrunk), but in the long run, it actually improves performance.
 
-#### Finite State Machines
+##### Finite State Machines
 
 To represent sequential logic, finite state machines are a good idea. Correspondingly, with combinational logic and registers, any FSM can be implemented in hardware.
 
-#### Functional Units (a.k.a. Execution Unit)
+##### Functional Units (a.k.a. Execution Unit)
 
 Take a look at the examples in the slides.
 
-## Hardware Architecture Description
+### Hardware Architecture Description
 
-### CPU
+#### CPU
 
-#### Datapath and Control
+##### Datapath and Control
 
 A CPU involves two parts:
 
@@ -446,29 +448,281 @@ Control construction options:
 	- Not easily re-programmable because requires modifying hardware
 	- Likely less expensive, more complex
 
-#### Performance Analysis
+## Great Idea \#3: Principle of Locality
 
-![image.png](https://fastly.jsdelivr.net/gh/f1a3h/imgs/202402051411511.png)
+### Caches
 
-`lw` instruction needs to do all the things, so it is the bottleneck of a single cycle. 
+Principle of Locality: Programs access only a small portion of the full address space at any instant time
 
-"Iron law" of processor performance:
+- Temporary Locality (time)
+- Spatial Locality (space)
 
-$$\frac{\mathtt{Time}}{\mathtt{Program}}=\frac{\mathtt{Instructions}}{\mathtt{Program}}\cdot\frac{\mathtt{Cycles}}{\mathtt{Instruction}}\cdot\frac{\mathtt{Time}}{\mathtt{Cycle}}$$
-## Amdahl's Law
+![image.png](https://fastly.jsdelivr.net/gh/f1a3h/imgs/202402092218872.png)
 
-- Speed up due to enhancement $E$ : $\text{Speedup w/E}=\dfrac{\text{Exec time w/o E}}{\text{Exec time w/E}}$
-- Example:
-	- $E$ does not affect a portion of $s(s<1)$ of a task
-	- It does accelerate the remainder $(1-s)$ by a factor $P(P>1)$
-	- $\text{Exec time w/E}=\text{Exec time w/o E}\times[s+(1-s)/P]$
-	- $\text{Speedup w/E}=1/[s+(1-s)/P]<\dfrac{1}{s}$
+In typical memory hierarchy, from top to down we have:
 
-# Great Idea \#4: Parallelism
+- RegFile
+- First Level Cache (consists of Instr Cache & Data Cache) $\rightarrow$ `$L1`
+- Second Level Cache (SRAM) $\rightarrow$ `$L2`
+- Main Memory (DRAM)
+- Secondary Memory (Disk or Flash)
 
-## Pipelining
+Upper above the Main Memory are On-Chip Components.
 
-### Intro
+#### Fully Associative Caches
+
+Fully associative: each memory block can map anywhere in the cache.
+
+![image.png](https://fastly.jsdelivr.net/gh/f1a3h/imgs/PicGo/202402092234541.png)
+
+In the cache:
+
+- Each cache slot contains the actual data block ($8\times 2^{\mathrm{Offset}}$ bits)
+- `Tag` field as identifier ($\mathrm{Tag}$ bits)
+- `Valid` bit indicate whether cache slot was filled in ($1$ bit)
+- Any necessary replacement management bits ("LRU(Least Recently Used) bits" - variable $\#$ bits)
+
+Total bits in cache = $\#\, \mathrm{slots}\times(8\times 2^{\mathrm{Offset}}+\mathrm{Tag}+1+?)$ bits
+
+![image.png](https://fastly.jsdelivr.net/gh/f1a3h/imgs/PicGo/202402092250179.png)
+
+#### Direct-Mapped Caches
+
+Direct-mapped cache: each memory address is associated with one possible block within the cache
+
+![[Screenshot 2024-02-16 at 00.33.39.png]]
+
+Within the cache:
+
+- Index: which row/block
+	- $\# \mathrm{blocks}/ \mathrm{cache}=\dfrac{\mathrm{bytes/ cache}}{\mathrm{bytes/ block}}$
+- Offset: which byte within the block
+- Tag: distinguish between all the memory addresses that map to the same location
+	- $\mathrm{tag \, length=addr \, length - offset - index}$
+
+#### N-Way Set Associative Caches
+
+pros:
+
+- avoids a lot of conflict misses
+- hardware cost isn't that bad: only need N comparators
+
+1-way set assoc $\leftarrow$ directly mapped
+
+M-way set assoc $\leftarrow$ fully assoc
+
+#### Writes, Block Sizes, Misses
+
+- Effective
+	- Hit rate (HR)
+	- Miss rate (MR)
+- Fast
+	- Hit time (HT)
+	- Miss penalty (MP)
+
+Handle cache hits:
+
+- Read hits (`I$` & `D$`)
+	- Fasted possible scenario
+- Write hits (`D$`)
+	1. Write-Through Policy: always write to cache and memory (through cache)
+		- Write buffer
+	2. Write-Back Policy: write only to cache, update memory when block is removed
+		- Dirty bit
+
+Handle cache misses:
+
+- Read misses (`$I` & `$D`)
+	- Stall, fetch from memory, put in cache
+- Write misses (`$D`)
+	- Write Allocate Policy: bring the block into the cache after a write miss
+	- No Write Allocate Polity: only change main memory
+	- Write allocate $\leftrightarrow$ write back, every slot needs an extra `dirty` bit
+	- No write allocate $\leftrightarrow$ write-through
+
+Block size tradeoff:
+
+- Benefits of larger block size
+	- Spatial Locality
+	- Very applicable with Stored-Program Concept
+	- Works well for sequential array accesses
+- Drawbacks of larger block size
+	- Larger miss penalty
+	- If block size is too big relative to cache size, then there are too few blocks $\rightarrow$ Higher miss rate
+
+![[Screenshot 2024-02-16 at 20.27.04.png]]
+
+Types of cache misses:
+
+1. Compulsory Misses
+2. Conflict Misses (Direct-Mapped Cache only)
+	- Solution 1: Make the cache size bigger
+	- Solution 2: Multiple distinct blocks can fit in the same cache Index
+3. Capacity Misses (primary for Fully Associative Cache)
+
+How to categorize misses:
+
+![[Screenshot 2024-02-16 at 20.41.07.png]]
+
+##### Block Replacement Policy
+
+- LRU (Least Recently Used)
+- FIFO
+- Random
+
+##### Average Memory Access Time
+
+AMAT = Hit Time $+$ Miss Penalty $\times$ Miss Rate
+
+> [!summary]+
+> 
+>  Why not "Hit Time $\times$ Hit Rate $+$ Miss Time $\times$ Miss Rate"?
+>  
+>  AMAT = Hit Time $\times$ (1 $-$ Miss Rate) + (Miss Penalty $-$ Hit Time) $\times$ Miss Rate
+
+> [!summary]+
+> 
+>  Big Idea: If something is expensive but we want to do it repeatedly, do it once and cache the result
+>  
+>  Cache Design Choices:
+>  - size of cache: speed vs. capacity
+>  - block size
+>  - write policy
+>  - associativity choice of N
+>  - block replacement policy
+>  - 2nd level cache
+>  - 3rd level cache
+
+### OS
+
+#### Basics
+
+What does OS do?
+
+- OS is the first thing that runs when computer starts
+- Finds and controls all devices in the machine in a general way
+- Starts services
+- Loads, runs and manages programs
+
+What does the core of OS do?
+
+- Provides *isolation* between running processes
+- Provides *interaction* with the outside world
+
+What does OS need from hardware?
+
+- Memory translation
+- Protection and privilege
+	- Split the processor into at least two modes: "User" and "Supervisor"
+	- Lesser privilege cannot change its memory mapping
+- Traps & Interrupts
+	- A way of going into supervisor mode on demand
+
+What happens at boot?
+
+1. BIOS[^1]: Find a storage device and loads the first sector
+2. Bootloader: Load the OS kernel from disk into a location in memory and jump into it
+3. Init: Launch an application that waits for input in loop (e.g., Terminal/Desktop/...)
+4. OS Boot: Initialize services, drivers, etc.
+
+[^1]: BIOS: Basic Input Output System
+
+#### OS Functions
+
+Refer to the lecture [slides](https://inst.eecs.berkeley.edu/~cs61c/fa20/pdfs/lectures/lec28.pdf).
+
+#### Virtual Memory
+
+![[Screenshot 2024-02-26 at 21.59.28.png|Hierarchy]]
+
+![[Screenshot 2024-02-26 at 22.01.01.png]]
+
+- Processes uses virtual addresses
+- Memory uses physical addresses
+
+Address space = set of addresses for all available memory locations.
+
+Responsibilities of memory manager:
+
+1. Map virtual to physical addresses
+2. Protection: isolate memory between processes
+3. Swap memory to disk: give illusions of larger memory by storing some contents on disk
+
+Physical memory (DRAM) is broken into pages:
+
+![[Screenshot 2024-02-26 at 22.20.39.png]]
+
+Paged memory translation:
+
+- OS keeps track of active processes
+- Memory manager extracts page number from virtual address
+- Looks up page address in page table
+- Computes physical memory address from sum of
+	- page address and
+	- offset (from virtual address)
+
+> [!note]+ 
+> Physical addresses may have more or fewer bits than virtual addresses.
+
+Since a page table is too large for a cache, so we have to store it in memory (DRAM, acts like caches for disk). To minimize performance penalty, we can:
+
+- Transfer blocks (not words) between DRAM and caches
+- Use a cache for frequently accessed page table entries
+
+Refer to [slides](https://inst.eecs.berkeley.edu/~cs61c/fa20/pdfs/lectures/lec30.pdf).
+
+#### I/O
+
+Interface options:
+
+1. Special I/O instructions
+2. Memory mapped I/O
+	- Use normal load/store instructions
+
+I/O polling:
+
+- Device registers:
+	- Control register
+	- Data register
+- Processor reads from control register in loop
+- then loads from (input) / writes to (output) data register
+- Procedure called "polling"
+
+Polling wastes processor resources, there is an alternative called "interrupts":
+
+- No I/O activity: nothing to do
+- Lots of I/O: expensive - thrashing cashes, VM, saving/restoring state
+
+When there is low data rate, we use interrputs. While there's high data rate, we start with interrupts, then switch to Direct Memory Access (DMA).
+
+The DMA allows I/O devices to directly read/write main memory, introducing a new hardware called *DMA engine* to let CPU execute other instructions.
+
+- Incoming data
+	- Receive interrupt from device
+	- CPU takes interrupt, initiates transfer
+	- Device/DMA engine handle the transfer
+		- CPU is free to execute other things
+	- Upon completion, device/DMA engine interrupts the CPU again
+- Outging data
+	- CPU decides to initiate transfer, confirms that external device is ready
+	- CPU begins transfer
+	- Device/DMA engine handle the transfer
+	- Device/DMA engine interrupt the CPU again to signal completion
+
+To plug in the DMA engine in the memory hierarchy, there are two extremes:
+
+- Between `L1$` and CPU
+	- Pro: free coherency
+	- Con: trash the CPU's working set with transferred data
+- Between Last-level cache and main memory
+	- Pro: don't mess with cache
+	- Con: need to explicitly manage coherency
+
+## Great Idea \#4: Parallelism
+
+### Pipelining
+
+#### Intro
 
 Noticing that since we have to set the maximum clock frequency to  the lowest value to fit in `lw` instruction, there will always be chips idle when performing other instructions.
 
@@ -480,7 +734,7 @@ To align the five instruction stages, we place a register between each two stage
 
 ![image.png](https://fastly.jsdelivr.net/gh/f1a3h/imgs/202402051445337.png)
 
-### Hazards
+#### Hazards
 
 [lec14.pdf](https://inst.eecs.berkeley.edu/~cs61c/su20/pdfs/lectures/lec14.pdf)
 
@@ -511,16 +765,16 @@ A hazard is a situation that prevents starting the next instruction in the next 
 	- Solution 2: move branch comparator to ID stage
 	- Solution 3: branch prediction - guess outcome of a branch, fix afterwards if necessary
 
-## Parallelism
+### Parallelism
 
-### Flynn's Taxonomy
+#### Flynn's Taxonomy
 
 - Choice of hardware and software parallelism are independent
 - *Flynn's Taxonomy* is for parallel hardware
 
 ![[Screenshot 2024-02-27 at 18.33.57.png]]
 
-### Instruction-Level
+#### Instruction-Level
 
 To improve performance, Intel's SIMD instructions:
 
@@ -629,9 +883,9 @@ To improve RISC-V performance, add SIMD instructions (and hardware) – V extens
 
 - `vadd vd, vs1, vs2`
 
-### Thread-Level
+#### Thread-Level
 
-#### Multicore
+##### Multicore
 
 Multiprocessor execution model:
 
@@ -652,7 +906,7 @@ Multiprocessor execution model:
 	- "multiprocessor microprocessor"
 	- multicore processor
 
-#### Thread
+##### Thread
 
 - *Thread*: "thread of execution", is a single stream of instructions.
 - With a single core, a single CPU can execute many threads by *time sharing*.
@@ -668,7 +922,7 @@ Multiprocessor execution model:
 	- *software threads* onto the available hardware threads
 	- all threads except those mapped to hardware threads are waiting
 
-#### Multithreading
+##### Multithreading
 
 When an active thread encounters cache miss, we switch out to execute another thread. However, saving the current state and loading the new state can be expensive. As a result, we consider asking hardware for help. And Moore's Law tells us that transistors are plenty.
 
@@ -684,7 +938,7 @@ OpenMP's Fork-Join Model:
 
 Note that OpenMP threads are operating system (software) threads, and OS will multiplex requested OpenMP threads onto available hardware threads. Hopefully each gets a real hardware thread to run on, so there will be no OS-level time-multiplexing. However, others tasks will compete for hardware threads, so be careful when timing result for projects.
 
-#### Synchronization
+##### Synchronization
 
 To solve the problem that different threads could be "racing" for shared resources which will lead to a nondeterministic result, computers use locks to control access, which relies on hardware synchronization instructions.
 
@@ -697,7 +951,7 @@ Deadlock: a system state in which no progress is possible.
 
 - Solution: elapsed wall clock time
 
-#### Shared Memory and Caches
+##### Shared Memory and Caches
 
 SMP: (Shared Meomory) Symmetric Multiprocessor
 
@@ -718,20 +972,20 @@ Coherency Tracked by Cache Block:
 - *false sharing*: block ping-pongs between two caches even though processors are accessing disjoint variables
 - 4th "C" of cache misses: *Coherence Misses*
 
-### Request-Level
+#### Request-Level
 
 Google query-serving architecture:
 
 ![[Screenshot 2024-03-11 at 18.50.27.png]]
 
-### Data-Level
+#### Data-Level
 
 Two kinds:
 
 - Data in memory
 - Data on many disks
 
-#### MapReduce
+##### MapReduce
 
 Design goals:
 
@@ -749,278 +1003,34 @@ MapReduce is centralized:
 
 In conclusion, MapReduce is a wonderful abstraction for programming thousands of machines. It hides details of machine failures, and it is file-based.
 
-#### Spark
+##### Spark
 
 Apache's Spark is a fast and general engine for large-scale data processing.
 
 It is better than MapReduce. It combines the techniques of lazy-evaluation along with memory-based data processing.
 
-# Great Idea \#3: Principle of Locality
+## Great Idea #5: Performance Measurement & Improvement
 
-## Caches
 
-Principle of Locality: Programs access only a small portion of the full address space at any instant time
+### CPU Performance Analysis
 
-- Temporary Locality (time)
-- Spatial Locality (space)
+![image.png](https://fastly.jsdelivr.net/gh/f1a3h/imgs/202402051411511.png)
 
-![image.png](https://fastly.jsdelivr.net/gh/f1a3h/imgs/202402092218872.png)
+`lw` instruction needs to do all the things, so it is the bottleneck of a single cycle. 
 
-In typical memory hierarchy, from top to down we have:
+"Iron law" of processor performance:
 
-- RegFile
-- First Level Cache (consists of Instr Cache & Data Cache) $\rightarrow$ `$L1`
-- Second Level Cache (SRAM) $\rightarrow$ `$L2`
-- Main Memory (DRAM)
-- Secondary Memory (Disk or Flash)
+$$\frac{\mathtt{Time}}{\mathtt{Program}}=\frac{\mathtt{Instructions}}{\mathtt{Program}}\cdot\frac{\mathtt{Cycles}}{\mathtt{Instruction}}\cdot\frac{\mathtt{Time}}{\mathtt{Cycle}}$$
 
-Upper above the Main Memory are On-Chip Components.
+### Amdahl's Law
 
-### Fully Associative Caches
+- Speed up due to enhancement $E$ : $\text{Speedup w/E}=\dfrac{\text{Exec time w/o E}}{\text{Exec time w/E}}$
+- Example:
+	- $E$ does not affect a portion of $s(s<1)$ of a task
+	- It does accelerate the remainder $(1-s)$ by a factor $P(P>1)$
+	- $\text{Exec time w/E}=\text{Exec time w/o E}\times[s+(1-s)/P]$
+	- $\text{Speedup w/E}=1/[s+(1-s)/P]<\dfrac{1}{s}$
 
-Fully associative: each memory block can map anywhere in the cache.
+## Great Idea #6: Dependability via Redundancy
 
-![image.png](https://fastly.jsdelivr.net/gh/f1a3h/imgs/PicGo/202402092234541.png)
-
-In the cache:
-
-- Each cache slot contains the actual data block ($8\times 2^{\mathrm{Offset}}$ bits)
-- `Tag` field as identifier ($\mathrm{Tag}$ bits)
-- `Valid` bit indicate whether cache slot was filled in ($1$ bit)
-- Any necessary replacement management bits ("LRU(Least Recently Used) bits" - variable $\#$ bits)
-
-Total bits in cache = $\#\, \mathrm{slots}\times(8\times 2^{\mathrm{Offset}}+\mathrm{Tag}+1+?)$ bits
-
-![image.png](https://fastly.jsdelivr.net/gh/f1a3h/imgs/PicGo/202402092250179.png)
-
-### Direct-Mapped Caches
-
-Direct-mapped cache: each memory address is associated with one possible block within the cache
-
-![[Screenshot 2024-02-16 at 00.33.39.png]]
-
-Within the cache:
-
-- Index: which row/block
-	- $\# \mathrm{blocks}/ \mathrm{cache}=\dfrac{\mathrm{bytes/ cache}}{\mathrm{bytes/ block}}$
-- Offset: which byte within the block
-- Tag: distinguish between all the memory addresses that map to the same location
-	- $\mathrm{tag \, length=addr \, length - offset - index}$
-
-### N-Way Set Associative Caches
-
-pros:
-
-- avoids a lot of conflict misses
-- hardware cost isn't that bad: only need N comparators
-
-1-way set assoc $\leftarrow$ directly mapped
-
-M-way set assoc $\leftarrow$ fully assoc
-
-### Writes, Block Sizes, Misses
-
-- Effective
-	- Hit rate (HR)
-	- Miss rate (MR)
-- Fast
-	- Hit time (HT)
-	- Miss penalty (MP)
-
-Handle cache hits:
-
-- Read hits (`I$` & `D$`)
-	- Fasted possible scenario
-- Write hits (`D$`)
-	1. Write-Through Policy: always write to cache and memory (through cache)
-		- Write buffer
-	2. Write-Back Policy: write only to cache, update memory when block is removed
-		- Dirty bit
-
-Handle cache misses:
-
-- Read misses (`$I` & `$D`)
-	- Stall, fetch from memory, put in cache
-- Write misses (`$D`)
-	- Write Allocate Policy: bring the block into the cache after a write miss
-	- No Write Allocate Polity: only change main memory
-	- Write allocate $\leftrightarrow$ write back, every slot needs an extra `dirty` bit
-	- No write allocate $\leftrightarrow$ write-through
-
-Block size tradeoff:
-
-- Benefits of larger block size
-	- Spatial Locality
-	- Very applicable with Stored-Program Concept
-	- Works well for sequential array accesses
-- Drawbacks of larger block size
-	- Larger miss penalty
-	- If block size is too big relative to cache size, then there are too few blocks $\rightarrow$ Higher miss rate
-
-![[Screenshot 2024-02-16 at 20.27.04.png]]
-
-Types of cache misses:
-
-1. Compulsory Misses
-2. Conflict Misses (Direct-Mapped Cache only)
-	- Solution 1: Make the cache size bigger
-	- Solution 2: Multiple distinct blocks can fit in the same cache Index
-3. Capacity Misses (primary for Fully Associative Cache)
-
-How to categorize misses:
-
-![[Screenshot 2024-02-16 at 20.41.07.png]]
-
-#### Block Replacement Policy
-
-- LRU (Least Recently Used)
-- FIFO
-- Random
-
-#### Average Memory Access Time
-
-AMAT = Hit Time $+$ Miss Penalty $\times$ Miss Rate
-
-> [!summary]+
-> 
->  Why not "Hit Time $\times$ Hit Rate $+$ Miss Time $\times$ Miss Rate"?
->  
->  AMAT = Hit Time $\times$ (1 $-$ Miss Rate) + (Miss Penalty $-$ Hit Time) $\times$ Miss Rate
-
-> [!summary]+
-> 
->  Big Idea: If something is expensive but we want to do it repeatedly, do it once and cache the result
->  
->  Cache Design Choices:
->  - size of cache: speed vs. capacity
->  - block size
->  - write policy
->  - associativity choice of N
->  - block replacement policy
->  - 2nd level cache
->  - 3rd level cache
-
-## OS
-
-### Basics
-
-What does OS do?
-
-- OS is the first thing that runs when computer starts
-- Finds and controls all devices in the machine in a general way
-- Starts services
-- Loads, runs and manages programs
-
-What does the core of OS do?
-
-- Provides *isolation* between running processes
-- Provides *interaction* with the outside world
-
-What does OS need from hardware?
-
-- Memory translation
-- Protection and privilege
-	- Split the processor into at least two modes: "User" and "Supervisor"
-	- Lesser privilege cannot change its memory mapping
-- Traps & Interrupts
-	- A way of going into supervisor mode on demand
-
-What happens at boot?
-
-1. BIOS[^1]: Find a storage device and loads the first sector
-2. Bootloader: Load the OS kernel from disk into a location in memory and jump into it
-3. Init: Launch an application that waits for input in loop (e.g., Terminal/Desktop/...)
-4. OS Boot: Initialize services, drivers, etc.
-
-[^1]: BIOS: Basic Input Output System
-
-### OS Functions
-
-Refer to the lecture [slides](https://inst.eecs.berkeley.edu/~cs61c/fa20/pdfs/lectures/lec28.pdf).
-
-### Virtual Memory
-
-![[Screenshot 2024-02-26 at 21.59.28.png|Hierarchy]]
-
-![[Screenshot 2024-02-26 at 22.01.01.png]]
-
-- Processes uses virtual addresses
-- Memory uses physical addresses
-
-Address space = set of addresses for all available memory locations.
-
-Responsibilities of memory manager:
-
-1. Map virtual to physical addresses
-2. Protection: isolate memory between processes
-3. Swap memory to disk: give illusions of larger memory by storing some contents on disk
-
-Physical memory (DRAM) is broken into pages:
-
-![[Screenshot 2024-02-26 at 22.20.39.png]]
-
-Paged memory translation:
-
-- OS keeps track of active processes
-- Memory manager extracts page number from virtual address
-- Looks up page address in page table
-- Computes physical memory address from sum of
-	- page address and
-	- offset (from virtual address)
-
-> [!note]+ 
-> Physical addresses may have more or fewer bits than virtual addresses.
-
-Since a page table is too large for a cache, so we have to store it in memory (DRAM, acts like caches for disk). To minimize performance penalty, we can:
-
-- Transfer blocks (not words) between DRAM and caches
-- Use a cache for frequently accessed page table entries
-
-Refer to [slides](https://inst.eecs.berkeley.edu/~cs61c/fa20/pdfs/lectures/lec30.pdf).
-
-### I/O
-
-Interface options:
-
-1. Special I/O instructions
-2. Memory mapped I/O
-	- Use normal load/store instructions
-
-I/O polling:
-
-- Device registers:
-	- Control register
-	- Data register
-- Processor reads from control register in loop
-- then loads from (input) / writes to (output) data register
-- Procedure called "polling"
-
-Polling wastes processor resources, there is an alternative called "interrupts":
-
-- No I/O activity: nothing to do
-- Lots of I/O: expensive - thrashing cashes, VM, saving/restoring state
-
-When there is low data rate, we use interrputs. While there's high data rate, we start with interrupts, then switch to Direct Memory Access (DMA).
-
-The DMA allows I/O devices to directly read/write main memory, introducing a new hardware called *DMA engine* to let CPU execute other instructions.
-
-- Incoming data
-	- Receive interrupt from device
-	- CPU takes interrupt, initiates transfer
-	- Device/DMA engine handle the transfer
-		- CPU is free to execute other things
-	- Upon completion, device/DMA engine interrupts the CPU again
-- Outging data
-	- CPU decides to initiate transfer, confirms that external device is ready
-	- CPU begins transfer
-	- Device/DMA engine handle the transfer
-	- Device/DMA engine interrupt the CPU again to signal completion
-
-To plug in the DMA engine in the memory hierarchy, there are two extremes:
-
-- Between `L1$` and CPU
-	- Pro: free coherency
-	- Con: trash the CPU's working set with transferred data
-- Between Last-level cache and main memory
-	- Pro: don't mess with cache
-	- Con: need to explicitly manage coherency
+Refer to [slides](https://inst.eecs.berkeley.edu/~cs61c/fa20/pdfs/lectures/lec38.pdf).

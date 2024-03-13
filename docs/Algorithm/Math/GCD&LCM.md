@@ -1,5 +1,5 @@
 ---
-title: gcd && lcm 复习笔记
+title: GCD & LCM
 date: 2023-09-15T22:35:59+08:00
 draft: false
 description: 旧文补档捏

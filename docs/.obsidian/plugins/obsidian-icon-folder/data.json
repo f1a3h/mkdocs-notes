@@ -6,11 +6,11 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "FarPaperPlane",
+      "FarChessKnight",
+      "FasDragon",
       "LiCircuitBoard",
-      "😜",
-      "😔",
-      "😢",
-      "LiClipboardSignature"
+      "😜"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -28,7 +28,7 @@
     "iconIdentifier": ":"
   },
   "ACG": "FarChessRook",
-  "Research": "LiBug",
+  "Research": "FarChessKnight",
   "Computer Science": "LiBook",
   "Computer Science/Math": "LiSigmaSquare",
   "Algorithm": "FarLightbulb",
@@ -52,5 +52,7 @@
   "_ignore/Diaries/2024/02/26.md": "😢",
   "_ignore/Diaries/2024/03/07.md": "😔",
   "_ignore/Diaries/2024/03/03.md": "😜",
-  "Computer Science/Electronics": "LiCircuitBoard"
+  "Computer Science/Electronics": "LiCircuitBoard",
+  "Computer Science/Compilers": "FasDragon",
+  "Research/Papers": "FarPaperPlane"
 }
