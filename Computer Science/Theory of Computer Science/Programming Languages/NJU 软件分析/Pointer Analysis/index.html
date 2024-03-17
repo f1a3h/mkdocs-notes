@@ -631,7 +631,7 @@
         
   
   <span class="md-ellipsis">
-    Introduction to Compilers and COOL
+    Introduction to Compilers
   </span>
   
 
@@ -1279,6 +1279,8 @@
       
         
       
+        
+      
     
     
       
@@ -1368,6 +1370,63 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../Math/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    网络空间安全数学基础
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            网络空间安全数学基础
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1987,27 +2046,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#call-site-sensitivity4" class="md-nav__link">
+  <a href="#call-site-sensitivity" class="md-nav__link">
     <span class="md-ellipsis">
-      Call-Site Sensitivity4
+      Call-Site Sensitivity
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#object-sensitivity5" class="md-nav__link">
+  <a href="#object-sensitivity" class="md-nav__link">
     <span class="md-ellipsis">
-      Object Sensitivity5
+      Object Sensitivity
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#type-sensitivity6" class="md-nav__link">
+  <a href="#type-sensitivity" class="md-nav__link">
     <span class="md-ellipsis">
-      Type Sensitivity6
+      Type Sensitivity
     </span>
   </a>
   
@@ -3387,27 +3446,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#call-site-sensitivity4" class="md-nav__link">
+  <a href="#call-site-sensitivity" class="md-nav__link">
     <span class="md-ellipsis">
-      Call-Site Sensitivity4
+      Call-Site Sensitivity
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#object-sensitivity5" class="md-nav__link">
+  <a href="#object-sensitivity" class="md-nav__link">
     <span class="md-ellipsis">
-      Object Sensitivity5
+      Object Sensitivity
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#type-sensitivity6" class="md-nav__link">
+  <a href="#type-sensitivity" class="md-nav__link">
     <span class="md-ellipsis">
-      Type Sensitivity6
+      Type Sensitivity
     </span>
   </a>
   
@@ -3634,7 +3693,7 @@ Why Allocation-Site
 <p>可以看出 C.S. 的处理方法和 C.I. 的处理方法几乎一致，而 <code>AddEdge</code> 和 <code>Propagate</code> 更是一样。</p>
 <h3 id="context-sensitivity-variants">Context Sensitivity Variants<a class="headerlink" href="#context-sensitivity-variants" title="Permanent link">&para;</a></h3>
 <p>context sensitivity variants 可以有很多种，这里仅仅介绍了 call-site、object、type 这三种。</p>
-<h4 id="call-site-sensitivity4">Call-Site Sensitivity<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup><a class="headerlink" href="#call-site-sensitivity4" title="Permanent link">&para;</a></h4>
+<h4 id="call-site-sensitivity">Call-Site Sensitivity<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup><a class="headerlink" href="#call-site-sensitivity" title="Permanent link">&para;</a></h4>
 <p>在 call-site sensitivity 中，context 被看作是一系列 call sites 组成的 stack (call chain)，每次进入一个 method call 就将这个 call site 加入 stack 中然后传入这个 method（相当于 select 得到的结果就是原来的 call chain 加上当前的 call site）。</p>
 <p>call-site sensitivity 也被称为 call-string sensitivity 或者 <span class="arithmatex">\(k\)</span>-CFA。</p>
 <p>当遇到非 tail-recursion 的递归函数时，call-site sensitivity 可能会得到一串很长的 call chain，甚至可能会出现 unbounded 的 call chain 从而导致 PA 无法 terminate。但是，真正起作用的 call sites 终究是 bounded 的，因此我们通过限制 call chain 的最大长度（<span class="arithmatex">\(k\)</span>）来避免出现这种情况。</p>
@@ -3647,7 +3706,7 @@ C.I. vs. C.S.(1-Call-Site)
 ![](https://fastly.jsdelivr.net/gh/f1a3h/imgs/20231226171830.png)
 </details>
 
-<h4 id="object-sensitivity5">Object Sensitivity<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup><a class="headerlink" href="#object-sensitivity5" title="Permanent link">&para;</a></h4>
+<h4 id="object-sensitivity">Object Sensitivity<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup><a class="headerlink" href="#object-sensitivity" title="Permanent link">&para;</a></h4>
 <p>在 object sensitivity 中，将一系列的使用 allocation site 表示的 objects 作为 context，每次遇到一个 method call 就将 receiver object 加到它的 heap context 后面作为这个 method 的 context。</p>
 <p>与 call-site sensitivity 不同的是，object sensitivity 针对的是流入每个 object 的 data，可以说 object sensitivity 是针对 OOPLs 设计的方法，由于使用 allocation site 来识别一个 object，所以它本质上是一种 allocation-site sensitivity。</p>
 <details>
@@ -3659,7 +3718,7 @@ C.S. (1-Object) vs. C.S. (1-Call-Site)
 </details>
 
 <p>不同情况下他们的 precision 也会不同，因此这两种方法不能直接进行比较，但是在大量的数据之下进行对比，object sensitivity 对于 Java 这样的 OOPLs 是要优于 call-site sensitivity 的，考虑到 Java 的特性，并且 object sensitivity 针对的是 OOPLs，所以这也是很 intuitive 的嘛。（也许可以认为是 object sensitivity 一定程度上丢失了 generalization 但是换来了在 OOPLs 上更好的性能🤔）</p>
-<h4 id="type-sensitivity6">Type Sensitivity<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup><a class="headerlink" href="#type-sensitivity6" title="Permanent link">&para;</a></h4>
+<h4 id="type-sensitivity">Type Sensitivity<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup><a class="headerlink" href="#type-sensitivity" title="Permanent link">&para;</a></h4>
 <p>type sensitivity 将 context 看作是一系列包含了 allocation-site of the receiver object 的 type 的集合，很显然它的精度一定是严格小于等于 object sensitivity 的，相当于一种将在同一个 class 下 allocate 的 objects 合并了的一种 object sensitivity，但是尽管丢失了精度，它换来了更好的速度。</p>
 <h4 id="call-site-vs-object-vs-type-sensitivity">Call-Site vs. Object vs. Type Sensitivity<a class="headerlink" href="#call-site-vs-object-vs-type-sensitivity" title="Permanent link">&para;</a></h4>
 <p><img alt="" src="https://fastly.jsdelivr.net/gh/f1a3h/imgs/20231226174218.png" /><sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup></p>

@@ -631,7 +631,7 @@
         
   
   <span class="md-ellipsis">
-    Introduction to Compilers and COOL
+    Introduction to Compilers
   </span>
   
 
@@ -1279,6 +1279,8 @@
       
         
       
+        
+      
     
     
       
@@ -1368,6 +1370,63 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Math/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    网络空间安全数学基础
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            网络空间安全数学基础
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1610,6 +1669,24 @@
   <a href="#context-free-grammars" class="md-nav__link">
     <span class="md-ellipsis">
       Context-Free Grammars
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pushdown-automata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pushdown Automata
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-context-free-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-Context-Free Languages
     </span>
   </a>
   
@@ -3083,6 +3160,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#pushdown-automata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pushdown Automata
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-context-free-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-Context-Free Languages
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3124,8 +3219,8 @@
 </ul>
 <p>能让 finite automata <span class="arithmatex">\(M_1\)</span> accept 的 strings 的集合记为 <span class="arithmatex">\(A\)</span>，我们称 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(M_1\)</span> 的语言 (language)，<span class="arithmatex">\(M_1\)</span> 可以识别 (recognize) <span class="arithmatex">\(A\)</span>，<span class="arithmatex">\(A=L(M_1)\)</span> 。</p>
 <p>对 finite automata 的 formal definition 如下：</p>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<details class="definition" open="open">
+<summary>Definition</summary>
 <p>A finite automaton <span class="arithmatex">\(M\)</span> is a 5-tuple <span class="arithmatex">\((Q, \Sigma, \delta, q_0, F)\)</span></p>
 <ol>
 <li><span class="arithmatex">\(Q\)</span>: finite set of states</li>
@@ -3134,7 +3229,7 @@
 <li><span class="arithmatex">\(q_0\)</span>: start state</li>
 <li><span class="arithmatex">\(F\)</span>: set of accept states</li>
 </ol>
-</div>
+</details>
 <p>对于 string 和 languages 还有以下补充与定义：</p>
 <details class="info" open="open">
 <summary>Info</summary>
@@ -3145,19 +3240,19 @@
 <li>empty language <span class="arithmatex">\(\varnothing\)</span> 是不包含 string 的集合</li>
 </ul>
 </details>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<details class="definition" open="open">
+<summary>Definition</summary>
 <p><span class="arithmatex">\(M\)</span> accepts string <span class="arithmatex">\(w=w_1w_2\dots w_n\)</span>, each <span class="arithmatex">\(w_i\in\sigma\)</span> if there is a sequence of states <span class="arithmatex">\(r_0, r_1, r_2, \dots, r_n\in Q\)</span> where:</p>
 <ul>
 <li><span class="arithmatex">\(r_0=q_0\)</span></li>
 <li><span class="arithmatex">\(r_i=\delta(r_{i-1}, w_i) ,\forall 1\le i\le n\)</span></li>
 <li><span class="arithmatex">\(r_n\in F\)</span></li>
 </ul>
-</div>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
+</details>
+<details class="definition" open="open">
+<summary>Definition</summary>
 <p>A language is <em>regular</em> if some finite automaton recognizes it.</p>
-</div>
+</details>
 <details class="example">
 <summary>Example</summary>
 <p><span class="arithmatex">\(C=\{ w|w \textrm{ has equal numbers of 0s and 1s} \}\)</span> 不是一个 regular language</p>
@@ -3169,19 +3264,19 @@
 </details>
 <p>arithmetic 的研究对象是 numbers，而在 theory of computation 中的研究对象则是 languages。arithmetic 有基本的 operations 来研究 numbers，相应地，我们也可以定义几种 operations 来研究 languages 的 properties。</p>
 <p>对于 languages <span class="arithmatex">\(A,B\)</span>，我们定义以下三种 operations，称为 <em>regular operations</em> :</p>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<details class="definition" open="open">
+<summary>Definition</summary>
 <ul>
 <li>union: <span class="arithmatex">\(A\cup B=\{w|w\in A \, \mathrm{or} \, w\in B\}\)</span> </li>
 <li>concatenation: <span class="arithmatex">\(A\circ B=\{ xy|x\in A\, \mathrm{and} \, y\in B \}=AB\)</span></li>
 <li>star: <span class="arithmatex">\(A\ast=\{ x_1\dots x_k|\mathrm{each} \, x_i\in A \,  \mathrm{for}\, k\ge 0 \}\)</span></li>
 </ul>
-</div>
+</details>
 <p>可以发现对于任意 regular languages，它们的 union 和 concatenation 运算得到的仍然是 regular language.</p>
-<div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<details class="theorem" open="open">
+<summary>Theorem</summary>
 <p>The class of regular languages is closed under the union and concatenation operations.</p>
-</div>
+</details>
 <details class="proof">
 <summary>Proof</summary>
 <p>（仅 DFA ）<br />
@@ -3207,8 +3302,8 @@
 <p><em>determinism</em>: 给定 machine 的 state，当读入下一个 symbol 时，我们可以确定下一个 state</p>
 <p>nondeterminism 是 determinism 的一种 generalization，所以每一个 nondeterministic finite automaton (NFA) 都天生是 deterministic finite automaton (DFA)。</p>
 <p><img alt="Screenshot 2024-02-29 at 19.05.08.png" src="../../../../_assets/img/Screenshot%202024-02-29%20at%2019.05.08.png" /></p>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<details class="definition" open="open">
+<summary>Definition</summary>
 <p>A <em>nondeterministic finite automaton</em> is a 5-tuple <span class="arithmatex">\((Q, \Sigma, \delta, q_0, F)\)</span> where:</p>
 <ol>
 <li><span class="arithmatex">\(Q\)</span> is a finite set of states,</li>
@@ -3217,7 +3312,7 @@
 <li><span class="arithmatex">\(q_0\in Q\)</span> is the start state, and</li>
 <li><span class="arithmatex">\(F\cup Q\)</span> is the set of accept states.</li>
 </ol>
-</div>
+</details>
 <p>对比 DFA，NFA 其实保留了所有可能到达的 states，并且考虑每一个可能性，只要有一个分支被 accept，那么就说明这个 string 是可以被 accept 的，可以分别从三个角度来理解 nondeterminism：</p>
 <ul>
 <li>computational：对于可能到达的 states，每个都 fork 一个新的 parallel thread，任意一个 thread 能够到达 accept state 则 accept</li>
@@ -3225,15 +3320,15 @@
 <li>Magical: 想象成 machine 在每一个 nondeterministic step 猜测要往哪个方向走，并且总是能猜测正确</li>
 </ul>
 <p>从上面的 mathematical way 结合前面提到的 union operation 的封闭性的证明，不难看出将所有分支对应的 DFA 进行 "union" 操作得到的新的 DFA 其实就是这个 NFA，也就是说，每个 NFA 都可以被转化为一个等价的 DFA。</p>
-<div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<details class="theorem" open="open">
+<summary>Theorem</summary>
 <p>Every nondeterministic finite automaton has an equivalent deterministic finite automaton.</p>
-</div>
+</details>
 <p>进而我们可以得到以下定理：</p>
-<div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<details class="theorem" open="open">
+<summary>Theorem</summary>
 <p>If an NFA recognizes <span class="arithmatex">\(A\)</span> then <span class="arithmatex">\(A\)</span> is regular.</p>
-</div>
+</details>
 <details class="proof">
 <summary>Proof</summary>
 <p>令 NFA <span class="arithmatex">\(M=(Q, \Sigma, \delta, q_0, F)\)</span> recognizes <span class="arithmatex">\(A\)</span>，我们需要构造能 recognize <span class="arithmatex">\(A\)</span> 的 DFA <span class="arithmatex">\(M^{\prime}=(Q^{\prime}, \Sigma, \delta^{\prime}, q_0^{\prime}, F^{\prime})\)</span></p>
@@ -3247,10 +3342,10 @@
 </ul>
 </details>
 <p>再结合以上两个定理，我们又可以得到</p>
-<div class="admonition corollary">
-<p class="admonition-title">Corollary</p>
+<details class="corollary" open="open">
+<summary>Corollary</summary>
 <p>A language is regular if and only if some nondeterministic finite automaton recognizes it.</p>
-</div>
+</details>
 <p>回到前面关于 regular operations 的封闭性的证明，有了 NFA，证明它们会更简单且直观。</p>
 <details class="proof">
 <summary>Proof</summary>
@@ -3263,8 +3358,8 @@
 </details>
 <h3 id="regular-expressions">Regular Expressions<a class="headerlink" href="#regular-expressions" title="Permanent link">&para;</a></h3>
 <p>类似于数学中用算数表达式来表示一个数字，我们也可以利用 regular operations 构造 languages 的表达式，称为 <em>regular expressions</em>.</p>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<details class="definition" open="open">
+<summary>Definition</summary>
 <p>Say that R is a <em>regular expression</em> if R is</p>
 <ol>
 <li><span class="arithmatex">\(a\)</span> for some <span class="arithmatex">\(a\)</span> in the alphabet <span class="arithmatex">\(\Sigma\)</span>,</li>
@@ -3274,13 +3369,13 @@
 <li><span class="arithmatex">\(R_1\circ R_2\)</span>, where <span class="arithmatex">\(R_1\)</span> and <span class="arithmatex">\(R_2\)</span> are regular expressions, or</li>
 <li><span class="arithmatex">\((R_1^{\ast})\)</span>, where <span class="arithmatex">\(R_1\)</span> is a regular expression.</li>
 </ol>
-</div>
+</details>
 <p>regular expression 是 programming languages 中很重要的一个模型，当一个 PL 的 syntax 可以用 tokens 组成的 regular expressions 来表示，automatic system 就可以生成 <em>lexical analyzer</em> 来处理一个 input program.</p>
 <p>由于 regular operations 可以表示 languages，而 regular language 又可以被 NFA 定义，于是我们有</p>
-<div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<details class="theorem" open="open">
+<summary>Theorem</summary>
 <p>If <span class="arithmatex">\(R\)</span> is a regular expression and <span class="arithmatex">\(A=L(R)\)</span> then <span class="arithmatex">\(A\)</span> is regular.</p>
-</div>
+</details>
 <details class="proof">
 <summary>Proof</summary>
 <p>将 <span class="arithmatex">\(R\)</span> 转化为一个等价的 NFA <span class="arithmatex">\(M\)</span>.</p>
@@ -3298,15 +3393,15 @@
 </ol>
 </details>
 <p>反过来也是一样的：</p>
-<div class="admonition theorem">
-<p class="admonition-title">Theorem</p>
+<details class="theorem" open="open">
+<summary>Theorem</summary>
 <p>If <span class="arithmatex">\(A\)</span> is regular then <span class="arithmatex">\(A = L(R)\)</span> for some regular expr <span class="arithmatex">\(R\)</span>.</p>
-</div>
+</details>
 <p>要证明这个定理，我们先引入 Generalized NFA (GNFA) 的概念，它应用了前一个的定理，将 regular expr 融入进 NFA 中，简化了 NFA 的形式，这也可以启发我们不断减少 NFA (GNFA) 的 states 是可以将 NFA (GNFA) 转化为 regular expr 从而也就证明了这个定理。</p>
-<div class="admonition definition">
-<p class="admonition-title">Definition</p>
+<details class="definition" open="open">
+<summary>Definition</summary>
 <p>A <em>Generalized Nondeterministic Finite Automaton (GNFA)</em> is similar to an NFA, but allows regular expressions as transition labels.</p>
-</div>
+</details>
 <details class="proof">
 <summary>Proof</summary>
 <p>考虑 induction.</p>
@@ -3322,38 +3417,132 @@
 </li>
 </ul>
 </details>
-<div class="admonition abstract">
-<p class="admonition-title">Abstract</p>
+<details class="abstract" open="open">
+<summary>Abstract</summary>
 <p>What can regular languages express?</p>
 <ul>
 <li>Languages that requiring counting modulo a fixed integer.</li>
 <li>Intuition: A finite automaton that runs long enough must repeat states.（这一点从后面的 pumping lemma 也可以看出来）</li>
 <li>Finite automaton cannot remember # of times it has visited a particular state.</li>
 </ul>
-</div>
+</details>
 <h3 id="nonregular-languages">Nonregular Languages<a class="headerlink" href="#nonregular-languages" title="Permanent link">&para;</a></h3>
 <p>根据直觉来判断某个 language 是否是 regular 的是不靠谱的。<em>pumping lemma</em> 是一个 regular language 具有的必要条件，是判断 nonregular languages 的好工具。</p>
-<div class="admonition lemma">
-<p class="admonition-title">Lemma</p>
+<details class="lemma" open="open">
+<summary>Lemma</summary>
 <p>If <span class="arithmatex">\(A\)</span> is a regular language, then there is a number <span class="arithmatex">\(p\)</span> (the <em>pumping length</em>) where if <span class="arithmatex">\(s\)</span> is any string in <span class="arithmatex">\(A\)</span> of length at least <span class="arithmatex">\(p\)</span>, then <span class="arithmatex">\(s\)</span> may be divided into three pieces, <span class="arithmatex">\(s = xyz\)</span>, satisfying the following conditions:</p>
 <ol>
 <li>for each <span class="arithmatex">\(i\ge 0\)</span>, <span class="arithmatex">\(xy^i z\in A\)</span>,</li>
 <li><span class="arithmatex">\(|y|&gt;0\)</span>, and</li>
 <li><span class="arithmatex">\(|xy|\le p\)</span>.</li>
 </ol>
-</div>
+</details>
 <p>注意到 finite automata 中的 "finite"，考虑 NFA 的 diagram 的形式，从 start state 到任何一个 accept state 的最长路径（存在环的话就计算一次环的长度）长度必然是有限的，取最长的长度，记为 <span class="arithmatex">\(p\)</span>，那么 <span class="arithmatex">\(p\)</span> 就是这个 NFA 的 pumping length。如果一个长度大于 <span class="arithmatex">\(p\)</span> 的 string 可以被 accept，这说明它对应的路径中必然存在环，而且这个环被计算过多次，也就是 pumping lemma 中的 <span class="arithmatex">\(y\)</span>。</p>
 <h2 id="context-free-languages">Context-Free Languages<a class="headerlink" href="#context-free-languages" title="Permanent link">&para;</a></h2>
-<p>regular languages 的力量终究还是有限的，某些规则简单的语言仍然不能被 finite automata 或 regular expr 来描述，而 context-free languages 则引入了递归的概念，这使得它的表示能力更为强大。</p>
-<p>context-free languages 在 regular languages 的基础上，附加了许多 languages。</p>
+<p>regular languages 的力量终究还是有限的，某些规则简单的语言仍然不能被 finite automata 或 regular expr 来描述，而 context-free grammars 则引入了递归的概念，这使得它的表示能力更为强大。</p>
 <h3 id="context-free-grammars">Context-Free Grammars<a class="headerlink" href="#context-free-grammars" title="Permanent link">&para;</a></h3>
-<p>CFG 由四个部分组成：</p>
+<p>CFG 由 <em>substitution rules (productions)</em> 组成，根据这些 rules 进行一系列 substitutions 得到一个 string 的过程被称为 <em>derivation</em>，例如</p>
+<div class="arithmatex">\[
+A\Rightarrow 0A1\Rightarrow 00A11\Rightarrow 000A111\Rightarrow 000B111\Rightarrow 000\#111
+\]</div>
+<p>derivation 也可以被表示为树形结构，称为 <em>parse tree</em> 。</p>
+<p>所有能被 CFG 生成的 string 的集合被称为 <em>language of the grammar</em>，能被 CFG 生成的 languages 称为 <em>context-free language</em> (CFL)</p>
+<details class="definition" open="open">
+<summary>Definition</summary>
+<p>A <em>context-free grammar</em> is a 4-tuple <span class="arithmatex">\((V, \Sigma, R, S)\)</span>, where</p>
 <ol>
-<li>Rule: Variable <span class="arithmatex">\(\to\)</span> string of variables and terminals</li>
-<li>Variables: Symbols appear on left-hand side of rule</li>
-<li>Terminals: Symbols appear only on right-hand side</li>
-<li>Start Variable: Top left symbol</li>
+<li><span class="arithmatex">\(V\)</span> is a finite set called the <em>variables</em>,</li>
+<li><span class="arithmatex">\(\Sigma\)</span> is a finite set, disjoint from <span class="arithmatex">\(V\)</span>, called the <em>terminals</em>,</li>
+<li><span class="arithmatex">\(R\)</span> is a finite set of <em>rules</em> (rule form: <span class="arithmatex">\(V\to (V\cup \Sigma)^\ast\)</span>),</li>
+<li><span class="arithmatex">\(S\in V\)</span> is the start variable.</li>
 </ol>
+</details>
+<p>对于 <span class="arithmatex">\(u, v\in (V\cup \Sigma)^\ast\)</span> ，如果 <span class="arithmatex">\(u\)</span> 通过一步替换即可得到 <span class="arithmatex">\(v\)</span>，就写作 <span class="arithmatex">\(u\Rightarrow v\)</span>，读作 <span class="arithmatex">\(u\)</span> <em>yields</em> <span class="arithmatex">\(v\)</span>，如果多步替换得到，就写作 <span class="arithmatex">\(u\xRightarrow{\ast}v\)</span>，读作 <span class="arithmatex">\(u\)</span> <em>derives</em> <span class="arithmatex">\(v\)</span>，进而 the languages of the grammar 可以表示为 <span class="arithmatex">\(\{ w\in\Sigma^\ast\mid S\xRightarrow{\ast}w \}\)</span>.</p>
+<p>给定一个 language，比起之前构造出对应的 finite automaton，构造它的 CFG 会相对更困难、更需要创造力，因为我们已经习惯了针对某些特定的任务设计一个 machine，而 CFG 则更近似于描述这个 language（和 procedural languages like C++ v.s. declarative languages like SQL 有点像🤔），想要设计一个 CFG 可以遵循以下几点建议：</p>
+<ul>
+<li>将 CFL 拆分成一些简单的 CFLs，分别对这些 CFLs 设计 CFG 最后将这些 CFGs 结合</li>
+<li>如果这个 language 是 regular language，就先设计一个 DFA，再按照以下步骤将 DFA 转换为 CFG<ul>
+<li>Make a variable <span class="arithmatex">\(R_i\)</span> for each state <span class="arithmatex">\(q_i\)</span> of the DFA. </li>
+<li>Add the rule <span class="arithmatex">\(R_i \to aR_j\)</span> to the CFG if <span class="arithmatex">\(\delta(q_i,a) = q_j\)</span> is a transition in the DFA. </li>
+<li>Add the rule <span class="arithmatex">\(R_i \to \epsilon\)</span> if <span class="arithmatex">\(q_i\)</span> is an accept state of the DFA. </li>
+<li>Make <span class="arithmatex">\(R_0\)</span> the start variable of the grammar, where <span class="arithmatex">\(q_0\)</span> is the start state of the machine.</li>
+</ul>
+</li>
+<li>像 <span class="arithmatex">\(\{ 0^n 1^n\mid n\ge 0 \}\)</span> 这样两个 substrings 的信息要对应并且可能无限长的 language，熟练使用 <span class="arithmatex">\(R\to uRv\)</span> 这种 rule</li>
+</ul>
+<p>在某些时候，设计出来的 CFG 可能对同一个 string 有不同的 derivation，这种 property 称为 <em>ambiguity</em>.</p>
+<details class="definition" open="open">
+<summary>Definition</summary>
+<p>A string <span class="arithmatex">\(w\)</span> is derived <em>ambiguously</em> in context-free grammar <span class="arithmatex">\(G\)</span> if it has two or more different leftmost derivations. Grammar <span class="arithmatex">\(G\)</span> is <em>ambiguous</em> if it generates some string ambiguously.</p>
+</details>
+<p>值得注意的是，某些 languages 只能由 ambiguous CFG 生成，这种 languages 被称为 <em>inherently ambiguous</em> (e.g. <span class="arithmatex">\(\{a^i b^j c^k\mid i=j\text{ or }i=k \}\)</span>).</p>
+<p><em>Chomsky normal form</em> 是一种简单、统一的 CFG rule form.</p>
+<details class="definition" open="open">
+<summary>Definition</summary>
+<p>A context-free grammar is in Chomsky normal form if every rule is of the form</p>
+<div class="arithmatex">\[ \begin{align} A &amp;\to BC \nonumber \\ A &amp;\to a \nonumber \end{align} \]</div>
+<p>where <span class="arithmatex">\(a\)</span> is any terminal and <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(B\)</span>, and <span class="arithmatex">\(C\)</span> are any variables—except that <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(C\)</span> may not be the start variable. In addition, we permit the rule <span class="arithmatex">\(S \to \epsilon\)</span>, where <span class="arithmatex">\(S\)</span> is the start variable.</p>
+</details>
+<h3 id="pushdown-automata">Pushdown Automata<a class="headerlink" href="#pushdown-automata" title="Permanent link">&para;</a></h3>
+<p>去掉各个状态结点的细节，NFA 可以简单地抽象为下图的形式：</p>
+<p><img alt="Screenshot 2024-03-17 at 12.55.31.png" src="../../../../_assets/img/Screenshot%202024-03-17%20at%2012.55.31.png" /></p>
+<p>而 pushdown automaton 与 NFA 相似，但是加上了一个 stack 使得它具备了记忆的功能。</p>
+<p><img alt="Screenshot 2024-03-17 at 12.56.25.png" src="../../../../_assets/img/Screenshot%202024-03-17%20at%2012.56.25.png" /></p>
+<details class="definition" open="open">
+<summary>Definition</summary>
+<p>A <em>pushdown automaton</em> is a 6-tuple <span class="arithmatex">\((Q, \Sigma, \Gamma, \delta, q_0, F )\)</span>, where <span class="arithmatex">\(Q\)</span>, <span class="arithmatex">\(\Sigma\)</span>, <span class="arithmatex">\(\Gamma\)</span>, and <span class="arithmatex">\(F\)</span> are all finite sets, and</p>
+<ol>
+<li><span class="arithmatex">\(Q\)</span> is the set of states,</li>
+<li><span class="arithmatex">\(\Sigma\)</span> is the input alphabet,</li>
+<li><span class="arithmatex">\(\Gamma\)</span> is the stack alphabet,</li>
+<li><span class="arithmatex">\(\delta\colon Q \times \Sigma_{\epsilon} \times \Gamma_{\epsilon}\to P(Q \times \Gamma_{\epsilon})\)</span> is the transition function,</li>
+<li><span class="arithmatex">\(q_0 \in Q\)</span> is the start state, and</li>
+<li><span class="arithmatex">\(F \subseteq Q\)</span> is the set of accept states.</li>
+</ol>
+</details>
+<p>前面学到过 finite automaton 和 regular expression 是等价的，因此不难想到： pushdown automaton 是否和 CFG 也是等价的？</p>
+<p>尽管 pushdown automaton 的特点在于 stack 的存在使其具有了 memory，而 CFG 则是借助了 recursion 的力量，看似不相关联，但是回想一下 CS61A 中介绍 recursion 时，递归函数内部实现其实就是将 function frames 以 stack 的形式存储下来，这样看来，二者之间的等价关系也并不是什么奇怪的事了。</p>
+<details class="theorem" open="open">
+<summary>Theorem</summary>
+<p>A language is context free if and only if some pushdown automaton recognizes it.</p>
+</details>
+<p>先证必要性：</p>
+<details class="lemma" open="open">
+<summary>Lemma</summary>
+<p>If a language is context free, then some pushdown automaton recognizes it.</p>
+</details>
+<details class="proof">
+<summary>Proof</summary>
+<p>Proof idea: 显然是将 CFG 转换为 pushdown automaton.</p>
+<p>观察 parse tree，可以发现自下而上看的话，这个过程就好比于在 stack 中不断 match、pop 的过程，那么转换过程就很好想了。</p>
+<p><img alt="Screenshot 2024-03-17 at 13.46.44.png" src="../../../../_assets/img/Screenshot%202024-03-17%20at%2013.46.44.png" /></p>
+<p>Proof construction: convert the CFG for <span class="arithmatex">\(A\)</span> to the following PDA.</p>
+<ol>
+<li>Push the start symbol (<span class="arithmatex">\(E\)</span>) on the stack.</li>
+<li>If the top of stack is:<ul>
+<li>Variable: replace with the right hand side of rule (nondet choice).</li>
+<li>Terminal: pop it and match with next input symbol.</li>
+</ul>
+</li>
+<li>If the stack is empty, accept.</li>
+</ol>
+</details>
+<p>然后证充分性：</p>
+<details class="theorem" open="open">
+<summary>Theorem</summary>
+<p>If a pushdown automaton recognizes some language, then it is context free.</p>
+</details>
+<details class="proof">
+<summary>Proof</summary>
+<p>反过来其实就是上一个证明的逆过程。</p>
+<p><img alt="Screenshot 2024-03-17 at 13.53.15.png" src="../../../../_assets/img/Screenshot%202024-03-17%20at%2013.53.15.png" /></p>
+</details>
+<p>最后，由前面提到的 DFA 转化为 CFG 的步骤，不难看出 regular languages 和 context-free languages 的关系：</p>
+<details class="corollary" open="open">
+<summary>Corollary</summary>
+<p>Every regular language is context free.</p>
+</details>
+<h3 id="non-context-free-languages">Non-Context-Free Languages<a class="headerlink" href="#non-context-free-languages" title="Permanent link">&para;</a></h3>
 
 
 

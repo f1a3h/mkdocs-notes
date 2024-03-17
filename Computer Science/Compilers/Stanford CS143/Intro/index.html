@@ -24,7 +24,7 @@
     
     
       
-        <title>Introduction to Compilers and COOL - f1a3h's Notebook</title>
+        <title>Introduction to Compilers - f1a3h's Notebook</title>
       
     
     
@@ -132,7 +132,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#compilers" class="md-skip">
+        <a href="#language-implementations" class="md-skip">
           Skip to content
         </a>
       
@@ -166,7 +166,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introduction to Compilers and COOL
+              Introduction to Compilers
             
           </span>
         </div>
@@ -642,7 +642,7 @@
           
   
   <span class="md-ellipsis">
-    Introduction to Compilers and COOL
+    Introduction to Compilers
   </span>
   
 
@@ -653,7 +653,7 @@
         
   
   <span class="md-ellipsis">
-    Introduction to Compilers and COOL
+    Introduction to Compilers
   </span>
   
 
@@ -673,16 +673,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#compilers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Compilers
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Compilers">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#language-implementations" class="md-nav__link">
     <span class="md-ellipsis">
       Language Implementations
@@ -690,8 +680,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#the-structure-of-a-compiler" class="md-nav__link">
     <span class="md-ellipsis">
       The Structure of a Compiler
@@ -699,9 +689,13 @@
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#programming-language-economics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programming Language Economics
+    </span>
+  </a>
   
 </li>
       
@@ -1352,6 +1346,8 @@
       
         
       
+        
+      
     
     
       
@@ -1441,6 +1437,63 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Math/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    网络空间安全数学基础
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            网络空间安全数学基础
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2972,16 +3025,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#compilers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Compilers
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Compilers">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#language-implementations" class="md-nav__link">
     <span class="md-ellipsis">
       Language Implementations
@@ -2989,8 +3032,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#the-structure-of-a-compiler" class="md-nav__link">
     <span class="md-ellipsis">
       The Structure of a Compiler
@@ -2998,9 +3041,13 @@
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#programming-language-economics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programming Language Economics
+    </span>
+  </a>
   
 </li>
       
@@ -3022,10 +3069,9 @@
   
 
 
-  <h1>Introduction to Compilers and COOL</h1>
+  <h1>Introduction to Compilers</h1>
 
-<h2 id="compilers">Compilers<a class="headerlink" href="#compilers" title="Permanent link">&para;</a></h2>
-<h3 id="language-implementations">Language Implementations<a class="headerlink" href="#language-implementations" title="Permanent link">&para;</a></h3>
+<h2 id="language-implementations">Language Implementations<a class="headerlink" href="#language-implementations" title="Permanent link">&para;</a></h2>
 <p>将高级的 programming languages 转化为 machine code 主要有两种方法：</p>
 <ul>
 <li>Compilers translate your program<ul>
@@ -3074,7 +3120,7 @@ A--&gt;Compiler--&gt;BC</code></pre>
 
 Program--&gt;Interpreter--&gt;Machine</code></pre>
 <p>也有一些语言 (e.g. Java, Javascript, WebAssembly) 同时提供了这两种方法：Interpreter + Just in Time (JIT) compiler</p>
-<h3 id="the-structure-of-a-compiler">The Structure of a Compiler<a class="headerlink" href="#the-structure-of-a-compiler" title="Permanent link">&para;</a></h3>
+<h2 id="the-structure-of-a-compiler">The Structure of a Compiler<a class="headerlink" href="#the-structure-of-a-compiler" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Lexical Analysis - identify words (syntactic)<ul>
 <li>将 program text 提取为 "tokens"</li>
@@ -3108,6 +3154,34 @@ Program--&gt;Interpreter--&gt;Machine</code></pre>
 </li>
 </ol>
 <p>相比于以前大部头是 lexical analysis 和 parsing，现在的编译器中最 expensive 的部分是 optimization，其次是 semantic analysis。</p>
+<h2 id="programming-language-economics">Programming Language Economics<a class="headerlink" href="#programming-language-economics" title="Permanent link">&para;</a></h2>
+<p>这部分主要回答三个问题：</p>
+<ul>
+<li>Why so many programming languages?<ul>
+<li>因为 applications 有不同甚至是相互矛盾的需求</li>
+</ul>
+</li>
+<li>Why new programming languages?<ul>
+<li>为了填补市场空白<ul>
+<li>可能是实现用某些已有的语言难以实现的 application</li>
+<li>也有可能技术发展得以提高语言设计的质量（主要原因）</li>
+</ul>
+</li>
+<li>另外，新的 PL 并不是 completely new，而是会和一些已有的 PL 很像，甚至算是同一个 family<ul>
+<li>最主要的原因是 programmer training，其次还有重复造轮子之类的，都是非常 costly 的</li>
+</ul>
+</li>
+<li>还有一个原因就是，已经被广泛使用的 PL 是很难去改变的，从现在很多 PL 的版本更替所导致的众多问题也可以看出来</li>
+</ul>
+</li>
+<li>What is a good programming language?<ul>
+<li>这个问题目前没有公认的说法<ul>
+<li>有一种说法是"A good language is one people use."，这种说法显然（至少我认为显然）是错误的</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
 
 
