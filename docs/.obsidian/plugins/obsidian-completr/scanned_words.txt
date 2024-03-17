@@ -151,6 +151,8 @@ tolerate
 thousands
 techniques
 translate
+terminal
+training
 USB
 UCB
 Use
@@ -340,6 +342,9 @@ CRT
 Cost
 Compilers
 COOL
+CFLs
+CFGs
+Chomsky
 Summer
 Study
 Six
@@ -626,6 +631,10 @@ diagram
 disks
 dies
 deriviation
+derivation
+derives
+derived
+derivations
 false
 find
 for
@@ -1082,6 +1091,8 @@ clusters
 conclusion
 combines
 counting
+completely
+costly
 Notes
 No
 Non
@@ -1285,6 +1296,7 @@ Giant
 Game
 GNFA
 Grammars
+Grammar
 Ideas
 Improvement
 Iterator
@@ -1516,6 +1528,8 @@ interpreters
 identify
 inconsistencies
 interpreter
+ing
+inherently
 Technology
 Trends
 Tags
@@ -1723,6 +1737,7 @@ PYGEUC
 PDZ
 Precedence
 Parsing
+Pushdown
 of
 overflow
 overhead
@@ -2016,6 +2031,7 @@ Ht
 Hd
 Hash
 Hopefully
+HUST
 Dependability
 Disruptive
 Drop
@@ -2354,6 +2370,7 @@ EXGCD
 Eratosthenes
 Exclusive
 Electronics
+Economics
 January
 Java
 JVM
@@ -2713,6 +2730,9 @@ syntactic
 syntactical
 sentences
 semantical
+substitution
+substitutions
+substrings
 Overflow
 Ownership
 Object
@@ -3546,6 +3566,8 @@ accessing
 appear
 assigns
 ambiguity
+ambiguously
+ambiguous
 you
 yet
 your
@@ -3564,6 +3586,7 @@ yN
 yy
 yJ
 yP
+yields
 knows
 knowing
 kill
@@ -3762,6 +3785,10 @@ particular
 parse
 parentheses
 parsing
+productions
+property
+permit
+programmer
 how
 hard
 handling
@@ -3961,6 +3988,7 @@ grammars
 getting
 gets
 grouping
+generates
 Quick
 QAQ
 QwQ

@@ -30,7 +30,7 @@ tags:
 
 对 finite automata 的 formal definition 如下：
 
-> [!definition]
+> [!definition]+
 > A finite automaton $M$ is a 5-tuple $(Q, \Sigma, \delta, q_0, F)$
 > 
 > 1. $Q$: finite set of states
@@ -47,14 +47,14 @@ tags:
 > - empty string $\varepsilon$ 是长度为 0 的 string
 > - empty language $\varnothing$ 是不包含 string 的集合
 
-> [!definition]
+> [!definition]+
 > $M$ accepts string $w=w_1w_2\dots w_n$, each $w_i\in\sigma$ if there is a sequence of states $r_0, r_1, r_2, \dots, r_n\in Q$ where:
 > 
 > - $r_0=q_0$
 > - $r_i=\delta(r_{i-1}, w_i) ,\forall 1\le i\le n$
 > - $r_n\in F$
 
-> [!definition]
+> [!definition]+
 > A language is *regular* if some finite automaton recognizes it.
 
 > [!example]- 
@@ -69,14 +69,14 @@ arithmetic 的研究对象是 numbers，而在 theory of computation 中的研�
 
 对于 languages $A,B$，我们定义以下三种 operations，称为 *regular operations* :
 
-> [!definition]
+> [!definition]+
 > - union: $A\cup B=\{w|w\in A \, \mathrm{or} \, w\in B\}$ 
 > - concatenation: $A\circ B=\{ xy|x\in A\, \mathrm{and} \, y\in B \}=AB$
 > - star: $A\ast=\{ x_1\dots x_k|\mathrm{each} \, x_i\in A \,  \mathrm{for}\, k\ge 0 \}$
 
 可以发现对于任意 regular languages，它们的 union 和 concatenation 运算得到的仍然是 regular language.
 
-> [!theorem]
+> [!theorem]+
 > The class of regular languages is closed under the union and concatenation operations.
 
 > [!proof]-
@@ -105,7 +105,7 @@ nondeterminism 是 determinism 的一种 generalization，所以每一个 nondet
 
 ![[Screenshot 2024-02-29 at 19.05.08.png]]
 
-> [!definition]
+> [!definition]+
 > A *nondeterministic finite automaton* is a 5-tuple $(Q, \Sigma, \delta, q_0, F)$ where:
 > 
 > 1. $Q$ is a finite set of states,
@@ -122,12 +122,12 @@ nondeterminism 是 determinism 的一种 generalization，所以每一个 nondet
 
 从上面的 mathematical way 结合前面提到的 union operation 的封闭性的证明，不难看出将所有分支对应的 DFA 进行 "union" 操作得到的新的 DFA 其实就是这个 NFA，也就是说，每个 NFA 都可以被转化为一个等价的 DFA。
 
-> [!theorem]
+> [!theorem]+
 > Every nondeterministic finite automaton has an equivalent deterministic finite automaton.
 
 进而我们可以得到以下定理：
 
-> [!theorem] 
+> [!theorem]+ 
 > If an NFA recognizes $A$ then $A$ is regular.
 
 > [!proof]- 
@@ -144,7 +144,7 @@ nondeterminism 是 determinism 的一种 generalization，所以每一个 nondet
 
 再结合以上两个定理，我们又可以得到
 
-> [!corollary]
+> [!corollary]+
 > A language is regular if and only if some nondeterministic finite automaton recognizes it.
 
 回到前面关于 regular operations 的封闭性的证明，有了 NFA，证明它们会更简单且直观。
@@ -163,7 +163,7 @@ nondeterminism 是 determinism 的一种 generalization，所以每一个 nondet
 
 类似于数学中用算数表达式来表示一个数字，我们也可以利用 regular operations 构造 languages 的表达式，称为 *regular expressions*.
 
-> [!definition]
+> [!definition]+
 > Say that R is a *regular expression* if R is
 > 
 > 1. $a$ for some $a$ in the alphabet $\Sigma$,
@@ -177,7 +177,7 @@ regular expression 是 programming languages 中很重要的一个模型，当�
 
 由于 regular operations 可以表示 languages，而 regular language 又可以被 NFA 定义，于是我们有
 
-> [!theorem]
+> [!theorem]+
 > If $R$ is a regular expression and $A=L(R)$ then $A$ is regular.
 
 > [!proof]-
@@ -194,12 +194,12 @@ regular expression 是 programming languages 中很重要的一个模型，当�
 
 反过来也是一样的：
 
-> [!theorem]
+> [!theorem]+
 > If $A$ is regular then $A = L(R)$ for some regular expr $R$.
 
 要证明这个定理，我们先引入 Generalized NFA (GNFA) 的概念，它应用了前一个的定理，将 regular expr 融入进 NFA 中，简化了 NFA 的形式，这也可以启发我们不断减少 NFA (GNFA) 的 states 是可以将 NFA (GNFA) 转化为 regular expr 从而也就证明了这个定理。
 
-> [!definition]
+> [!definition]+
 > A *Generalized Nondeterministic Finite Automaton (GNFA)* is similar to an NFA, but allows regular expressions as transition labels.
 
 > [!proof]-
@@ -211,7 +211,7 @@ regular expression 是 programming languages 中很重要的一个模型，当�
 > 	- 由 $k-1$ 增加 state 到 $k$ 并不方便，不妨反过来证明 $k$ 个 states 的 GNFA 去掉一个 state 得到的 GNFA 是等价的
 > 	- ![[Screenshot 2024-03-08 at 22.09.18.png]]
 
-> [!summary] 
+> [!summary]+ 
 > What can regular languages express?
 > 
 > - Languages that requiring counting modulo a fixed integer.
@@ -222,7 +222,7 @@ regular expression 是 programming languages 中很重要的一个模型，当�
 
 根据直觉来判断某个 language 是否是 regular 的是不靠谱的。*pumping lemma* 是一个 regular language 具有的必要条件，是判断 nonregular languages 的好工具。
 
-> [!lemma]
+> [!lemma]+
 > If $A$ is a regular language, then there is a number $p$ (the *pumping length*) where if $s$ is any string in $A$ of length at least $p$, then $s$ may be divided into three pieces, $s = xyz$, satisfying the following conditions:
 > 
 > 1. for each $i\ge 0$, $xy^i z\in A$,
@@ -233,15 +233,117 @@ regular expression 是 programming languages 中很重要的一个模型，当�
 
 ## Context-Free Languages
 
-regular languages 的力量终究还是有限的，某些规则简单的语言仍然不能被 finite automata 或 regular expr 来描述，而 context-free languages 则引入了递归的概念，这使得它的表示能力更为强大。
-
-context-free languages 在 regular languages 的基础上，附加了许多 languages。
+regular languages 的力量终究还是有限的，某些规则简单的语言仍然不能被 finite automata 或 regular expr 来描述，而 context-free grammars 则引入了递归的概念，这使得它的表示能力更为强大。
 
 ### Context-Free Grammars
 
-CFG 由四个部分组成：
+CFG 由 *substitution rules (productions)* 组成，根据这些 rules 进行一系列 substitutions 得到一个 string 的过程被称为 *derivation*，例如
 
-1. Rule: Variable $\to$ string of variables and terminals
-2. Variables: Symbols appear on left-hand side of rule
-3. Terminals: Symbols appear only on right-hand side
-4. Start Variable: Top left symbol
+$$
+A\Rightarrow 0A1\Rightarrow 00A11\Rightarrow 000A111\Rightarrow 000B111\Rightarrow 000\#111
+$$
+
+derivation 也可以被表示为树形结构，称为 *parse tree* 。
+
+所有能被 CFG 生成的 string 的集合被称为 *language of the grammar*，能被 CFG 生成的 languages 称为 *context-free language* (CFL)
+
+> [!definition]+
+> A *context-free grammar* is a 4-tuple $(V, \Sigma, R, S)$, where
+> 
+> 1. $V$ is a finite set called the *variables*,
+> 2. $\Sigma$ is a finite set, disjoint from $V$, called the *terminals*,
+> 3. $R$ is a finite set of *rules* (rule form: $V\to (V\cup \Sigma)^\ast$),
+> 4. $S\in V$ is the start variable.
+
+对于 $u, v\in (V\cup \Sigma)^\ast$ ，如果 $u$ 通过一步替换即可得到 $v$，就写作 $u\Rightarrow v$，读作 $u$ *yields* $v$，如果多步替换得到，就写作 $u\xRightarrow{\ast}v$，读作 $u$ *derives* $v$，进而 the languages of the grammar 可以表示为 $\{ w\in\Sigma^\ast\mid S\xRightarrow{\ast}w \}$.
+
+给定一个 language，比起之前构造出对应的 finite automaton，构造它的 CFG 会相对更困难、更需要创造力，因为我们已经习惯了针对某些特定的任务设计一个 machine，而 CFG 则更近似于描述这个 language（和 procedural languages like C++ v.s. declarative languages like SQL 有点像🤔），想要设计一个 CFG 可以遵循以下几点建议：
+
+- 将 CFL 拆分成一些简单的 CFLs，分别对这些 CFLs 设计 CFG 最后将这些 CFGs 结合
+- 如果这个 language 是 regular language，就先设计一个 DFA，再按照以下步骤将 DFA 转换为 CFG
+	- Make a variable $R_i$ for each state $q_i$ of the DFA. 
+	- Add the rule $R_i \to aR_j$ to the CFG if $\delta(q_i,a) = q_j$ is a transition in the DFA. 
+	- Add the rule $R_i \to \epsilon$ if $q_i$ is an accept state of the DFA. 
+	- Make $R_0$ the start variable of the grammar, where $q_0$ is the start state of the machine.
+- 像 $\{ 0^n 1^n\mid n\ge 0 \}$ 这样两个 substrings 的信息要对应并且可能无限长的 language，熟练使用 $R\to uRv$ 这种 rule
+
+在某些时候，设计出来的 CFG 可能对同一个 string 有不同的 derivation，这种 property 称为 *ambiguity*.
+
+> [!definition]+
+> A string $w$ is derived *ambiguously* in context-free grammar $G$ if it has two or more different leftmost derivations. Grammar $G$ is *ambiguous* if it generates some string ambiguously.
+
+值得注意的是，某些 languages 只能由 ambiguous CFG 生成，这种 languages 被称为 *inherently ambiguous* (e.g. $\{a^i b^j c^k\mid i=j\text{ or }i=k \}$).
+
+*Chomsky normal form* 是一种简单、统一的 CFG rule form.
+
+> [!definition]+
+> A context-free grammar is in Chomsky normal form if every rule is of the form
+> 
+> $$ \begin{align} A &\to BC \nonumber \\ A &\to a \nonumber \end{align} $$
+> 
+> where $a$ is any terminal and $A$, $B$, and $C$ are any variables—except that $B$ and $C$ may not be the start variable. In addition, we permit the rule $S \to \epsilon$, where $S$ is the start variable.
+
+### Pushdown Automata
+
+去掉各个状态结点的细节，NFA 可以简单地抽象为下图的形式：
+
+![[Screenshot 2024-03-17 at 12.55.31.png]]
+
+而 pushdown automaton 与 NFA 相似，但是加上了一个 stack 使得它具备了记忆的功能。
+
+![[Screenshot 2024-03-17 at 12.56.25.png]]
+
+> [!definition]+
+> A *pushdown automaton* is a 6-tuple $(Q, \Sigma, \Gamma, \delta, q_0, F )$, where $Q$, $\Sigma$, $\Gamma$, and $F$ are all finite sets, and
+> 
+> 1. $Q$ is the set of states,
+> 2. $\Sigma$ is the input alphabet,
+> 3. $\Gamma$ is the stack alphabet,
+> 4. $\delta\colon Q \times \Sigma_{\epsilon} \times \Gamma_{\epsilon}\to P(Q \times \Gamma_{\epsilon})$ is the transition function,
+> 5. $q_0 \in Q$ is the start state, and
+> 6. $F \subseteq Q$ is the set of accept states.
+
+前面学到过 finite automaton 和 regular expression 是等价的，因此不难想到： pushdown automaton 是否和 CFG 也是等价的？
+
+尽管 pushdown automaton 的特点在于 stack 的存在使其具有了 memory，而 CFG 则是借助了 recursion 的力量，看似不相关联，但是回想一下 CS61A 中介绍 recursion 时，递归函数内部实现其实就是将 function frames 以 stack 的形式存储下来，这样看来，二者之间的等价关系也并不是什么奇怪的事了。
+
+> [!theorem]+
+> A language is context free if and only if some pushdown automaton recognizes it.
+
+先证必要性：
+
+> [!lemma]+
+> If a language is context free, then some pushdown automaton recognizes it.
+
+> [!proof]-
+> Proof idea: 显然是将 CFG 转换为 pushdown automaton.
+> 
+> 观察 parse tree，可以发现自下而上看的话，这个过程就好比于在 stack 中不断 match、pop 的过程，那么转换过程就很好想了。
+> 
+> ![[Screenshot 2024-03-17 at 13.46.44.png]]
+> 
+> Proof construction: convert the CFG for $A$ to the following PDA.
+> 
+> 1. Push the start symbol ($E$) on the stack.
+> 2. If the top of stack is:
+> 	- Variable: replace with the right hand side of rule (nondet choice).
+> 	- Terminal: pop it and match with next input symbol.
+> 3. If the stack is empty, accept.
+
+然后证充分性：
+
+> [!theorem]+
+> If a pushdown automaton recognizes some language, then it is context free.
+
+> [!proof]-
+> 反过来其实就是上一个证明的逆过程。
+> 
+> ![[Screenshot 2024-03-17 at 13.53.15.png]]
+
+最后，由前面提到的 DFA 转化为 CFG 的步骤，不难看出 regular languages 和 context-free languages 的关系：
+
+> [!corollary]+
+> Every regular language is context free.
+
+### Non-Context-Free Languages
+

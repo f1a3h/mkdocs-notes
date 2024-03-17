@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "8ce9863e4832df3d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Computer Science/Theory of Computer Science/Programming Languages/Stanford CS242/Syntax and Semantics.md",
-                "mode": "preview",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "78ddd4b99e820601",
             "type": "leaf",
             "state": {
@@ -31,8 +19,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -173,19 +160,28 @@
   },
   "active": "78ddd4b99e820601",
   "lastOpenFiles": [
-    "Computer Science/index.md",
+    "Computer Science/Theory of Computer Science/MIT 18.404/Automata and Language Theory.md",
+    "_assets/img/Screenshot 2024-03-17 at 13.53.15.png",
+    "_assets/img/Screenshot 2024-03-17 at 13.46.44.png",
+    "_assets/img/Screenshot 2024-03-17 at 12.56.25.png",
+    "_assets/img/Screenshot 2024-03-17 at 12.55.31.png",
     "Computer Science/Compilers/Stanford CS143/Intro.md",
+    "Computer Science/Math/MIT 18.330.md",
+    "_ignore/Diaries/2024/03/17.md",
+    "Computer Science/Math/网络空间安全数学基础/index.md",
+    "Algorithm/index.md",
+    "index.md",
+    "Computer Science/index.md",
     "Computer Science/Theory of Computer Science/Programming Languages/Stanford CS242/Syntax and Semantics.md",
+    "Computer Science/Math/网络空间安全数学基础",
     "Algorithm/WriteUp/Quantum Wave Speed Pass.md",
     "_assets/img/Screenshot 2024-03-13 at 12.52.02.png",
     "Computer Science/Compilers/Stanford CS143/index.md",
     "Computer Science/Compilers/index.md",
     "Computer Science/Electronics/index.md",
-    "Computer Science/Theory of Computer Science/MIT 18.404/Automata and Language Theory.md",
     "Computer Science/Compilers/Stanford CS143",
     "Computer Science/Compilers",
     "_ignore/Diaries/2024/03/13.md",
-    "index.md",
     "_assets/img/mainvisual04.png",
     "Algorithm/Math/基础数论.md",
     "_assets/img/IMG_7240.PNG",
@@ -199,8 +195,6 @@
     "_assets/img/Screenshot 2024-03-11 at 20.32.00.png",
     "_assets/img/Screenshot 2024-03-11 at 20.24.41.png",
     "_assets/img/Screenshot 2024-03-11 at 19.41.40.png",
-    "_assets/img/Screenshot 2024-03-11 at 18.55.57.png",
-    "_assets/img/Screenshot 2024-03-11 at 18.50.27.png",
     "Computer Science/Electronics/数字电路与逻辑设计/Ch.2.md",
     "Computer Science/Electronics/信号与系统",
     "Computer Science/Electronics/数字电路与逻辑设计",
@@ -209,15 +203,8 @@
     "Algorithm/WriteUp/LuoguP5539.md",
     "Computer Science/Theory of Computer Science/MIT 18.404/index.md",
     "Computer Science/Theory of Computer Science/Programming Languages/Stanford CS242/index.md",
-    "Computer Science/Theory of Computer Science/Programming Languages/index.md",
-    "Computer Science/Theory of Computer Science/Programming Languages/NJU 软件分析/index.md",
     "Computer Science/Theory of Computer Science/Programming Languages/Stanford CS242",
-    "Computer Science/Theory of Computer Science/index.md",
-    "Computer Science/Computer Security/Stanford CS110L.md",
-    "_assets/img/favicon.png",
     "_assets/img/paw-256.ico",
-    "_assets/img/favicon.ico",
-    "_assets/img/Screenshot 2024-03-08 at 22.09.18.png",
     "Ignore/Plans/2024/02/Untitled.canvas",
     "Untitled.canvas"
   ]

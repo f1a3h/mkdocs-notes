@@ -1,5 +1,5 @@
 ---
-title: Introduction to Compilers and COOL
+title: Introduction to Compilers
 date: 
 draft: false
 math: true
@@ -9,9 +9,8 @@ categories:
 tags:
   - Compilers
 ---
-## Compilers
 
-### Language Implementations
+## Language Implementations
 
 将高级的 programming languages 转化为 machine code 主要有两种方法：
 
@@ -63,7 +62,7 @@ Program-->Interpreter-->Machine
 
 也有一些语言 (e.g. Java, Javascript, WebAssembly) 同时提供了这两种方法：Interpreter + Just in Time (JIT) compiler
 
-### The Structure of a Compiler
+## The Structure of a Compiler
 
 1. Lexical Analysis - identify words (syntactic)
 	- 将 program text 提取为 "tokens"
@@ -85,3 +84,20 @@ Program-->Interpreter-->Machine
 	- 过程中可能会生成多次 IR 来逐步发掘高层次抽象中隐藏的 features
 
 相比于以前大部头是 lexical analysis 和 parsing，现在的编译器中最 expensive 的部分是 optimization，其次是 semantic analysis。
+
+## Programming Language Economics
+
+这部分主要回答三个问题：
+
+- Why so many programming languages?
+	- 因为 applications 有不同甚至是相互矛盾的需求
+- Why new programming languages?
+	- 为了填补市场空白
+		- 可能是实现用某些已有的语言难以实现的 application
+		- 也有可能技术发展得以提高语言设计的质量（主要原因）
+	- 另外，新的 PL 并不是 completely new，而是会和一些已有的 PL 很像，甚至算是同一个 family
+		- 最主要的原因是 programmer training，其次还有重复造轮子之类的，都是非常 costly 的
+	- 还有一个原因就是，已经被广泛使用的 PL 是很难去改变的，从现在很多 PL 的版本更替所导致的众多问题也可以看出来
+- What is a good programming language?
+	- 这个问题目前没有公认的说法
+		- 有一种说法是"A good language is one people use."，这种说法显然（至少我认为显然）是错误的
