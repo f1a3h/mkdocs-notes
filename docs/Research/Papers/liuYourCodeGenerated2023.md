@@ -86,17 +86,5 @@ Comment：🔤契约编程 [41] 哲学，通过以代码断言的形式系统地
 
 %% end annotations %%
 
-## 3. Key Notes
-
-### 3.1 Problems
-
-
-### 3.2 Contributions
-
-
-### 3.3 Method
-
-
-### 3.4 Comments
 
 %% Import Date: 2024-02-15T12:47:41.675+08:00 %%

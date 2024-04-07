@@ -8,13 +8,25 @@
         "type": "tabs",
         "children": [
           {
-            "id": "78ddd4b99e820601",
+            "id": "044aeb8d8213423f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Science/Compilers/Stanford CS143/Intro.md",
+                "file": "Computer Science/Electronics/数字电路与逻辑设计/Ch.1.md",
                 "mode": "preview",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1d27296122a6ae5a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Algorithm/WriteUp/Competition/AtCoder.md",
+                "mode": "source",
                 "source": false
               }
             }
@@ -85,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Science/Compilers/Stanford CS143/Intro.md",
+                "file": "Computer Science/Electronics/数字电路与逻辑设计/Ch.1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Science/Compilers/Stanford CS143/Intro.md",
+                "file": "Computer Science/Electronics/数字电路与逻辑设计/Ch.1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Science/Compilers/Stanford CS143/Intro.md"
+                "file": "Computer Science/Electronics/数字电路与逻辑设计/Ch.1.md"
               }
             }
           },
@@ -142,7 +154,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -158,54 +171,54 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "78ddd4b99e820601",
+  "active": "044aeb8d8213423f",
   "lastOpenFiles": [
-    "CNAME",
+    "Computer Science/Electronics/数字电路与逻辑设计/Ch.2.md",
+    "Computer Science/Electronics/数字电路与逻辑设计/Ch.1.md",
+    "Research/Learning Research.md",
+    "Research/Papers/fuSedarObtainingHighQuality2024.md",
+    "Algorithm/WriteUp/Competition/AtCoder.md",
+    "_ignore/Plans/Research.md",
+    "Algorithm/WriteUp/Competition",
+    "_ignore/Plans/Misc.md",
+    "_ignore/Plans/CSdiy.md",
+    "_ignore/Plans/Algorithm.md",
+    "Algorithm/String/AC自动机.md",
+    "_ignore/Diaries/2024/04/05 1.md",
+    "_ignore/Diaries/2024/04/05.md",
+    "_ignore/Diaries/2024/04",
+    "_ignore/Templates/zotero_integration.md",
+    "_ignore/Plans/2024/04/Untitled Kanban.md",
+    "Algorithm/ACM算法实践.md",
+    "Research/Papers/manesArtScienceEngineering2019.md",
+    "_ignore/Plans/2024/04/Untitled.md",
+    "_ignore/Plans/2024/03/31.md",
+    "_ignore/Plans/2024/04",
+    "_ignore/Plans/2024/03/Untitled",
+    "_assets/img/Screenshot 2024-03-31 at 22.10.59.png",
+    "Computer Science/Electronics/DDCA/第一章.md",
+    "Computer Science/Electronics/DDCA/index.md",
+    "Computer Science/Theory of Computer Science/MIT 18.404/Computability Theory/The Church-Turing Thesis.md",
+    "Computer Science/Electronics/DDCA",
+    "_assets/img/Screenshot 2024-03-31 at 13.54.20.png",
     "Computer Science/Theory of Computer Science/MIT 18.404/Automata and Language Theory.md",
+    "Computer Science/Theory of Computer Science/MIT 18.404/Computability Theory/index.md",
+    "_ignore/Diaries/2024/03/31.md",
+    "_ignore/Plans/2024/02/05.md",
+    "Computer Science/Math/LADW.md",
+    "_ignore/Plans/2024/03",
+    "Computer Science/Theory of Computer Science/MIT 18.404/Computability Theory",
+    "_assets/img/Screenshot 2024-03-30 at 21.07.30.png",
+    "_assets/img/Screenshot 2024-03-26 at 15.33.25.png",
+    "_assets/img/Screenshot 2024-03-23 at 17.09.51.png",
+    "_assets/img/Screenshot 2024-03-23 at 17.09.23.png",
+    "CNAME",
     "_assets/img/Screenshot 2024-03-17 at 13.53.15.png",
     "_assets/img/Screenshot 2024-03-17 at 13.46.44.png",
     "_assets/img/Screenshot 2024-03-17 at 12.56.25.png",
     "_assets/img/Screenshot 2024-03-17 at 12.55.31.png",
-    "Computer Science/Compilers/Stanford CS143/Intro.md",
-    "Computer Science/Math/MIT 18.330.md",
-    "_ignore/Diaries/2024/03/17.md",
-    "Computer Science/Math/网络空间安全数学基础/index.md",
-    "Algorithm/index.md",
-    "index.md",
-    "Computer Science/index.md",
-    "Computer Science/Theory of Computer Science/Programming Languages/Stanford CS242/Syntax and Semantics.md",
     "Computer Science/Math/网络空间安全数学基础",
-    "Algorithm/WriteUp/Quantum Wave Speed Pass.md",
-    "_assets/img/Screenshot 2024-03-13 at 12.52.02.png",
-    "Computer Science/Compilers/Stanford CS143/index.md",
-    "Computer Science/Compilers/index.md",
-    "Computer Science/Electronics/index.md",
     "Computer Science/Compilers/Stanford CS143",
-    "Computer Science/Compilers",
-    "_ignore/Diaries/2024/03/13.md",
-    "_assets/img/mainvisual04.png",
-    "Algorithm/Math/基础数论.md",
-    "_assets/img/IMG_7240.PNG",
-    "_ignore/Diaries/2024/03/12.md",
-    "Computer Science/Computer Architecture/UCB CS61C.md",
-    "Algorithm/Math/GCD&LCM.md",
-    "Algorithm/Math/Miller Rabin.md",
-    "Algorithm/Math/快速幂.md",
-    "_assets/css/custom.css",
-    "_assets/css/custom.css.bak",
-    "_assets/img/Screenshot 2024-03-11 at 20.32.00.png",
-    "_assets/img/Screenshot 2024-03-11 at 20.24.41.png",
-    "_assets/img/Screenshot 2024-03-11 at 19.41.40.png",
-    "Computer Science/Electronics/数字电路与逻辑设计/Ch.2.md",
-    "Computer Science/Electronics/信号与系统",
-    "Computer Science/Electronics/数字电路与逻辑设计",
-    "Computer Science/Electronics",
-    "Algorithm/ACM算法实践.md",
-    "Algorithm/WriteUp/LuoguP5539.md",
-    "Computer Science/Theory of Computer Science/MIT 18.404/index.md",
-    "Computer Science/Theory of Computer Science/Programming Languages/Stanford CS242/index.md",
-    "Computer Science/Theory of Computer Science/Programming Languages/Stanford CS242",
-    "_assets/img/paw-256.ico",
     "Ignore/Plans/2024/02/Untitled.canvas",
     "Untitled.canvas"
   ]

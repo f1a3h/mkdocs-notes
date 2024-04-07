@@ -6,7 +6,6 @@ math: true
 description: Introduction to the Theory of Computation
 categories:
   - Study Notes
-  - ITC
 tags:
   - TCS
 ---

@@ -8,6 +8,8 @@ categories:
   - Study Notes
 tags:
   - TCS
+  - Automaton
+  - Programming-Language
 ---
 
 > [!key points]- 
@@ -347,3 +349,37 @@ derivation 也可以被表示为树形结构，称为 *parse tree* 。
 
 ### Non-Context-Free Languages
 
+和 finite automata 一样，CFG 尽管借助递归的力量拥有了更强大的表达能力，但是仍然有所限制，它所能识别的字符串中除了有限长的字符串都必然会有至少两个子串是“重复”的，这样是符合递归的定义的，于是 CFL 也会一个 pumping lemma.
+
+> [!lemma]+ Pumping lemma for context-free languages
+> If $A$ is a context-free language, then there is a number $p$ (the pumping length) where, if $s$ is any string in $A$ of length at least $p$, then $s$ may be divided into five pieces $s = uvxyz$ satisfying the conditions
+> 
+> 1. for each $i\ge 0$, $uv^ixy^iz\in A$,
+> 2. $|vy|>0$, and
+> 3. $|vxy|\le p$.
+
+从 parse tree 上很容易看出它的正确性：
+
+![[Screenshot 2024-03-30 at 21.07.30.png]]
+
+### Deterministic Context-Free Languages
+
+在前面的 regular languages 中，我们知道 DFA 和 NFA 的表达能力是一样的，nondeterminism 的力量在 regular languages 中并没有得到体现（不过 NFA 一般会比 DFA 好构造得多 qwq ），但是在 CFL 中，nondeterminism 给 PDA 带来了新的活力。
+
+> [!note]- Thoughts on the essence
+> 为什么 nondeterminism 在 CFL 中可以有用武之地而在 regular languages 中却像是花瓶一样的存在呢？它们的本质区别究竟在于何处？
+> 
+> 我们可以在某种程度上，狭义地认为这是 finiteness 造成的。
+> 
+> 在 finite automata 中，无论是 states 还是 transitions 都是 finite 的，因而 DFA 可以通过 subset construction algorithm 转化为 NFA，nondeterminism 在其中等价于 more options，允许了 NFA 对于一个 input symbol 可以有多个 transitions，但是 possible states 和 transitions 终究还是 finite，可以被 DFA 通过增加 states 追赶上来，因此 nondeterminism 提供的力量相当有限。
+> 
+> 而在 CFG 中，一个 symbol 对应多个 rule，每个 rule 都可以被重复使用，使得它的 states 是 infinite 的，同时也会产生一定的 complexity 使其区别于 regular languages。在这种情况下，nondeterminism 的引入带来的是 more parsing paths，使得同一个 string 可以被不同的结构所表示，这也引入了 ambiguity，这些 ambiguous CFLs 是无法被 DPDA 所识别的。
+> 
+> 值得注意的是，nondeterminism 只是 opens the door for ambiguity，这并不代表所有 NCFL 都是 ambiguous 的。
+> 
+> - DCFLs $\subset$ unambiguous CFLs
+> - ambiguous CFLs $\subset$ NCFLs
+
+这一个 section 可以算是一个 bonus section，对于 CFL 的理论更深入、复杂，我只是看了其中很小一部分内容，并且思考了 nondeterminism 在 regular languages 和 CFLs 中各自发挥的本质作用，剩余的内容是否会在之后的某一天接着学习仍然是 nondeterministic 的（逃
+
+~~非常好 nondeterminism，这使我的 TCS 旋转~~

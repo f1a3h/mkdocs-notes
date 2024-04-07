@@ -56,17 +56,3 @@ Comment：🔤如果选择的时间预算太小，速度越快，但效果越差
 
 Annotated Text：[In the implementation, the researcher can make engineering decisions that can substantially affect the effectiveness of the fuzzer.](zotero://open-pdf/library/items/4XJENJ6Y?page=6&annotation=C3YIVR8K)
 Comment：🔤In the implementation, the researcher can make engineering decisions that can substantially affect the effectiveness of the fuzzer.🔤
-
-## 3. Key Notes
-
-### 3.1 Problems
-
-
-### 3.2 Contributions
-
-
-### 3.3 Method
-
-
-### 3.4 Comments
-
