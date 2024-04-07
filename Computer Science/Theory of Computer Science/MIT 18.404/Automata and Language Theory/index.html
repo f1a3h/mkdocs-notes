@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../../_assets/img/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.7e359304.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.bcfcd587.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
@@ -578,6 +578,8 @@
         
       
         
+      
+        
           
         
       
@@ -632,6 +634,27 @@
   
   <span class="md-ellipsis">
     Introduction to Compilers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Compilers/Stanford%20CS143/Lexical%20Analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lexical Analysis
   </span>
   
 
@@ -1234,11 +1257,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Electronics/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E4%B8%8E%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1/Ch.2/" class="md-nav__link">
+      <a href="../../../Electronics/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E4%B8%8E%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1/Ch.1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    第2章 逻辑代数基础
+    第1章 数字电路与逻辑设计基础
   </span>
   
 
@@ -1319,7 +1342,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Math/Linear%20Algebra%20Done%20Wrong/" class="md-nav__link">
+      <a href="../../../Math/LADW/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1517,6 +1540,8 @@
           
         
       
+        
+      
     
     
       
@@ -1692,6 +1717,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#deterministic-context-free-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deterministic Context-Free Languages
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1706,6 +1740,77 @@
 
               
             
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8_2_3" id="__nav_2_8_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Computability Theory
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_8_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Computability Theory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computability%20Theory/The%20Church-Turing%20Thesis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Church-Turing Thesis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
               
             
           </ul>
@@ -3178,6 +3283,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#deterministic-context-free-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deterministic Context-Free Languages
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3543,6 +3657,34 @@ A\Rightarrow 0A1\Rightarrow 00A11\Rightarrow 000A111\Rightarrow 000B111\Rightarr
 <p>Every regular language is context free.</p>
 </details>
 <h3 id="non-context-free-languages">Non-Context-Free Languages<a class="headerlink" href="#non-context-free-languages" title="Permanent link">&para;</a></h3>
+<p>和 finite automata 一样，CFG 尽管借助递归的力量拥有了更强大的表达能力，但是仍然有所限制，它所能识别的字符串中除了有限长的字符串都必然会有至少两个子串是“重复”的，这样是符合递归的定义的，于是 CFL 也会一个 pumping lemma.</p>
+<details class="lemma" open="open">
+<summary>Pumping lemma for context-free languages</summary>
+<p>If <span class="arithmatex">\(A\)</span> is a context-free language, then there is a number <span class="arithmatex">\(p\)</span> (the pumping length) where, if <span class="arithmatex">\(s\)</span> is any string in <span class="arithmatex">\(A\)</span> of length at least <span class="arithmatex">\(p\)</span>, then <span class="arithmatex">\(s\)</span> may be divided into five pieces <span class="arithmatex">\(s = uvxyz\)</span> satisfying the conditions</p>
+<ol>
+<li>for each <span class="arithmatex">\(i\ge 0\)</span>, <span class="arithmatex">\(uv^ixy^iz\in A\)</span>,</li>
+<li><span class="arithmatex">\(|vy|&gt;0\)</span>, and</li>
+<li><span class="arithmatex">\(|vxy|\le p\)</span>.</li>
+</ol>
+</details>
+<p>从 parse tree 上很容易看出它的正确性：</p>
+<p><img alt="Screenshot 2024-03-30 at 21.07.30.png" src="../../../../_assets/img/Screenshot%202024-03-30%20at%2021.07.30.png" /></p>
+<h3 id="deterministic-context-free-languages">Deterministic Context-Free Languages<a class="headerlink" href="#deterministic-context-free-languages" title="Permanent link">&para;</a></h3>
+<p>在前面的 regular languages 中，我们知道 DFA 和 NFA 的表达能力是一样的，nondeterminism 的力量在 regular languages 中并没有得到体现（不过 NFA 一般会比 DFA 好构造得多 qwq ），但是在 CFL 中，nondeterminism 给 PDA 带来了新的活力。</p>
+<details class="note">
+<summary>Thoughts on the essence</summary>
+<p>为什么 nondeterminism 在 CFL 中可以有用武之地而在 regular languages 中却像是花瓶一样的存在呢？它们的本质区别究竟在于何处？</p>
+<p>我们可以在某种程度上，狭义地认为这是 finiteness 造成的。</p>
+<p>在 finite automata 中，无论是 states 还是 transitions 都是 finite 的，因而 DFA 可以通过 subset construction algorithm 转化为 NFA，nondeterminism 在其中等价于 more options，允许了 NFA 对于一个 input symbol 可以有多个 transitions，但是 possible states 和 transitions 终究还是 finite，可以被 DFA 通过增加 states 追赶上来，因此 nondeterminism 提供的力量相当有限。</p>
+<p>而在 CFG 中，一个 symbol 对应多个 rule，每个 rule 都可以被重复使用，使得它的 states 是 infinite 的，同时也会产生一定的 complexity 使其区别于 regular languages。在这种情况下，nondeterminism 的引入带来的是 more parsing paths，使得同一个 string 可以被不同的结构所表示，这也引入了 ambiguity，这些 ambiguous CFLs 是无法被 DPDA 所识别的。</p>
+<p>值得注意的是，nondeterminism 只是 opens the door for ambiguity，这并不代表所有 NCFL 都是 ambiguous 的。</p>
+<ul>
+<li>DCFLs <span class="arithmatex">\(\subset\)</span> unambiguous CFLs</li>
+<li>ambiguous CFLs <span class="arithmatex">\(\subset\)</span> NCFLs</li>
+</ul>
+</details>
+<p>这一个 section 可以算是一个 bonus section，对于 CFL 的理论更深入、复杂，我只是看了其中很小一部分内容，并且思考了 nondeterminism 在 regular languages 和 CFLs 中各自发挥的本质作用，剩余的内容是否会在之后的某一天接着学习仍然是 nondeterministic 的（逃</p>
+<p><del>非常好 nondeterminism，这使我的 TCS 旋转</del></p>
 
 
 
@@ -3732,7 +3874,7 @@ document.addEventListener("DOMContentLoaded", function() {
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.1e8ae164.min.js"></script>
       
         <script src="../../../../_assets/js/katex.js"></script>
       
