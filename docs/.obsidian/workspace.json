@@ -8,24 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "044aeb8d8213423f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Computer Science/Electronics/数字电路与逻辑设计/Ch.1.md",
-                "mode": "preview",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "1d27296122a6ae5a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/WriteUp/Competition/AtCoder.md",
+                "file": "Algorithm/Geometry/2D.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Science/Electronics/数字电路与逻辑设计/Ch.1.md",
+                "file": "Algorithm/Geometry/2D.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Science/Electronics/数字电路与逻辑设计/Ch.1.md",
+                "file": "Algorithm/Geometry/2D.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Science/Electronics/数字电路与逻辑设计/Ch.1.md"
+                "file": "Algorithm/Geometry/2D.md"
               }
             }
           },
@@ -171,13 +159,29 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "044aeb8d8213423f",
+  "active": "1d27296122a6ae5a",
   "lastOpenFiles": [
-    "Computer Science/Electronics/数字电路与逻辑设计/Ch.2.md",
-    "Computer Science/Electronics/数字电路与逻辑设计/Ch.1.md",
-    "Research/Learning Research.md",
-    "Research/Papers/fuSedarObtainingHighQuality2024.md",
+    "ACG/Game/樱之诗.md",
+    "Algorithm/Geometry/2D.md",
+    "Algorithm/Geometry",
+    "Computer Science/index.md",
+    "_assets/css/font.css~",
+    "index.md",
+    "Research/index.md",
+    "_ignore/Diaries/2024/04/11.md",
     "Algorithm/WriteUp/Competition/AtCoder.md",
+    "Computer Science/Math/信息安全数学基础/index.md",
+    "Research/Learning Research.md",
+    "Research/Papers/index.md",
+    "Research/Papers/manesArtScienceEngineering2019.md",
+    "Research/Papers/godefroidAutomatedWhiteboxFuzz.md",
+    "Research/Papers/liuYourCodeGenerated2023.md",
+    "Research/Papers/fuSedarObtainingHighQuality2024.md",
+    "Research/Papers/boehmeFuzzingChallengesReflections2021.md",
+    "Research/Research Log.md",
+    "_ignore/Templates/zotero_integration.md",
+    "Computer Science/Electronics/数字电路与逻辑设计/Ch.1.md",
+    "Computer Science/Electronics/数字电路与逻辑设计/Ch.2.md",
     "_ignore/Plans/Research.md",
     "Algorithm/WriteUp/Competition",
     "_ignore/Plans/Misc.md",
@@ -187,25 +191,11 @@
     "_ignore/Diaries/2024/04/05 1.md",
     "_ignore/Diaries/2024/04/05.md",
     "_ignore/Diaries/2024/04",
-    "_ignore/Templates/zotero_integration.md",
-    "_ignore/Plans/2024/04/Untitled Kanban.md",
-    "Algorithm/ACM算法实践.md",
-    "Research/Papers/manesArtScienceEngineering2019.md",
-    "_ignore/Plans/2024/04/Untitled.md",
-    "_ignore/Plans/2024/03/31.md",
     "_ignore/Plans/2024/04",
     "_ignore/Plans/2024/03/Untitled",
     "_assets/img/Screenshot 2024-03-31 at 22.10.59.png",
-    "Computer Science/Electronics/DDCA/第一章.md",
-    "Computer Science/Electronics/DDCA/index.md",
-    "Computer Science/Theory of Computer Science/MIT 18.404/Computability Theory/The Church-Turing Thesis.md",
     "Computer Science/Electronics/DDCA",
     "_assets/img/Screenshot 2024-03-31 at 13.54.20.png",
-    "Computer Science/Theory of Computer Science/MIT 18.404/Automata and Language Theory.md",
-    "Computer Science/Theory of Computer Science/MIT 18.404/Computability Theory/index.md",
-    "_ignore/Diaries/2024/03/31.md",
-    "_ignore/Plans/2024/02/05.md",
-    "Computer Science/Math/LADW.md",
     "_ignore/Plans/2024/03",
     "Computer Science/Theory of Computer Science/MIT 18.404/Computability Theory",
     "_assets/img/Screenshot 2024-03-30 at 21.07.30.png",
@@ -217,8 +207,6 @@
     "_assets/img/Screenshot 2024-03-17 at 13.46.44.png",
     "_assets/img/Screenshot 2024-03-17 at 12.56.25.png",
     "_assets/img/Screenshot 2024-03-17 at 12.55.31.png",
-    "Computer Science/Math/网络空间安全数学基础",
-    "Computer Science/Compilers/Stanford CS143",
     "Ignore/Plans/2024/02/Untitled.canvas",
     "Untitled.canvas"
   ]

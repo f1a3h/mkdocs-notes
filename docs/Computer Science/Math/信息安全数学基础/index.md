@@ -1,5 +1,5 @@
 ---
-title: 网络空间安全数学基础
+title: 信息安全数学基础
 date: 
 draft: false
 math: true

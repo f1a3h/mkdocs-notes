@@ -6,7 +6,7 @@ share: true
 ---
 
 
-!!! note ""
+!!! quote ""
 	<div align="center" style="font-size:32px;font-weight:bold;">
 	『その時を待つよ』
 	</div>

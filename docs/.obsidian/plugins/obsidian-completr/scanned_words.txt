@@ -376,6 +376,8 @@ CE
 Campaign
 Cross
 CDQ
+Capture
+Crude
 Summer
 Study
 Six
@@ -540,6 +542,9 @@ SC
 Sedar
 Seeds
 SEDAR
+Schema
+Sun
+Simple
 date
 draft
 description
@@ -1198,6 +1203,7 @@ circumstances
 continue
 carefully
 compound
+choices
 Notes
 No
 Non
@@ -1512,6 +1518,7 @@ ISHZ
 IZ
 ITG
 IFTW
+Inspired
 in
 issues
 integer
@@ -2056,6 +2063,7 @@ LG
 LADW
 LNHKHFRS
 Liang
+Lack
 Memory
 Measurement
 Most
@@ -2173,6 +2181,7 @@ Maverick
 MYR
 MQ
 Monge
+Mutability
 Hierarchy
 How
 Handling
@@ -2253,7 +2262,6 @@ DBS
 Distributive
 Dataflow
 Datalog
-DBMS
 David
 Darmstadt
 Dagstuhl
@@ -2456,6 +2464,8 @@ RD
 RNV
 RJ
 Reading
+Refinement
+Refine
 By
 Borrowing
 BB
@@ -2991,6 +3001,9 @@ sensibly
 subconscious
 starved
 sleep
+support
+systematic
+scalability
 Overflow
 Ownership
 Object
@@ -3270,6 +3283,8 @@ empirical
 evidence
 explore
 executions
+enabling
+explode
 Valgrind
 Variables
 View
@@ -3372,6 +3387,7 @@ unambiguous
 unlimited
 unrestricted
 uni
+undeterministic
 leaks
 languages
 level
@@ -3639,6 +3655,7 @@ remained
 refers
 researchers
 regression
+refinement
 what
 will
 whatever
@@ -4176,6 +4193,7 @@ heuristic
 hundreds
 halting
 highly
+hallucinations
 just
 join
 jpg
@@ -4339,6 +4357,7 @@ ground
 gain
 grey
 go
+generational
 Quick
 QAQ
 QwQ

@@ -10,8 +10,8 @@ share: true
 ---
 
 
-!!! note ""
-    <p>
+!!! quote ""
+    <p align="center">
     Sometimes it's the very people who no one imagines anything of who do the things no one can imagine.
     </p>
     <p align="right">—— Alan Turing</p>
@@ -41,11 +41,11 @@ share: true
 > 
 > Electronics:
 > 
-> - [ ] 数字电路与逻辑设计
 > - [ ] 信号与系统
 > 
 > Math:
 > 
+> - [ ] 信息安全数学基础
 > - [ ] Linear Algebra Done Wrong（只是暂时搁置一下啦QAQ）
 > - [ ] MIT 18.330（搁置ing，之后上计算方法的时候再补完）
 > - [x] 谢惠民做题记录（腰斩力 QAQ）

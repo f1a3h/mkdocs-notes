@@ -6,11 +6,11 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "RaCubes",
       "😫",
       "😢",
       "😣",
-      "FarPaperPlane",
-      "FarChessKnight"
+      "FarPaperPlane"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -56,5 +56,6 @@
   "Computer Science/Compilers": "FasDragon",
   "Research/Papers": "FarPaperPlane",
   "_ignore/Diaries/2024/03/20.md": "😣",
-  "_ignore/Diaries/2024/03/28.md": "😫"
+  "_ignore/Diaries/2024/03/28.md": "😫",
+  "Algorithm/Geometry": "RaCubes"
 }
