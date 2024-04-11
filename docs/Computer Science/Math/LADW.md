@@ -15,7 +15,7 @@ tags:
 > [!info] 
 > 「[Linear Algebra Done Wrong](https://sites.google.com/a/brown.edu/sergei-treil-homepage/linear-algebra-done-wrong)」by Sergei Treil
 
-## Ch.2
+## Systems of Linear Euqations
 
 ![image.png](https://fastly.jsdelivr.net/gh/f1a3h/imgs/202402191510320.png)
 
@@ -65,4 +65,6 @@ $$
 $$
 [T]_{\mathcal{BB}} = Q^{-1}[T]_{\mathcal{AA}}Q
 $$
+
+## Determinants
 

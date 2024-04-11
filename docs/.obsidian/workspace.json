@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/Geometry/2D.md",
+                "file": "Computer Science/Math/LADW.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithm/Geometry/2D.md",
+                "file": "Computer Science/Math/LADW.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithm/Geometry/2D.md",
+                "file": "Computer Science/Math/LADW.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithm/Geometry/2D.md"
+                "file": "Computer Science/Math/LADW.md"
               }
             }
           },
@@ -159,10 +159,11 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "1d27296122a6ae5a",
+  "active": "00948b16b9d42f94",
   "lastOpenFiles": [
-    "ACG/Game/樱之诗.md",
+    "Computer Science/Math/信息安全数学基础/index.md",
     "Algorithm/Geometry/2D.md",
+    "ACG/Game/樱之诗.md",
     "Algorithm/Geometry",
     "Computer Science/index.md",
     "_assets/css/font.css~",
@@ -170,7 +171,6 @@
     "Research/index.md",
     "_ignore/Diaries/2024/04/11.md",
     "Algorithm/WriteUp/Competition/AtCoder.md",
-    "Computer Science/Math/信息安全数学基础/index.md",
     "Research/Learning Research.md",
     "Research/Papers/index.md",
     "Research/Papers/manesArtScienceEngineering2019.md",

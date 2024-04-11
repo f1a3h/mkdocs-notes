@@ -50,8 +50,8 @@ theme:
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: orange
-      accent: orange
+      primary: black
+      accent: cyan
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to light mode
