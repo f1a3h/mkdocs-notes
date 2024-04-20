@@ -6,11 +6,11 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "FasDiagramProject",
       "RaCubes",
       "😫",
       "😢",
-      "😣",
-      "FarPaperPlane"
+      "😣"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -57,5 +57,6 @@
   "Research/Papers": "FarPaperPlane",
   "_ignore/Diaries/2024/03/20.md": "😣",
   "_ignore/Diaries/2024/03/28.md": "😫",
-  "Algorithm/Geometry": "RaCubes"
+  "Algorithm/Geometry": "RaCubes",
+  "Algorithm/Graph": "FasDiagramProject"
 }

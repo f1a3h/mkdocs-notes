@@ -13,6 +13,18 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "Algorithm/Graph/Auxiliary Tree.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8adef7984a31a6fe",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "Computer Science/Math/LADW.md",
                 "mode": "source",
                 "source": false
@@ -85,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Science/Math/LADW.md",
+                "file": "Algorithm/Graph/Auxiliary Tree.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Science/Math/LADW.md",
+                "file": "Algorithm/Graph/Auxiliary Tree.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Science/Math/LADW.md"
+                "file": "Algorithm/Graph/Auxiliary Tree.md"
               }
             }
           },
@@ -159,11 +171,18 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "00948b16b9d42f94",
+  "active": "1d27296122a6ae5a",
   "lastOpenFiles": [
-    "Computer Science/Math/信息安全数学基础/index.md",
+    "Computer Science/Math/LADW.md",
+    "Algorithm/Graph/Auxiliary Tree.md",
+    "Algorithm/Math/快速幂.md",
+    "Algorithm/Math/基础数论.md",
+    "Algorithm/Math/Miller Rabin.md",
+    "Algorithm/Math/GCD&LCM.md",
     "Algorithm/Geometry/2D.md",
+    "Algorithm/Graph",
     "ACG/Game/樱之诗.md",
+    "Computer Science/Math/信息安全数学基础/index.md",
     "Algorithm/Geometry",
     "Computer Science/index.md",
     "_assets/css/font.css~",
@@ -184,12 +203,6 @@
     "Computer Science/Electronics/数字电路与逻辑设计/Ch.2.md",
     "_ignore/Plans/Research.md",
     "Algorithm/WriteUp/Competition",
-    "_ignore/Plans/Misc.md",
-    "_ignore/Plans/CSdiy.md",
-    "_ignore/Plans/Algorithm.md",
-    "Algorithm/String/AC自动机.md",
-    "_ignore/Diaries/2024/04/05 1.md",
-    "_ignore/Diaries/2024/04/05.md",
     "_ignore/Diaries/2024/04",
     "_ignore/Plans/2024/04",
     "_ignore/Plans/2024/03/Untitled",
@@ -202,7 +215,6 @@
     "_assets/img/Screenshot 2024-03-26 at 15.33.25.png",
     "_assets/img/Screenshot 2024-03-23 at 17.09.51.png",
     "_assets/img/Screenshot 2024-03-23 at 17.09.23.png",
-    "CNAME",
     "_assets/img/Screenshot 2024-03-17 at 13.53.15.png",
     "_assets/img/Screenshot 2024-03-17 at 13.46.44.png",
     "_assets/img/Screenshot 2024-03-17 at 12.56.25.png",

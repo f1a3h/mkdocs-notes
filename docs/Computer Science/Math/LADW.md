@@ -15,6 +15,10 @@ tags:
 > [!info] 
 > 「[Linear Algebra Done Wrong](https://sites.google.com/a/brown.edu/sergei-treil-homepage/linear-algebra-done-wrong)」by Sergei Treil
 
+> [!warning] 
+> 本文写得很随意 qwq
+
+
 ## Systems of Linear Euqations
 
 ![image.png](https://fastly.jsdelivr.net/gh/f1a3h/imgs/202402191510320.png)
@@ -67,4 +71,37 @@ $$
 $$
 
 ## Determinants
+
+将矩阵看成 column vectors 的组合，首先考虑 $2\times 2$ 的矩阵，那么它的 volume 就是两个向量组成的平行四边形的面积，如果是 $3\times 3$ 的矩阵，则是它们组成的立方体的体积，如果是 $n\times n$ 的矩阵呢？我们定义它的 volume 是 $D(\vec{v_1}, \dots, \vec{v_n})$ ，也可以写作 $\det A$ ，从这个角度来看，一下几个性质就很显然了：
+
+1. $D(\alpha\vec{v_1}, \dots, \vec{v_n})=\alpha D(\vec{v_1}, \dots, \vec{v_n})$
+2. $D(\vec{v_1}, \dots, \vec{u_k}+\vec{v_k}, \dots, \vec{v_n})=D(\vec{v_1}, \dots, \vec{u_k}, \dots, \vec{v_n})+D(\vec{v_1}, \dots, \vec{v_k}, \dots, \vec{v_n})$
+
+可以发现，我们对矩阵 $A$ 做 row operations，对于 $|A|$ 的影响只是前面的系数，根据前面 invertible 的知识，我们可以得出 A is invertible $\iff$ $|A| \not= 0$
+
+> [!lemma]+
+> Any invertible matrix is a product of elementary matrices.
+
+由以上 lemma 我们也不难得出以下结论：
+
+1. $\det{A} = \det{A^T}$
+2. $\det{(AB)}=(\det{A})(\det{B})$
+
+对 determinant 的实际意义有了一个基本的概念后，我们需要给它下一个 formal definition，于是便有了国内大部分教材引入行列式的概念时用到的基于逆序对和排列的定义，具体推导过程可以看书，不再赘述。
+
+在这之后，作者介绍了 determinant 写成 entries 与 cofactors 的线性组合的形式，这种形式是用来计算维度较大的行列式的主要方法。
+
+> [!theorem]+
+> Let $A$ be an invertible matrix and let $C$ be its cofactor matrix.
+> 
+> Then
+> $$A^{-1} = \dfrac{1}{\det{A}}C^T$$
+
+再由方程组的矩阵形式 $\mathrm{Ax=b}$ 我们可以引出 Cramer's rule.
+
+> [!theorem]+ Cramer's rule
+> 
+> For an invertible matrix $A$ the entry number $k$ of the solution of the equation $\mathrm{Ax = b}$ is given by the formula
+> $$ x_k = \dfrac{\det{B_k}}{\det{A}} $$
+> where the matrix $B_k$ is obtained from $A$ by replacing column number $k$ of $A$ by the vector $\mathrm{b}$.
 
