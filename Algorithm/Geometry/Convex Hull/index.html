@@ -10,28 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://note.f1a3h.com/Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/">
+        <link rel="canonical" href="https://note.f1a3h.com/Algorithm/Geometry/Convex%20Hull/">
       
       
-        <link rel="prev" href="Static%20Analysis%20for%20Security/">
+        <link rel="prev" href="../2D/">
       
       
-        <link rel="next" href="../Stanford%20CS242/Syntax%20and%20Semantics/">
+        <link rel="next" href="../../Graph/Auxiliary%20Tree/">
       
       
-      <link rel="icon" href="../../../../_assets/img/favicon.png">
+      <link rel="icon" href="../../../_assets/img/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
     
     
       
-        <title>NJU「软件分析」学习笔记 - f1a3h's Notebook</title>
+        <title>凸包 - f1a3h's Notebook</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.66ac8b77.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -94,19 +94,19 @@
     
       <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap">
     
-      <link rel="stylesheet" href="../../../../_assets/css/tasklist.css">
+      <link rel="stylesheet" href="../../../_assets/css/tasklist.css">
     
-      <link rel="stylesheet" href="../../../../_assets/css/custom.css">
+      <link rel="stylesheet" href="../../../_assets/css/custom.css">
     
-      <link rel="stylesheet" href="../../../../_assets/css/flink.css">
+      <link rel="stylesheet" href="../../../_assets/css/flink.css">
     
-      <link rel="stylesheet" href="../../../../_assets/css/font.css">
+      <link rel="stylesheet" href="../../../_assets/css/font.css">
     
-      <link rel="stylesheet" href="../../../../_assets/css/admonition.css">
+      <link rel="stylesheet" href="../../../_assets/css/admonition.css">
     
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -131,6 +131,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -141,7 +146,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="f1a3h&#39;s Notebook" class="md-header__button md-logo" aria-label="f1a3h's Notebook" data-md-component="logo">
+    <a href="../../.." title="f1a3h&#39;s Notebook" class="md-header__button md-logo" aria-label="f1a3h's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M275.2 38.4c-10.6-8-25-8.5-36.3-1.5S222 57.3 224.6 70.3l9.7 48.6c-19.4 9-36.9 19.9-52.4 31.5-15.3 11.5-29 23.9-40.7 36.3l-93.1-54.3c-12.5-7.3-28.4-5.3-38.6 4.9s-12.5 26-5.3 38.6L50 256 4.2 336.1c-7.2 12.6-5 28.4 5.3 38.6s26.1 12.2 38.6 4.9l93.1-54.3c11.8 12.3 25.4 24.8 40.7 36.3 15.5 11.6 33 22.5 52.4 31.5l-9.7 48.6c-2.6 13 3.1 26.3 14.3 33.3s25.6 6.5 36.3-1.5l77.6-58.2c54.9-4 101.5-27 137.2-53.8 39.2-29.4 67.2-64.7 81.6-89.5 5.8-9.9 5.8-22.2 0-32.1-14.4-24.8-42.5-60.1-81.6-89.5-35.8-26.8-82.3-49.8-137.2-53.8l-77.6-58.2zM384 256a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>
@@ -161,7 +166,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              NJU「软件分析」学习笔记
+              凸包
             
           </span>
         </div>
@@ -273,7 +278,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -288,13 +293,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../Computer%20Science/" class="md-tabs__link">
           
   
     
@@ -314,7 +317,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../Research/Learning%20Research/" class="md-tabs__link">
+        <a href="../../../Research/Learning%20Research/" class="md-tabs__link">
           
   
     
@@ -330,11 +333,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../../Algorithm/ACM%E7%AE%97%E6%B3%95%E5%AE%9E%E8%B7%B5/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../ACM%E7%AE%97%E6%B3%95%E5%AE%9E%E8%B7%B5/" class="md-tabs__link">
           
   
     
@@ -354,7 +359,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../ACG/" class="md-tabs__link">
+        <a href="../../../ACG/" class="md-tabs__link">
           
   
     
@@ -389,7 +394,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="f1a3h&#39;s Notebook" class="md-nav__button md-logo" aria-label="f1a3h's Notebook" data-md-component="logo">
+    <a href="../../.." title="f1a3h&#39;s Notebook" class="md-nav__button md-logo" aria-label="f1a3h's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M275.2 38.4c-10.6-8-25-8.5-36.3-1.5S222 57.3 224.6 70.3l9.7 48.6c-19.4 9-36.9 19.9-52.4 31.5-15.3 11.5-29 23.9-40.7 36.3l-93.1-54.3c-12.5-7.3-28.4-5.3-38.6 4.9s-12.5 26-5.3 38.6L50 256 4.2 336.1c-7.2 12.6-5 28.4 5.3 38.6s26.1 12.2 38.6 4.9l93.1-54.3c11.8 12.3 25.4 24.8 40.7 36.3 15.5 11.6 33 22.5 52.4 31.5l-9.7 48.6c-2.6 13 3.1 26.3 14.3 33.3s25.6 6.5 36.3-1.5l77.6-58.2c54.9-4 101.5-27 137.2-53.8 39.2-29.4 67.2-64.7 81.6-89.5 5.8-9.9 5.8-22.2 0-32.1-14.4-24.8-42.5-60.1-81.6-89.5-35.8-26.8-82.3-49.8-137.2-53.8l-77.6-58.2zM384 256a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>
@@ -419,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -436,8 +441,6 @@
       
   
   
-    
-  
   
   
     
@@ -464,22 +467,19 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../" class="md-nav__link ">
+            <a href="../../../Computer%20Science/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -490,13 +490,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Computer Science
@@ -537,7 +537,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Compilers/" class="md-nav__link ">
+            <a href="../../../Computer%20Science/Compilers/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -612,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Compilers/NJU%20%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Compilers/NJU%20%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -666,7 +666,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Compilers/Stanford%20CS143/" class="md-nav__link ">
+            <a href="../../../Computer%20Science/Compilers/Stanford%20CS143/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -697,7 +697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Compilers/Stanford%20CS143/Intro/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Compilers/Stanford%20CS143/Intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -718,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Compilers/Stanford%20CS143/Lexical%20Analysis/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Compilers/Stanford%20CS143/Lexical%20Analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -801,7 +801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer%20Architecture/UCB%20CS61C/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Computer%20Architecture/UCB%20CS61C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -845,7 +845,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Computer%20Architecture/CSAPP/" class="md-nav__link ">
+            <a href="../../../Computer%20Science/Computer%20Architecture/CSAPP/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -876,7 +876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer%20Architecture/CSAPP/Chapter%202/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Computer%20Architecture/CSAPP/Chapter%202/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -938,7 +938,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Computer%20Network/" class="md-nav__link ">
+            <a href="../../../Computer%20Science/Computer%20Network/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1002,7 +1002,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Computer%20Network/CNATDA/" class="md-nav__link ">
+            <a href="../../../Computer%20Science/Computer%20Network/CNATDA/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1033,7 +1033,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer%20Network/CNATDA/Chapter%202/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Computer%20Network/CNATDA/Chapter%202/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1054,7 +1054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer%20Network/CNATDA/Chapter%203/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Computer%20Network/CNATDA/Chapter%203/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1075,7 +1075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer%20Network/CNATDA/Chapter%204/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Computer%20Network/CNATDA/Chapter%204/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1096,7 +1096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer%20Network/CNATDA/Chapter%205/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Computer%20Network/CNATDA/Chapter%205/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1117,7 +1117,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer%20Network/CNATDA/Chapter%206/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Computer%20Network/CNATDA/Chapter%206/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1198,7 +1198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer%20Security/Stanford%20CS110L/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Computer%20Security/Stanford%20CS110L/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1250,7 +1250,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Electronics/" class="md-nav__link ">
+            <a href="../../../Computer%20Science/Electronics/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1325,7 +1325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Electronics/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E4%B8%8E%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1/Ch.1/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Electronics/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E4%B8%8E%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1/Ch.1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1410,7 +1410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Math/LADW/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Math/LADW/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1431,7 +1431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Math/MIT%2018.330/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Math/MIT%2018.330/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1452,7 +1452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Math/%E8%B0%A2%E6%83%A0%E6%B0%91%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Math/%E8%B0%A2%E6%83%A0%E6%B0%91%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1494,7 +1494,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Math/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="md-nav__link ">
+            <a href="../../../Computer%20Science/Math/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1535,8 +1535,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1556,16 +1554,16 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1582,7 +1580,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_8">
             <span class="md-nav__icon md-icon"></span>
             Theory of Computer Science
@@ -1623,7 +1621,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../MIT%2018.404/" class="md-nav__link ">
+            <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/MIT%2018.404/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1654,7 +1652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MIT%2018.404/Automata%20and%20Language%20Theory/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/MIT%2018.404/Automata%20and%20Language%20Theory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1719,7 +1717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MIT%2018.404/Computability%20Theory/The%20Church-Turing%20Thesis/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/MIT%2018.404/Computability%20Theory/The%20Church-Turing%20Thesis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1753,8 +1751,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1774,16 +1770,16 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_3" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1800,7 +1796,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_8_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_8_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_8_3">
             <span class="md-nav__icon md-icon"></span>
             Programming Languages
@@ -1813,8 +1809,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1844,16 +1838,16 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_3_2" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1864,13 +1858,13 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_2_8_3_2" id="__nav_2_8_3_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2_8_3_2" id="__nav_2_8_3_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_8_3_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_8_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_8_3_2">
             <span class="md-nav__icon md-icon"></span>
             NJU 软件分析
@@ -1884,7 +1878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CFL-Reachability%20and%20IFDS/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/CFL-Reachability%20and%20IFDS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1905,7 +1899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Data%20Flow%20Analysis/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Data%20Flow%20Analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1926,7 +1920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Datalog/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Datalog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1947,7 +1941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Interprocedural%20Analysis/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Interprocedural%20Analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1968,7 +1962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Pointer%20Analysis/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Pointer%20Analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1989,7 +1983,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Soundness%20and%20Soundiness/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Soundness%20and%20Soundiness/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2010,7 +2004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Static%20Analysis%20for%20Security/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Static%20Analysis%20for%20Security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2064,7 +2058,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Stanford%20CS242/" class="md-nav__link ">
+            <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/Stanford%20CS242/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2095,7 +2089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Stanford%20CS242/Syntax%20and%20Semantics/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/Stanford%20CS242/Syntax%20and%20Semantics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2172,7 +2166,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Research/" class="md-nav__link ">
+            <a href="../../../Research/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2203,7 +2197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Research/Learning%20Research/" class="md-nav__link">
+      <a href="../../../Research/Learning%20Research/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2230,6 +2224,8 @@
       
   
   
+    
+  
   
   
     
@@ -2256,19 +2252,22 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Algorithm/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2279,13 +2278,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Algorithm
@@ -2299,7 +2298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Algorithm/ACM%E7%AE%97%E6%B3%95%E5%AE%9E%E8%B7%B5/" class="md-nav__link">
+      <a href="../../ACM%E7%AE%97%E6%B3%95%E5%AE%9E%E8%B7%B5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2322,7 +2321,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Algorithm/%E5%8F%8C%E5%90%91%E6%90%9C%E7%B4%A2/" class="md-nav__link">
+      <a href="../../%E5%8F%8C%E5%90%91%E6%90%9C%E7%B4%A2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2340,8 +2339,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -2355,11 +2356,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
@@ -2373,7 +2374,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
             Geometry
@@ -2387,7 +2388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Algorithm/Geometry/2D/" class="md-nav__link">
+      <a href="../2D/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2405,10 +2406,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../../Algorithm/Geometry/Convex%20Hull/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    凸包
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2417,6 +2436,117 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      二维凸包
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二维凸包">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      算法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      暴力穷举法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jarvis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jarvis 步进法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#andrew" class="md-nav__link">
+    <span class="md-ellipsis">
+      Andrew 算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graham" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graham 扫描法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      三维凸包
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2479,7 +2609,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Algorithm/Graph/Auxiliary%20Tree/" class="md-nav__link">
+      <a href="../../Graph/Auxiliary%20Tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2556,7 +2686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Algorithm/Math/GCD%26LCM/" class="md-nav__link">
+      <a href="../../Math/GCD%26LCM/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2577,7 +2707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Algorithm/Math/Miller%20Rabin/" class="md-nav__link">
+      <a href="../../Math/Miller%20Rabin/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2598,7 +2728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Algorithm/Math/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/" class="md-nav__link">
+      <a href="../../Math/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2619,7 +2749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Algorithm/Math/%E5%BF%AB%E9%80%9F%E5%B9%82/" class="md-nav__link">
+      <a href="../../Math/%E5%BF%AB%E9%80%9F%E5%B9%82/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2692,7 +2822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Algorithm/String/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/" class="md-nav__link">
+      <a href="../../String/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2713,7 +2843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Algorithm/String/Manacher/" class="md-nav__link">
+      <a href="../../String/Manacher/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2786,7 +2916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Algorithm/WriteUp/LuoguP5539/" class="md-nav__link">
+      <a href="../../WriteUp/LuoguP5539/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2807,7 +2937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Algorithm/WriteUp/Quantum%20Wave%20Speed%20Pass/" class="md-nav__link">
+      <a href="../../WriteUp/Quantum%20Wave%20Speed%20Pass/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2870,7 +3000,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../ACG/" class="md-nav__link ">
+            <a href="../../../ACG/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2945,7 +3075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ACG/Comics/%E8%91%AC%E9%80%81%E3%81%AE%E3%83%95%E3%83%AA%E3%83%BC%E3%83%AC%E3%83%B3/" class="md-nav__link">
+      <a href="../../../ACG/Comics/%E8%91%AC%E9%80%81%E3%81%AE%E3%83%95%E3%83%AA%E3%83%BC%E3%83%AC%E3%83%B3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3018,7 +3148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ACG/Game/%E5%A1%9E%E5%B0%94%E8%BE%BE%E4%BC%A0%E8%AF%B4%EF%BC%9A%E6%97%B7%E9%87%8E%E4%B9%8B%E6%81%AF/" class="md-nav__link">
+      <a href="../../../ACG/Game/%E5%A1%9E%E5%B0%94%E8%BE%BE%E4%BC%A0%E8%AF%B4%EF%BC%9A%E6%97%B7%E9%87%8E%E4%B9%8B%E6%81%AF/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3039,7 +3169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ACG/Game/%E6%A8%B1%E4%B9%8B%E8%AF%97/" class="md-nav__link">
+      <a href="../../../ACG/Game/%E6%A8%B1%E4%B9%8B%E8%AF%97/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3110,7 +3240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ACG/Novel/%E9%92%A2%E9%93%81%E4%B9%8B%E7%BF%BC/" class="md-nav__link">
+      <a href="../../../ACG/Novel/%E9%92%A2%E9%93%81%E4%B9%8B%E7%BF%BC/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3157,6 +3287,107 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      二维凸包
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二维凸包">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      算法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      暴力穷举法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jarvis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jarvis 步进法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#andrew" class="md-nav__link">
+    <span class="md-ellipsis">
+      Andrew 算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graham" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graham 扫描法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      三维凸包
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3173,21 +3404,137 @@
   
 
 
-  <h1>NJU「软件分析」学习笔记</h1>
+  <h1>凸包</h1>
 
-<p>The course website is <a href="https://tai-e.pascal-lab.net/en/lectures.html">here</a>.</p>
-<p>I watched the lecture videos recorded in Spring 2020, and did the Tai-e assignments for exercise.</p>
+<h2 id="_1">二维凸包<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="_2">定义<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p><strong>凸多边形</strong>：所有内角大小都在 <span class="arithmatex">\([0, \pi]\)</span> 范围内的<em>简单多边形</em></p>
+<p><strong>凸包</strong>：在平面上能够包含所有给定点的最小凸多边形</p>
+<p>对于凸包，想象在给定平面上用一个橡皮筋去套住所有给定点后围成的图形即可。凸包是能围住所有点的所有多边形中周长最小的多边形，从下图<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>中可以看出来：</p>
+<p><img alt="" src="https://oi-wiki.org/geometry/images/ch.png" /></p>
+<h3 id="_3">算法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h4 id="_4">暴力穷举法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>最左下角的点一定在凸包上，于是我们将这个点加入凸包上的点集，枚举点集中的点，求出其他每个点与当前点组成的直线的斜率，将斜率最大和最小的两个点加入点集即可求出凸包上的点，复杂度 <span class="arithmatex">\(\mathcal{O}(nm)\)</span> ，<span class="arithmatex">\(m\)</span> 为凸包上的点的数量。</p>
+<h4 id="jarvis">Jarvis 步进法<a class="headerlink" href="#jarvis" title="Permanent link">&para;</a></h4>
+<p>同样从左下角的点开始，按照逆时针方向逐个找凸包上的点，一步一个点，因此叫步进法。</p>
+<p>假设当前已经找到了前 3 个点，分别是 <span class="arithmatex">\(p_0, p_1, p_2\)</span> ，那么 <span class="arithmatex">\(p_2\)</span> 到下一个点构成的向量与向量 <span class="arithmatex">\(\overrightarrow{p_1 p_2}\)</span> 的夹角一定最小，如下图<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>所示</p>
+<p><img alt="2641050697.png" src="../../../_assets/img/2641050697.png" /></p>
+<p>于是之后我们只需要利用 <span class="arithmatex">\(\cos\beta = \dfrac{\vec{u} \cdot \vec{v}}{|\vec{u} \times \vec{v}|}\)</span> 求出下一个点即可，复杂度 <span class="arithmatex">\(\mathcal{O}(nm)\)</span> ，<span class="arithmatex">\(m\)</span> 为凸包上的点的数量。</p>
+<h4 id="andrew">Andrew 算法<a class="headerlink" href="#andrew" title="Permanent link">&para;</a></h4>
+<p>从左下角的点开始，按照从左往右、从下到上的顺序先寻找下凸包上的点，然后再从右上角的点出发，按照从右往左、从上到下的顺序寻找上凸包上的点，因此，首先将所有点按照以横坐标为第一关键字、纵坐标为第二关键字进行排序。</p>
+<p>我们以下图<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>为例：</p>
+<p><img alt="20200921200619.png" src="../../../_assets/img/20200921200619.png" /></p>
+<p>观察可以发现，凸包上相邻三个点（分别设为 <span class="arithmatex">\(P_1, P_2, P_3\)</span> ）组成的内夹角一定小于 <span class="arithmatex">\(\pi\)</span> ，换而言之，如果是下凸包的话 <span class="arithmatex">\(P_2\)</span> 必然在线段 <span class="arithmatex">\(P_1 P_3\)</span> 的下方，因此我们可以按照上面所说的顺序，先将前两个点加入点集（栈），然后判断用当前枚举到的第三个点判断是否满足上述条件，如不满足就将栈顶的点弹出，一直到满足上述条件为止，枚举完所有的点也就找到了下（上）凸包上的点了。</p>
+<p>至于如果判断是否满足条件，就需要用到点积，以上图中的点 <span class="arithmatex">\(A,B,C\)</span> 为例，<span class="arithmatex">\(B\)</span> 点在 <span class="arithmatex">\(AC\)</span> 上方就会有 <span class="arithmatex">\(\overrightarrow{AB}\cdot\overrightarrow{BC}&lt;0\)</span>，如果是等于 0 的情况就说明 <span class="arithmatex">\(B\)</span> 在 <span class="arithmatex">\(AC\)</span> 上，这种情况下一般也会将 <span class="arithmatex">\(B\)</span> 点去掉，因而判断条件为 <span class="arithmatex">\(\overrightarrow{AB}\cdot\overrightarrow{BC}\le 0\)</span></p>
+<p>需要注意的是，由于排序和凸包内部的点所处线段上下方向不同的问题，求解上凸包时需要将所有点倒着枚举一遍，这样就不需要更改判断条件了。</p>
+<p>复杂度 <span class="arithmatex">\(\mathcal{O}(n\log n)\)</span>，瓶颈在于排序。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Point</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">Point</span><span class="w"> </span><span class="k">operator</span><span class="o">-</span><span class="p">(</span><span class="n">Point</span><span class="w"> </span><span class="o">&amp;</span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// - 重载为求解向量</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">Point</span><span class="p">){</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span><span class="w"> </span><span class="n">cov</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Andrew</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">points</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">points</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="p">[](</span><span class="n">Point</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">Point</span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="p">});</span><span class="w"> </span><span class="c1">// 排序</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">cross</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[](</span><span class="n">Point</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 计算点积</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="p">};</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">tot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">tmp</span><span class="p">;</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 先求解下凸包</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">tot</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">            </span><span class="n">cross</span><span class="p">(</span><span class="n">cov</span><span class="p">[</span><span class="n">tot</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">cov</span><span class="p">[</span><span class="n">tot</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">cov</span><span class="p">[</span><span class="n">tot</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">            </span><span class="n">tot</span><span class="o">--</span><span class="p">;</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">        </span><span class="n">cov</span><span class="p">[</span><span class="n">tot</span><span class="o">++</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">    </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tot</span><span class="p">;</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="o">--</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 再求解上凸包</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">tot</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">            </span><span class="n">cross</span><span class="p">(</span><span class="n">cov</span><span class="p">[</span><span class="n">tot</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">cov</span><span class="p">[</span><span class="n">tot</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">cov</span><span class="p">[</span><span class="n">tot</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 下凸包上的点再计算一遍不会影响结果</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">            </span><span class="n">tot</span><span class="o">--</span><span class="p">;</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">        </span><span class="n">cov</span><span class="p">[</span><span class="n">tot</span><span class="o">++</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="p">}</span>
+</code></pre></div>
+<h4 id="graham">Graham 扫描法<a class="headerlink" href="#graham" title="Permanent link">&para;</a></h4>
+<p>Graham 扫描法与 Andrew 算法的不同在于它是从纵坐标最小的点开始，将它作为原点，以其它点到原点的极角大小为关键字进行排序的，相比之下，Andrew 算法会更 intuitive 一些。</p>
+<p>复杂度的瓶颈同样在于排序，为 <span class="arithmatex">\(\mathcal{O}(n\log n)\)</span> </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Point</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">ang</span><span class="p">;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="n">Point</span><span class="w"> </span><span class="k">operator</span><span class="o">-</span><span class="p">(</span><span class="n">Point</span><span class="w"> </span><span class="o">&amp;</span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// - 重载为求解向量</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">Point</span><span class="p">){</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span><span class="w"> </span><span class="n">cov</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Graham</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 求出纵坐标最小的点</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">y</span><span class="w"> </span><span class="o">||</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">           </span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">y</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">x</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 求出每个点的极角</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">        </span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">ang</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">atan2</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">points</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">points</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="p">[](</span><span class="n">Point</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">Point</span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">ang</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">ang</span><span class="p">;</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">    </span><span class="p">});</span><span class="w"> </span><span class="c1">// 排序</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">cross</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[](</span><span class="n">Point</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 计算点积</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">    </span><span class="p">};</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">tot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">tmp</span><span class="p">;</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 先求解下凸包</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">tot</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">            </span><span class="n">cross</span><span class="p">(</span><span class="n">cov</span><span class="p">[</span><span class="n">tot</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">cov</span><span class="p">[</span><span class="n">tot</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">cov</span><span class="p">[</span><span class="n">tot</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">            </span><span class="n">tot</span><span class="o">--</span><span class="p">;</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">        </span><span class="n">cov</span><span class="p">[</span><span class="n">tot</span><span class="o">++</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="w">    </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tot</span><span class="p">;</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="o">--</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 再求解上凸包</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">tot</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="w">            </span><span class="n">cross</span><span class="p">(</span><span class="n">cov</span><span class="p">[</span><span class="n">tot</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">cov</span><span class="p">[</span><span class="n">tot</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">cov</span><span class="p">[</span><span class="n">tot</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 下凸包上的点再计算一遍不会影响结果</span>
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="w">            </span><span class="n">tot</span><span class="o">--</span><span class="p">;</span>
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="w">        </span><span class="n">cov</span><span class="p">[</span><span class="n">tot</span><span class="o">++</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="_5">三维凸包<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>TODO</p>
+<h2 id="_6">参考<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Course Introduction</li>
-<li>Intermediate Representation</li>
-<li><a href="Data%20Flow%20Analysis/">Data Flow Analysis</a></li>
-<li><a href="Interprocedural%20Analysis/">Interprocedural Analysis</a></li>
-<li><a href="Pointer%20Analysis/">Pointer Analysis</a></li>
-<li><a href="Static%20Analysis%20for%20Security/">Static Analysis for Security</a></li>
-<li><a href="Datalog/">Datalog-Based Program Analysis</a></li>
-<li><a href="CFL-Reachability%20and%20IFDS/">CFL-Reachability and IFDS</a></li>
-<li><a href="Soundness%20and%20Soundiness/">Soundness and Soundiness</a></li>
+<li><a href="https://www.jvruo.com/archives/38/">【蒟蒻计算几何】二维凸包</a></li>
+<li><a href="https://www.cnblogs.com/RioTian/p/13714244.html">【计算几何 02】凸包问题（Convex Hull）</a></li>
+<li><a href="https://oi-wiki.org/geometry/convex-hull">凸包 - OI Wiki</a></li>
 </ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="https://oi-wiki.org/geometry/convex-hull/#%E5%87%B8%E5%8C%85">凸包 - OI Wiki</a> Fig.1&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://www.jvruo.com/archives/38/">【蒟蒻计算几何】二维凸包</a> Fig.6&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://www.cnblogs.com/RioTian/p/13714244.html">【计算几何 02】凸包问题（Convex Hull）</a> Fig.5&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
@@ -3374,12 +3721,12 @@ document.addEventListener("DOMContentLoaded", function() {
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.3220b9d7.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.3220b9d7.min.js"></script>
       
-        <script src="../../../../_assets/js/katex.js"></script>
+        <script src="../../../_assets/js/katex.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
       
