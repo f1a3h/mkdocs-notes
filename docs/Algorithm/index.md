@@ -1,7 +1,7 @@
 ---
 title: Algorithm
 ---
-!!! note ""
+!!! quote ""
 	<div align="center" style="font-size:20px;font-weight:bold;">
     他强由他强，清风拂山冈。
     他横任他横，明月照大江。
