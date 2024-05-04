@@ -8,31 +8,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "1d27296122a6ae5a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Algorithm/index.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "a5fcb64ecfba4d4a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/Graph/Auxiliary Tree.md",
+                "file": "ACG/Game/樱之诗.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithm/Graph/Auxiliary Tree.md",
+                "file": "ACG/Game/樱之诗.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithm/Graph/Auxiliary Tree.md",
+                "file": "ACG/Game/樱之诗.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithm/Graph/Auxiliary Tree.md"
+                "file": "ACG/Game/樱之诗.md"
               }
             }
           },
@@ -174,9 +161,13 @@
   },
   "active": "a5fcb64ecfba4d4a",
   "lastOpenFiles": [
+    "Computer Science/Math/LADW.md",
+    "ACG/Game/樱之诗.md",
+    "Computer Science/Theory of Computer Science/TCS Toolkit/Basic Asymptotics.md",
+    "Algorithm/Graph/Auxiliary Tree.md",
+    "Computer Science/Theory of Computer Science/TCS Toolkit",
     "Algorithm/index.md",
     "Algorithm/Geometry/2D.md",
-    "Algorithm/Graph/Auxiliary Tree.md",
     "Algorithm/Geometry/Convex Hull.md",
     "Algorithm/Graph",
     "Computer Science/Theory of Computer Science/TCS Toolkit/Asymptotics.md",
@@ -188,9 +179,7 @@
     "_assets/img/2641050697.png.crdownload",
     "_assets/img/20200921200619.png.crdownload",
     "_assets/img/20200921200619.png",
-    "Computer Science/Math/LADW.md",
     "Computer Science/Math/信息安全数学基础/index.md",
-    "ACG/Game/樱之诗.md",
     "Algorithm/Geometry",
     "Computer Science/index.md",
     "_assets/css/font.css~",
@@ -209,9 +198,7 @@
     "_ignore/Templates/zotero_integration.md",
     "Computer Science/Electronics/数字电路与逻辑设计/Ch.1.md",
     "Computer Science/Electronics/数字电路与逻辑设计/Ch.2.md",
-    "_ignore/Plans/Research.md",
     "Algorithm/WriteUp/Competition",
-    "_ignore/Diaries/2024/04",
     "_assets/img/Screenshot 2024-03-31 at 22.10.59.png",
     "_assets/img/Screenshot 2024-03-31 at 13.54.20.png",
     "_assets/img/Screenshot 2024-03-30 at 21.07.30.png",

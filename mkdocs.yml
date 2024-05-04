@@ -44,14 +44,14 @@ theme:
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: white
-      accent: cyan
+      accent: indigo
       toggle:
         icon: material/toggle-switch 
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: black
-      accent: cyan
+      accent: indigo
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to light mode
