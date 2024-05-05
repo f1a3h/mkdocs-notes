@@ -13,26 +13,38 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/index.md",
+                "file": "Computer Science/Electronics/Signals and Systems/Convolution.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "a5fcb64ecfba4d4a",
+            "id": "24495d9f36f926e5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/Graph/Auxiliary Tree.md",
+                "file": "Computer Science/Math/MIT 18.330.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b414a745dc5088ed",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_ignore/Diaries/2024/阶段性总结·一.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithm/Graph/Auxiliary Tree.md",
+                "file": "_ignore/Diaries/2024/阶段性总结·一.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithm/Graph/Auxiliary Tree.md",
+                "file": "_ignore/Diaries/2024/阶段性总结·一.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithm/Graph/Auxiliary Tree.md"
+                "file": "_ignore/Diaries/2024/阶段性总结·一.md"
               }
             }
           },
@@ -172,11 +184,28 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "a5fcb64ecfba4d4a",
+  "active": "b414a745dc5088ed",
   "lastOpenFiles": [
+    "_ignore/Diaries/2024/05/02.md",
+    "_ignore/Diaries/2024/阶段性总结·一.md",
+    "_ignore/Diaries/2024/05",
+    "Computer Science/Electronics/Signals and Systems/Convolution.md",
+    "Computer Science/Electronics/Signals and Systems/Signals and System Properties.md",
+    "Computer Science/Math/MIT 18.330.md",
+    "_assets/img/Screenshot 2024-04-29 at 15.28.14.png",
+    "_assets/img/Screenshot 2024-04-29 at 15.06.10.png",
+    "Algorithm/WriteUp/Competition/AtCoder.md",
+    "Computer Science/Electronics/Signals and Systems",
+    "Computer Science/Theory of Computer Science/MIT 18.404/Computability Theory/The Church-Turing Thesis.md",
+    "_ignore/Diaries/2024/04/26.md",
+    "_ignore/Diaries/2024/04",
+    "_assets/img/Screenshot 2024-04-21 at 23.03.03.png",
+    "Computer Science/Compilers/Stanford CS143/Intro.md",
+    "Computer Science/Theory of Computer Science/MIT 18.404/Automata and Language Theory.md",
     "Algorithm/index.md",
-    "Algorithm/Geometry/2D.md",
+    "_ignore/Diaries/2024/04/21.md",
     "Algorithm/Graph/Auxiliary Tree.md",
+    "Algorithm/Geometry/2D.md",
     "Algorithm/Geometry/Convex Hull.md",
     "Algorithm/Graph",
     "Computer Science/Theory of Computer Science/TCS Toolkit/Asymptotics.md",
@@ -193,33 +222,16 @@
     "ACG/Game/樱之诗.md",
     "Algorithm/Geometry",
     "Computer Science/index.md",
-    "_assets/css/font.css~",
     "index.md",
     "Research/index.md",
     "_ignore/Diaries/2024/04/11.md",
-    "Algorithm/WriteUp/Competition/AtCoder.md",
     "Research/Learning Research.md",
     "Research/Papers/index.md",
-    "Research/Papers/manesArtScienceEngineering2019.md",
-    "Research/Papers/godefroidAutomatedWhiteboxFuzz.md",
-    "Research/Papers/liuYourCodeGenerated2023.md",
-    "Research/Papers/fuSedarObtainingHighQuality2024.md",
-    "Research/Papers/boehmeFuzzingChallengesReflections2021.md",
-    "Research/Research Log.md",
-    "_ignore/Templates/zotero_integration.md",
-    "Computer Science/Electronics/数字电路与逻辑设计/Ch.1.md",
-    "Computer Science/Electronics/数字电路与逻辑设计/Ch.2.md",
-    "_ignore/Plans/Research.md",
-    "Algorithm/WriteUp/Competition",
-    "_ignore/Diaries/2024/04",
     "_assets/img/Screenshot 2024-03-31 at 22.10.59.png",
     "_assets/img/Screenshot 2024-03-31 at 13.54.20.png",
     "_assets/img/Screenshot 2024-03-30 at 21.07.30.png",
     "_assets/img/Screenshot 2024-03-26 at 15.33.25.png",
     "_assets/img/Screenshot 2024-03-23 at 17.09.51.png",
-    "_assets/img/Screenshot 2024-03-23 at 17.09.23.png",
-    "_assets/img/Screenshot 2024-03-17 at 13.53.15.png",
-    "_assets/img/Screenshot 2024-03-17 at 13.46.44.png",
     "Ignore/Plans/2024/02/Untitled.canvas",
     "Untitled.canvas"
   ]

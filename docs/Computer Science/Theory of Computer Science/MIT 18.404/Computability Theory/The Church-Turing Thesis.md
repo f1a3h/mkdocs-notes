@@ -53,3 +53,17 @@ Turing machine 的 formal definition 如下，
 > Call a language *Turing-decidable* or simply decidable if some Turing machine decides it.[^2]
 
 [^2]: It is called a *recursive language* in some other textbooks.
+
+## TM Variants
+
+[slides](https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/resources/mit18_404f20_lec6-1/)
+
+> [!info] 
+> 意识到自动机理论部分的进度拖的太慢，而且这部分过于传统以至于让人感到十分无聊，因此不再赘述
+
+## The Definition of Algorithm
+
+> [!note] The Church-Turing thesis
+> 
+> ![[Screenshot 2024-04-21 at 23.03.03.png]]
+

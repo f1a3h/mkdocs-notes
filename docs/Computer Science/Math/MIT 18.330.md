@@ -44,7 +44,7 @@ $$
 	\delta_{n+1}&=x_{n+1}-x^*\\
 	&= g(x_n)-x^*\\
 	&= g(x^*+\delta_n)-x^*\\
-	&\simeq \delta g'(x^*)
+	&\simeq \delta_n g'(x^*)
 \end{aligned}
 $$
 

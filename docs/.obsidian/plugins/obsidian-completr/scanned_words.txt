@@ -166,6 +166,7 @@ taxonomy
 thoroughly
 tip
 turning
+thesis
 USB
 UCB
 Use
@@ -378,6 +379,8 @@ Cross
 CDQ
 Capture
 Crude
+Causality
+Convolution
 Summer
 Study
 Six
@@ -545,6 +548,10 @@ SEDAR
 Schema
 Sun
 Simple
+Signals
+Stability
+Scaling
+Superposition
 date
 draft
 description
@@ -1204,6 +1211,7 @@ continue
 carefully
 compound
 choices
+causal
 Notes
 No
 Non
@@ -1522,6 +1530,7 @@ IZ
 ITG
 IFTW
 Inspired
+Invariance
 in
 issues
 integer
@@ -1677,6 +1686,8 @@ incorporate
 insights
 important
 incredible
+invariant
+impulse
 Technology
 Trends
 Tags
@@ -1785,6 +1796,7 @@ These
 That
 They
 TODO
+TM
 Principles
 Parallelism
 Performance
@@ -1905,6 +1917,7 @@ PKJ
 Pockets
 Pumping
 PUT
+Properties
 of
 overflow
 overhead
@@ -2069,6 +2082,8 @@ LNHKHFRS
 Liang
 Lack
 Lexer
+Linearity
+LTI
 Memory
 Measurement
 Most
@@ -2335,6 +2350,7 @@ DPDA
 DCFLs
 DSE
 DBMSs
+Definition
 via
 value
 vector
@@ -3010,6 +3026,7 @@ sleep
 support
 systematic
 scalability
+satisfies
 Overflow
 Ownership
 Object
@@ -3507,6 +3524,7 @@ literature
 lack
 leverage
 lovely
+linear
 resulted
 re
 reason
@@ -4145,6 +4163,8 @@ presents
 perhaps
 pursue
 peacefully
+past
+pair
 how
 hard
 handling
