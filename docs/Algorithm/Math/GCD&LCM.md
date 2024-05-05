@@ -103,3 +103,51 @@ int exgcd(int a, int b, int &x, int &y) {
     return ret;
 }
 ```
+
+之后我们考虑整系数不定方程 $ax + by = c$ 的求解。
+
+首先，由[[基础数论#裴蜀定理 ( Bézout 定理 )|裴蜀定理]]可以知道当且仅当 $\gcd(a, b)\mid c$ 时有解，若 $x=x_0, y=y_0$ ，则方程的所有整数解可以表示为
+
+$$
+\begin{cases}
+&x = x_0 - \dfrac{b}{(a, b)}t \\
+&y = y_0 + \dfrac{a}{(a, b)}t
+\end{cases}, t \in \mathbb{Z}
+$$
+
+更数论一点的解法在[[基础数论#扩展欧几里得算法|基础数论]]中已经给出，这里分享一个线性代数角度的解法。
+
+不难将方程写成解线性方程组的矩阵形式，即方程等价于
+
+$$
+\begin{bmatrix}
+a & b
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}
+= c
+$$
+
+若我们已经得到特解 $x = x_0, y = y_0$ ，那么只需求出
+
+$$
+\begin{bmatrix}
+a & b
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}
+= 0
+$$
+
+的所有解即可，我们不难得到这个方程的特解为 $x^{\prime}_0 = -\dfrac{b}{(a, b)}, y^{\prime}_0 = \dfrac{a}{(a, b)}$ （因为后面的 $t$ 只能取整数，为了保证取完解空间下的所有整数解，所以此处的 $x_0^{\prime}$ 和 $y_0^{\prime}$ 必须要互质），于是便得到了原方程的所有解，为
+
+$$
+\begin{cases}
+&x = x_0 - \dfrac{b}{(a, b)}t \\
+&y = y_0 + \dfrac{a}{(a, b)}t
+\end{cases}, t \in \mathbb{Z}
+$$
