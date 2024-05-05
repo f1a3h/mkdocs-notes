@@ -6,32 +6,32 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Datalog-Based Program Analysis">
+        <meta name="description" content="f1a3h's Notebook">
       
       
       
-        <link rel="canonical" href="https://note.f1a3h.com/Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Datalog/">
+        <link rel="canonical" href="https://note.f1a3h.com/Computer%20Science/Electronics/Signals%20and%20Systems/Signals%20and%20System%20Properties/">
       
       
-        <link rel="prev" href="../Data%20Flow%20Analysis/">
+        <link rel="prev" href="../Convolution/">
       
       
-        <link rel="next" href="../Interprocedural%20Analysis/">
+        <link rel="next" href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E4%B8%8E%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1/Ch.1/">
       
       
-      <link rel="icon" href="../../../../../_assets/img/favicon.png">
+      <link rel="icon" href="../../../../_assets/img/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
     
     
       
-        <title>Datalog-Based Program Analysis - f1a3h's Notebook</title>
+        <title>Signals and System Properties - f1a3h's Notebook</title>
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.66ac8b77.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -94,19 +94,19 @@
     
       <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap">
     
-      <link rel="stylesheet" href="../../../../../_assets/css/tasklist.css">
+      <link rel="stylesheet" href="../../../../_assets/css/tasklist.css">
     
-      <link rel="stylesheet" href="../../../../../_assets/css/custom.css">
+      <link rel="stylesheet" href="../../../../_assets/css/custom.css">
     
-      <link rel="stylesheet" href="../../../../../_assets/css/flink.css">
+      <link rel="stylesheet" href="../../../../_assets/css/flink.css">
     
-      <link rel="stylesheet" href="../../../../../_assets/css/font.css">
+      <link rel="stylesheet" href="../../../../_assets/css/font.css">
     
-      <link rel="stylesheet" href="../../../../../_assets/css/admonition.css">
+      <link rel="stylesheet" href="../../../../_assets/css/admonition.css">
     
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
     
-    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -132,7 +132,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#motivation" class="md-skip">
+        <a href="#signals" class="md-skip">
           Skip to content
         </a>
       
@@ -146,7 +146,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../../.." title="f1a3h&#39;s Notebook" class="md-header__button md-logo" aria-label="f1a3h's Notebook" data-md-component="logo">
+    <a href="../../../.." title="f1a3h&#39;s Notebook" class="md-header__button md-logo" aria-label="f1a3h's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M275.2 38.4c-10.6-8-25-8.5-36.3-1.5S222 57.3 224.6 70.3l9.7 48.6c-19.4 9-36.9 19.9-52.4 31.5-15.3 11.5-29 23.9-40.7 36.3l-93.1-54.3c-12.5-7.3-28.4-5.3-38.6 4.9s-12.5 26-5.3 38.6L50 256 4.2 336.1c-7.2 12.6-5 28.4 5.3 38.6s26.1 12.2 38.6 4.9l93.1-54.3c11.8 12.3 25.4 24.8 40.7 36.3 15.5 11.6 33 22.5 52.4 31.5l-9.7 48.6c-2.6 13 3.1 26.3 14.3 33.3s25.6 6.5 36.3-1.5l77.6-58.2c54.9-4 101.5-27 137.2-53.8 39.2-29.4 67.2-64.7 81.6-89.5 5.8-9.9 5.8-22.2 0-32.1-14.4-24.8-42.5-60.1-81.6-89.5-35.8-26.8-82.3-49.8-137.2-53.8l-77.6-58.2zM384 256a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>
@@ -166,7 +166,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Datalog-Based Program Analysis
+              Signals and System Properties
             
           </span>
         </div>
@@ -278,7 +278,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../.." class="md-tabs__link">
+      <a href="../../../.." class="md-tabs__link">
         
   
     
@@ -299,7 +299,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../../" class="md-tabs__link">
+        <a href="../../../" class="md-tabs__link">
           
   
     
@@ -319,7 +319,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../Research/Learning%20Research/" class="md-tabs__link">
+        <a href="../../../../Research/Learning%20Research/" class="md-tabs__link">
           
   
     
@@ -339,7 +339,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../Algorithm/ACM%E7%AE%97%E6%B3%95%E5%AE%9E%E8%B7%B5/" class="md-tabs__link">
+        <a href="../../../../Algorithm/ACM%E7%AE%97%E6%B3%95%E5%AE%9E%E8%B7%B5/" class="md-tabs__link">
           
   
     
@@ -359,7 +359,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../ACG/" class="md-tabs__link">
+        <a href="../../../../ACG/" class="md-tabs__link">
           
   
     
@@ -394,7 +394,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../../.." title="f1a3h&#39;s Notebook" class="md-nav__button md-logo" aria-label="f1a3h's Notebook" data-md-component="logo">
+    <a href="../../../.." title="f1a3h&#39;s Notebook" class="md-nav__button md-logo" aria-label="f1a3h's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M275.2 38.4c-10.6-8-25-8.5-36.3-1.5S222 57.3 224.6 70.3l9.7 48.6c-19.4 9-36.9 19.9-52.4 31.5-15.3 11.5-29 23.9-40.7 36.3l-93.1-54.3c-12.5-7.3-28.4-5.3-38.6 4.9s-12.5 26-5.3 38.6L50 256 4.2 336.1c-7.2 12.6-5 28.4 5.3 38.6s26.1 12.2 38.6 4.9l93.1-54.3c11.8 12.3 25.4 24.8 40.7 36.3 15.5 11.6 33 22.5 52.4 31.5l-9.7 48.6c-2.6 13 3.1 26.3 14.3 33.3s25.6 6.5 36.3-1.5l77.6-58.2c54.9-4 101.5-27 137.2-53.8 39.2-29.4 67.2-64.7 81.6-89.5 5.8-9.9 5.8-22.2 0-32.1-14.4-24.8-42.5-60.1-81.6-89.5-35.8-26.8-82.3-49.8-137.2-53.8l-77.6-58.2zM384 256a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>
@@ -424,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -484,7 +484,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../" class="md-nav__link ">
+            <a href="../../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -542,7 +542,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Compilers/" class="md-nav__link ">
+            <a href="../../../Compilers/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -617,7 +617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Compilers/NJU%20%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90/" class="md-nav__link">
+      <a href="../../../Compilers/NJU%20%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -671,7 +671,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Compilers/Stanford%20CS143/" class="md-nav__link ">
+            <a href="../../../Compilers/Stanford%20CS143/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -702,7 +702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Compilers/Stanford%20CS143/Intro/" class="md-nav__link">
+      <a href="../../../Compilers/Stanford%20CS143/Intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -723,7 +723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Compilers/Stanford%20CS143/Lexical%20Analysis/" class="md-nav__link">
+      <a href="../../../Compilers/Stanford%20CS143/Lexical%20Analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -806,7 +806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Computer%20Architecture/UCB%20CS61C/" class="md-nav__link">
+      <a href="../../../Computer%20Architecture/UCB%20CS61C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -850,7 +850,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Computer%20Architecture/CSAPP/" class="md-nav__link ">
+            <a href="../../../Computer%20Architecture/CSAPP/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -881,7 +881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Computer%20Architecture/CSAPP/Chapter%202/" class="md-nav__link">
+      <a href="../../../Computer%20Architecture/CSAPP/Chapter%202/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -943,7 +943,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Computer%20Network/" class="md-nav__link ">
+            <a href="../../../Computer%20Network/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1007,7 +1007,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Computer%20Network/CNATDA/" class="md-nav__link ">
+            <a href="../../../Computer%20Network/CNATDA/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1038,7 +1038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Computer%20Network/CNATDA/Chapter%202/" class="md-nav__link">
+      <a href="../../../Computer%20Network/CNATDA/Chapter%202/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1059,7 +1059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Computer%20Network/CNATDA/Chapter%203/" class="md-nav__link">
+      <a href="../../../Computer%20Network/CNATDA/Chapter%203/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1080,7 +1080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Computer%20Network/CNATDA/Chapter%204/" class="md-nav__link">
+      <a href="../../../Computer%20Network/CNATDA/Chapter%204/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1101,7 +1101,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Computer%20Network/CNATDA/Chapter%205/" class="md-nav__link">
+      <a href="../../../Computer%20Network/CNATDA/Chapter%205/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1122,7 +1122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Computer%20Network/CNATDA/Chapter%206/" class="md-nav__link">
+      <a href="../../../Computer%20Network/CNATDA/Chapter%206/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1203,7 +1203,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Computer%20Security/Stanford%20CS110L/" class="md-nav__link">
+      <a href="../../../Computer%20Security/Stanford%20CS110L/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1229,6 +1229,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1248,16 +1250,16 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Electronics/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1274,7 +1276,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
             Electronics
@@ -1287,8 +1289,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1302,11 +1306,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_6_2" id="__nav_2_6_2_label" tabindex="0">
@@ -1320,7 +1324,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_6_2">
             <span class="md-nav__icon md-icon"></span>
             Signals and Systems
@@ -1334,7 +1338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Electronics/Signals%20and%20Systems/Convolution/" class="md-nav__link">
+      <a href="../Convolution/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1352,10 +1356,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../../Electronics/Signals%20and%20Systems/Signals%20and%20System%20Properties/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Signals and System Properties
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1364,6 +1386,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#causality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Causality
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linearity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linearity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-invariance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time-Invariance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lti-systems-and-convolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      LTI Systems and Convolution
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1426,7 +1544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Electronics/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E4%B8%8E%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1/Ch.1/" class="md-nav__link">
+      <a href="../../%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E4%B8%8E%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1/Ch.1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1511,7 +1629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Math/LADW/" class="md-nav__link">
+      <a href="../../../Math/LADW/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1532,7 +1650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Math/MIT%2018.330/" class="md-nav__link">
+      <a href="../../../Math/MIT%2018.330/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1553,7 +1671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Math/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      <a href="../../../Math/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1574,7 +1692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Math/%E8%B0%A2%E6%83%A0%E6%B0%91%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+      <a href="../../../Math/%E8%B0%A2%E6%83%A0%E6%B0%91%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1600,8 +1718,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1623,16 +1739,16 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../" class="md-nav__link ">
+            <a href="../../../Theory%20of%20Computer%20Science/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1649,7 +1765,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_8">
             <span class="md-nav__icon md-icon"></span>
             Theory of Computer Science
@@ -1690,7 +1806,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../MIT%2018.404/" class="md-nav__link ">
+            <a href="../../../Theory%20of%20Computer%20Science/MIT%2018.404/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1721,7 +1837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../MIT%2018.404/Automata%20and%20Language%20Theory/" class="md-nav__link">
+      <a href="../../../Theory%20of%20Computer%20Science/MIT%2018.404/Automata%20and%20Language%20Theory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1786,7 +1902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../MIT%2018.404/Computability%20Theory/The%20Church-Turing%20Thesis/" class="md-nav__link">
+      <a href="../../../Theory%20of%20Computer%20Science/MIT%2018.404/Computability%20Theory/The%20Church-Turing%20Thesis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1820,8 +1936,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1841,16 +1955,16 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_3" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../../../Theory%20of%20Computer%20Science/Programming%20Languages/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1867,7 +1981,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_8_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_8_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_8_3">
             <span class="md-nav__icon md-icon"></span>
             Programming Languages
@@ -1880,8 +1994,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1911,16 +2023,16 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8_3_2" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../../Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1937,7 +2049,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_8_3_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_8_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_8_3_2">
             <span class="md-nav__icon md-icon"></span>
             NJU 软件分析
@@ -1951,7 +2063,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../CFL-Reachability%20and%20IFDS/" class="md-nav__link">
+      <a href="../../../Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/CFL-Reachability%20and%20IFDS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1972,7 +2084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Data%20Flow%20Analysis/" class="md-nav__link">
+      <a href="../../../Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Data%20Flow%20Analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1990,28 +2102,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Datalog-Based Program Analysis
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Datalog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2020,93 +2114,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#motivation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Motivation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#introduction-to-datalog" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction to Datalog
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Introduction to Datalog">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#predicates-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Predicates (Data)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#datalog-rules-logic" class="md-nav__link">
-    <span class="md-ellipsis">
-      Datalog Rules (Logic)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#execution-of-datalog-programs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Execution of Datalog Programs
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pointer-analysis-via-datalog" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pointer Analysis via Datalog
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#taint-analysis-via-datalog" class="md-nav__link">
-    <span class="md-ellipsis">
-      Taint Analysis via Datalog
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2119,7 +2126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Interprocedural%20Analysis/" class="md-nav__link">
+      <a href="../../../Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Interprocedural%20Analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2140,7 +2147,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Pointer%20Analysis/" class="md-nav__link">
+      <a href="../../../Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Pointer%20Analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2161,7 +2168,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Soundness%20and%20Soundiness/" class="md-nav__link">
+      <a href="../../../Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Soundness%20and%20Soundiness/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2182,7 +2189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Static%20Analysis%20for%20Security/" class="md-nav__link">
+      <a href="../../../Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Static%20Analysis%20for%20Security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2236,7 +2243,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Stanford%20CS242/" class="md-nav__link ">
+            <a href="../../../Theory%20of%20Computer%20Science/Programming%20Languages/Stanford%20CS242/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2267,7 +2274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Stanford%20CS242/Syntax%20and%20Semantics/" class="md-nav__link">
+      <a href="../../../Theory%20of%20Computer%20Science/Programming%20Languages/Stanford%20CS242/Syntax%20and%20Semantics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2348,7 +2355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../TCS%20Toolkit/Basic%20Asymptotics/" class="md-nav__link">
+      <a href="../../../Theory%20of%20Computer%20Science/TCS%20Toolkit/Basic%20Asymptotics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2415,7 +2422,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../Research/" class="md-nav__link ">
+            <a href="../../../../Research/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2446,7 +2453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../Research/Learning%20Research/" class="md-nav__link">
+      <a href="../../../../Research/Learning%20Research/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2511,7 +2518,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../Algorithm/" class="md-nav__link ">
+            <a href="../../../../Algorithm/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2542,7 +2549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../Algorithm/ACM%E7%AE%97%E6%B3%95%E5%AE%9E%E8%B7%B5/" class="md-nav__link">
+      <a href="../../../../Algorithm/ACM%E7%AE%97%E6%B3%95%E5%AE%9E%E8%B7%B5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2565,7 +2572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../Algorithm/%E5%8F%8C%E5%90%91%E6%90%9C%E7%B4%A2/" class="md-nav__link">
+      <a href="../../../../Algorithm/%E5%8F%8C%E5%90%91%E6%90%9C%E7%B4%A2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2630,7 +2637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../Algorithm/Geometry/2D/" class="md-nav__link">
+      <a href="../../../../Algorithm/Geometry/2D/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2651,7 +2658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../Algorithm/Geometry/Convex%20Hull/" class="md-nav__link">
+      <a href="../../../../Algorithm/Geometry/Convex%20Hull/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2722,7 +2729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../Algorithm/Graph/Auxiliary%20Tree/" class="md-nav__link">
+      <a href="../../../../Algorithm/Graph/Auxiliary%20Tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2799,7 +2806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../Algorithm/Math/GCD%26LCM/" class="md-nav__link">
+      <a href="../../../../Algorithm/Math/GCD%26LCM/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2820,7 +2827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../Algorithm/Math/Miller%20Rabin/" class="md-nav__link">
+      <a href="../../../../Algorithm/Math/Miller%20Rabin/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2841,7 +2848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../Algorithm/Math/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/" class="md-nav__link">
+      <a href="../../../../Algorithm/Math/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2862,7 +2869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../Algorithm/Math/%E5%BF%AB%E9%80%9F%E5%B9%82/" class="md-nav__link">
+      <a href="../../../../Algorithm/Math/%E5%BF%AB%E9%80%9F%E5%B9%82/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2935,7 +2942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../Algorithm/String/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/" class="md-nav__link">
+      <a href="../../../../Algorithm/String/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2956,7 +2963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../Algorithm/String/Manacher/" class="md-nav__link">
+      <a href="../../../../Algorithm/String/Manacher/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3031,7 +3038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../Algorithm/WriteUp/LuoguP5539/" class="md-nav__link">
+      <a href="../../../../Algorithm/WriteUp/LuoguP5539/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3052,7 +3059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../Algorithm/WriteUp/Quantum%20Wave%20Speed%20Pass/" class="md-nav__link">
+      <a href="../../../../Algorithm/WriteUp/Quantum%20Wave%20Speed%20Pass/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3117,7 +3124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../Algorithm/WriteUp/Competition/AtCoder/" class="md-nav__link">
+      <a href="../../../../Algorithm/WriteUp/Competition/AtCoder/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3138,7 +3145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../Algorithm/WriteUp/Competition/Codeforces/" class="md-nav__link">
+      <a href="../../../../Algorithm/WriteUp/Competition/Codeforces/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3209,7 +3216,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../ACG/" class="md-nav__link ">
+            <a href="../../../../ACG/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3284,7 +3291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../ACG/Comics/%E8%91%AC%E9%80%81%E3%81%AE%E3%83%95%E3%83%AA%E3%83%BC%E3%83%AC%E3%83%B3/" class="md-nav__link">
+      <a href="../../../../ACG/Comics/%E8%91%AC%E9%80%81%E3%81%AE%E3%83%95%E3%83%AA%E3%83%BC%E3%83%AC%E3%83%B3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3357,7 +3364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../ACG/Game/%E5%A1%9E%E5%B0%94%E8%BE%BE%E4%BC%A0%E8%AF%B4%EF%BC%9A%E6%97%B7%E9%87%8E%E4%B9%8B%E6%81%AF/" class="md-nav__link">
+      <a href="../../../../ACG/Game/%E5%A1%9E%E5%B0%94%E8%BE%BE%E4%BC%A0%E8%AF%B4%EF%BC%9A%E6%97%B7%E9%87%8E%E4%B9%8B%E6%81%AF/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3378,7 +3385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../ACG/Game/%E6%A8%B1%E4%B9%8B%E8%AF%97/" class="md-nav__link">
+      <a href="../../../../ACG/Game/%E6%A8%B1%E4%B9%8B%E8%AF%97/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3449,7 +3456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../ACG/Novel/%E9%92%A2%E9%93%81%E4%B9%8B%E7%BF%BC/" class="md-nav__link">
+      <a href="../../../../ACG/Novel/%E9%92%A2%E9%93%81%E4%B9%8B%E7%BF%BC/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3503,46 +3510,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#motivation" class="md-nav__link">
+  <a href="#signals" class="md-nav__link">
     <span class="md-ellipsis">
-      Motivation
+      Signals
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#introduction-to-datalog" class="md-nav__link">
+  <a href="#systems" class="md-nav__link">
     <span class="md-ellipsis">
-      Introduction to Datalog
+      Systems
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Introduction to Datalog">
+    <nav class="md-nav" aria-label="Systems">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#predicates-data" class="md-nav__link">
+  <a href="#memory" class="md-nav__link">
     <span class="md-ellipsis">
-      Predicates (Data)
+      Memory
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#datalog-rules-logic" class="md-nav__link">
+  <a href="#causality" class="md-nav__link">
     <span class="md-ellipsis">
-      Datalog Rules (Logic)
+      Causality
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#execution-of-datalog-programs" class="md-nav__link">
+  <a href="#stability" class="md-nav__link">
     <span class="md-ellipsis">
-      Execution of Datalog Programs
+      Stability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linearity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linearity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-invariance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time-Invariance
     </span>
   </a>
   
@@ -3554,18 +3579,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pointer-analysis-via-datalog" class="md-nav__link">
+  <a href="#lti-systems-and-convolution" class="md-nav__link">
     <span class="md-ellipsis">
-      Pointer Analysis via Datalog
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#taint-analysis-via-datalog" class="md-nav__link">
-    <span class="md-ellipsis">
-      Taint Analysis via Datalog
+      LTI Systems and Convolution
     </span>
   </a>
   
@@ -3589,93 +3605,52 @@
   
 
 
-  <h1>Datalog-Based Program Analysis</h1>
+  <h1>Signals and System Properties</h1>
 
-<p><del>新年第一天，从「恋×シンアイ彼女」开始！</del></p>
-<p>新年第一天，从 Program Analysis 开始！</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>南京大学「<a href="https://tai-e.pascal-lab.net/lectures.html">软件分析</a>」课程 Datalog-Based Program Analysis 部分的学习笔记。</p>
-</div>
-<h2 id="motivation">Motivation<a class="headerlink" href="#motivation" title="Permanent link">&para;</a></h2>
-<ul>
-<li>imperative: how to do (~implementation)</li>
-<li>E.g. C. 需要告诉机器要如何去实现</li>
-<li>declarative: what to do (~specification)</li>
-<li>E.g. SQL. 仅仅需要指明你想要什么，如何实现则交给程序（DBMS）自行选择</li>
-</ul>
-<p>在 program analysis 中，我们指明对于不同的 statement 对应不同的 rule，这就是一种 specification，而在 algorithm 中，我们则指明了每一步具体要怎么做，在实际的代码实现里更是要考虑更多的 implementation details。可以看出，前面所学的 program analysis 即是 declarative 也是 imperative 的。</p>
-<p>在 tai-e assignments 中，我们使用 imperative 的方式实现 program analysis，同样的，我们也可以通过 declarative 的方式来实现。(via Datalog)</p>
-<h2 id="introduction-to-datalog">Introduction to Datalog<a class="headerlink" href="#introduction-to-datalog" title="Permanent link">&para;</a></h2>
-<p>datalog 最早是以 database language 的身份出现的<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>，现在有了更广泛的应用。</p>
-<ul>
-<li>Datalog = Data + Logic (and, or, not)</li>
-<li>no side-effects</li>
-<li>no control flows</li>
-<li>no functions</li>
-<li>not turing-complete</li>
-</ul>
-<h3 id="predicates-data">Predicates (Data)<a class="headerlink" href="#predicates-data" title="Permanent link">&para;</a></h3>
-<p>在 datalog 中，一个 predicate (relation) 就是值一系列的 statemetns，本质上其实是 a table of data。而 fact 则是指这个 table 中某个 tuple。</p>
-<p>atoms 是 datalog 的 basic elements。</p>
-<p><code>P(X1, X2, ..., Xn)</code> 的形式表示一个 relation atom，其中 P 是 predicate 的名字，Xi 则是 arguments， 它的值可以是一个 variable 也可以是 constant。一个 relation atom 的值为 true 当且仅当 P 中存在 <code>(X1, X2, ..., Xn)</code> 这个 tuple。</p>
-<p>除了 relation atoms，datalog 还有 arithmetic atoms。</p>
-<h3 id="datalog-rules-logic">Datalog Rules (Logic)<a class="headerlink" href="#datalog-rules-logic" title="Permanent link">&para;</a></h3>
-<p>rule 用来表示 logic inferences，并且表明 facts 是如何被 deduced 的，它的形式为 <code>H &lt;- B1, B2, ,,,, Bn</code> ，其中 head 和 body 中的每一项都是 atom，<code>Bi</code> 也被称为 subgoal。</p>
-<p>一个 datalog program 由 facts 和 rules 组成。更多的语法直接看 slides 吧，懒得写了（</p>
-<p>datalog 的 predicates 被分为 EDB 和 IDB 两种：</p>
+<h2 id="signals">Signals<a class="headerlink" href="#signals" title="Permanent link">&para;</a></h2>
+<p><img alt="Screenshot 2024-04-29 at 15.06.10.png" src="../../../../_assets/img/Screenshot%202024-04-29%20at%2015.06.10.png" /></p>
+<h2 id="systems">Systems<a class="headerlink" href="#systems" title="Permanent link">&para;</a></h2>
+<h3 id="memory">Memory<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h3>
+<p>memoryless: A system is called memoryless if its output at a given time depends on the input only at that time.</p>
+<h3 id="causality">Causality<a class="headerlink" href="#causality" title="Permanent link">&para;</a></h3>
+<p>causal: A system is called causal if its input depends on the input at present and past times only, not on future times.</p>
+<h3 id="stability">Stability<a class="headerlink" href="#stability" title="Permanent link">&para;</a></h3>
+<p>stable: A system is stable if all bounded inputs generate bounded outputs.</p>
+<h3 id="linearity">Linearity<a class="headerlink" href="#linearity" title="Permanent link">&para;</a></h3>
+<p>linear: A system is called linear if it satisfies these two conditions</p>
 <ol>
-<li>EDB (extensional database)<br />
-   - 提前定义好的 predicates<br />
-   - relations are immutable<br />
-   - 可以看作 input relations</li>
-<li>IDB (intensional database)<br />
-   - 由 rules 推导出的 predicates<br />
-   - 可以看作是 output relations</li>
+<li>Scaling: <span class="arithmatex">\(ax(t) \to ay(t)\)</span></li>
+<li>Superposition: <span class="arithmatex">\(x_1(t) + x_2(t) \to y_1(t) + y_2(t)\)</span></li>
 </ol>
-<p>datalog 支持 recursive rules，从而可以从自身进行 deduce。</p>
-<p>考虑以下两条 rules：</p>
-<ul>
-<li><code>A(x) &lt;- B(y), x &gt; y.</code></li>
-<li><code>A(x) &lt;- B(y), !C(x, y).</code></li>
-</ul>
-<p>可以发现它们都有可能使得 A 称为一个 infinite relation，但是这并不是我们使用 datalog 想要得到的结果，所以我们要避免 infinite relation，也就因此引入了 rule safety 的概念。</p>
-<p>注意到 EDB 的元素是有限个的，因此对于一个 non-negated realtion atom，它能 deduce 的元素也会是有限的，所以我们只需要保证 head 中的每一个 variable 至少被一个 non-negated atom relation 给限制住了即可。在 datalog 中，只有满足 safe rules 是被允许的。</p>
-<p>再考虑这条 rule：</p>
-<ul>
-<li><code>A(x) &lt;- B(x), !A(x)</code></li>
-</ul>
-<p>显然这是一条自相矛盾的 rule，但是它满足了 safe rule 的条件，因此我们需要另外添加限制。观察可以发现这种 contradictory rule 必然也是 recursive 的形式，并且是在 body 中对 head 进行 negate，因此，在 datalog 中，我们规定 recursion and negation of an atom must be separated。</p>
-<h3 id="execution-of-datalog-programs">Execution of Datalog Programs<a class="headerlink" href="#execution-of-datalog-programs" title="Permanent link">&para;</a></h3>
-<p><img alt="execution.png" src="https://fastly.jsdelivr.net/gh/f1a3h/imgs/execution_of_datalog.png" /></p>
-<ul>
-<li>datalog 使用 datalog engine 根据 EDB 和 rules 进行 deduce 并输出 IDB</li>
-<li>monotonicity: facts 只会从 rules 中产生而不会因为 deduction 而减少</li>
-<li>termination: 通过 rule safety 保证了能被 deduce 的 facts 必然是 finite 的，因此 datalog program 必然是可以终止的</li>
-</ul>
-<h2 id="pointer-analysis-via-datalog">Pointer Analysis via Datalog<a class="headerlink" href="#pointer-analysis-via-datalog" title="Permanent link">&para;</a></h2>
-<p>其实只要用 datalog 的语言描述出前面 pointer analysis 的 rules 即可，同样也需要考虑一些细节以及每个 atom 的 arguments 要如何设计。</p>
-<p><img alt="pa.png" src="https://fastly.jsdelivr.net/gh/f1a3h/imgs/pointer_analysis_via_datalog.png" /></p>
-<h2 id="taint-analysis-via-datalog">Taint Analysis via Datalog<a class="headerlink" href="#taint-analysis-via-datalog" title="Permanent link">&para;</a></h2>
-<p><img alt="ta.png" src="https://fastly.jsdelivr.net/gh/f1a3h/imgs/taint_analysis_via_datalog.png" /></p>
-<p>使用 datalog 来实现 program analysis 有以下优点和缺点：</p>
-<ul>
-<li>pros</li>
-<li>简洁、可读性高</li>
-<li>容易实现，写 bug 的概率也小很多</li>
-<li>off-the-shelf optimized datalog engines 可以让你少考虑一些优化上的细节，make your life easier</li>
-<li>cons</li>
-<li>表达能力有限，某些 logics 很难用 datalog 表示甚至根本表示不了</li>
-<li>datalog engine 作为一个 black box 的存在使得我们很难用更优秀、更有针对性的 algorithm 来实现更优越的性能</li>
-</ul>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p>David Maier, K. Tuncay Tekle, Michael Kifer, and David S. Warren, <em>"Datalog: Concepts, History, and Outlook"</em>. Chapter, 2018.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
+<details class="corollary" open="open">
+<summary>Corollary</summary>
+<p>If the input to a linear system is 0, the output must be 0.</p>
+</details>
+<h3 id="time-invariance">Time-Invariance<a class="headerlink" href="#time-invariance" title="Permanent link">&para;</a></h3>
+<p>time-invariant: A system is called time-invariant if a time shift in the input results is an identical time shift in the output:</p>
+<div class="arithmatex">\[
+x(t-T) \to y(t-T)
+\]</div>
+<p>for any input-output pair and any amount of shift <span class="arithmatex">\(T\)</span>.</p>
+<h2 id="lti-systems-and-convolution">LTI Systems and Convolution<a class="headerlink" href="#lti-systems-and-convolution" title="Permanent link">&para;</a></h2>
+<p>LTI systems 是强大的 analysis tools，尤其是在已知它对 unit impulse 的 response 后我们可以预测给定 input 在任意时刻的 response</p>
+<p><img alt="Screenshot 2024-04-29 at 15.28.14.png" src="../../../../_assets/img/Screenshot%202024-04-29%20at%2015.28.14.png" /></p>
+<p>为了得到 <span class="arithmatex">\(x[n]\)</span> 的 response，我们将其用 <span class="arithmatex">\(\delta[n]\)</span> 来表示，即：</p>
+<div class="arithmatex">\[
+x[n] = \dots + x[-1]\delta[n+1] + x[0]\delta[n] + x[1]\delta[n-1] + \dots
+\]</div>
+<p>由 time-invariance，有 <span class="arithmatex">\(\delta[n-k]\to h[n-k]\)</span> ，再由 linearity，有</p>
+<div class="arithmatex">\[
+y[n] = dots + x[-1]h[n+1] + x[0]h[n] + x[1]h[n-1] + \dots
+\]</div>
+<p>即给定 input <span class="arithmatex">\(x[n]\)</span>，有 output</p>
+<div class="arithmatex">\[
+y[n] = \sum^{\infty}_{k=-\infty} x[k]h[n-k]
+\]</div>
+<p>定义右边为卷积运算，即</p>
+<div class="arithmatex">\[
+(x \ast h)[n] \coloneqq \sum_{k=-\infty}^{\infty} x[k]h[n-k]
+\]</div>
 
 
 
@@ -3862,12 +3837,12 @@ document.addEventListener("DOMContentLoaded", function() {
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
       
-        <script src="../../../../../_assets/js/katex.js"></script>
+        <script src="../../../../_assets/js/katex.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
       
