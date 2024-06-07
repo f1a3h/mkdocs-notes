@@ -10,28 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://note.f1a3h.com/ACG/">
+        <link rel="canonical" href="https://note.f1a3h.com/Algorithm/Math/%E5%8D%9A%E5%BC%88%E8%AE%BA/%E5%85%AC%E5%B9%B3%E7%BB%84%E5%90%88%E6%B8%B8%E6%88%8F/">
       
       
-        <link rel="prev" href="../Algorithm/WriteUp/Competition/Codeforces/">
+        <link rel="prev" href="../../%E5%BF%AB%E9%80%9F%E5%B9%82/">
       
       
-        <link rel="next" href="Comics/%E8%91%AC%E9%80%81%E3%81%AE%E3%83%95%E3%83%AA%E3%83%BC%E3%83%AC%E3%83%B3/">
+        <link rel="next" href="../../../String/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/">
       
       
-      <link rel="icon" href="../_assets/img/favicon.png">
+      <link rel="icon" href="../../../../_assets/img/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26">
     
     
       
-        <title>ACG - f1a3h's Notebook</title>
+        <title>公平组合游戏 - f1a3h's Notebook</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.6543a935.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -94,19 +94,19 @@
     
       <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap">
     
-      <link rel="stylesheet" href="../_assets/css/tasklist.css">
+      <link rel="stylesheet" href="../../../../_assets/css/tasklist.css">
     
-      <link rel="stylesheet" href="../_assets/css/custom.css">
+      <link rel="stylesheet" href="../../../../_assets/css/custom.css">
     
-      <link rel="stylesheet" href="../_assets/css/flink.css">
+      <link rel="stylesheet" href="../../../../_assets/css/flink.css">
     
-      <link rel="stylesheet" href="../_assets/css/font.css">
+      <link rel="stylesheet" href="../../../../_assets/css/font.css">
     
-      <link rel="stylesheet" href="../_assets/css/admonition.css">
+      <link rel="stylesheet" href="../../../../_assets/css/admonition.css">
     
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -131,6 +131,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#nim" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -141,7 +146,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="f1a3h&#39;s Notebook" class="md-header__button md-logo" aria-label="f1a3h's Notebook" data-md-component="logo">
+    <a href="../../../.." title="f1a3h&#39;s Notebook" class="md-header__button md-logo" aria-label="f1a3h's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M275.2 38.4c-10.6-8-25-8.5-36.3-1.5S222 57.3 224.6 70.3l9.7 48.6c-19.4 9-36.9 19.9-52.4 31.5-15.3 11.5-29 23.9-40.7 36.3l-93.1-54.3c-12.5-7.3-28.4-5.3-38.6 4.9s-12.5 26-5.3 38.6L50 256 4.2 336.1c-7.2 12.6-5 28.4 5.3 38.6s26.1 12.2 38.6 4.9l93.1-54.3c11.8 12.3 25.4 24.8 40.7 36.3 15.5 11.6 33 22.5 52.4 31.5l-9.7 48.6c-2.6 13 3.1 26.3 14.3 33.3s25.6 6.5 36.3-1.5l77.6-58.2c54.9-4 101.5-27 137.2-53.8 39.2-29.4 67.2-64.7 81.6-89.5 5.8-9.9 5.8-22.2 0-32.1-14.4-24.8-42.5-60.1-81.6-89.5-35.8-26.8-82.3-49.8-137.2-53.8l-77.6-58.2zM384 256a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>
@@ -161,7 +166,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ACG
+              公平组合游戏
             
           </span>
         </div>
@@ -273,7 +278,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../../../.." class="md-tabs__link">
         
   
     
@@ -292,7 +297,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../Computer%20Science/" class="md-tabs__link">
+        <a href="../../../../Computer%20Science/" class="md-tabs__link">
           
   
     
@@ -312,32 +317,12 @@
     
     
       <li class="md-tabs__item">
-        <a href="../Research/Learning%20Research/" class="md-tabs__link">
+        <a href="../../../../Research/Learning%20Research/" class="md-tabs__link">
           
   
     
   
   Research
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../Algorithm/ACM%E7%AE%97%E6%B3%95%E5%AE%9E%E8%B7%B5/" class="md-tabs__link">
-          
-  
-    
-  
-  Algorithm
 
         </a>
       </li>
@@ -354,7 +339,27 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../../../ACM%E7%AE%97%E6%B3%95%E5%AE%9E%E8%B7%B5/" class="md-tabs__link">
+          
+  
+    
+  
+  Algorithm
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../ACG/" class="md-tabs__link">
           
   
     
@@ -389,7 +394,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="f1a3h&#39;s Notebook" class="md-nav__button md-logo" aria-label="f1a3h's Notebook" data-md-component="logo">
+    <a href="../../../.." title="f1a3h&#39;s Notebook" class="md-nav__button md-logo" aria-label="f1a3h's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M275.2 38.4c-10.6-8-25-8.5-36.3-1.5S222 57.3 224.6 70.3l9.7 48.6c-19.4 9-36.9 19.9-52.4 31.5-15.3 11.5-29 23.9-40.7 36.3l-93.1-54.3c-12.5-7.3-28.4-5.3-38.6 4.9s-12.5 26-5.3 38.6L50 256 4.2 336.1c-7.2 12.6-5 28.4 5.3 38.6s26.1 12.2 38.6 4.9l93.1-54.3c11.8 12.3 25.4 24.8 40.7 36.3 15.5 11.6 33 22.5 52.4 31.5l-9.7 48.6c-2.6 13 3.1 26.3 14.3 33.3s25.6 6.5 36.3-1.5l77.6-58.2c54.9-4 101.5-27 137.2-53.8 39.2-29.4 67.2-64.7 81.6-89.5 5.8-9.9 5.8-22.2 0-32.1-14.4-24.8-42.5-60.1-81.6-89.5-35.8-26.8-82.3-49.8-137.2-53.8l-77.6-58.2zM384 256a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>
@@ -419,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -474,7 +479,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Computer%20Science/" class="md-nav__link ">
+            <a href="../../../../Computer%20Science/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -532,7 +537,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Computer%20Science/Compilers/" class="md-nav__link ">
+            <a href="../../../../Computer%20Science/Compilers/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -607,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Compilers/NJU%20%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Compilers/NJU%20%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -661,7 +666,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Computer%20Science/Compilers/Stanford%20CS143/" class="md-nav__link ">
+            <a href="../../../../Computer%20Science/Compilers/Stanford%20CS143/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -692,7 +697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Compilers/Stanford%20CS143/Intro/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Compilers/Stanford%20CS143/Intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -713,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Compilers/Stanford%20CS143/Lexical%20Analysis/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Compilers/Stanford%20CS143/Lexical%20Analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -796,7 +801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Computer%20Architecture/UCB%20CS61C/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Computer%20Architecture/UCB%20CS61C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -842,7 +847,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Computer%20Science/Computer%20Architecture/CSAPP/" class="md-nav__link ">
+            <a href="../../../../Computer%20Science/Computer%20Architecture/CSAPP/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -873,7 +878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Computer%20Architecture/CSAPP/Chapter%202/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Computer%20Architecture/CSAPP/Chapter%202/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -894,7 +899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Computer%20Architecture/CSAPP/Chapter%203/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Computer%20Architecture/CSAPP/Chapter%203/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -956,7 +961,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Computer%20Science/Computer%20Network/" class="md-nav__link ">
+            <a href="../../../../Computer%20Science/Computer%20Network/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1020,7 +1025,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Computer%20Science/Computer%20Network/CNATDA/" class="md-nav__link ">
+            <a href="../../../../Computer%20Science/Computer%20Network/CNATDA/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1051,7 +1056,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Computer%20Network/CNATDA/Chapter%202/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Computer%20Network/CNATDA/Chapter%202/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1072,7 +1077,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Computer%20Network/CNATDA/Chapter%203/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Computer%20Network/CNATDA/Chapter%203/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1093,7 +1098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Computer%20Network/CNATDA/Chapter%204/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Computer%20Network/CNATDA/Chapter%204/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1114,7 +1119,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Computer%20Network/CNATDA/Chapter%205/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Computer%20Network/CNATDA/Chapter%205/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1135,7 +1140,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Computer%20Network/CNATDA/Chapter%206/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Computer%20Network/CNATDA/Chapter%206/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1216,7 +1221,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Computer%20Security/Stanford%20CS110L/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Computer%20Security/Stanford%20CS110L/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1270,7 +1275,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Computer%20Science/Electronics/" class="md-nav__link ">
+            <a href="../../../../Computer%20Science/Electronics/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1347,7 +1352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Electronics/Signals%20and%20Systems/Convolution/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Electronics/Signals%20and%20Systems/Convolution/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1368,7 +1373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Electronics/Signals%20and%20Systems/Signals%20and%20System%20Properties/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Electronics/Signals%20and%20Systems/Signals%20and%20System%20Properties/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1439,7 +1444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Electronics/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E4%B8%8E%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1/Ch.1/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Electronics/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E4%B8%8E%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1/Ch.1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1524,7 +1529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Math/LADW/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Math/LADW/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1545,7 +1550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Math/MIT%2018.330/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Math/MIT%2018.330/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1566,7 +1571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Math/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Math/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1587,7 +1592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Math/%E8%B0%A2%E6%83%A0%E6%B0%91%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Math/%E8%B0%A2%E6%83%A0%E6%B0%91%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1643,7 +1648,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Computer%20Science/Theory%20of%20Computer%20Science/" class="md-nav__link ">
+            <a href="../../../../Computer%20Science/Theory%20of%20Computer%20Science/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1701,7 +1706,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Computer%20Science/Theory%20of%20Computer%20Science/MIT%2018.404/" class="md-nav__link ">
+            <a href="../../../../Computer%20Science/Theory%20of%20Computer%20Science/MIT%2018.404/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1732,7 +1737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Theory%20of%20Computer%20Science/MIT%2018.404/Automata%20and%20Language%20Theory/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Theory%20of%20Computer%20Science/MIT%2018.404/Automata%20and%20Language%20Theory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1797,7 +1802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Theory%20of%20Computer%20Science/MIT%2018.404/Computability%20Theory/The%20Church-Turing%20Thesis/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Theory%20of%20Computer%20Science/MIT%2018.404/Computability%20Theory/The%20Church-Turing%20Thesis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1859,7 +1864,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/" class="md-nav__link ">
+            <a href="../../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1927,7 +1932,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/" class="md-nav__link ">
+            <a href="../../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1958,7 +1963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/CFL-Reachability%20and%20IFDS/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/CFL-Reachability%20and%20IFDS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1979,7 +1984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Data%20Flow%20Analysis/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Data%20Flow%20Analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2000,7 +2005,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Datalog/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Datalog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2021,7 +2026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Interprocedural%20Analysis/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Interprocedural%20Analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2042,7 +2047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Pointer%20Analysis/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Pointer%20Analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2063,7 +2068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Soundness%20and%20Soundiness/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Soundness%20and%20Soundiness/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2084,7 +2089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Static%20Analysis%20for%20Security/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Static%20Analysis%20for%20Security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2138,7 +2143,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/Stanford%20CS242/" class="md-nav__link ">
+            <a href="../../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/Stanford%20CS242/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2169,7 +2174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/Stanford%20CS242/Syntax%20and%20Semantics/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/Stanford%20CS242/Syntax%20and%20Semantics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2250,7 +2255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Theory%20of%20Computer%20Science/TCS%20Toolkit/Basic%20Asymptotics/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Theory%20of%20Computer%20Science/TCS%20Toolkit/Basic%20Asymptotics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2317,7 +2322,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Research/" class="md-nav__link ">
+            <a href="../../../../Research/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2348,7 +2353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Research/Learning%20Research/" class="md-nav__link">
+      <a href="../../../../Research/Learning%20Research/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2375,6 +2380,8 @@
       
   
   
+    
+  
   
   
     
@@ -2401,19 +2408,22 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Algorithm/" class="md-nav__link ">
+            <a href="../../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2424,13 +2434,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Algorithm
@@ -2444,7 +2454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/ACM%E7%AE%97%E6%B3%95%E5%AE%9E%E8%B7%B5/" class="md-nav__link">
+      <a href="../../../ACM%E7%AE%97%E6%B3%95%E5%AE%9E%E8%B7%B5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2467,7 +2477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/%E5%8F%8C%E5%90%91%E6%90%9C%E7%B4%A2/" class="md-nav__link">
+      <a href="../../../%E5%8F%8C%E5%90%91%E6%90%9C%E7%B4%A2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2532,7 +2542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/Geometry/2D/" class="md-nav__link">
+      <a href="../../../Geometry/2D/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2553,7 +2563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/Geometry/Convex%20Hull/" class="md-nav__link">
+      <a href="../../../Geometry/Convex%20Hull/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2626,7 +2636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/Graph/Auxiliary%20Tree/" class="md-nav__link">
+      <a href="../../../Graph/Auxiliary%20Tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2647,7 +2657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/Graph/%E6%AC%A7%E6%8B%89%E5%9B%BE/" class="md-nav__link">
+      <a href="../../../Graph/%E6%AC%A7%E6%8B%89%E5%9B%BE/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2673,8 +2683,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -2694,11 +2706,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" checked>
         
           
           <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
@@ -2712,7 +2724,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_6">
             <span class="md-nav__icon md-icon"></span>
             Math
@@ -2726,7 +2738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/Math/GCD%26LCM/" class="md-nav__link">
+      <a href="../../GCD%26LCM/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2747,7 +2759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/Math/Miller%20Rabin/" class="md-nav__link">
+      <a href="../../Miller%20Rabin/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2768,7 +2780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/Math/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/" class="md-nav__link">
+      <a href="../../%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2789,7 +2801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/Math/%E5%BF%AB%E9%80%9F%E5%B9%82/" class="md-nav__link">
+      <a href="../../%E5%BF%AB%E9%80%9F%E5%B9%82/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2807,8 +2819,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -2820,11 +2834,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_5" checked>
         
           
           <label class="md-nav__link" for="__nav_4_6_5" id="__nav_4_6_5_label" tabindex="0">
@@ -2838,7 +2852,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_6_5">
             <span class="md-nav__icon md-icon"></span>
             博弈论
@@ -2849,10 +2863,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Algorithm/Math/%E5%8D%9A%E5%BC%88%E8%AE%BA/%E5%85%AC%E5%B9%B3%E7%BB%84%E5%90%88%E6%B8%B8%E6%88%8F/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    公平组合游戏
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2861,6 +2893,51 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nim 游戏
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sg" class="md-nav__link">
+    <span class="md-ellipsis">
+      SG 函数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考文献
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2933,7 +3010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/String/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/" class="md-nav__link">
+      <a href="../../../String/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2954,7 +3031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/String/Manacher/" class="md-nav__link">
+      <a href="../../../String/Manacher/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3029,7 +3106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/WriteUp/LuoguP5539/" class="md-nav__link">
+      <a href="../../../WriteUp/LuoguP5539/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3050,7 +3127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/WriteUp/Quantum%20Wave%20Speed%20Pass/" class="md-nav__link">
+      <a href="../../../WriteUp/Quantum%20Wave%20Speed%20Pass/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3115,7 +3192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/WriteUp/Competition/AtCoder/" class="md-nav__link">
+      <a href="../../../WriteUp/Competition/AtCoder/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3136,7 +3213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/WriteUp/Competition/Codeforces/" class="md-nav__link">
+      <a href="../../../WriteUp/Competition/Codeforces/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3177,8 +3254,6 @@
       
   
   
-    
-  
   
   
     
@@ -3197,22 +3272,19 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../../../../ACG/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3223,13 +3295,13 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_5" id="__nav_5_label" tabindex="">
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             ACG
@@ -3287,7 +3359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Comics/%E8%91%AC%E9%80%81%E3%81%AE%E3%83%95%E3%83%AA%E3%83%BC%E3%83%AC%E3%83%B3/" class="md-nav__link">
+      <a href="../../../../ACG/Comics/%E8%91%AC%E9%80%81%E3%81%AE%E3%83%95%E3%83%AA%E3%83%BC%E3%83%AC%E3%83%B3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3362,7 +3434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Game/%E5%A1%9E%E5%B0%94%E8%BE%BE%E4%BC%A0%E8%AF%B4%EF%BC%9A%E6%97%B7%E9%87%8E%E4%B9%8B%E6%81%AF/" class="md-nav__link">
+      <a href="../../../../ACG/Game/%E5%A1%9E%E5%B0%94%E8%BE%BE%E4%BC%A0%E8%AF%B4%EF%BC%9A%E6%97%B7%E9%87%8E%E4%B9%8B%E6%81%AF/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3383,7 +3455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Game/%E6%A8%B1%E4%B9%8B%E8%AF%97/" class="md-nav__link">
+      <a href="../../../../ACG/Game/%E6%A8%B1%E4%B9%8B%E8%AF%97/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3404,7 +3476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Game/%E8%BF%91%E6%9C%88%E5%B0%91%E5%A5%B3%E7%9A%84%E7%A4%BC%E4%BB%AA/" class="md-nav__link">
+      <a href="../../../../ACG/Game/%E8%BF%91%E6%9C%88%E5%B0%91%E5%A5%B3%E7%9A%84%E7%A4%BC%E4%BB%AA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3475,7 +3547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Novel/%E9%92%A2%E9%93%81%E4%B9%8B%E7%BF%BC/" class="md-nav__link">
+      <a href="../../../../ACG/Novel/%E9%92%A2%E9%93%81%E4%B9%8B%E7%BF%BC/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3522,6 +3594,41 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nim 游戏
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sg" class="md-nav__link">
+    <span class="md-ellipsis">
+      SG 函数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考文献
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3538,9 +3645,78 @@
   
 
 
-  <h1>ACG</h1>
+  <h1>公平组合游戏</h1>
 
-
+<p>公平组合游戏（Impartial Combinatorial Games, ICG）指的是：</p>
+<ul>
+<li>两人共同参与，轮流行动，均知道游戏的完整信息</li>
+<li>在某一状态下可以做出的决策集合仅与当前的局面有关，与游戏者无关</li>
+<li>经过有限步数后一定会以非平局结束游戏，一般是以某一玩家无法继续行动为结束点</li>
+</ul>
+<p>公平组合游戏有多种，其中最经典的是 Nim 游戏，并且其他的公平组合游戏都可以转化为 Nim 游戏。</p>
+<h2 id="nim">Nim 游戏<a class="headerlink" href="#nim" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><span class="arithmatex">\(n\)</span> 堆物品，每堆有 <span class="arithmatex">\(a_i\)</span> 个，两个玩家轮流取走任意一堆的任意个物品，但不能不取。</p>
+<p>取走最后一个物品的人获胜，也就是玩家无法行动的时候即为输。</p>
+</blockquote>
+<p>不妨假设两位玩家都是绝顶聪明，行动必采取最优策略。在这种情况下，如果每种局面都存在最优策略，那么当初始局面给定时一定可以确定先手/后手必输，因此我们先考虑是否一定存在最优策略。</p>
+<p>可以发现，所有局面对应的结束局面都是：</p>
+<ul>
+<li><span class="arithmatex">\(a_i = 0, \forall i = 1, 2, \dots. n\)</span> 此时先手必输</li>
+</ul>
+<p>我们在此基础上加石子，枚举该局面可能的父局面，显然这些父局面都是先手必赢的。依此类推，不断地加石子必然可以得到初始局面，不难发现这个过程得到的是一张单起点单终点的有向无环图，其中每个结点对应某个局面（称为状态），每条边对应一种行动，我们将这个图称为<em>博弈状态图</em>。</p>
+<p><img alt="" src="https://oi-wiki.org/math/game-theory/images/game1.png" /><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<p>先给出两个定义：</p>
+<ul>
+<li><em>P-position</em>: 当前局面先手必输，后手必赢</li>
+<li><em>N-position</em>: 当前局面先手必赢，后手必输</li>
+</ul>
+<p>显然 <span class="arithmatex">\((0, 0, 0)\)</span> 是 P-position，于是我们可以标记它的父节点为 N-position，自底向上标记，如果某个结点存在一个子节点为 P-position，那么它一定是 N-position，否则为 P-position（不存在最优策略）。这样一来，整张图的所有结点必然都会有一个标记，因此对于任意局面，如果每次采取最优策略那么它的结局从一开始就是确定好了的。</p>
+<p>之后我们考虑如何确定某一局面是 P-position 还是 N-position。</p>
+<p>最简单粗暴的办法当然是在这张图上自下而上遍历，由于会有重复的状态所以还需要记忆化，这样时间复杂度和空间复杂度都是 <span class="arithmatex">\(O(\prod^{i=1}_{n}a_i)\)</span> 的。</p>
+<p>这时候你也许会认为没有更优的办法了，但是，回想一下之前标记的过程：</p>
+<blockquote>
+<p>如果某个结点存在一个子节点为 P-position，那么它一定是 N-position，否则为 P-position（不存在最优策略）。</p>
+</blockquote>
+<p>直觉告诉我，它一定还存在优化的空间！</p>
+<p>事实上，确实有更好的办法，并且理论上应该也是最优的算法，那就是可以利用异或（<span class="arithmatex">\(\otimes\)</span>）操作 <span class="arithmatex">\(O(n)\)</span> 地求解。</p>
+<p><strong>结论</strong>：如果 <span class="arithmatex">\(a_1 \otimes a_2 \otimes \dots \otimes a_n=0\)</span>，则先手必败。</p>
+<p>使用数学归纳法证明：</p>
+<ol>
+<li>对于有且仅有的 terminal position <span class="arithmatex">\(a_1=a_2=\dots=a_n=0\)</span> ，上述结论显然满足</li>
+<li>对于任何 N-position <span class="arithmatex">\(a_1 \otimes a_2 \otimes \dots \otimes a_n=k \not=0\)</span> ，必然存在某种行动使得它的子局面满足 <span class="arithmatex">\(a_1^\prime \otimes a_2^\prime \otimes \dots \otimes a_n^\prime=0\)</span><ul>
+<li><span class="arithmatex">\(k\)</span> 二进制下最高位的 1 必然由某个 <span class="arithmatex">\(a_i\)</span> 贡献而来，令 <span class="arithmatex">\(a_i^\prime=k \otimes a_i &lt; a_i\)</span> 其余保持不变，此时 <span class="arithmatex">\(a_1\otimes \dots \otimes a_i^\prime \otimes \dots \otimes a_n=0\)</span></li>
+</ul>
+</li>
+<li>对于任何 P-position <span class="arithmatex">\(a_1 \otimes a_2 \otimes \dots \otimes a_n=0\)</span> ，无论如何行动，它的子局面必然为 <span class="arithmatex">\(a_1^\prime \otimes a_2^\prime \otimes \dots \otimes a_n^\prime\not=0\)</span> <ul>
+<li>假设拿 <span class="arithmatex">\(a_j\)</span> 中的石子，那么无论拿走多少，<span class="arithmatex">\(a_j\)</span> 的二进制位下至少有一位翻转了，最终异或和下的那一位必然变成 1，因此子局面的异或和不可能为 0</li>
+</ul>
+</li>
+</ol>
+<p>自此，我们可以根据异或和判断 P/N-position 。</p>
+<p>但是问题来了，异或的操作无论是和 Nim 游戏还是和上面的博弈状态图看上去都风马牛不相及，为什么异或和可以求出某一个局面是 P 还是 N-position 呢？上述的证明使用了数学归纳法，也仅仅是已知结论进行推导它确实成立而已。</p>
+<p>一个揭示了有向图游戏和异或操作的本质关联的解释用到了群论<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>，另外一个更 intuitive 的解释在 John Conway 的 <em>Winning Ways for Your Mathematical Plays</em> 书中有提到（当然我没看过，之后有时间也许会看看这本书？）</p>
+<h2 id="sg">SG 函数<a class="headerlink" href="#sg" title="Permanent link">&para;</a></h2>
+<p>To be continued......</p>
+<h2 id="_1">参考文献<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://oi-wiki.org/math/game-theory/impartial-game">公平组合游戏 - OI Wiki</a></li>
+<li><a href="https://www.cnblogs.com/candy99/p/6548836.html">[组合游戏与博弈论]【学习笔记】</a></li>
+<li><a href="https://www.cnblogs.com/Lanly/p/7262998.html">博弈论之Nim游戏</a></li>
+<li><a href="https://www.cnblogs.com/Galetx/p/17264367.html">浅谈博弈论——Nim 游戏</a></li>
+<li><a href="https://www.zhihu.com/question/51290443">为什么会想到用异或来算SG函数？它的本质是什么？ - 知乎</a></li>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="https://oi-wiki.org/math/game-theory/impartial-game">OI-Wiki 公平组合游戏</a> 下的博弈状态图示例&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://www.zhihu.com/question/51290443/answer/125184901">为什么会想到用异或来算SG函数？它的本质是什么？ - 诚信肥肥的回答 - 知乎</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
@@ -3727,12 +3903,12 @@ document.addEventListener("DOMContentLoaded", function() {
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "content.code.copy", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.ad660dcc.min.js"></script>
       
-        <script src="../_assets/js/katex.js"></script>
+        <script src="../../../../_assets/js/katex.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
       

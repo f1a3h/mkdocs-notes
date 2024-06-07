@@ -10,28 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://note.f1a3h.com/ACG/">
+        <link rel="canonical" href="https://note.f1a3h.com/Algorithm/Graph/%E6%AC%A7%E6%8B%89%E5%9B%BE/">
       
       
-        <link rel="prev" href="../Algorithm/WriteUp/Competition/Codeforces/">
+        <link rel="prev" href="../Auxiliary%20Tree/">
       
       
-        <link rel="next" href="Comics/%E8%91%AC%E9%80%81%E3%81%AE%E3%83%95%E3%83%AA%E3%83%BC%E3%83%AC%E3%83%B3/">
+        <link rel="next" href="../../Math/GCD%26LCM/">
       
       
-      <link rel="icon" href="../_assets/img/favicon.png">
+      <link rel="icon" href="../../../_assets/img/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26">
     
     
       
-        <title>ACG - f1a3h's Notebook</title>
+        <title>欧拉图 - f1a3h's Notebook</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -94,19 +94,19 @@
     
       <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap">
     
-      <link rel="stylesheet" href="../_assets/css/tasklist.css">
+      <link rel="stylesheet" href="../../../_assets/css/tasklist.css">
     
-      <link rel="stylesheet" href="../_assets/css/custom.css">
+      <link rel="stylesheet" href="../../../_assets/css/custom.css">
     
-      <link rel="stylesheet" href="../_assets/css/flink.css">
+      <link rel="stylesheet" href="../../../_assets/css/flink.css">
     
-      <link rel="stylesheet" href="../_assets/css/font.css">
+      <link rel="stylesheet" href="../../../_assets/css/font.css">
     
-      <link rel="stylesheet" href="../_assets/css/admonition.css">
+      <link rel="stylesheet" href="../../../_assets/css/admonition.css">
     
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -131,6 +131,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -141,7 +146,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="f1a3h&#39;s Notebook" class="md-header__button md-logo" aria-label="f1a3h's Notebook" data-md-component="logo">
+    <a href="../../.." title="f1a3h&#39;s Notebook" class="md-header__button md-logo" aria-label="f1a3h's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M275.2 38.4c-10.6-8-25-8.5-36.3-1.5S222 57.3 224.6 70.3l9.7 48.6c-19.4 9-36.9 19.9-52.4 31.5-15.3 11.5-29 23.9-40.7 36.3l-93.1-54.3c-12.5-7.3-28.4-5.3-38.6 4.9s-12.5 26-5.3 38.6L50 256 4.2 336.1c-7.2 12.6-5 28.4 5.3 38.6s26.1 12.2 38.6 4.9l93.1-54.3c11.8 12.3 25.4 24.8 40.7 36.3 15.5 11.6 33 22.5 52.4 31.5l-9.7 48.6c-2.6 13 3.1 26.3 14.3 33.3s25.6 6.5 36.3-1.5l77.6-58.2c54.9-4 101.5-27 137.2-53.8 39.2-29.4 67.2-64.7 81.6-89.5 5.8-9.9 5.8-22.2 0-32.1-14.4-24.8-42.5-60.1-81.6-89.5-35.8-26.8-82.3-49.8-137.2-53.8l-77.6-58.2zM384 256a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>
@@ -161,7 +166,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ACG
+              欧拉图
             
           </span>
         </div>
@@ -273,7 +278,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -292,7 +297,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../Computer%20Science/" class="md-tabs__link">
+        <a href="../../../Computer%20Science/" class="md-tabs__link">
           
   
     
@@ -312,32 +317,12 @@
     
     
       <li class="md-tabs__item">
-        <a href="../Research/Learning%20Research/" class="md-tabs__link">
+        <a href="../../../Research/Learning%20Research/" class="md-tabs__link">
           
   
     
   
   Research
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../Algorithm/ACM%E7%AE%97%E6%B3%95%E5%AE%9E%E8%B7%B5/" class="md-tabs__link">
-          
-  
-    
-  
-  Algorithm
 
         </a>
       </li>
@@ -354,7 +339,27 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../../ACM%E7%AE%97%E6%B3%95%E5%AE%9E%E8%B7%B5/" class="md-tabs__link">
+          
+  
+    
+  
+  Algorithm
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ACG/" class="md-tabs__link">
           
   
     
@@ -389,7 +394,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="f1a3h&#39;s Notebook" class="md-nav__button md-logo" aria-label="f1a3h's Notebook" data-md-component="logo">
+    <a href="../../.." title="f1a3h&#39;s Notebook" class="md-nav__button md-logo" aria-label="f1a3h's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M275.2 38.4c-10.6-8-25-8.5-36.3-1.5S222 57.3 224.6 70.3l9.7 48.6c-19.4 9-36.9 19.9-52.4 31.5-15.3 11.5-29 23.9-40.7 36.3l-93.1-54.3c-12.5-7.3-28.4-5.3-38.6 4.9s-12.5 26-5.3 38.6L50 256 4.2 336.1c-7.2 12.6-5 28.4 5.3 38.6s26.1 12.2 38.6 4.9l93.1-54.3c11.8 12.3 25.4 24.8 40.7 36.3 15.5 11.6 33 22.5 52.4 31.5l-9.7 48.6c-2.6 13 3.1 26.3 14.3 33.3s25.6 6.5 36.3-1.5l77.6-58.2c54.9-4 101.5-27 137.2-53.8 39.2-29.4 67.2-64.7 81.6-89.5 5.8-9.9 5.8-22.2 0-32.1-14.4-24.8-42.5-60.1-81.6-89.5-35.8-26.8-82.3-49.8-137.2-53.8l-77.6-58.2zM384 256a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>
@@ -419,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -474,7 +479,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Computer%20Science/" class="md-nav__link ">
+            <a href="../../../Computer%20Science/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -532,7 +537,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Computer%20Science/Compilers/" class="md-nav__link ">
+            <a href="../../../Computer%20Science/Compilers/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -607,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Compilers/NJU%20%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Compilers/NJU%20%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -661,7 +666,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Computer%20Science/Compilers/Stanford%20CS143/" class="md-nav__link ">
+            <a href="../../../Computer%20Science/Compilers/Stanford%20CS143/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -692,7 +697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Compilers/Stanford%20CS143/Intro/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Compilers/Stanford%20CS143/Intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -713,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Compilers/Stanford%20CS143/Lexical%20Analysis/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Compilers/Stanford%20CS143/Lexical%20Analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -796,7 +801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Computer%20Architecture/UCB%20CS61C/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Computer%20Architecture/UCB%20CS61C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -842,7 +847,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Computer%20Science/Computer%20Architecture/CSAPP/" class="md-nav__link ">
+            <a href="../../../Computer%20Science/Computer%20Architecture/CSAPP/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -873,7 +878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Computer%20Architecture/CSAPP/Chapter%202/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Computer%20Architecture/CSAPP/Chapter%202/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -894,7 +899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Computer%20Architecture/CSAPP/Chapter%203/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Computer%20Architecture/CSAPP/Chapter%203/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -956,7 +961,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Computer%20Science/Computer%20Network/" class="md-nav__link ">
+            <a href="../../../Computer%20Science/Computer%20Network/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1020,7 +1025,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Computer%20Science/Computer%20Network/CNATDA/" class="md-nav__link ">
+            <a href="../../../Computer%20Science/Computer%20Network/CNATDA/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1051,7 +1056,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Computer%20Network/CNATDA/Chapter%202/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Computer%20Network/CNATDA/Chapter%202/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1072,7 +1077,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Computer%20Network/CNATDA/Chapter%203/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Computer%20Network/CNATDA/Chapter%203/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1093,7 +1098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Computer%20Network/CNATDA/Chapter%204/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Computer%20Network/CNATDA/Chapter%204/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1114,7 +1119,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Computer%20Network/CNATDA/Chapter%205/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Computer%20Network/CNATDA/Chapter%205/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1135,7 +1140,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Computer%20Network/CNATDA/Chapter%206/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Computer%20Network/CNATDA/Chapter%206/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1216,7 +1221,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Computer%20Security/Stanford%20CS110L/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Computer%20Security/Stanford%20CS110L/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1270,7 +1275,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Computer%20Science/Electronics/" class="md-nav__link ">
+            <a href="../../../Computer%20Science/Electronics/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1347,7 +1352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Electronics/Signals%20and%20Systems/Convolution/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Electronics/Signals%20and%20Systems/Convolution/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1368,7 +1373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Electronics/Signals%20and%20Systems/Signals%20and%20System%20Properties/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Electronics/Signals%20and%20Systems/Signals%20and%20System%20Properties/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1439,7 +1444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Electronics/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E4%B8%8E%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1/Ch.1/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Electronics/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E4%B8%8E%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1/Ch.1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1524,7 +1529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Math/LADW/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Math/LADW/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1545,7 +1550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Math/MIT%2018.330/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Math/MIT%2018.330/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1566,7 +1571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Math/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Math/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1587,7 +1592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Math/%E8%B0%A2%E6%83%A0%E6%B0%91%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Math/%E8%B0%A2%E6%83%A0%E6%B0%91%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1643,7 +1648,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Computer%20Science/Theory%20of%20Computer%20Science/" class="md-nav__link ">
+            <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1701,7 +1706,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Computer%20Science/Theory%20of%20Computer%20Science/MIT%2018.404/" class="md-nav__link ">
+            <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/MIT%2018.404/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1732,7 +1737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Theory%20of%20Computer%20Science/MIT%2018.404/Automata%20and%20Language%20Theory/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/MIT%2018.404/Automata%20and%20Language%20Theory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1797,7 +1802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Theory%20of%20Computer%20Science/MIT%2018.404/Computability%20Theory/The%20Church-Turing%20Thesis/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/MIT%2018.404/Computability%20Theory/The%20Church-Turing%20Thesis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1859,7 +1864,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/" class="md-nav__link ">
+            <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1927,7 +1932,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/" class="md-nav__link ">
+            <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1958,7 +1963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/CFL-Reachability%20and%20IFDS/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/CFL-Reachability%20and%20IFDS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1979,7 +1984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Data%20Flow%20Analysis/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Data%20Flow%20Analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2000,7 +2005,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Datalog/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Datalog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2021,7 +2026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Interprocedural%20Analysis/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Interprocedural%20Analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2042,7 +2047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Pointer%20Analysis/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Pointer%20Analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2063,7 +2068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Soundness%20and%20Soundiness/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Soundness%20and%20Soundiness/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2084,7 +2089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Static%20Analysis%20for%20Security/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Static%20Analysis%20for%20Security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2138,7 +2143,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/Stanford%20CS242/" class="md-nav__link ">
+            <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/Stanford%20CS242/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2169,7 +2174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/Stanford%20CS242/Syntax%20and%20Semantics/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/Programming%20Languages/Stanford%20CS242/Syntax%20and%20Semantics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2250,7 +2255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Computer%20Science/Theory%20of%20Computer%20Science/TCS%20Toolkit/Basic%20Asymptotics/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Theory%20of%20Computer%20Science/TCS%20Toolkit/Basic%20Asymptotics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2317,7 +2322,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Research/" class="md-nav__link ">
+            <a href="../../../Research/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2348,7 +2353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Research/Learning%20Research/" class="md-nav__link">
+      <a href="../../../Research/Learning%20Research/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2375,6 +2380,8 @@
       
   
   
+    
+  
   
   
     
@@ -2401,19 +2408,22 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Algorithm/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2424,13 +2434,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Algorithm
@@ -2444,7 +2454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/ACM%E7%AE%97%E6%B3%95%E5%AE%9E%E8%B7%B5/" class="md-nav__link">
+      <a href="../../ACM%E7%AE%97%E6%B3%95%E5%AE%9E%E8%B7%B5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2467,7 +2477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/%E5%8F%8C%E5%90%91%E6%90%9C%E7%B4%A2/" class="md-nav__link">
+      <a href="../../%E5%8F%8C%E5%90%91%E6%90%9C%E7%B4%A2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2532,7 +2542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/Geometry/2D/" class="md-nav__link">
+      <a href="../../Geometry/2D/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2553,7 +2563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/Geometry/Convex%20Hull/" class="md-nav__link">
+      <a href="../../Geometry/Convex%20Hull/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2579,8 +2589,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -2594,11 +2606,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
         
           
           <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
@@ -2612,7 +2624,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
             Graph
@@ -2626,7 +2638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/Graph/Auxiliary%20Tree/" class="md-nav__link">
+      <a href="../Auxiliary%20Tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2644,10 +2656,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Algorithm/Graph/%E6%AC%A7%E6%8B%89%E5%9B%BE/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    欧拉图
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2656,6 +2686,60 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      概念
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      性质
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      判别
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      求欧拉路/欧拉回路
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2726,7 +2810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/Math/GCD%26LCM/" class="md-nav__link">
+      <a href="../../Math/GCD%26LCM/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2747,7 +2831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/Math/Miller%20Rabin/" class="md-nav__link">
+      <a href="../../Math/Miller%20Rabin/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2768,7 +2852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/Math/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/" class="md-nav__link">
+      <a href="../../Math/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2789,7 +2873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/Math/%E5%BF%AB%E9%80%9F%E5%B9%82/" class="md-nav__link">
+      <a href="../../Math/%E5%BF%AB%E9%80%9F%E5%B9%82/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2852,7 +2936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/Math/%E5%8D%9A%E5%BC%88%E8%AE%BA/%E5%85%AC%E5%B9%B3%E7%BB%84%E5%90%88%E6%B8%B8%E6%88%8F/" class="md-nav__link">
+      <a href="../../Math/%E5%8D%9A%E5%BC%88%E8%AE%BA/%E5%85%AC%E5%B9%B3%E7%BB%84%E5%90%88%E6%B8%B8%E6%88%8F/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2933,7 +3017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/String/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/" class="md-nav__link">
+      <a href="../../String/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2954,7 +3038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/String/Manacher/" class="md-nav__link">
+      <a href="../../String/Manacher/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3029,7 +3113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/WriteUp/LuoguP5539/" class="md-nav__link">
+      <a href="../../WriteUp/LuoguP5539/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3050,7 +3134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/WriteUp/Quantum%20Wave%20Speed%20Pass/" class="md-nav__link">
+      <a href="../../WriteUp/Quantum%20Wave%20Speed%20Pass/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3115,7 +3199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/WriteUp/Competition/AtCoder/" class="md-nav__link">
+      <a href="../../WriteUp/Competition/AtCoder/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3136,7 +3220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Algorithm/WriteUp/Competition/Codeforces/" class="md-nav__link">
+      <a href="../../WriteUp/Competition/Codeforces/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3177,8 +3261,6 @@
       
   
   
-    
-  
   
   
     
@@ -3197,22 +3279,19 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../../../ACG/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3223,13 +3302,13 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_5" id="__nav_5_label" tabindex="">
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             ACG
@@ -3287,7 +3366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Comics/%E8%91%AC%E9%80%81%E3%81%AE%E3%83%95%E3%83%AA%E3%83%BC%E3%83%AC%E3%83%B3/" class="md-nav__link">
+      <a href="../../../ACG/Comics/%E8%91%AC%E9%80%81%E3%81%AE%E3%83%95%E3%83%AA%E3%83%BC%E3%83%AC%E3%83%B3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3362,7 +3441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Game/%E5%A1%9E%E5%B0%94%E8%BE%BE%E4%BC%A0%E8%AF%B4%EF%BC%9A%E6%97%B7%E9%87%8E%E4%B9%8B%E6%81%AF/" class="md-nav__link">
+      <a href="../../../ACG/Game/%E5%A1%9E%E5%B0%94%E8%BE%BE%E4%BC%A0%E8%AF%B4%EF%BC%9A%E6%97%B7%E9%87%8E%E4%B9%8B%E6%81%AF/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3383,7 +3462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Game/%E6%A8%B1%E4%B9%8B%E8%AF%97/" class="md-nav__link">
+      <a href="../../../ACG/Game/%E6%A8%B1%E4%B9%8B%E8%AF%97/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3404,7 +3483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Game/%E8%BF%91%E6%9C%88%E5%B0%91%E5%A5%B3%E7%9A%84%E7%A4%BC%E4%BB%AA/" class="md-nav__link">
+      <a href="../../../ACG/Game/%E8%BF%91%E6%9C%88%E5%B0%91%E5%A5%B3%E7%9A%84%E7%A4%BC%E4%BB%AA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3475,7 +3554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Novel/%E9%92%A2%E9%93%81%E4%B9%8B%E7%BF%BC/" class="md-nav__link">
+      <a href="../../../ACG/Novel/%E9%92%A2%E9%93%81%E4%B9%8B%E7%BF%BC/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3522,6 +3601,50 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      概念
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      性质
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      判别
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      求欧拉路/欧拉回路
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3538,9 +3661,77 @@
   
 
 
-  <h1>ACG</h1>
+  <h1>欧拉图</h1>
 
-
+<h2 id="_1">概念<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>欧拉回路：经过每条边刚好一次的<em>回路</em></li>
+<li>欧拉通路：经过每条边刚好一次的<em>通路</em></li>
+<li>欧拉图：具有<em>欧拉回路</em>的图</li>
+<li>半欧拉图：具有<em>欧拉通路</em>但不具有欧拉回路的图</li>
+</ul>
+<h2 id="_2">性质<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>欧拉图：<ul>
+<li>所有结点的度为偶数</li>
+<li>欧拉图是若干个环的并，并且每条边必然处于奇数个环中<ul>
+<li>一个很不严谨的 Proof: 假设这条边是 <span class="arithmatex">\(e(u, v)\)</span>，那么对于每一个环，必然存在一条边 <span class="arithmatex">\(e^\prime(v^\prime, u)\)</span> 与此条边对应，从 <span class="arithmatex">\(e^\prime\)</span> 到结点 <span class="arithmatex">\(u\)</span>，走 <span class="arithmatex">\(e\)</span> 离开 <span class="arithmatex">\(v\)</span>，如果它存在于偶数个环中，那么每个 <span class="arithmatex">\(e^\prime\)</span> 都会对 <span class="arithmatex">\(\deg(u)\)</span> 产生 1 个贡献，加上 <span class="arithmatex">\(e\)</span> 的贡献那么 <span class="arithmatex">\(\deg(u)\)</span> 必然是奇数，与上一条性质矛盾</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="_3">判别<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>无向图<ul>
+<li>欧拉图<ul>
+<li>非零度结点连通</li>
+<li>结点的度数都是偶数</li>
+</ul>
+</li>
+<li>半欧拉图<ul>
+<li>非零度结点连通</li>
+<li>只有两个节点的度数为奇数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>有向图<ul>
+<li>欧拉图<ul>
+<li>非零度结点强连通</li>
+<li>结点入度等于出度</li>
+</ul>
+</li>
+<li>半欧拉图<ul>
+<li>非零度结点强连通</li>
+<li>至多 1 个结点入度 - 出度 = 1</li>
+<li>至多 1 个结点出度 - 入度 = 1</li>
+<li>其余结点出度等于入度</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="_4">求欧拉路/欧拉回路<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>一般使用 Hierholzer 算法，实质是 dfs 一个个求解单个环的过程，每次经过一条边就将其删除，dfs 完一个结点就将其弹入栈中，记录下这条边（从哪里进入该结点）。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="c1">// 使用邻接矩阵存储</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cnt</span><span class="p">[</span><span class="n">u</span><span class="p">];</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 每次 ++v 相当于 ++cnt[u]，避免重复访问 0 ~ cnt[u]-1 号结点</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">            </span><span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">g</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">u</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">            </span><span class="n">dfs</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="n">stk</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">}</span>
+</code></pre></div>
+<details class="tip" open="open">
+<summary>为什么一定要在回溯时将结点入栈</summary>
+<p>考虑下面这张图：<br />
+<img alt="" src="data:image/png;base64,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u3btCEfCtm0HpVx8+umndO/eHdeDDz7IrFmzKEsDBw7k73//O4mJiXz88cfUqVMHJbz8+OOP1KlTB9fp06epWrUqFen555/ngQceoEePHixdupRwpKGUm/bt2/POO+/gmj17NoMGDcKyLErboUOHaN++PX//+9+pVq0aixcvpk6dOijh56qrrqJ379645s6dS0V75ZVXcA0aNIhwpaGUqz59+vDee++RkJDA4sWLadKkCf/85z8pLfPmzaNp06asX7+e+vXrs2LFCm688UaU8HXPPffgmjlzJvn5+VSUt956i6+++oq6desyaNAgwpWGUu66devG+vXrad++PYcOHaJv37707duX9evXU1LLli2jffv23HvvveTm5jJw4EA+/fRTGjZsiBLeunfvTpcuXTh9+jSpqalUBCkl06ZNwzVhwgTCmbBt20GpMM888wyPP/44+fn5uFq0aEH//v3p1q0bjRo14rds2bKFlStXsmTJEvbs2UORESNG8NJLL6FEji1bttC+fXtcK1eu5NZbb6U8jR8/nhdeeIHWrVuzZs0awpmwbdtBqVA//fQTs2fP5pVXXuHf//43ReLj46lfvz6JiYnExMQQCoU4e/YsR44cYc+ePRQUFFCkTp06NG3alH/84x/UrVuXb775BiWyZGRk8MQTT5CYmMjnn39OrVq1KA8vvfQS999/P67PP/+cm266iXAmbNt2UMLG0qVLWbFiBevXr+eHH37gt1x33XV06NCBnj170q1bN1xt27Zl69atPPnkk0yYMAElsvTv358PPviAm266iRUrVlCtWjXK0qJFixgyZAiu2bNnc++99xLuhG3bDkpYOnnyJAcPHuTkyZNYloUQgpiYGK666iquvfZaEhIS+Lnly5czcOBAEhIS2LdvH7GxsSiRw7Isbr31VrZt20aTJk1YtGgR1113HWXh5ZdfZvTo0bhSUlJIT08nEgjbth2Ui0qfPn1YtWoVjzzyCI8//jhKZDl16hQDBw5ky5YtJCQk8NJLL/HHP/6R0jRp0iSeeeYZXJMnT+Yvf/kLkULYtu2gXFQ2btxIp06dcH377bfUqlULJbL4/X5GjRrFP/7xD1x33303qamp1KlThwuxbNkyUlNT2blzJ64ZM2Ywbtw4IomGctFp1aoVQ4cOxZWZmYkSeTweDwsWLKBbt264Xn/9derWrcuYMWPY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/PM88MADuLp06cKiRYswTRMlsowfP56XX36ZIkOHDmXw4MH07NkTTdP4v+zcuZOlS5cyf/58vv/+e4p07tyZDz74AOXiIWzbdigjmzdvpnfv3uTm5tKnTx/eeOMNYmNjKW1btmxh2LBhHDp0iDZt2vD+++/j9XpRwt/u3bu5//772bp1K2uicoAAACAASURBVK777ruPyZMnU7duXUpqzpw5PP744xw9ehTXs88+y/33349ycRC2bTuUge+//55OnTpx7Ngx7rzzTt58803K0uHDh+nduze7d++md+/eLFmyBCW8ffTRRwwbNozc3FwaN27MzJkz6dChA6WhoKCARx55hBdffBHXQw89RGZmJkrkE7ZtO5SBHj16sHbtWnr37s17771HeThw4ADt27fn+PHjpKSkkJ6ejhKePvzwQ+644w5cw4YNY/78+RiGQWl75ZVXuOeee3CNGTOGmTNnokQ2Ydu2QynLzMwkLS2NOnXqsG3bNhISEigvH330Ed27d8e1atUq2rdvjxJevvzySzp37kxBQQHjx4/nueeeoyy9//779O7dG9fUqVNJTU1FiVzCtm2HUnT48GHq1auHa/ny5fTq1Yvy9uijjzJ9+nRatmzJunXrUMJHMBikRYsW7Nq1ixEjRvDaa69RHpYuXUr//v1xvfXWWwwYMAAlMmmUsmeeeQbX8OHD6dWrFxXh8ccfp06dOmzatIl33nkHJXw88sgj7Nq1ixYtWvDaa69RXvr160dWVhauiRMnkp2djRKZNErRqVOnmDt3Lq7k5GQq0iOPPIJrzpw5KOFhw4YN/O1vf8P13HPPUd4mT55Mz549OXXqFNOmTUOJTBqlaOHChbj69etHgwYNqEj3338/l112GRs3buTLL79EqXgzZszANWXKFG666SYqwvTp03HNmTOHvXv3okQejVL03nvv4RoyZAgllXNwE0vfnMnjGTN5Zcla9v6bEhs8eDCu5cuXo1SsrVu3smLFCipXrkxKSgoVpXHjxtx777245syZgxJ5NEpJTk4OGzduRAhBr169KD6b75ZPoVvzTgy6ewKPpU3gnmH96NBpNEsP2pREz549ca1duxalYi1YsADXfffdR3x8PBVp7NixuN58802klCiRRaOUbNu2DVebNm3wer0U29G1PJP6Ol8HE2jzwNO8PPdpxrW7Es+upaRmruWEpNja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" /><br />
+如果从 1 开始 dfs，那么从一开始就将 <span class="arithmatex">\(u\)</span> 入栈会得到一个可能的欧拉路径 <code>1 2 3 4 1</code>，而回溯时入栈会得到正确的欧拉路径 <code>1 4 3 1 2</code>。</p>
+<p>不难发现，如果在回溯时入栈，那么发生入栈操作只会是在找到最后一条完整的欧拉回路/欧拉路径的情况下才会发生，即便在走某条欧拉回路中途走了一段“岔路”也会先直接将这一段岔路入栈，然后走完了这条欧拉回路才完整地将整条回路入栈，避免了“断层”现象。</p>
+</details>
 
 
 
@@ -3727,12 +3918,12 @@ document.addEventListener("DOMContentLoaded", function() {
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "content.code.copy", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.ad660dcc.min.js"></script>
       
-        <script src="../_assets/js/katex.js"></script>
+        <script src="../../../_assets/js/katex.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
       
