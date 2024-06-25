@@ -4057,16 +4057,28 @@ m \equiv (\mathrm{C} \bmod{q})^{d \bmod{\varphi(q)}} \pmod{q}
 <h2 id="rabin">Rabin 密码<a class="headerlink" href="#rabin" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="https://picgo-1259588753.cos.ap-beijing.myqcloud.com/202406201509801.png" /></p>
 <p>注意这里 <span class="arithmatex">\(p,q\)</span> 都是 Blum 素数。</p>
-<p>对于 Blum 素数 <span class="arithmatex">\(p\)</span>，有 <span class="arithmatex">\(\varphi(p) = p-1 = 4k+2(k\in \mathbb{N})\)</span>。假设已知 <span class="arithmatex">\(y \in \mathbb{Z}_{p}\)</span>，要求解满足下列方程的 <span class="arithmatex">\(x\)</span>:</p>
+<p>设密文为 <span class="arithmatex">\(y\)</span>，公钥 <span class="arithmatex">\(n=pq\)</span>，解密即为求解同余式</p>
 <div class="arithmatex">\[
-y \equiv x^2 \pmod{p}
+x^2 \equiv y \pmod{pq}
 \]</div>
-<p>相当于求解 <span class="arithmatex">\(x \equiv \sqrt{ y } \pmod{p}\)</span>。</p>
-<p>对于任意 <span class="arithmatex">\(y \in \mathbb{Z}_{p}\)</span>，都有 <span class="arithmatex">\(\operatorname{ord}(y) \mid \varphi(p)\)</span>，因此</p>
+<p>上述同余式等价于</p>
 <div class="arithmatex">\[
-y^{\varphi(p)}\equiv y^{4k+2} \equiv (y^{2k+1})^2 \equiv y \pmod{p}
+\begin{cases}
+x^2 \equiv y \pmod{p} \\
+x^2 \equiv y \pmod{q}
+\end{cases}
 \]</div>
-<p>于是我们可以得到上述方程的解 <span class="arithmatex">\(x \equiv y^{2k+1} \equiv y^{\varphi(p)/2} \pmod{p}\)</span></p>
+<p>显然 <span class="arithmatex">\(y\)</span> 会满足 <span class="arithmatex">\(\left( \dfrac{y}{p} \right)=1, \left( \dfrac{y}{q} \right)=1\)</span>，由欧拉判别法则，有</p>
+<div class="arithmatex">\[
+y^{\frac{p-1}{2}} \equiv 1 \pmod{p} \implies y^{\frac{p+1}{2}} \equiv y \pmod{p} 
+\]</div>
+<p>因为 <span class="arithmatex">\(p=4k+3(k \in \mathbb{N})\)</span>，因此上式等价于 <span class="arithmatex">\((y^{\frac{p+1}{4}})^2 \equiv a \pmod{p}\)</span>，于是我们可以得到</p>
+<div class="arithmatex">\[
+\begin{cases}
+x \equiv \pm y^{\frac{p+1}{4}} \pmod{p} \\
+x \equiv \pm y^{\frac{q+1}{4}} \pmod{q}
+\end{cases}
+\]</div>
 <p>由此，只要知道了 <span class="arithmatex">\(n\)</span> 的分解就能直接利用 CRT 解密了，所以 Rabin 密码的安全性仍然基于大整数分解的困难性。</p>
 <p><img alt="image.png" src="https://picgo-1259588753.cos.ap-beijing.myqcloud.com/202406201510240.png" /></p>
 <h2 id="diffie-hellman">Diffie-Hellman 算法<a class="headerlink" href="#diffie-hellman" title="Permanent link">&para;</a></h2>
