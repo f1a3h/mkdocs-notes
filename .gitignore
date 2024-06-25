@@ -5,5 +5,5 @@
 site/
 
 docs/_ignore/
-
+docs/.obsidian/
 docs/Research/Papers
