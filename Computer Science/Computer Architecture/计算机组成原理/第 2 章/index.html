@@ -3962,7 +3962,7 @@
 <ul>
 <li><span class="arithmatex">\(N = k + r \le 2^r - 1\)</span></li>
 <li><span class="arithmatex">\(r + 1\)</span> 位生成多项式 <span class="arithmatex">\(G(x)\)</span></li>
-<li>有效信息 <span class="arithmatex">\(M(x)\)</span> ，<span class="arithmatex">\(R(x) = M(x) \bmod{G(x)}\)</span> ，CRC 码为 <span class="arithmatex">\(M(x) || R(x)\)</span></li>
+<li>有效信息 <span class="arithmatex">\(M(x)\)</span> ，<span class="arithmatex">\(R(x) = M(x) \times 2^r  \bmod{G(x)}\)</span> ，CRC 码为 <span class="arithmatex">\(M(x) || R(x)\)</span></li>
 <li>检验：<span class="arithmatex">\(CRC \equiv 0\pmod{G(x)}\)</span></li>
 <li>检错：<br />
 <img alt="image.png" src="https://picgo-1259588753.cos.ap-beijing.myqcloud.com/202406221111172.png" /></li>
