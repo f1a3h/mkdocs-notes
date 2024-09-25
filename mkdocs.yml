@@ -1,5 +1,5 @@
 site_name: f1a3h's Notebook
-site_url: https://note.f1a3h.com
+site_url: https://note.levenhuang.com
 site_description: f1a3h's Notebook
 
 repo_name: f1a3h/mkdocs-notes
@@ -8,10 +8,10 @@ edit_uri: tree/master/docs
 
 copyright: Copyright &copy; 2024 <a href="https://github.com/f1a3h" target="_blank" rel="noopener">f1a3h</a>
 
-theme: 
-  name: 'material'
-  language: 'en'
-  icon: 
+theme:
+  name: "material"
+  language: "en"
+  icon:
     logo: fontawesome/solid/fish-fins
     repo: fontawesome/brands/github-alt
     admonition:
@@ -38,7 +38,7 @@ theme:
     - search.highlight
     - search.share
   font:
-    text: 
+    text:
     code: JetBrains Mono
   palette:
     - media: "(prefers-color-scheme: light)"
@@ -46,7 +46,7 @@ theme:
       primary: white
       accent: indigo
       toggle:
-        icon: material/toggle-switch 
+        icon: material/toggle-switch
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
@@ -86,7 +86,7 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.inlinehilite
   - pymdownx.tabbed:
-      alternate_style: true 
+      alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.highlight:
@@ -94,7 +94,7 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji 
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 plugins:
@@ -119,9 +119,9 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/f1a3h/
     - icon: fontawesome/solid/rss
-      link: https://notes.f1a3h.com/
+      link: https://notes.levenhuang.com/
     - icon: fontawesome/solid/house
-      link: https://f1a3h.com/
+      link: https://levenhuang.com/
 
 extra_css:
   # - https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css
@@ -131,6 +131,7 @@ extra_css:
   - https://fonts.loli.net/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap
   - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
   - https://fonts.loli.net/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap
+  - https://fonts.loli.net/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap
   - _assets/css/tasklist.css
   - _assets/css/custom.css
   - _assets/css/flink.css
@@ -145,7 +146,7 @@ extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
 
-# not_in_nav: 
+# not_in_nav:
 
 nav:
   - Home: index.md

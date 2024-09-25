@@ -1,14 +1,8 @@
 ---
 title: Algorithm
 ---
-!!! quote ""
-	<div align="center" style="font-size:20px;font-weight:bold;">
-    他强由他强，清风拂山冈。
-    他横任他横，明月照大江。
-    </div>
-    <br>
 
+![](https://picgo-1259588753.cos.ap-beijing.myqcloud.com/Competitive-Programming.png)
 
-> [!info] 
+> [!info]
 > 算法（竞赛）相关学习笔记。
-
