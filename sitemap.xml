@@ -1,388 +1,351 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://note.f1a3h.com/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/ACGN/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/ACGN/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/ACGN/Comics/%E8%91%AC%E9%80%81%E3%81%AE%E3%83%95%E3%83%AA%E3%83%BC%E3%83%AC%E3%83%B3/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/ACGN/Comics/%E8%91%AC%E9%80%81%E3%81%AE%E3%83%95%E3%83%AA%E3%83%BC%E3%83%AC%E3%83%B3/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/ACGN/Game/%E5%A1%9E%E5%B0%94%E8%BE%BE%E4%BC%A0%E8%AF%B4%EF%BC%9A%E6%97%B7%E9%87%8E%E4%B9%8B%E6%81%AF/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/ACGN/Game/%E5%A1%9E%E5%B0%94%E8%BE%BE%E4%BC%A0%E8%AF%B4%EF%BC%9A%E6%97%B7%E9%87%8E%E4%B9%8B%E6%81%AF/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/ACGN/Game/%E6%A8%B1%E4%B9%8B%E8%AF%97/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/ACGN/Game/%E6%A8%B1%E4%B9%8B%E8%AF%97/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/ACGN/Game/%E7%81%AB%E7%84%B0%E7%BA%B9%E7%AB%A0%EF%BC%9A%E9%A3%8E%E8%8A%B1%E9%9B%AA%E6%9C%88/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/ACGN/Game/%E7%81%AB%E7%84%B0%E7%BA%B9%E7%AB%A0%EF%BC%9A%E9%A3%8E%E8%8A%B1%E9%9B%AA%E6%9C%88/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/ACGN/Novel/%E9%92%A2%E9%93%81%E4%B9%8B%E7%BF%BC/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/ACGN/Novel/%E9%92%A2%E9%93%81%E4%B9%8B%E7%BF%BC/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Algorithm/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Algorithm/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Algorithm/ACM%E7%AE%97%E6%B3%95%E5%AE%9E%E8%B7%B5/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Algorithm/ACM%E7%AE%97%E6%B3%95%E5%AE%9E%E8%B7%B5/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Algorithm/%E5%8F%8C%E5%90%91%E6%90%9C%E7%B4%A2/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Algorithm/%E5%8F%8C%E5%90%91%E6%90%9C%E7%B4%A2/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Algorithm/Geometry/2D/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Algorithm/Geometry/2D/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Algorithm/Geometry/Convex%20Hull/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Algorithm/Geometry/Convex%20Hull/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Algorithm/Graph/Auxiliary%20Tree/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Algorithm/Graph/Auxiliary%20Tree/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Algorithm/Graph/%E6%AC%A7%E6%8B%89%E5%9B%BE/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Algorithm/Graph/%E6%AC%A7%E6%8B%89%E5%9B%BE/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Algorithm/Math/GCD%26LCM/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Algorithm/Math/GCD%26LCM/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Algorithm/Math/Miller%20Rabin/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Algorithm/Math/Miller%20Rabin/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Algorithm/Math/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Algorithm/Math/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Algorithm/Math/%E5%BF%AB%E9%80%9F%E5%B9%82/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Algorithm/Math/%E5%BF%AB%E9%80%9F%E5%B9%82/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Algorithm/Math/%E5%8D%9A%E5%BC%88%E8%AE%BA/%E5%85%AC%E5%B9%B3%E7%BB%84%E5%90%88%E6%B8%B8%E6%88%8F/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Algorithm/Math/%E5%8D%9A%E5%BC%88%E8%AE%BA/%E5%85%AC%E5%B9%B3%E7%BB%84%E5%90%88%E6%B8%B8%E6%88%8F/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Algorithm/String/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Algorithm/String/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Algorithm/String/Manacher/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Algorithm/String/Manacher/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Algorithm/WriteUp/LuoguP5539/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Algorithm/WriteUp/LuoguP5539/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Algorithm/WriteUp/Quantum%20Wave%20Speed%20Pass/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Algorithm/WriteUp/Quantum%20Wave%20Speed%20Pass/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Algorithm/WriteUp/Competition/AtCoder/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Algorithm/WriteUp/Competition/AtCoder/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Algorithm/WriteUp/Competition/Codeforces/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Algorithm/WriteUp/Competition/Codeforces/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Compilers/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Compilers/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Compilers/Stanford%20CS143/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Compilers/Stanford%20CS143/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Compilers/Stanford%20CS143/Intro/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Compilers/Stanford%20CS143/Intro/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Compilers/Stanford%20CS143/Lexical%20Analysis/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Compilers/Stanford%20CS143/Lexical%20Analysis/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Computer%20Architecture/UCB%20CS61C/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Computer%20Architecture/UCB%20CS61C/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Computer%20Architecture/CSAPP/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Computer%20Architecture/CSAPP/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Computer%20Architecture/CSAPP/Chapter%202/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Computer%20Architecture/CSAPP/Chapter%202/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Computer%20Architecture/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%201%20%E7%AB%A0/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Computer%20Architecture/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%201%20%E7%AB%A0/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Computer%20Architecture/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%202%20%E7%AB%A0/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Computer%20Architecture/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%202%20%E7%AB%A0/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Computer%20Architecture/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%203%20%E7%AB%A0/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Computer%20Architecture/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%203%20%E7%AB%A0/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Computer%20Architecture/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%204%20%E7%AB%A0/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Computer%20Architecture/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%204%20%E7%AB%A0/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Computer%20Architecture/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%205%20%E7%AB%A0/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Computer%20Architecture/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%205%20%E7%AB%A0/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Computer%20Architecture/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%206%20%E7%AB%A0/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Computer%20Architecture/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%206%20%E7%AB%A0/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Computer%20Network/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Computer%20Network/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Computer%20Network/CNATDA/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Computer%20Network/CNATDA/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Computer%20Network/CNATDA/Chapter%202/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Computer%20Network/CNATDA/Chapter%202/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Computer%20Network/CNATDA/Chapter%203/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Computer%20Network/CNATDA/Chapter%203/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Computer%20Network/CNATDA/Chapter%204/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Computer%20Network/CNATDA/Chapter%204/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Computer%20Network/CNATDA/Chapter%205/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Computer%20Network/CNATDA/Chapter%205/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Computer%20Network/CNATDA/Chapter%206/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Computer%20Network/CNATDA/Chapter%206/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Computer%20Security/Stanford%20CS110L/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Computer%20Security/Stanford%20CS110L/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Computer%20Security/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%8E%9F%E7%90%86/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Computer%20Security/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%8E%9F%E7%90%86/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Computer%20Security/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%8E%9F%E7%90%86/Hash%20%E5%87%BD%E6%95%B0/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Computer%20Security/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%8E%9F%E7%90%86/Hash%20%E5%87%BD%E6%95%B0/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Computer%20Security/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%8E%9F%E7%90%86/%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Computer%20Security/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%8E%9F%E7%90%86/%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Computer%20Security/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%8E%9F%E7%90%86/%E5%88%86%E7%BB%84%E5%AF%86%E7%A0%81/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Computer%20Security/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%8E%9F%E7%90%86/%E5%88%86%E7%BB%84%E5%AF%86%E7%A0%81/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Electronics/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Electronics/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Electronics/Signals%20and%20Systems/Convolution/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Electronics/Signals%20and%20Systems/Convolution/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Electronics/Signals%20and%20Systems/Signals%20and%20System%20Properties/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Electronics/Signals%20and%20Systems/Signals%20and%20System%20Properties/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Math/LADW/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Math/LADW/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Math/MIT%2018.330/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Math/MIT%2018.330/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Math/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Math/%E8%B0%A2%E6%83%A0%E6%B0%91%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Math/%E8%B0%A2%E6%83%A0%E6%B0%91%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Math/Optimization/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Theoretical%20Computer%20Science/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Math/Optimization/Linear%20Opt/Ch1/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Theoretical%20Computer%20Science/CS%20170/DPV%20Ch.1/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Math/Optimization/Linear%20Opt/Ch2/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Theoretical%20Computer%20Science/CS%20170/DPV%20Ch.2/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Math/Optimization/Linear%20Opt/Sol/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Theoretical%20Computer%20Science/MIT%2018.404/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Math/UCB%20EECS126/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Theoretical%20Computer%20Science/MIT%2018.404/Automata%20and%20Language%20Theory/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Math/UCB%20EECS126/B-T/Ch1/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Theoretical%20Computer%20Science/MIT%2018.404/Computability%20Theory/The%20Church-Turing%20Thesis/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Math/UCB%20EECS126/B-T/Ch2/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Theoretical%20Computer%20Science/Programming%20Languages/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Math/UCB%20EECS126/B-T/Ch3/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Theoretical%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Math/UCB%20EECS126/hw/hw1/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Theoretical%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/CFL-Reachability%20and%20IFDS/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Theoretical%20Computer%20Science/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Theoretical%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Data%20Flow%20Analysis/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Theoretical%20Computer%20Science/CS%20170/DPV%20Ch.1/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Theoretical%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Datalog/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Theoretical%20Computer%20Science/CS%20170/DPV%20Ch.2/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Theoretical%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Interprocedural%20Analysis/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Theoretical%20Computer%20Science/CS%20265/Lec1/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Theoretical%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Pointer%20Analysis/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Theoretical%20Computer%20Science/CS%20265/Lec2/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Theoretical%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Soundness%20and%20Soundiness/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Theoretical%20Computer%20Science/MIT%2018.404/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Theoretical%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Static%20Analysis%20for%20Security/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Theoretical%20Computer%20Science/MIT%2018.404/Automata%20and%20Language%20Theory/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Theoretical%20Computer%20Science/Programming%20Languages/Stanford%20CS242/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Theoretical%20Computer%20Science/MIT%2018.404/Computability%20Theory/The%20Church-Turing%20Thesis/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Computer%20Science/Theoretical%20Computer%20Science/Programming%20Languages/Stanford%20CS242/Syntax%20and%20Semantics/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Theoretical%20Computer%20Science/Programming%20Languages/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Research/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Theoretical%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
     <url>
-         <loc>https://note.f1a3h.com/Research/Learning%20Research/</loc>
-         <lastmod>2024-08-03</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://note.levenhuang.com/Computer%20Science/Theoretical%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/CFL-Reachability%20and%20IFDS/</loc>
+         <lastmod>2024-09-25</lastmod>
+    </url>
+    <url>
+         <loc>https://note.levenhuang.com/Computer%20Science/Theoretical%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Data%20Flow%20Analysis/</loc>
+         <lastmod>2024-09-25</lastmod>
+    </url>
+    <url>
+         <loc>https://note.levenhuang.com/Computer%20Science/Theoretical%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Datalog/</loc>
+         <lastmod>2024-09-25</lastmod>
+    </url>
+    <url>
+         <loc>https://note.levenhuang.com/Computer%20Science/Theoretical%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Interprocedural%20Analysis/</loc>
+         <lastmod>2024-09-25</lastmod>
+    </url>
+    <url>
+         <loc>https://note.levenhuang.com/Computer%20Science/Theoretical%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Pointer%20Analysis/</loc>
+         <lastmod>2024-09-25</lastmod>
+    </url>
+    <url>
+         <loc>https://note.levenhuang.com/Computer%20Science/Theoretical%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Soundness%20and%20Soundiness/</loc>
+         <lastmod>2024-09-25</lastmod>
+    </url>
+    <url>
+         <loc>https://note.levenhuang.com/Computer%20Science/Theoretical%20Computer%20Science/Programming%20Languages/NJU%20%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/Static%20Analysis%20for%20Security/</loc>
+         <lastmod>2024-09-25</lastmod>
+    </url>
+    <url>
+         <loc>https://note.levenhuang.com/Computer%20Science/Theoretical%20Computer%20Science/Programming%20Languages/Stanford%20CS242/</loc>
+         <lastmod>2024-09-25</lastmod>
+    </url>
+    <url>
+         <loc>https://note.levenhuang.com/Computer%20Science/Theoretical%20Computer%20Science/Programming%20Languages/Stanford%20CS242/Syntax%20and%20Semantics/</loc>
+         <lastmod>2024-09-25</lastmod>
+    </url>
+    <url>
+         <loc>https://note.levenhuang.com/Research/</loc>
+         <lastmod>2024-09-25</lastmod>
+    </url>
+    <url>
+         <loc>https://note.levenhuang.com/Research/Learning%20Research/</loc>
+         <lastmod>2024-09-25</lastmod>
     </url>
 </urlset>
