@@ -64,7 +64,7 @@ hyperplane 与 halfspace 是与 single linear constraint 相关的概念.
 extreme point 就是不能被 $P$ 中其他任意两个点的 convex combination 表示的点.
 
 > [!definition] Vertex
-> Let $P$ be a polyhedron. A vector $\mathbf{x} \in P$ is a *vertex* of $P$ if there exists some $\mathbf{c}$ such that $\mathbf{c'z} < \mathbf{c'y}$  for all $\mathbf{y}$ satisfying $\mathbf{y} \in P$ and $\mathbf{y} \not= \mathbf{x}$.
+> Let $P$ be a polyhedron. A vector $\mathbf{x} \in P$ is a *vertex* of $P$ if there exists some $\mathbf{c}$ such that $\mathbf{c'x} < \mathbf{c'y}$  for all $\mathbf{y}$ satisfying $\mathbf{y} \in P$ and $\mathbf{y} \not= \mathbf{x}$.
 > 
 > ![image.png](https://picgo-1259588753.cos.ap-beijing.myqcloud.com/202409211433382.png)
 
@@ -110,9 +110,33 @@ $$\begin{aligned}&\mathrm{a}_{i}^{\prime}\mathrm{x~\geq~}b_{i},\quad&i\in M_{1},
 > 1. $\mathbf{x}^*$ is a vertex;
 > 2. $\mathbf{x}^*$ is an extreme point;
 > 3. $\mathbf{x}^*$ is a basic feasible solution.
-
-> [!proof]
-> #TODO
+> 
+> > [!proof]-
+> > vertex $\implies$ extreme point:
+> > 
+> > 因为 $\mathbf{x}^*$ 是 vertex, 因此存在 $\mathbf{c}$ 使得 $\mathbf{c'x}$ 在 $\mathbf{x}^*$ 处取得最小值. 若 $\mathbf{x}^*$ 不是 extreme point, 于是 $\exists \mathbf{y}, \mathbf{z} \in P, \lambda \in [0, 1], s.t. \mathbf{x}^* = \lambda \mathbf{y} + (1-\lambda)\mathbf{z}$. 此时有
+> > 
+> > $$\begin{aligned}\mathbf{c'x} &= \lambda \mathbf{c'y} + (1-\lambda)\mathbf{c'z}\\ &> λ \mathbf{c'x}^* + (1-λ) \mathbf{c'x}^* = \mathbf{c'x^*}\end{aligned}$$
+> > 
+> > 矛盾, 因此 $\mathbf{x}^*$ 是 extreme point.
+> > 
+> > basic feasible solution $\implies$ vertex:
+> > 
+> > 由 $\mathbf{x}^*$ 是 basic feasible solution, 我们可以找到 $n$ 个线性无关的约束 $\mathbf{a}_{i} \in \mathfrak{R}^n$ 以及它们对应的 $b_{i}$, 满足 $\mathbf{a}'_{i}\mathbf{x}^* = b_{i}$, 设这样的 $n$ 个约束下标集合为 $I$. 不失一般性地, 我们令 $P$ 为 general form polyhedron, 从而任取 $\mathbf{x} \in P, \mathbf{x}\not= \mathbf{x}^*$, 都有 $\mathbf{a}_{i}'\mathbf{x} \geq b_{i}, \forall i \in I$.
+> > 
+> > 因为 $\mathbf{a}_{i}, \forall i \in I$ 线性无关, 因此线性方程组 $\mathbf{a}_{i}'\mathbf{x} = b_{i}, \forall i \in I$ 有唯一解 $\mathbf{x}^*$. 令 $\mathbf{c} = \sum_{i \in I}\mathbf{a}_{i}$, 则 $\mathbf{c}'\mathbf{x}^* = \sum_{i \in I}b_{i}$. 任取 $\mathbf{x} \in P, \mathbf{x} \not= \mathbf{x}^*$, 我们有
+> > 
+> > $$\mathbf{c}'\mathbf{x} = \sum_{i \in I}\mathbf{a}_{i}'\mathbf{x} \geq \sum_{i \in I}b_{i} = \mathbf{c}'\mathbf{x}^*$$
+> > 
+> > 当且仅当 $\mathbf{x}$ 为满足线性方程组 $\mathbf{a}_{i}'\mathbf{x} = b_{i}, \forall i \in I$ 时取等, 因为 $\mathbf{x} \not= \mathbf{x}^*$, 所以无法取到等号, 从而 $\mathbf{c}'\mathbf{x} > \mathbf{c}'\mathbf{x}^*$, 因此 $\mathbf{x}^*$ 是 vertex.
+> > 
+> > extreme point $\implies$ basic feasible solution:
+> > 
+> > 考虑证明逆否命题. 设 $\mathbf{x}^*$ 不是 basic solution, 则至多有 $m < n$ 个线性无关的 constraints 能在 $\mathbf{x}^*$ 处 active, 设它们的序号集合为 $I$, 其余 inactive at $\mathbf{x}^*$ 的 constraints 的集合记作 $I'$. 不妨令 $P$ 为 general form polyhedron.
+> > 
+> > 在 $\mathfrak{R}^n$ 中我们至少能找到一个 $\mathbf{d}$ 使得 $\mathbf{a}_{i}'\mathbf{d} = 0, \forall i \in I$. 任取一个满足条件的 $\mathbf{d}$, 我们总能找到一个足够小的 $\epsilon>0$, 然后令 $\mathbf{y}=\mathbf{x}^* + \epsilon \mathbf{d}, \mathbf{z} = \mathbf{x}^* - \epsilon\mathbf{d}$, 此时有 $\mathbf{a}_{i}'\mathbf{y}=\mathbf{a}_{i}'\mathbf{z}=b_{i}, \forall i \in I$ 且 $\mathbf{a}_{i}'\mathbf{y} > b_{i}, \mathbf{a}_{i}'\mathbf{z} > b_{i}, \forall i \in I'$, 从而 $\mathbf{y}, \mathbf{z} \in P$, 又 $\mathbf{x}^* = \frac{1}{2}\mathbf{y}+\frac{1}{2}\mathbf{z}$, 因此 $x^*$ 不是 extreme point, 逆否命题得证, 从而原命题得证.
+> > 
+> > 综上, 所证定理的三个命题等价.
 
 > [!corollary]
 > Given a finite number of linear inequality constraints, there can only be a finite number of basic or basic feasible solutions.
@@ -221,9 +245,25 @@ basic feasible solution 的 degeneracy 并不是一个 geometric property, 而�
 > 1. The polyhedron $P$ has at least one extreme point.
 > 2. The polyhedron $P$ does not contain a line.
 > 3. There exist $n$ vectors out of the family $\mathbf{a}_{1}, \dots, \mathbf{a}_{m}$, which are linearly independent.
-
-> [!proof]
-> #TODO
+> 
+> > [!proof]-
+> > 1 $\implies$ 3:
+> > 
+> > extreme point 等价于 basic feasible solution, 因此必然存在 $n$ 个线性无关的约束向量.
+> > 
+> > 2 $\implies$ 1:
+> > 
+> > 我们首先证明若 $P$ 不包含 line, 则它有 basic feasible solution, 因而有 extreme point.
+> > 
+> > ![image.png](https://picgo-1259588753.cos.ap-beijing.myqcloud.com/202409272018846.png)
+> > 
+> > 上方的图示是此条证明的 intuition, 据此很容易想到具体的证明过程, 因此不再赘述.
+> > 
+> > 3 $\implies$ 2:
+> > 
+> > 反证法, 假设 $P$ 包含一条 line, 即存在 $\mathbf{x} \in P, \mathbf{d} \in \mathfrak{R}^n, s.t. \forall\lambda \in \mathfrak{R}, \mathbf{x}+\lambda \mathbf{d} \in P$.
+> > 
+> > 设 $n$ 个线性无关的约束向量的下标集合为 $I$, 则 $\exists i \in I, s.t. \mathbf{a}_{i}'\mathbf{d} \neq 0$. 不失一般性地, 我们令 $\mathbf{a}_{i}'\mathbf{d} < 0$. 则当 $\lambda$ 足够大时, 必然有 $\mathbf{a}_{i}'(\mathbf{x}+\lambda \mathbf{d}) < b_{i}$, 即 $\mathbf{x}+\lambda \mathbf{d} \notin P$, 与假设矛盾, 因此 $P$ 不包含 line.
 
 > [!note] 
 > 一个 bounded polyhedron 必不包含一条 line, 类似地, positive orthant $\{\mathbf{x} | \mathbf{x} \geq \mathbf{0}\}$ 也不包含一条 line, 由于 standard form 的 polyhedron 包含了 positive orthant, 因此它也不会包含一条 line.
@@ -284,8 +324,43 @@ basic feasible solution 的 degeneracy 并不是一个 geometric property, 而�
 > [!theorem]
 > A nonempty and bounded polyhedron is the convex hull of its extreme points.
 > 
-> > [!proof]
-> > #TODO 
+> > [!proof]-
+> > 设这个 polyhedron 为 $P$, 它的 extreme points 的 convex hull 集合为 $P'$, 根据 Section 1 中定理, $P'$ 也是一个 polyhedron, 我们可以通过证明 $(P \subseteq P') \land (P' \subseteq P)$ 来证明该定理.
+> > 
+> > $P' \subseteq P$:
+> > 
+> > 将 extreme points 的 convex combination 的式子代入 $P$ 的约束不等式中显然.
+> > 
+> > $P \subseteq P'$:
+> > 
+> > > [!note]- 对书上证明思路的猜测
+> > > 我们任取 $P$ 中一个点, 如果它是 extreme point, 那么显然它属于 $P'$, 因此我们后面只对非 extreme points 进行考虑.
+> > > 
+> > > 不妨从 $\mathfrak{R}^{3}$ 开始考虑, 我们取 $P$ 内部非表面上的任意一点 $\mathbf{z}$, 再任取一个 extreme point $\mathbf{y}$, 考虑用 $\mathbf{y}$ 来表示 $\mathbf{z}$, 如果我们已经知道 $\mathbf{y}$ 所在的某一表面上的点可以用该表面上的 extreme points 的 convex combination 表示, 那我们取其中一点 $\mathbf{u}$, 试试用 $\mathbf{y}, \mathbf{u}$ 来表示 $\mathbf{z}$. 然后可以发现 $\mathbf{u}-\mathbf{z}$ 的信息太少无法表达. 这时, 我们不妨直接确定好这个向量, 把 $\mathbf{z}$ 到 $\mathbf{y}$ 所在的表面改为沿着 $\mathbf{z}-\mathbf{y}$ 走到 $\mathbf{y}$ 对着的那个平面, 由于 $P$ 不会包含 line, 因此那个平面上一定会对应一个 $\mathbf{u}^*=\mathbf{z}+\lambda^*(\mathbf{z}-\mathbf{y})$, 然后我们就有 $\mathbf{z}=\frac{\mathbf{u}^*+\lambda^*\mathbf{y}}{1+\lambda^*}$, 此时 $\mathbf{u}^*$ 和 $\mathbf{y}$ 的系数和恰好为 1, 如果 $\mathbf{u}^*$ 可以被它所在的平面上的 extreme points 的 convex combination, 那么我们就能用这些 extreme points + $\mathbf{y}$ 的 convex combination 来表示 $\mathbf{z}$, 从而证明了 $P$ 的形状为 3 维时是满足定理的, 这依赖于 2 维情况的证明. 类似地, 当 $P$ 为 $k$ 维时, 我们可以用 $k-1$ 维推导 $k$ 维的情况, 而 $P$ 至多是 $n$ 维的, 因此我们可以对 $P$ 的维数使用 induction 进行证明.
+> > 
+> > 定义 polyhedron $P \subset \mathfrak{R}^n$ 的 *dimension* 为能将 $P$ 包含在某个 $k$-dimensional affine subspace of $\mathfrak{R}^n$ 的最小的 $k$. 显然有 $k \leq n$, 当 $k=1$ 时, $P$ 为一个点, 且这个点是它的 extreme point, 定理成立.
+> > 
+> > 假设小于等于 $k-1$ 维时定理成立, 考虑 $k(2\leq k \leq n)$ 维的情况.
+> > 
+> > 令 $P=\{\mathbf{x} \in \mathfrak{R}^n | \mathbf{a}_{i}'\mathbf{x} \leq b_{i}, i=1, \dots, m\}$ 为 $k$ 维的 polyhedron, 则 $P$ 包含于一个 $k$ 维 affine subspace $S \subset \mathfrak{R}^n$, 它可以被表示为
+> > 
+> > $$S = \{\mathbf{x}^0+\lambda_{1}\mathbf{x}^1+\cdots+\lambda_{k}\mathbf{x}^k | \lambda_{1}, \dots, \lambda_{k} \in \mathfrak{R}\},$$
+> > 
+> > 其中 $\mathbf{x}^1, \mathbf{x}^2, \dots, \mathbf{x}^k$ 为 $\mathfrak{R}^n$ 中线性无关的一组向量. 令 $\mathbf{f}_{1}, \dots, \mathbf{f}_{n-k} \in \mathfrak{R}^n$ 为 $n-k$ 个线性无关的向量, 且分别与 $\mathbf{x}^1, \mathbf{x}^2, \dots, \mathbf{x}^k$ 正交. 设 $g_{i}=\mathbf{f}_{i}'\mathbf{x}^0, i=1, \dots, n-k$, 则 $S$ 中的每个元素 $\mathbf{x}$ 都有 $\mathbf{f}_{i}'\mathbf{x}=g_{i}, i=1, \dots, n-k$.
+> > 
+> > 任取 $P$ 中一个非 extreme point $\mathbf{z}$ 和 extreme point $\mathbf{y}$, 令 $\mathbf{u}=\mathbf{z}+\lambda(\mathbf{z}-\mathbf{y}), \lambda>0$, 由于 $P$ 不包含 line, 因此存在 $\lambda^* \geq 0$, 使得对于某些 $i^*$, 有 $\mathbf{a}_{i^*}'\mathbf{u}^* = b_{i^*}$, 其中 $\mathbf{u}^*=\mathbf{z}+\lambda^*(\mathbf{z}-\mathbf{y})$, 当 $\lambda > \lambda^*$ 时有 $\mathbf{a}_{i^*}'\mathbf{u} < b_{i^*}$, 这说明 $\mathbf{a}_{i^*}'(\mathbf{z}-\mathbf{y})<0$ . 令 polyhedron
+> > 
+> > $$Q=\{\mathbf{x} \in \mathfrak{R}^n | \mathbf{a}_{i}'\mathbf{x}\leq b_{i}, i=1, \dots, m, \mathbf{a}_{i^*}'\mathbf{x}=b_{i^*}\} \subset P$$
+> > 
+> > 显然有 $\mathbf{u}^* \in Q$. 然后我们证明 $\dim Q \leq k-1$. 因为 $\mathbf{z}, \mathbf{y} \in S$, 所以 $\mathbf{f}_{i}'\mathbf{z}=\mathbf{f}_{i}'\mathbf{y}=g_{i}, i=1, \dots, n-k$, 则 $\mathbf{f}_{i}'(\mathbf{z}-\mathbf{y})=0, \forall i=1, \dots, m$, 这说明 $\mathbf{z}-\mathbf{y}$ 与 $\mathbf{f}_{1}, \dots, \mathbf{f}_{n-k}$ 正交, 若 $\mathbf{a}_{i^*}$ 可以用 $\mathbf{f}_{1}, \dots, \mathbf{f}_{n-k}$ 的线性组合表示, 则 $\mathbf{a}_{i^*}'(\mathbf{z}-\mathbf{y})=0$, 与事实矛盾, 因此 $\mathbf{a}_{i^*}$ 与 $\mathbf{f}_{1}, \dots, \mathbf{f}_{n-k}$ 线性无关. 对于解空间为 $S$ 的线性方程组 $\mathbf{f}_{i}'\mathbf{x}=g_{i}, \forall i=1, \dots, n-k, \mathbf{x} \in \mathfrak{R}^n$, 我们加上方程 $\mathbf{a}_{i^*}'\mathbf{x}=b_{i^*}$, 由于 $\mathbf{f}_{1}, \dots, \mathbf{f}_{n-k}, \mathbf{a}_{i^*}$ 线性无关, 因此它的解空间为 $n-(n-k+1)=k-1$-dimensional affine subspace of $\mathfrak{R}^n$, 设其为 $S'$, 显然 $S' \subset S$, 并且 $Q \subseteq S'$, 因此 $\dim Q \leq k-1$, 根据假设, $Q$ 上的所有点可以用它的 extreme points 的 convex combination 表示, 因此 $\mathbf{u}^*$ 可以被表示为
+> > 
+> > $$\mathbf{u}^* = \sum_{i \in I} \lambda_{i}\mathbf{v}_{i}$$
+> > 
+> > 其中 $\sum_{i \in I}\lambda_{i}=1$, $I$ 为 $Q$ 的 extreme points $\mathbf{v}_{i}$ 的下标集合. 根据前面的定理可知, $Q \subseteq P$ 的 extreme points 也会是 $P$ 的 extreme points, 从而 $\mathbf{u}^*$ 可以被 $P$ 的 extreme points $\mathbf{v}_{i}, i \in I$ 的 convex combination 表示. 我们又有 $\mathbf{z}=\frac{\mathbf{u}^* + \lambda^* \mathbf{y}}{1+\lambda^*}$, 因此
+> > 
+> > $$\mathbf{z} = \frac{\lambda^*}{1+\lambda^*}\mathbf{y} + \sum_{i \in I} \frac{\lambda_{i}}{1+\lambda^*}\mathbf{v}_{i}$$
+> > 
+> > 其中 $\mathbf{y}, \mathbf{v}_{i}, i \in I$ 为 $P$ 的 extreme points, 且 $\frac{\lambda^*}{1+\lambda^*}+\frac{\sum_{i \in I}\lambda_{i}}{1+\lambda^*}=1$, 因此 $\mathbf{z}$ 可以用 $P$ 的 extreme points 的 convex combination 表示, 这说明 $P \subseteq P'$.
 
 ## Projections of polyhedra: Fourier-Motzkin elimination
 
@@ -310,14 +385,14 @@ $$\begin{align}
 
 > [!info] Elimination algorithm
 > 
-> 1. Rewrite each constraint $\sum_{j=1}^{n} a_{ij}x_{j} \geq b_{i}$ in the form $$a_{in}x_{n} \geq -\sum_{j=1}^{n-1}a_{ij}x_{j}+b_{i}, \quad i=1, \dots, m;$$ if $a_{in}\not=0$, divide both sides by $a_{in}$. By letting $\mathbf{\bar{x}}=(x_{1, \dots, x_{n-1}})$, we obtain an equivalent representation of $P$ involving the following constraints: 
->    
->    $$\begin{aligned} x_{n} & \geq d_{i}+\mathbf{f}_{i}^{\prime} \overline{\mathbf{x}}, & & \text { if } a_{i n}>0, \\ d_{j}+\mathbf{f}_{j}^{\prime} \overline{\mathbf{x}} & \geq x_{n}, & & \text { if } a_{j n}<0, \\ 0 & \geq d_{k}+\mathbf{f}_{k}^{\prime} \overline{\mathbf{x}}, & & \text { if } a_{k n}=0. \end{aligned}$$
->    
->    Here, each $d_{i}, d_{j}, d_{k}$ is a scalar, and each $\mathbf{f}_{i}, \mathbf{f}_{j}, \mathbf{f}_{k}$ is a vector in $\mathfrak{R}^{n-1}$.
+> 1. Rewrite each constraint $\sum_{j=1}^{n} a_{ij}x_{j} \geq b_{i}$ in the form $$a_{in}x_{n} \geq -\sum_{j=1}^{n-1}a_{ij}x_{j}+b_{i}, \quad i=1, \dots, m;$$ if $a_{in}\not=0$, divide both sides by $a_{in}$. By letting $\mathbf{\bar{x}}=(x_{1, \dots, x_{n-1}})$, we obtain an equivalent representation of $P$ involving the following constraints:
+>   
+>   $\begin{aligned} x_{n} & \geq d_{i}+\mathbf{f}_{i}^{\prime} \overline{\mathbf{x}}, & & \text { if } a_{i n}>0, \\ d_{j}+\mathbf{f}_{j}^{\prime} \overline{\mathbf{x}} & \geq x_{n}, & & \text { if } a_{j n}<0, \\ 0 & \geq d_{k}+\mathbf{f}_{k}^{\prime} \overline{\mathbf{x}}, & & \text { if } a_{k n}=0. \end{aligned}$
+>   
+>   Here, each $d_{i}, d_{j}, d_{k}$ is a scalar, and each $\mathbf{f}_{i}, \mathbf{f}_{j}, \mathbf{f}_{k}$ is a vector in $\mathfrak{R}^{n-1}$.
 > 2. Let $Q$ be the polyhedron in $\mathfrak{R}^{n-1}$ defined by the constraints 
 >    
->    $$\begin{aligned} d_{j}+\mathbf{f}_{j}^{\prime} \overline{\mathbf{x}} & \geq d_{i}+\mathbf{f}_{i}^{\prime} \overline{\mathbf{x}}, & & \text { if } a_{i n}>0 \text { and } a_{j n}<0, \\ 0 & \geq d_{k}+\mathbf{f}_{k}^{\prime} \overline{\mathbf{x}}, & & \text { if } a_{k n}=0. \end{aligned}$$
+>    $\begin{aligned} d_{j}+\mathbf{f}_{j}^{\prime} \overline{\mathbf{x}} & \geq d_{i}+\mathbf{f}_{i}^{\prime} \overline{\mathbf{x}}, & & \text { if } a_{i n}>0 \text { and } a_{j n}<0, \\ 0 & \geq d_{k}+\mathbf{f}_{k}^{\prime} \overline{\mathbf{x}}, & & \text { if } a_{k n}=0. \end{aligned}$
 
 > [!theorem]
 > The polyhedron $Q$ constructed by the elimination al­gorithm is equal to the projection $\Pi_{n-1}(P)$ of $P$.
@@ -327,14 +402,19 @@ $$\begin{align}
 根据算法的步骤结合上述定理, 对于 polyhedron $P$, 任意 $1 \leq k \leq n$ 的 projection $\Pi_{k}(P)$ 仍然是一个 polyhedron.
 
 > [!corollary]
-> Let $P \subset \mathfrak{R}^{n+k}$ be a polyhedron. Then the set $$\{\mathbf{x} \in \mathfrak{R}^{n} | \text{there exists } \mathbf{y} \in \mathfrak{R}^{k} \text{ such that } (\mathbf{x}, \mathbf{y}) \in P\}$$ is also a polyhedron.
+> Let $P \subset \mathfrak{R}^{n+k}$ be a polyhedron. Then the set
+> 
+> $$\{\mathbf{x} \in \mathfrak{R}^{n} | \text{there exists } \mathbf{y} \in \mathfrak{R}^{k} \text{ such that } (\mathbf{x}, \mathbf{y}) \in P\}$$
+> 
+> is also a polyhedron.
 
 > [!corollary]
 > Let $P \subset \mathfrak{R}^n$ be a polyhedron and let $\mathbf{A}$ be an $m \times n$ matrix. Then, the set $Q=\{\mathbf{Ax} | \mathbf{x} \in P\}$ is also a polyhedron.
 > 
-> > [!question]-
-> > 书上这个部分的证明感觉有点问题啊 QwQ.
-> > #TODO 
+> > [!proof]-
+> > 利用上一条 corollary 证明.
+> > 
+> > 很容易构造出 $R = \{(\mathbf{x}, \mathbf{y}) \in \mathfrak{R}^{n+m} | \mathbf{Ax}=\mathbf{y}, \mathbf{x} \in P\}$, $\mathbf{Ax}=\mathbf{y}$ 显然是 standard form polyhedron 的约束, 加上 $\mathbf{x} \in P$ 相当于在 $P$ 的约束基础上增加一些约束, 因此 $R$ 也会是一个 polyhedron. 而 $Q=\{\mathbf{y} \in \mathfrak{R}^m | \text{there exists }x \in \mathfrak{R}^n \text{ such that }\mathbf{Ax}=\mathbf{y}, \mathbf{x} \in P\}$ 则是 $R$ 在 $\mathbf{y}$ 轴上的 projection, 因此 $Q$ 也是 polyhedron.
 
 > [!corollary]
 > The convex hull of a finite number of vectors is a polyhedron.

@@ -1,5 +1,5 @@
 ---
-title: "Lec 1: Computational Models, and the \rSchwartz-Zippel Randomized Polynomial Identity Test"
+title: Lec 1
 ---
 ## Computational Model
 

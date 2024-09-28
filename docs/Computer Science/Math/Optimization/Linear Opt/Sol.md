@@ -18,7 +18,7 @@ title: Solutions to selected exercises
 
 1. $0 \leq c \leq 1$ 时, 有
    <div>
-   $$ \begin{align}f^{*}(c \mathbf{x}+(1-c) \mathbf{0}) &= cf(\mathbf{x}) + (1-c)f(\mathbf{0}) - f(\mathbf{0}) \\ &= c[f(\mathbf{x}) - f(\mathbf{0})] \\ &= cf^*(\mathbf{x})\end{align} $$
+   $$ \begin{aligned}f^{*}(c \mathbf{x}+(1-c) \mathbf{0}) &= cf(\mathbf{x}) + (1-c)f(\mathbf{0}) - f(\mathbf{0}) \\ &= c[f(\mathbf{x}) - f(\mathbf{0})] \\ &= cf^*(\mathbf{x})\end{aligned} $$
    </div>
 2. $c>1$ 时, 有
    <div>
@@ -27,7 +27,7 @@ title: Solutions to selected exercises
    因此满足 $f^*(c \mathbf{x}) = cf^*(\mathbf{x})$
 3. $c \le 0$ 时,
    <div>
-   $$ \begin{align}f(\mathbf{0}) &= f\left( \frac{1}{2} \mathbf{x} + \frac{1}{2}(-\mathbf{x})\right) \\ &= \frac{1}{2}\left[f(\mathbf{x}) + f(-\mathbf{x})\right] \\ &= \frac{1}{2}[f^*(\mathbf{x}) + f^*(-\mathbf{x})] + f(\mathbf{0}) \\ \end{align} $$
+   $$ \begin{aligned}f(\mathbf{0}) &= f\left( \frac{1}{2} \mathbf{x} + \frac{1}{2}(-\mathbf{x})\right) \\ &= \frac{1}{2}\left[f(\mathbf{x}) + f(-\mathbf{x})\right] \\ &= \frac{1}{2}[f^*(\mathbf{x}) + f^*(-\mathbf{x})] + f(\mathbf{0}) \\ \end{aligned} $$
    </div>
    于是我们有 $f^*(\mathbf{x})+f^*(-\mathbf{x})=0$, 再直接套用 $c > 0$ 的结果即可证明 $c < 0$ 时同样满足 $f^*(c \mathbf{x}) = cf^*(\mathbf{x})$
 
@@ -37,11 +37,11 @@ title: Solutions to selected exercises
 2. $ab>0$, 有 $f^*(a \mathbf{x} + b \mathbf{y}) = (a+b)f^*\left( \frac{a \mathbf{x} + b \mathbf{y}}{a+b} \right)$, 令 $\lambda = \frac{a}{a+b}$, 于是
    <div>
    $$
-   \begin{align}
+   \begin{aligned}
    f^*(a \mathbf{x} + b \mathbf{y}) &= (a+b)f^*(\lambda \mathbf{x} + (1-\lambda) \mathbf{y}) \\
    &= (a+b)[\lambda f^*(\mathbf{x}) + (1-\lambda) f^*(\mathbf{y})] \\
    &= af^*(\mathbf{x}) + b f^*(\mathbf{y})
-   \end{align}
+   \end{aligned}
    $$
    </div>
 3. $ab < 0$, 令 $\mathbf{y}' = -\mathbf{y}$, 然后套用 $ab > 0$ 的式子以及 $f^*(-\mathbf{y}) = -f^*(\mathbf{y})$ 即可得证.
